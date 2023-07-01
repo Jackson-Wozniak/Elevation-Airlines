@@ -11,48 +11,48 @@
 ### Flight Tracking URL Endpoints
 *All endpoints are publicly available*
 ```
-- GET | http://localhost:8080/api/v1/tracking/live-flights
+- GET | http://localhost:8081/api/v1/tracking/live-flights
 Get all flights currently in the air
 ```
 
 ```
-- GET | http://localhost:8080/api/v1/tracking/daily_flights&date={date}
+- GET | http://localhost:8081/api/v1/tracking/daily_flights&date={date}
 Get all flights scheduled on date
 
 {date} must be formatted as MM/DD/YYYY
 ```
 
 ```
-- GET | http://localhost:8080/api/v1/tracking
+- GET | http://localhost:8081/api/v1/tracking
 Get all flights currently scheduled
 ```
 
 ```
-- GET | http://localhost:8080/api/v1/tracking/call_sign/{callSign}
+- GET | http://localhost:8081/api/v1/tracking/call_sign/{callSign}
 Get all flights currently scheduled for a specific planes call sign
 ```
 
 ```
-- GET | http://localhost:8080/api/v1/tracking/{identifier}
+- GET | http://localhost:8081/api/v1/tracking/{identifier}
 View the route & status of a flight based on the flight's indentifier
 ```
 
 ```
-- GET | http://localhost:8080/api/v1/tracking&departure={departureAirport}
+- GET | http://localhost:8081/api/v1/tracking&departure={departureAirport}
 View flights departing from inputted airport
 
 {departureAirport} must be the relevant ICAO code
 ```
 
 ```
-- GET | http://localhost:8080/api/v1/tracking&destination={destinationAirport}
+- GET | http://localhost:8081/api/v1/tracking&destination={destinationAirport}
 View flights arriving to inputted airport
 
 {destinationAirport} must be the relevant ICAO code
 ```
 
 ```
-- POST | http://localhost:8080/api/v1/tracking/generate_path?departure={departureAirport}&destination={destinationAirport}
+- POST | http://localhost:8081/api/v1/tracking/generate_path?departure={departureAirport}&destination={destinationAirport}
 Create a generated flight path departing from one airport and arriving at another.
 Flight paths will either be direct or connecting flights, and will only generate
 if the required routes are scheduled
