@@ -1,23 +1,32 @@
 package github.wozniak.flighttrackingservice.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Embeddable
+@Entity(name = "plane")
+@Table(name = "planes")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Plane {
 
+    @Id
+    @Column(name = "call_sign")
     private String callSign;
+
+    @Column(name = "model")
     private String model;
-    private Integer economySeatingCapacity;
-    private Integer luxurySeatingCapacity;
-    private Double economySeatingPrice;
-    private Double luxurySeatingPrice;
+
+    @Column(name = "seat_capacity")
+    private Integer seatingCapacity;
+
+    @Column(name = "luxury_seats")
+    private Integer luxurySeats;
+
+    @Column(name = "base_seating_price")
+    private Double baseSeatingPrice;
 }

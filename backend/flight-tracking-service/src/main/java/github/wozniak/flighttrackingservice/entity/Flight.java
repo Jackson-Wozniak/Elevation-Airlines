@@ -16,7 +16,8 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long flightIdentifier;
 
-    @Embedded
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign")
     private Plane plane;
 
     @Embedded
