@@ -59,3 +59,42 @@ if the required routes are scheduled
 
  {departureAirport} & {destinationAirport} must be the relevant ICAO code
 ```
+
+### REST API JSON Object Mapping
+```
+Flight:
+    - identifier: string
+    - callSign: string
+    - plane: object
+    - route: object
+```
+
+```
+Plane:
+    - model: string
+    - economy seat capacity: int
+    - economy seat price: double
+    - luxury seat capacity: int
+    - luxury seat price: double
+    - cruising speed (knots): int
+    - cruising altitude (ft): int
+```
+
+```
+Route:
+    - departure airport: object
+    - destination airport: object
+    - timeToArrival
+    - scheduled date/time
+    - liveFlight: boolean
+```
+
+```
+Airport:
+    - ICAO code: string
+    - name: string
+    - country: string
+    - continent: string
+    - latitude: double
+    - longitude: double
+```
