@@ -21,6 +21,12 @@ public class AirportService {
         return airportRepository.findAll();
     }
 
+    public List<Airport> findAirportsByCountry(String country){
+        return airportRepository.findAll().stream()
+                .filter(airport -> airport.getCountry().equals(country))
+                .toList();
+    }
+
     @Modifying
     @Transactional
     public void deleteAllAirportsAndFlights(){
