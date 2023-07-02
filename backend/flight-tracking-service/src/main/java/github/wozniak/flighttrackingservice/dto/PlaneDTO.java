@@ -13,12 +13,15 @@ public class PlaneDTO {
     private int seatingCapacity;
     private int luxurySeats;
     private double baseSeatingPrice;
+    private int speedKnots;
+    private int rangeMiles;
 
     public PlaneDTO(Plane plane){
         this.callSign = plane.getCallSign();
         this.model = plane.getModel();
         this.seatingCapacity = plane.getSeatingCapacity();
         this.luxurySeats = plane.getLuxurySeats();
-        this.baseSeatingPrice = plane.getBaseSeatingPrice();
+        this.speedKnots = plane.getCruisingSpeedKnots();
+        this.rangeMiles = plane.getRangeMiles();
     }
 }

@@ -29,7 +29,6 @@ public class PlaneService {
     }
 
     public void saveDefaultPlanes(){
-        planeRepository.truncatePlanes();
         planeRepository.saveAll(PlaneList.getDefaultPlanes());
     }
 

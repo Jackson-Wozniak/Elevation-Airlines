@@ -22,7 +22,7 @@ public class FlightComponentConfig {
 
     @PostConstruct
     public void configureFlightComponents(){
-        if(PlaneList.getDefaultPlanes().size() != planeService.planeCount()){
+        if(planeService.planeCount() != 30){
             logger.info("Saving Default Planes");
             planeService.deleteAllPlanesAndFlights();
             planeService.saveDefaultPlanes();
