@@ -1,11 +1,22 @@
 package github.wozniak.flighttrackingservice.utils;
 
+import github.wozniak.flighttrackingservice.entity.Airport;
 import github.wozniak.flighttrackingservice.entity.Plane;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class FlightDataCalculatorTest {
+
+    @Test
+    void calculateDistanceTest(){
+        Airport boston = new Airport("Boston", "Test", 42.3601, 71.0589, "Test", "Test");
+        Airport nyc = new Airport("NYC", "Test", 40.7128, 74.0060, "Test", "Test");
+        Airport london = new Airport("London", "Test", 51.5072, 0.1276, "Test", "Test");
+        assertEquals(190, FlightDataCalculator.getFlightMiles(boston, nyc));
+        assertEquals(3271, FlightDataCalculator.getFlightMiles(boston, london));
+        assertEquals(3461, FlightDataCalculator.getFlightMiles(nyc, london));
+    }
 
     @Test
     void knotsToMPHTest(){

@@ -7,11 +7,19 @@ import java.text.DecimalFormat;
 
 public class FlightDataCalculator {
 
-    private static final DecimalFormat formatter = new DecimalFormat("#.##");
-
     //uses Haversine formula based on coordinates
     public static int getFlightMiles(Airport departure, Airport destination){
-        return 0;
+        double depLat = Math.toRadians(departure.getLatitude());
+        double depLong = Math.toRadians(departure.getLongitude());
+        double destLat = Math.toRadians(destination.getLatitude());
+        double destLong = Math.toRadians(destination.getLongitude());
+        double dLat = depLat - destLat;
+        double dLong = depLong - destLong;
+
+        double a = (Math.pow(Math.sin(dLat / 2), 2)) + Math.cos(depLat) * Math.cos(destLat)
+                * (Math.pow(Math.sin(dLong / 2), 2));
+        double c = 2 * Math.asin(Math.sqrt(a));
+        return (int) (c * 3958.8);
     }
 
     public static double getFlightHours(int flightMiles, Plane plane){
