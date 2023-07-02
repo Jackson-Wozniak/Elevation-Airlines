@@ -19,7 +19,7 @@ public class RouteGenerator {
     private final AirportService airportService;
     private static final Random random = new Random();
 
-    public Route flightFromUnitedStates(Plane plane){
+    public Route flightFromUnitedStates(Plane plane, double maxHours){
         Airport departure;
         List<Airport> airports = airportService.findAllAirports();
         List<Airport> airportsUnitedStates = airports.stream()
@@ -36,6 +36,10 @@ public class RouteGenerator {
             int distanceMiles = FlightDataCalculator.getFlightMiles(departure, destination);
             if(distanceMiles <= plane.getRangeMiles()){
                 double flightHours = FlightDataCalculator.getFlightHours(distanceMiles, plane);
+                if(flightHours > maxHours){
+                    airports.remove(destination);
+                    continue;
+                }
                 return new Route(
                         departure,
                         destination,
