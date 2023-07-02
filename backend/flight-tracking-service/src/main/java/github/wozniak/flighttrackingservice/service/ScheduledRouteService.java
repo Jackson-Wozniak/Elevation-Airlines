@@ -19,7 +19,7 @@ public class ScheduledRouteService {
 
     public void saveScheduledRoute(ScheduledRoute route){
         if(route.isPlaneScheduled(scheduledRouteRepository.findAll())){
-            throw new RouteSchedulingException(route.getCallSign() + " was already assigned a scheduled route")
+            throw new RouteSchedulingException(route.getCallSign() + " was already assigned a scheduled route");
         }
         scheduledRouteRepository.save(route);
     }
