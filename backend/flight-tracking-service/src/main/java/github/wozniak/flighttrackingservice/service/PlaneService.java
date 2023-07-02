@@ -5,7 +5,6 @@ import github.wozniak.flighttrackingservice.properties.PlaneList;
 import github.wozniak.flighttrackingservice.repository.PlaneRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PlaneService {
 
-    @Autowired
     private final PlaneRepository planeRepository;
-    @Autowired
     private final FlightService flightService;
 
     public List<Plane> findAllPlanes(){

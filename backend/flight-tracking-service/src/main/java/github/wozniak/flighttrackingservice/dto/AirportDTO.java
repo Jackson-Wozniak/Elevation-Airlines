@@ -1,7 +1,6 @@
 package github.wozniak.flighttrackingservice.dto;
 
 import github.wozniak.flighttrackingservice.entity.Airport;
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 

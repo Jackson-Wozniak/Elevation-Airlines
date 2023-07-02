@@ -2,9 +2,7 @@ package github.wozniak.flighttrackingservice.properties;
 
 import github.wozniak.flighttrackingservice.entity.Airport;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 //Contains a list of default airports making up flight routes
 //data originally received from https://ourairports.com/data/, and sorted to only include large airports
