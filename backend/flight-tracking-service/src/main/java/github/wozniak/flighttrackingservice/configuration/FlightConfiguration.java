@@ -1,9 +1,12 @@
 package github.wozniak.flighttrackingservice.configuration;
 
 import github.wozniak.flighttrackingservice.entity.Plane;
+import github.wozniak.flighttrackingservice.entity.Route;
+import github.wozniak.flighttrackingservice.entity.ScheduledRoute;
 import github.wozniak.flighttrackingservice.helper.RouteGenerator;
 import github.wozniak.flighttrackingservice.service.PlaneService;
 import github.wozniak.flighttrackingservice.service.ScheduledRouteService;
+import github.wozniak.flighttrackingservice.utils.FlightDataCalculator;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +32,15 @@ public class FlightConfiguration {
         if(remainingFlights > 0){
             List<Plane> availablePlanes = scheduledRouteService.findAvailablePlanes();
             for(int i = 0; i < remainingFlights; i++){
-                //TODO: generate routes
+                if(availablePlanes.size() == 0) return;
+                Plane plane = availablePlanes.get(random.nextInt(availablePlanes.size()));
+                Route route = routeGenerator.flightFromUnitedStates(plane, 11);
+                scheduledRouteService.saveScheduledRoute(
+                        new ScheduledRoute(plane, route, FlightDataCalculator.createTimeOfFlight())
+                );
+                availablePlanes.remove(plane);
             }
         }
+        //TODO: ensure a week of flights are scheduled, if not schedule them
     }
 }

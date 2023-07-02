@@ -16,10 +16,11 @@ import java.util.List;
 public class ScheduledRoute {
 
     @Id
+    @Column(name = "call_sign_id")
     private String callSign;
 
-    @MapsId("callSign")
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
+    @JoinColumn(name = "call_sign")
     private Plane plane;
 
     @Embedded
@@ -29,6 +30,7 @@ public class ScheduledRoute {
     private LocalTime time;
 
     public ScheduledRoute(Plane plane, Route route, LocalTime time){
+        this.callSign = plane.getCallSign();
         this.plane = plane;
         this.route = route;
         this.time = time;

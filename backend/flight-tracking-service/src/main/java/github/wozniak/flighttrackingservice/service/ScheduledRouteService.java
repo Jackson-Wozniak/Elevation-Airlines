@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,14 +19,11 @@ public class ScheduledRouteService {
     private final PlaneService planeService;
 
     public void saveScheduledRoute(ScheduledRoute route){
-        if(route.isPlaneScheduled(scheduledRouteRepository.findAll())){
-            throw new RouteSchedulingException(route.getCallSign() + " was already assigned a scheduled route");
-        }
         scheduledRouteRepository.save(route);
     }
 
     public List<Plane> findAvailablePlanes(){
-        List<Plane> planes = scheduledRouteRepository.findAll().stream().map(ScheduledRoute::getPlane).toList();
+        List<Plane> planes = new ArrayList<>(scheduledRouteRepository.findAll().stream().map(ScheduledRoute::getPlane).toList());
         List<Plane> availablePlanes = planeService.findAllPlanes();
         availablePlanes.removeAll(planes);
         return availablePlanes;
