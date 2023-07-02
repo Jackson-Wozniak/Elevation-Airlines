@@ -477,7 +477,7 @@ public class AirportsList {
             new Airport("ZYTX", "Shenyang Taoxian International Airport", 41.639801, 123.483002, "Asia", "China")
     );
 
-    public List<Airport> getDefaultAirports(){
+    public static List<Airport> getDefaultAirports(){
         return defaultAirports;
     }
 }

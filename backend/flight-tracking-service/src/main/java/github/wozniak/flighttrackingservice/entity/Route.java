@@ -13,11 +13,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Route {
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = false)
     @JoinColumn(name = "departure_icao", referencedColumnName = "icao_code")
     private Airport departureAirport;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = false)
     @JoinColumn(name = "destination_icao", referencedColumnName = "icao_code")
     private Airport destinationAirport;
 
