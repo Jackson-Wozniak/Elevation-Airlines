@@ -2,10 +2,8 @@ package github.wozniak.flighttrackingservice.service;
 
 import github.wozniak.flighttrackingservice.entity.Plane;
 import github.wozniak.flighttrackingservice.entity.ScheduledRoute;
-import github.wozniak.flighttrackingservice.exception.RouteSchedulingException;
 import github.wozniak.flighttrackingservice.repository.ScheduledRouteRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +18,10 @@ public class ScheduledRouteService {
 
     public void saveScheduledRoute(ScheduledRoute route){
         scheduledRouteRepository.save(route);
+    }
+
+    public void saveScheduledRoutes(List<ScheduledRoute> routes){
+        scheduledRouteRepository.saveAll(routes);
     }
 
     public List<Plane> findAvailablePlanes(){

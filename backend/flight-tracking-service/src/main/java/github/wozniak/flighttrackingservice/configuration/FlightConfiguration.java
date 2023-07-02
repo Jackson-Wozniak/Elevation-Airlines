@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -28,19 +29,23 @@ public class FlightConfiguration {
     //configure 15 scheduledRoute to fly the same time every day, based on plane callSign
     @PostConstruct
     public void configureScheduledRoutes(){
-        long remainingFlights = scheduledRouteService.remainingRoutesToSchedule();
+        int remainingFlights = (int) scheduledRouteService.remainingRoutesToSchedule();
         if(remainingFlights > 0){
-            List<Plane> availablePlanes = scheduledRouteService.findAvailablePlanes();
-            for(int i = 0; i < remainingFlights; i++){
-                if(availablePlanes.size() == 0) return;
-                Plane plane = availablePlanes.get(random.nextInt(availablePlanes.size()));
-                Route route = routeGenerator.flightFromUnitedStates(plane, 11);
-                scheduledRouteService.saveScheduledRoute(
-                        new ScheduledRoute(plane, route, FlightDataCalculator.createTimeOfFlight())
-                );
-                availablePlanes.remove(plane);
-            }
+            scheduledRouteService.saveScheduledRoutes(createScheduledRoutes(remainingFlights));
         }
         //TODO: ensure a week of flights are scheduled, if not schedule them
+    }
+
+    public List<ScheduledRoute> createScheduledRoutes(int routesToCreate){
+        List<Plane> availablePlanes = scheduledRouteService.findAvailablePlanes();
+        List<ScheduledRoute> scheduledRoutes = new ArrayList<>();
+        for(int i = 0; i < routesToCreate; i++){
+            if(availablePlanes.size() == 0) break;
+            Plane plane = availablePlanes.get(random.nextInt(availablePlanes.size()));
+            Route route = routeGenerator.flightFromUnitedStates(plane, 11);
+            scheduledRoutes.add(new ScheduledRoute(plane, route, FlightDataCalculator.createTimeOfFlight()));
+            availablePlanes.remove(plane);
+        }
+        return scheduledRoutes;
     }
 }
