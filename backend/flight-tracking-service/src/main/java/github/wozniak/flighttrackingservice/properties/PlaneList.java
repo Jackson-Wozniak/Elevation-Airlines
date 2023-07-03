@@ -9,6 +9,7 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class PlaneList {
 
@@ -21,14 +22,22 @@ public class PlaneList {
     public static List<Plane> getDefaultPlanes(){
         //fleet of 30 planes
         List<Plane> defaultPlanes = new ArrayList<>();
-        List<Integer> usedCallSigns = new ArrayList<>();
+        ArrayList<Integer> nums = new ArrayList<>(IntStream.range(1, 1000).boxed().toList());
         for(int i = 0; i < 30; i++){
-            int callSign = random.nextInt(10, 999);
-            if(usedCallSigns.contains(callSign)){
-                i--;
-                continue;
-            }
-            usedCallSigns.add(callSign);
+            int callSign = nums.get(random.nextInt(nums.size()));
+            nums.remove(Integer.valueOf(callSign));
+            defaultPlanes.add(new Plane("ELV" + callSign, planeModels.get(random.nextInt(planeModels.size()))));
+        }
+        return defaultPlanes;
+    }
+
+    public static List<Plane> getDefaultPlanes(int planes){
+        if(planes > 999) planes = 999;
+        List<Plane> defaultPlanes = new ArrayList<>();
+        ArrayList<Integer> nums = new ArrayList<>(IntStream.range(1, 1000).boxed().toList());
+        for(int i = 0; i < planes; i++){
+            int callSign = nums.get(random.nextInt(nums.size()));
+            nums.remove(Integer.valueOf(callSign));
             defaultPlanes.add(new Plane("ELV" + callSign, planeModels.get(random.nextInt(planeModels.size()))));
         }
         return defaultPlanes;
