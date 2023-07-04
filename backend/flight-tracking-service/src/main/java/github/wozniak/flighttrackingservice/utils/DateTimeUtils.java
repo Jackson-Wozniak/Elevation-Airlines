@@ -1,6 +1,5 @@
 package github.wozniak.flighttrackingservice.utils;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -11,7 +10,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class DateTimeFormat {
+public class DateTimeUtils {
 
     private static final Random random = new Random();
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
@@ -35,6 +34,10 @@ public class DateTimeFormat {
 
     public static String of(LocalDate date, LocalTime time){
         return LocalDateTime.of(date, time).format(dateTimeFormatter);
+    }
+
+    public static String format(LocalDateTime dateTime){
+        return dateTime.format(dateTimeFormatter);
     }
 
     public static List<LocalDate> allDatesInRange(LocalDate start, LocalDate end){

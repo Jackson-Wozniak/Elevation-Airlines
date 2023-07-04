@@ -4,7 +4,7 @@ import github.wozniak.flighttrackingservice.entity.Flight;
 import github.wozniak.flighttrackingservice.model.FlightTimeTable;
 import github.wozniak.flighttrackingservice.service.PlaneService;
 import github.wozniak.flighttrackingservice.service.ScheduledRouteService;
-import github.wozniak.flighttrackingservice.utils.DateTimeFormat;
+import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +40,7 @@ class FlightCalendarCreatorTest {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
-        LocalTime time = DateTimeFormat.createTimeOfFlight();
+        LocalTime time = DateTimeUtils.createTimeOfFlight();
         LocalDateTime dateTime = LocalDateTime.of(LocalDate.now(), time);
         System.out.println(dateTime);
         assertEquals("07/04/2023 " + time, dateTime.format(format));

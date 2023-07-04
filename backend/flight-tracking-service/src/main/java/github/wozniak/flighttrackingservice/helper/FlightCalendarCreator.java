@@ -5,7 +5,7 @@ import github.wozniak.flighttrackingservice.entity.ScheduledRoute;
 import github.wozniak.flighttrackingservice.model.FlightTimeTable;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import github.wozniak.flighttrackingservice.service.PlaneService;
-import github.wozniak.flighttrackingservice.utils.DateTimeFormat;
+import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -35,7 +35,7 @@ public class FlightCalendarCreator {
                 .map(flight -> flight.getTakeOffDateTime().toLocalDate())
                 .collect(Collectors.toSet());
         List<LocalDate> missingDays = new ArrayList<>();
-        for(LocalDate date : DateTimeFormat.allDatesInRange(startDate, endDate)){
+        for(LocalDate date : DateTimeUtils.allDatesInRange(startDate, endDate)){
             if(!dates.contains(date)) missingDays.add(date);
         }
         return missingDays;
@@ -54,7 +54,7 @@ public class FlightCalendarCreator {
                 .forEach(plane -> flightsToday.add(new Flight(
                         plane,
                         routeGenerator.flightFromUnitedStates(plane, 24),
-                        LocalDateTime.of(date, DateTimeFormat.createTimeOfFlight())))
+                        LocalDateTime.of(date, DateTimeUtils.createTimeOfFlight())))
                 );
         return new FlightTimeTable(date, flightsToday);
     }

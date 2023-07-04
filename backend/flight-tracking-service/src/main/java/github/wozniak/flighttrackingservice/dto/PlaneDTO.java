@@ -10,16 +10,15 @@ public class PlaneDTO {
 
     private String callSign;
     private String model;
-    private int seatingCapacity;
+    private int seatCapacity;
     private int luxurySeats;
-    private double baseSeatingPrice;
     private int speedKnots;
     private int rangeMiles;
 
     public PlaneDTO(Plane plane){
         this.callSign = plane.getCallSign();
         this.model = plane.getModel();
-        this.seatingCapacity = plane.getSeatingCapacity();
+        this.seatCapacity = plane.getSeatingCapacity();
         this.luxurySeats = plane.getLuxurySeats();
         this.speedKnots = plane.getCruisingSpeedKnots();
         this.rangeMiles = plane.getRangeMiles();

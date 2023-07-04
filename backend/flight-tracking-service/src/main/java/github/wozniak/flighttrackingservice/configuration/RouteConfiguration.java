@@ -7,7 +7,7 @@ import github.wozniak.flighttrackingservice.helper.FlightCalendarCreator;
 import github.wozniak.flighttrackingservice.helper.RouteGenerator;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import github.wozniak.flighttrackingservice.service.ScheduledRouteService;
-import github.wozniak.flighttrackingservice.utils.DateTimeFormat;
+import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -47,9 +47,8 @@ public class RouteConfiguration {
         if(remainingFlights > 0){
             scheduledRouteService.saveScheduledRoutes(createScheduledRoutes(remainingFlights));
         }
-        //TODO: ensure a week of flights are scheduled, if not schedule them.
-        // Remove past flights
         fillMissingDaysInCalendar();
+        //TODO: remove past flights from database
     }
 
     public List<ScheduledRoute> createScheduledRoutes(int routesToCreate){
@@ -59,7 +58,7 @@ public class RouteConfiguration {
             if(availablePlanes.size() == 0) break;
             Plane plane = availablePlanes.get(random.nextInt(availablePlanes.size()));
             Route route = routeGenerator.flightFromUnitedStates(plane, 11);
-            scheduledRoutes.add(new ScheduledRoute(plane, route, DateTimeFormat.createTimeOfFlight()));
+            scheduledRoutes.add(new ScheduledRoute(plane, route, DateTimeUtils.createTimeOfFlight()));
             availablePlanes.remove(plane);
         }
         return scheduledRoutes;

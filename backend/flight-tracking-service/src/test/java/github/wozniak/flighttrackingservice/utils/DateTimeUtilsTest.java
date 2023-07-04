@@ -7,19 +7,19 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DateTimeFormatTest {
+class DateTimeUtilsTest {
 
     @Test
     void formatTime(){
-        assertEquals("00:30", DateTimeFormat.hoursToHHMM(0.5));
-        assertEquals("02:30", DateTimeFormat.hoursToHHMM(2.5));
-        assertEquals("12:26", DateTimeFormat.hoursToHHMM(12.43));
-        assertEquals("116:50", DateTimeFormat.hoursToHHMM(116.83));
+        assertEquals("00:30", DateTimeUtils.hoursToHHMM(0.5));
+        assertEquals("02:30", DateTimeUtils.hoursToHHMM(2.5));
+        assertEquals("12:26", DateTimeUtils.hoursToHHMM(12.43));
+        assertEquals("116:50", DateTimeUtils.hoursToHHMM(116.83));
     }
 
     @Test
     void allDatesInRangeTest(){
-        List<LocalDate> dates = DateTimeFormat.allDatesInRange(LocalDate.now(), LocalDate.now().plusDays(7));
+        List<LocalDate> dates = DateTimeUtils.allDatesInRange(LocalDate.now(), LocalDate.now().plusDays(7));
         assertEquals(7, dates.size());
         for(int i = 0; i < 7; i++){
             assertEquals(LocalDate.now().plusDays(i), dates.get(i));
