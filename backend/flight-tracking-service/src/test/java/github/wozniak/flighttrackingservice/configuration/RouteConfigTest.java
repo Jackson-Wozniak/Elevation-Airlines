@@ -10,18 +10,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-class RouteConfigurationTest {
+class RouteConfigTest {
 
-    private final RouteConfiguration routeConfiguration;
+    private final RouteConfig routeConfig;
 
     @Autowired
-    RouteConfigurationTest(RouteConfiguration routeConfiguration) {
-        this.routeConfiguration = routeConfiguration;
+    RouteConfigTest(RouteConfig routeConfig) {
+        this.routeConfig = routeConfig;
     }
 
     @Test
     void scheduledRouteCreationTest(){
-        routeConfiguration.createScheduledRoutes(100).forEach(scheduled -> {
+        routeConfig.createScheduledRoutes(100).forEach(scheduled -> {
             assertTrue(scheduled.getRoute().getFlightDurationHours() < 11);
             assertTrue(scheduled.getPlane().getRangeMiles() >= scheduled.getRoute().getFlightDistanceMiles());
         });

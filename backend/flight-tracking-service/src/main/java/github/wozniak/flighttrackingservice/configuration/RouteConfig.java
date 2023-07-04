@@ -23,14 +23,14 @@ import java.util.Random;
 @Configuration
 @AllArgsConstructor
 @Order(2)
-public class RouteConfiguration {
+public class RouteConfig {
 
     private final ScheduledRouteService scheduledRouteService;
     private final RouteGenerator routeGenerator;
     private final FlightCalendarCreator calendarCreator;
     private final FlightService flightService;
     private static final Random random = new Random();
-    private static final Logger logger = LoggerFactory.getLogger(RouteConfiguration.class);
+    private static final Logger logger = LoggerFactory.getLogger(RouteConfig.class);
 
     /*
     This method will ensure that 15 daily routes are saved to the database. Alongside these daily flights,
