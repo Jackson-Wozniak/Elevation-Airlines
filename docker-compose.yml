@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  #flight tracking service --------------------------------------------------------------------
+  flight-tracking-service:
+    build: ./backend/flight-tracking-service
+    image: flight-tracking-service
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+    ports:
+      - "8080:8090"
+    environment:
+      MYSQL_HOST: db_flight_tracking
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: db_flight_tracking
+      MYSQL_PORT: 3306
+      SPRING_DATASOURCE_URL: jdbc:mysql://db_flight_tracking:3306/flight_tracking_service?createIfDatabaseNotExist=true
+    depends_on:
+      db_flight_tracking:
+        condition: service_healthy
+
+  db_flight_tracking:
+    container_name: db_flight_tracking
+    image: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: flight_tracking_service
+      MYSQL_ROOT_PASSWORD: password
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+
+  #flight booking service --------------------------------------------------------------------
