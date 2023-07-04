@@ -41,4 +41,8 @@ public class AirportService {
     public long airportCount(){
         return airportRepository.count();
     }
+
+    public boolean airportExists(String icaoCode){
+        return airportRepository.findById(icaoCode).isPresent();
+    }
 }

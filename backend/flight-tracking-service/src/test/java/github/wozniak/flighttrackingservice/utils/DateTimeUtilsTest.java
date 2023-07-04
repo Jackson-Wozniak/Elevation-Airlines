@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,5 +46,38 @@ class DateTimeUtilsTest {
         for(int i = 0; i < 7; i++){
             assertEquals(LocalDate.now().plusDays(i), dates.get(i));
         }
+    }
+
+    @Test
+    void liveFlightTest(){
+        LocalDateTime takeOffTime = LocalDateTime.now().minusHours(5);
+
+        //5 hours left in flight (live)
+        assertTrue(DateTimeUtils.isLiveFlight(takeOffTime, 10.00));
+
+        //flight landed 3 hours ago (not live)
+        assertFalse(DateTimeUtils.isLiveFlight(takeOffTime, 2.00));
+
+        //flight landed 5 minutes ago (not live)
+        assertFalse(DateTimeUtils.isLiveFlight(takeOffTime, 4.92));
+
+        //5 minutes left in flight (live)
+        assertTrue(DateTimeUtils.isLiveFlight(takeOffTime, 5.08));
+
+        //flight is currently landing (not live)
+        assertFalse(DateTimeUtils.isLiveFlight(takeOffTime, 5.00));
+    }
+
+    @Test
+    void isValidDateFormat(){
+        assertTrue(DateTimeUtils.isValid("01/12/2023"));
+        assertFalse(DateTimeUtils.isValid("13/12/2023"));
+        assertFalse(DateTimeUtils.isValid("01-12-2023"));
+    }
+
+    @Test
+    void toSQLDateFormat(){
+        assertEquals("2023-07-04", DateTimeUtils.stringToSQLDate("07/04/2023").toString());
+        assertThrows(DateTimeParseException.class, () -> DateTimeUtils.stringToSQLDate("000/01/1"));
     }
 }

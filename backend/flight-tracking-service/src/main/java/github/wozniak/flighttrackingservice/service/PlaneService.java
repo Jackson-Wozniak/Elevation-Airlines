@@ -21,6 +21,10 @@ public class PlaneService {
         return planeRepository.findAll();
     }
 
+    public boolean planeExists(String callSign){
+        return planeRepository.findById(callSign).isPresent();
+    }
+
     @Modifying
     @Transactional
     public void deleteAllPlanesAndFlights(){
