@@ -1,6 +1,7 @@
 package github.wozniak.flighttrackingservice.helper;
 
 import github.wozniak.flighttrackingservice.entity.Airport;
+import github.wozniak.flighttrackingservice.entity.Flight;
 import github.wozniak.flighttrackingservice.entity.Plane;
 import github.wozniak.flighttrackingservice.entity.Route;
 import github.wozniak.flighttrackingservice.exception.RouteGeneratorException;
@@ -49,5 +50,9 @@ public class RouteGenerator {
             }
             airports.remove(destination);
         }
+    }
+
+    public List<Route> roundTripReturnRoutes(List<Route> firstWayRoutes){
+        return null;
     }
 }

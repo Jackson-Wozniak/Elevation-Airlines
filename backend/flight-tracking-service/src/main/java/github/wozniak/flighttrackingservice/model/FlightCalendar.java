@@ -1,6 +1,5 @@
 package github.wozniak.flighttrackingservice.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,10 +10,10 @@ import java.util.List;
 @Setter
 public class FlightCalendar {
     private List<LocalDate> dates;
-    private List<DailyFlightTimeTable> daysInCalendar;
+    private List<FlightTimeTable> daysInCalendar;
 
-    public FlightCalendar(List<DailyFlightTimeTable> daysInCalendar){
+    public FlightCalendar(List<FlightTimeTable> daysInCalendar){
         this.daysInCalendar = daysInCalendar;
-        this.dates = daysInCalendar.stream().map(DailyFlightTimeTable::getDate).toList();
+        this.dates = daysInCalendar.stream().map(FlightTimeTable::getDate).toList();
     }
 }

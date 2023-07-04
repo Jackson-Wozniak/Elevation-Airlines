@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class DailyFlightTimeTable {
+public class FlightTimeTable {
 
     private LocalDate date;
     private List<Flight> flightsToday;

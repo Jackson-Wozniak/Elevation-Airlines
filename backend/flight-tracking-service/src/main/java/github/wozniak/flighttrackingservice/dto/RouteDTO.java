@@ -1,7 +1,7 @@
 package github.wozniak.flighttrackingservice.dto;
 
 import github.wozniak.flighttrackingservice.entity.Route;
-import github.wozniak.flighttrackingservice.utils.TimeFormat;
+import github.wozniak.flighttrackingservice.utils.DateTimeFormat;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +17,7 @@ public class RouteDTO {
     public RouteDTO(Route route){
         this.departure = new AirportDTO(route.getDepartureAirport());
         this.destination = new AirportDTO(route.getDestinationAirport());
-        this.flightTime = TimeFormat.hoursToHHMM(route.getFlightDurationHours());
+        this.flightTime = DateTimeFormat.hoursToHHMM(route.getFlightDurationHours());
         this.distanceMiles = route.getFlightDistanceMiles();
     }
 }

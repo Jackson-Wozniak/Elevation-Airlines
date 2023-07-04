@@ -35,11 +35,4 @@ public class FlightDataCalculator {
     public static double knotsToMPH(int knots){
         return Double.parseDouble(String.format("%.02f", knots * 1.15078));
     }
-
-    //returns time in format
-    public static LocalTime createTimeOfFlight(){
-        int hour = random.nextInt(24);
-        int minute = random.nextBoolean() ? 30 : 0;
-        return LocalTime.of(hour, minute);
-    }
 }

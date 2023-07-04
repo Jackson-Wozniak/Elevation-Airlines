@@ -16,6 +16,10 @@ public class ScheduledRouteService {
     private final ScheduledRouteRepository scheduledRouteRepository;
     private final PlaneService planeService;
 
+    public List<ScheduledRoute> findDailySchedule(){
+        return scheduledRouteRepository.findAll();
+    }
+
     public void saveScheduledRoute(ScheduledRoute route){
         scheduledRouteRepository.save(route);
     }

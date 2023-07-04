@@ -18,8 +18,8 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long flightIdentifier;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign")
+    @ManyToOne
+    @JoinColumn(name = "call_sign")
     private Plane plane;
 
     @Embedded
@@ -31,6 +31,12 @@ public class Flight {
     public Flight(Plane plane, Route route, LocalDateTime takeOffDateTime){
         this.plane = plane;
         this.route = route;
+        this.takeOffDateTime = takeOffDateTime;
+    }
+
+    public Flight(ScheduledRoute dailyScheduledRoute, LocalDateTime takeOffDateTime){
+        this.plane = dailyScheduledRoute.getPlane();
+        this.route = dailyScheduledRoute.getRoute();
         this.takeOffDateTime = takeOffDateTime;
     }
 }
