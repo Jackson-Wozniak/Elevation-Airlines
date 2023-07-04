@@ -39,7 +39,7 @@ public class RouteConfiguration {
         if(remainingFlights > 0){
             scheduledRouteService.saveScheduledRoutes(createScheduledRoutes(remainingFlights));
         }
-        //TODO: ensure a week of flights are scheduled, if not schedule them
+        //TODO: ensure a week of flights are scheduled, if not schedule them. Remove past flights
     }
 
     public List<ScheduledRoute> createScheduledRoutes(int routesToCreate){

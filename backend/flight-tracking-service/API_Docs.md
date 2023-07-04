@@ -23,6 +23,13 @@ Get all flights scheduled on date
 ```
 
 ```
+- GET | http://localhost:8081/api/v1/tracking/flight_calendar?start={calendarStartDay}&end={calendarEndDate}
+Find flight calendar of start and end date
+
+dates must be formatted as MM/DD/YYYY, endDate is inclusive
+```
+
+```
 - GET | http://localhost:8081/api/v1/tracking
 Get all flights currently scheduled
 ```

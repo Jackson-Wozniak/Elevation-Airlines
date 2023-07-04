@@ -22,7 +22,7 @@ public class FlightScheduler {
         TODO:
          schedule 1 day of flights exactly 7 days from the current date.
          15 daily routes will be saved as well scheduling 1 or 2 flights for
-         the remaining unused planes in the fleet
+         the remaining unused planes in the fleet. This method will also remove past flights
         */
     }
 }
