@@ -14,6 +14,7 @@ public class DateTimeUtils {
 
     private static final Random random = new Random();
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
+    private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
     public static String hoursToHHMM(double hours){
         int roundHour = (int) Math.floor(hours);
@@ -38,6 +39,10 @@ public class DateTimeUtils {
 
     public static String format(LocalDateTime dateTime){
         return dateTime.format(dateTimeFormatter);
+    }
+
+    public static String format(LocalDate date){
+        return dateFormatter.format(date);
     }
 
     public static List<LocalDate> allDatesInRange(LocalDate start, LocalDate end){

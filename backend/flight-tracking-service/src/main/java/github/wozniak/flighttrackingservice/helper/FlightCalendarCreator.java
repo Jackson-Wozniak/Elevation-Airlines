@@ -26,9 +26,12 @@ public class FlightCalendarCreator {
     private final PlaneService planeService;
     private final FlightService flightService;
 
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-    private static final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-    private static final DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
+    public boolean isDayMissing(LocalDate date){
+        Set<LocalDate> dates = flightService.findAllFlights().stream()
+                .map(flight -> flight.getTakeOffDateTime().toLocalDate())
+                .collect(Collectors.toSet());
+        return !dates.contains(date);
+    }
 
     public List<LocalDate> missingDays(LocalDate startDate, LocalDate endDate){
         Set<LocalDate> dates = flightService.findAllFlights().stream()

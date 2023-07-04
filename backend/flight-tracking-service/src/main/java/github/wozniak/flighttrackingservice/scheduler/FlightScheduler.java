@@ -1,15 +1,28 @@
 package github.wozniak.flighttrackingservice.scheduler;
 
+import github.wozniak.flighttrackingservice.helper.FlightCalendarCreator;
 import github.wozniak.flighttrackingservice.properties.SchedulingProperties;
+import github.wozniak.flighttrackingservice.service.FlightService;
+import github.wozniak.flighttrackingservice.service.ScheduledRouteService;
+import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 
 @EnableScheduling
 @Service
 @AllArgsConstructor
 public class FlightScheduler {
+
+    private final FlightCalendarCreator flightCalendarCreator;
+    private final FlightService flightService;
+    private final ScheduledRouteService scheduledRouteService;
+    private static final Logger logger = LoggerFactory.getLogger(FlightScheduler.class);
 
     /*
     RouteConfiguration.java is called on app startup to ensure flights are scheduled 1 week out,
@@ -18,11 +31,12 @@ public class FlightScheduler {
      */
     @Scheduled(cron = SchedulingProperties.runAtMidnight)
     public void scheduleFlightsOneWeekOut(){
-        /*
-        TODO:
-         schedule 1 day of flights exactly 7 days from the current date.
-         15 daily routes will be saved as well scheduling 1 or 2 flights for
-         the remaining unused planes in the fleet. This method will also remove past flights
-        */
+        LocalDate oneWeek = LocalDate.now().plusDays(7);
+        if(flightCalendarCreator.isDayMissing(oneWeek)){
+            logger.info("Generating time table for " + DateTimeUtils.format(oneWeek));
+            flightService.saveFlights(flightCalendarCreator.createDaysTimeTable(
+                    oneWeek, scheduledRouteService.findDailySchedule()).getFlightsToday());
+        }
+        //TODO: remove past flights
     }
 }
