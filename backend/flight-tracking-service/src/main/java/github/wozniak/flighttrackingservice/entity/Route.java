@@ -13,17 +13,17 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Route {
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departure_icao", referencedColumnName = "icaoCode")
+    @ManyToOne
+    @JoinColumn(name = "departure_icao")
     private Airport departureAirport;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "destination_icao", referencedColumnName = "icaoCode")
+    @ManyToOne
+    @JoinColumn(name = "destination_icao")
     private Airport destinationAirport;
 
-    @Column(name = "flightDurationHours")
+    @Column(name = "flight_duration_hours")
     private Double flightDurationHours;
 
-    @Column(name = "flightDistanceMiles")
+    @Column(name = "flight_distance_miles")
     private Double flightDistanceMiles;
 }
