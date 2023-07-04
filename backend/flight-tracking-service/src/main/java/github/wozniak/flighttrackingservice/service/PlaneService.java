@@ -35,4 +35,10 @@ public class PlaneService {
     public long planeCount(){
         return planeRepository.count();
     }
+
+    public List<Plane> findUnusedPlanes(List<Plane> usedPlanes){
+        List<Plane> planes = planeRepository.findAll();
+        planes.removeAll(usedPlanes);
+        return planes;
+    }
 }
