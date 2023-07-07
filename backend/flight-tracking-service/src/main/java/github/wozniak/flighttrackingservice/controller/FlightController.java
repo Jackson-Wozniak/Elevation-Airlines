@@ -61,4 +61,10 @@ public class FlightController {
         return ResponseEntity.ok().body(flightService.findFlightsByDate(date).stream()
                 .map(FlightDTO::new).toList());
     }
+
+    /*
+    TODO:
+        - create endpoint for getting flights in a range of dates using FlightCalendar.java
+        - create endpoint to generate a path between 2 airports based on scheduled flights, if possible
+     */
 }

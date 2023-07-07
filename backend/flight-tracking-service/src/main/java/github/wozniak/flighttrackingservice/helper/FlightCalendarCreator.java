@@ -57,7 +57,15 @@ public class FlightCalendarCreator {
                 .map(route -> new Flight(route, LocalDateTime.of(date, route.getTime())))
                 .toList());
 
-        //TODO: add round trip for daily flights (fly back to departure airport after landing in destination)
+        //add round trip for daily flights (fly back to departure airport after landing in destination)
+        List<Flight> copy = new ArrayList<>(flightsToday);
+        copy.forEach(flight -> flightsToday.add(new Flight(
+                flight.getPlane(),
+                new Route(flight.getRoute().getDestinationAirport(),
+                        flight.getRoute().getDepartureAirport(),
+                        flight.getPlane()),
+                flight.getLandingDateTime().plusMinutes(30)
+        )));
 
         //for each plane not being used by a daily flight, schedule 1 random flight
         scheduledRouteService.findAvailablePlanes().forEach(plane -> {

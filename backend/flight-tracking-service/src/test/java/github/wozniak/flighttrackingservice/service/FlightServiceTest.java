@@ -48,6 +48,10 @@ class FlightServiceTest {
                     System.out.println("Next Takeoff time: " + DateTimeUtils.format(nextTakeOff));
                     System.out.println();
                 }
+                System.out.println("Plane: " + plane.getCallSign());
+                System.out.println("Takeoff: " + flight.getRoute().getDepartureAirport().getIcaoCode());
+                System.out.println("Landing: " + flight.getRoute().getDestinationAirport().getIcaoCode());
+                System.out.println();
                 assertTrue(landing.isBefore(nextTakeOff));
             }
         });

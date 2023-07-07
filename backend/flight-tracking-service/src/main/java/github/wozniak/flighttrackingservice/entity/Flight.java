@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity(name = "flight")
 @Table(name = "flights")
@@ -46,5 +48,9 @@ public class Flight {
         //allows for invalid flights to be dismissed, but this should be resolved later
         //so that flights aren't dismissed.
         return this.takeOffDateTime.plusMinutes((int) (this.route.getFlightDurationHours() * 60)).getHour() + 1;
+    }
+
+    public LocalDateTime getLandingDateTime(){
+        return this.takeOffDateTime.plusMinutes((int) (this.route.getFlightDurationHours() * 60));
     }
 }
