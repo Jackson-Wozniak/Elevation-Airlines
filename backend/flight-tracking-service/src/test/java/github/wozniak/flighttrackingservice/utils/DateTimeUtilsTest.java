@@ -41,7 +41,7 @@ class DateTimeUtilsTest {
 
     @Test
     void allDatesInRangeTest(){
-        List<LocalDate> dates = DateTimeUtils.allDatesInRange(LocalDate.now(), LocalDate.now().plusDays(7));
+        List<LocalDate> dates = DateTimeUtils.allDatesInRange(LocalDate.now(), LocalDate.now().plusDays(7), false);
         assertEquals(7, dates.size());
         for(int i = 0; i < 7; i++){
             assertEquals(LocalDate.now().plusDays(i), dates.get(i));

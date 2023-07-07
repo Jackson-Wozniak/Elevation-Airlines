@@ -2,6 +2,7 @@ package github.wozniak.flighttrackingservice.service;
 
 import github.wozniak.flighttrackingservice.entity.Flight;
 import github.wozniak.flighttrackingservice.exception.*;
+import github.wozniak.flighttrackingservice.model.FlightTimeTable;
 import github.wozniak.flighttrackingservice.repository.FlightRepository;
 import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import jakarta.transaction.Transactional;
@@ -9,10 +10,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -63,6 +62,22 @@ public class FlightService {
         List<Flight> flights = flightRepository.findFlightsByDate(DateTimeUtils.stringToSQLDate(date));
         if(flights.isEmpty()) throw new FlightQueryException("No flights are scheduled on " + date);
         return flights;
+    }
+
+    public List<FlightTimeTable> findFlightsByDateRange(String start, String end){
+        HashMap<LocalDate, ArrayList<Flight>> flightsOnDate = new HashMap<>();
+        List<LocalDate> dates = DateTimeUtils.allDatesInRange(
+                DateTimeUtils.toDate(start), DateTimeUtils.toDate(end), true);
+
+        for (LocalDate date : dates) {
+            flightsOnDate.put(date, new ArrayList<>());
+        }
+
+        flightRepository.findAll().forEach(flight -> {
+            if(!dates.contains(flight.getTakeOffDateTime().toLocalDate())) return;
+            flightsOnDate.get(flight.getTakeOffDateTime().toLocalDate()).add(flight);
+        });
+        return FlightTimeTable.generate(flightsOnDate);
     }
 
     public List<Flight> findAllFlights(){

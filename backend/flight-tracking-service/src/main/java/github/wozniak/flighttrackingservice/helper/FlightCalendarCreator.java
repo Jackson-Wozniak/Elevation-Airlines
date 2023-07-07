@@ -46,7 +46,7 @@ public class FlightCalendarCreator {
                 .map(flight -> flight.getTakeOffDateTime().toLocalDate())
                 .collect(Collectors.toSet());
         List<LocalDate> missingDays = new ArrayList<>();
-        for(LocalDate date : DateTimeUtils.allDatesInRange(startDate, endDate)){
+        for(LocalDate date : DateTimeUtils.allDatesInRange(startDate, endDate, false)){
             if(!dates.contains(date)) missingDays.add(date);
         }
         return missingDays;
