@@ -5,7 +5,6 @@ import github.wozniak.flighttrackingservice.entity.Plane;
 import github.wozniak.flighttrackingservice.entity.Route;
 import github.wozniak.flighttrackingservice.exception.RouteGeneratorException;
 import github.wozniak.flighttrackingservice.service.AirportService;
-import github.wozniak.flighttrackingservice.utils.FlightDataCalculator;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -44,19 +43,14 @@ public class RouteGenerator {
         while(true){
             if(airports.size() == 0) throw new RouteGeneratorException("Could not create route");
             Airport destination = airports.get(random.nextInt(airports.size()));
-            int distanceMiles = FlightDataCalculator.getFlightMiles(departure, destination);
-            if(distanceMiles <= plane.getRangeMiles()){
-                double flightHours = FlightDataCalculator.getFlightHours(distanceMiles, plane);
-                if(flightHours > maxHours){
+
+            Route route = new Route(departure, destination, plane);
+            if(route.getFlightDistanceMiles() <= plane.getRangeMiles()){
+                if(route.getFlightDurationHours() > maxHours){
                     airports.remove(destination);
                     continue;
                 }
-                return new Route(
-                        departure,
-                        destination,
-                        flightHours,
-                        (double) distanceMiles
-                );
+                return route;
             }
             airports.remove(destination);
         }
