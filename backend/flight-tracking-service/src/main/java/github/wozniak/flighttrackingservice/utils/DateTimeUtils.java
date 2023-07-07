@@ -32,10 +32,16 @@ public class DateTimeUtils {
 
     //returns time in format hh:mm
     public static LocalTime createTimeOfFlight(){
-        int hour = random.nextInt(24);
+        int hour = random.nextInt(20);
         int minute = random.nextBoolean() ? 30 : 0;
         return LocalTime.of(hour, minute);
     }
+    public static LocalTime createTimeOfFlight(int earliestHour){
+        int hour = earliestHour >= 23 ? 23 : random.nextInt(earliestHour, 23);
+        int minute = random.nextBoolean() ? 30 : 0;
+        return LocalTime.of(hour, minute);
+    }
+
 
     public static String of(LocalDate date, LocalTime time){
         return LocalDateTime.of(date, time).format(dateTimeFormatter);

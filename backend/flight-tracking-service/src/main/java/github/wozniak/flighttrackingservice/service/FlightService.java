@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -39,6 +40,12 @@ public class FlightService {
             throw new PlaneNotFoundException(callSign + " does not exist");
         }
         throw new FlightQueryException("No flights are scheduled for " + callSign);
+    }
+
+    public Flight findLastFlightByCallSign(String callSign){
+        return flightRepository.findFlightsByCallSign(callSign).stream()
+                .max(Comparator.comparing(Flight::getTakeOffDateTime))
+                .orElseThrow(() -> new FlightQueryException("Cannot find most recent flight"));
     }
 
     public List<Flight> findFlightsByAirport(String icao, boolean isDeparture, AirportService service){

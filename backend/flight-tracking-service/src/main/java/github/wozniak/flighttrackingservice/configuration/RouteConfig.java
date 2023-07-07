@@ -57,7 +57,7 @@ public class RouteConfig {
         for(int i = 0; i < routesToCreate; i++){
             if(availablePlanes.size() == 0) break;
             Plane plane = availablePlanes.get(random.nextInt(availablePlanes.size()));
-            Route route = routeGenerator.flightFromUnitedStates(plane, 11);
+            Route route = routeGenerator.fromUnitedStates(plane, 11);
             scheduledRoutes.add(new ScheduledRoute(plane, route, DateTimeUtils.createTimeOfFlight()));
             availablePlanes.remove(plane);
         }
@@ -70,6 +70,7 @@ public class RouteConfig {
             logger.info(missingDates.size() + " missing dates: scheduling time tables");
             List<ScheduledRoute> scheduledRoutes = scheduledRouteService.findDailySchedule();
             for (LocalDate missingDate : missingDates) {
+                System.out.println(DateTimeUtils.format(missingDate));
                 flightService.saveFlights(
                         calendarCreator.createDaysTimeTable(missingDate, scheduledRoutes)
                             .getFlightsToday());

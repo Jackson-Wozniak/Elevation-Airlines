@@ -25,7 +25,7 @@ class RouteGeneratorTest {
     @Test
     void validUnitedStatesFlightTest(){
         Plane plane = new Plane("Test", "Test", 1000, 10, 400, 2300);
-        Route route = routeGenerator.flightFromUnitedStates(plane, 10.5);
+        Route route = routeGenerator.fromUnitedStates(plane, 10.5);
         assertEquals("United States", route.getDepartureAirport().getCountry());
         assertTrue(route.getFlightDistanceMiles() <= plane.getRangeMiles());
         assertTrue(route.getFlightDurationHours() <= 10.5);
@@ -34,7 +34,7 @@ class RouteGeneratorTest {
     @Test
     void noRangeThrowsErrorTest(){
         Plane plane = new Plane("Test", "Test", 1000, 10, 400, 0);
-        assertThrows(RouteGeneratorException.class, () -> routeGenerator.flightFromUnitedStates(plane, 100));
+        assertThrows(RouteGeneratorException.class, () -> routeGenerator.fromUnitedStates(plane, 100));
     }
 
 }
