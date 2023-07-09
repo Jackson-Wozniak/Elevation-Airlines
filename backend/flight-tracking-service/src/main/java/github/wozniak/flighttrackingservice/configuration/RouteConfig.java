@@ -48,7 +48,8 @@ public class RouteConfig {
             scheduledRouteService.saveScheduledRoutes(createScheduledRoutes(remainingFlights));
         }
         fillMissingDaysInCalendar();
-        //TODO: remove past flights from database
+        //TODO:
+        // remove past flights from database before filling missing dates
     }
 
     public List<ScheduledRoute> createScheduledRoutes(int routesToCreate){
@@ -57,7 +58,7 @@ public class RouteConfig {
         for(int i = 0; i < routesToCreate; i++){
             if(availablePlanes.size() == 0) break;
             Plane plane = availablePlanes.get(random.nextInt(availablePlanes.size()));
-            Route route = routeGenerator.flightFromUnitedStates(plane, 11);
+            Route route = routeGenerator.fromUnitedStates(plane, 11);
             scheduledRoutes.add(new ScheduledRoute(plane, route, DateTimeUtils.createTimeOfFlight()));
             availablePlanes.remove(plane);
         }

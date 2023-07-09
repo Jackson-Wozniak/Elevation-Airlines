@@ -12,10 +12,12 @@ import java.util.List;
 @Setter
 public class FlightTimeTableDTO {
     private String date;
+    private int flightCount;
     private List<FlightDTO> flights;
 
     public FlightTimeTableDTO(FlightTimeTable timeTable){
         this.date = DateTimeUtils.format(timeTable.getDate());
         this.flights = timeTable.getFlightsToday().stream().map(FlightDTO::new).toList();
+        this.flightCount = flights.size();
     }
 }

@@ -1,6 +1,7 @@
 package github.wozniak.flighttrackingservice.controller;
 
 import github.wozniak.flighttrackingservice.dto.FlightDTO;
+import github.wozniak.flighttrackingservice.dto.FlightTimeTableDTO;
 import github.wozniak.flighttrackingservice.service.AirportService;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import github.wozniak.flighttrackingservice.service.PlaneService;
@@ -61,4 +62,15 @@ public class FlightController {
         return ResponseEntity.ok().body(flightService.findFlightsByDate(date).stream()
                 .map(FlightDTO::new).toList());
     }
+
+    @GetMapping(value = "/time_table/range")
+    public ResponseEntity<?> returnFlightsOnDate(@RequestParam("start") String start, @RequestParam("end") String end){
+        return ResponseEntity.ok().body(flightService.findFlightsByDateRange(start, end).stream()
+                        .map(FlightTimeTableDTO::new).toList());
+    }
+
+    /*
+    TODO:
+        - create endpoint to generate a path between 2 airports based on scheduled flights, if possible
+     */
 }

@@ -1,13 +1,11 @@
 package github.wozniak.flighttrackingservice.utils;
 
 import java.sql.Date;
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAmount;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -32,10 +30,16 @@ public class DateTimeUtils {
 
     //returns time in format hh:mm
     public static LocalTime createTimeOfFlight(){
-        int hour = random.nextInt(24);
+        int hour = random.nextInt(20);
         int minute = random.nextBoolean() ? 30 : 0;
         return LocalTime.of(hour, minute);
     }
+    public static LocalTime createTimeOfFlight(int earliestHour){
+        int hour = earliestHour >= 23 ? 23 : random.nextInt(23 - earliestHour) + earliestHour;
+        int minute = random.nextBoolean() ? 30 : 0;
+        return LocalTime.of(hour, minute);
+    }
+
 
     public static String of(LocalDate date, LocalTime time){
         return LocalDateTime.of(date, time).format(dateTimeFormatter);
@@ -57,8 +61,12 @@ public class DateTimeUtils {
         return Date.valueOf(LocalDate.parse(date, dateFormatter));
     }
 
-    public static List<LocalDate> allDatesInRange(LocalDate start, LocalDate end){
-        long numOfDaysBetween = ChronoUnit.DAYS.between(start, end);
+    public static LocalDate toDate(String date){
+        return dateFormatter.parse(date, LocalDate::from);
+    }
+
+    public static List<LocalDate> allDatesInRange(LocalDate start, LocalDate end, boolean isInclusive){
+        long numOfDaysBetween = ChronoUnit.DAYS.between(start, end) + (isInclusive ? 1 : 0);
         return IntStream.iterate(0, i -> i + 1)
                 .limit(numOfDaysBetween)
                 .mapToObj(start::plusDays)

@@ -41,14 +41,13 @@ class FlightCalendarCreatorTest {
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
         LocalTime time = DateTimeUtils.createTimeOfFlight();
-        LocalDateTime dateTime = LocalDateTime.of(LocalDate.now(), time);
-        System.out.println(dateTime);
-        assertEquals("07/04/2023 " + time, dateTime.format(format));
+        LocalDateTime dateTime = LocalDate.of(2023, 7, 4).atTime(time);
+        assertEquals("07/04/2023", dateTime.format(format));
     }
 
     @Test
     void flightsTimeTableUsesWholeFleet(){
-        LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.of(2023, 7, 4);
         FlightTimeTable timeTable = calendarCreator.createDaysTimeTable(
                 today, scheduledRouteService.findDailySchedule());
         assertEquals(

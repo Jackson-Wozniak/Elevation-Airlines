@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity(name = "flight")
 @Table(name = "flights")
@@ -38,5 +40,17 @@ public class Flight {
         this.plane = dailyScheduledRoute.getPlane();
         this.route = dailyScheduledRoute.getRoute();
         this.takeOffDateTime = takeOffDateTime;
+    }
+
+    public int getLandingHour(){
+        //this could technically return a number greater than 24 so this has to be fixed later.
+        //I currently have it this was because the current scheduling technically
+        //allows for invalid flights to be dismissed, but this should be resolved later
+        //so that flights aren't dismissed.
+        return this.takeOffDateTime.plusMinutes((int) (this.route.getFlightDurationHours() * 60)).getHour() + 1;
+    }
+
+    public LocalDateTime getLandingDateTime(){
+        return this.takeOffDateTime.plusMinutes((int) (this.route.getFlightDurationHours() * 60));
     }
 }
