@@ -1,7 +1,9 @@
 package github.wozniak.flighttrackingservice.controller;
 
 import github.wozniak.flighttrackingservice.dto.FlightDTO;
+import github.wozniak.flighttrackingservice.dto.FlightSummaryDTO;
 import github.wozniak.flighttrackingservice.dto.FlightTimeTableDTO;
+import github.wozniak.flighttrackingservice.dto.TimeTableSummaryDTO;
 import github.wozniak.flighttrackingservice.service.AirportService;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import github.wozniak.flighttrackingservice.service.PlaneService;
@@ -25,14 +27,14 @@ public class FlightController {
         if(!departure.equals("")){
             return ResponseEntity.ok(flightService.findFlightsByAirport(
                     departure, true, airportService)
-                        .stream().map(FlightDTO::new).toList());
+                        .stream().map(FlightSummaryDTO::new).toList());
         }
         if(!destination.equals("")){
             return ResponseEntity.ok(flightService.findFlightsByAirport(
                     destination, false, airportService)
-                        .stream().map(FlightDTO::new).toList());
+                        .stream().map(FlightSummaryDTO::new).toList());
         }
-        return ResponseEntity.ok(flightService.findAllFlights().stream().map(FlightDTO::new).toList());
+        return ResponseEntity.ok(flightService.findAllFlights().stream().map(FlightSummaryDTO::new).toList());
     }
 
     @GetMapping(value = "/identifier/{identifier}")
@@ -60,13 +62,13 @@ public class FlightController {
     @GetMapping(value = "/time_table")
     public ResponseEntity<?> returnFlightsOnDate(@RequestParam("date") String date){
         return ResponseEntity.ok().body(flightService.findFlightsByDate(date).stream()
-                .map(FlightDTO::new).toList());
+                .map(FlightSummaryDTO::new).toList());
     }
 
     @GetMapping(value = "/time_table/range")
     public ResponseEntity<?> returnFlightsOnDate(@RequestParam("start") String start, @RequestParam("end") String end){
         return ResponseEntity.ok().body(flightService.findFlightsByDateRange(start, end).stream()
-                        .map(FlightTimeTableDTO::new).toList());
+                        .map(TimeTableSummaryDTO::new).toList());
     }
 
     /*
