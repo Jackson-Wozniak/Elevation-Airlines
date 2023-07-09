@@ -35,7 +35,7 @@ public class DateTimeUtils {
         return LocalTime.of(hour, minute);
     }
     public static LocalTime createTimeOfFlight(int earliestHour){
-        int hour = earliestHour >= 23 ? 23 : random.nextInt(earliestHour, 23);
+        int hour = earliestHour >= 23 ? 23 : random.nextInt(23 - earliestHour) + earliestHour;
         int minute = random.nextBoolean() ? 30 : 0;
         return LocalTime.of(hour, minute);
     }

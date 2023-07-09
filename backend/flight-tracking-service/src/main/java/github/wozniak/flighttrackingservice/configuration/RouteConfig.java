@@ -48,7 +48,8 @@ public class RouteConfig {
             scheduledRouteService.saveScheduledRoutes(createScheduledRoutes(remainingFlights));
         }
         fillMissingDaysInCalendar();
-        //TODO: remove past flights from database
+        //TODO:
+        // remove past flights from database before filling missing dates
     }
 
     public List<ScheduledRoute> createScheduledRoutes(int routesToCreate){
@@ -70,7 +71,6 @@ public class RouteConfig {
             logger.info(missingDates.size() + " missing dates: scheduling time tables");
             List<ScheduledRoute> scheduledRoutes = scheduledRouteService.findDailySchedule();
             for (LocalDate missingDate : missingDates) {
-                System.out.println(DateTimeUtils.format(missingDate));
                 flightService.saveFlights(
                         calendarCreator.createDaysTimeTable(missingDate, scheduledRoutes)
                             .getFlightsToday());
