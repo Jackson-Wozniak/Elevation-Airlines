@@ -35,7 +35,15 @@ public class DateTimeUtils {
         return LocalTime.of(hour, minute);
     }
     public static LocalTime createTimeOfFlight(int earliestHour){
-        int hour = earliestHour >= 23 ? 23 : random.nextInt(23 - earliestHour) + earliestHour;
+        if(earliestHour >= 23) return LocalTime.of(23, 59);
+        int hour = random.nextInt(23 - earliestHour) + earliestHour;
+        int minute = random.nextBoolean() ? 30 : 0;
+        return LocalTime.of(hour, minute);
+    }
+
+    public static LocalTime createTimeOfFlight(int latestHour, boolean isRestricted){
+        if(latestHour <= 0) return LocalTime.of(0, 0);
+        int hour = random.nextInt(latestHour);
         int minute = random.nextBoolean() ? 30 : 0;
         return LocalTime.of(hour, minute);
     }

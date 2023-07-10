@@ -41,18 +41,14 @@ class FlightServiceTest {
                 LocalDateTime landing = flight.getTakeOffDateTime().plusMinutes((int) (flight.getRoute().getFlightDurationHours() * 60));
                 if(flightsByPlane.peek() == null) continue;
                 LocalDateTime nextTakeOff = flightsByPlane.peek().getTakeOffDateTime();
-                if(landing.isAfter(nextTakeOff)){
+                if(nextTakeOff.isBefore(landing)){
                     System.out.println("Call Sign: " + flight.getPlane().getCallSign());
                     System.out.println("Takeoff time: " + DateTimeUtils.format(flight.getTakeOffDateTime()));
                     System.out.println("Landing time: " + DateTimeUtils.format(landing));
                     System.out.println("Next Takeoff time: " + DateTimeUtils.format(nextTakeOff));
                     System.out.println();
                 }
-                System.out.println("Plane: " + plane.getCallSign());
-                System.out.println("Takeoff: " + flight.getRoute().getDepartureAirport().getIcaoCode());
-                System.out.println("Landing: " + flight.getRoute().getDestinationAirport().getIcaoCode());
-                System.out.println();
-                assertTrue(landing.isBefore(nextTakeOff));
+                assertFalse(nextTakeOff.isBefore(landing));
             }
         });
     }

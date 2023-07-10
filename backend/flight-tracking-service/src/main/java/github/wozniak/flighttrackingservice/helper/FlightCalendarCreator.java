@@ -90,11 +90,13 @@ public class FlightCalendarCreator {
         if(latestFlight.getLandingDateTime().toLocalDate().isAfter(date)) return List.of();
         while(true){
             Route route = routeGenerator.fromAirport(latestFlight.getRoute().getDestinationAirport(), plane, 11);
-            LocalDateTime takeOffTime = LocalDateTime.of(date, DateTimeUtils.createTimeOfFlight(latestFlight.getLandingHour()));
+            LocalDateTime takeOffTime = LocalDateTime.of(date, latestFlight.getLandingDateTime().toLocalTime().plusMinutes(30));
 
             Flight newestFlight = new Flight(plane, route, takeOffTime);
             newFlights.add(newestFlight);
-            if(newestFlight.getLandingDateTime().toLocalDate().isAfter(date)){
+            //need to make sure this pus 30 is doing what I want it to (haven't tested yet)
+            //intended so that the next take-off times in loop aren't a different day
+            if(newestFlight.getLandingDateTime().plusMinutes(30).toLocalDate().isAfter(date)){
                 break;
             }
             latestFlight = newestFlight;

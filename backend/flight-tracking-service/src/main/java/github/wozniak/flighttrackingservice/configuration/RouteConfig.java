@@ -59,7 +59,7 @@ public class RouteConfig {
             if(availablePlanes.size() == 0) break;
             Plane plane = availablePlanes.get(random.nextInt(availablePlanes.size()));
             Route route = routeGenerator.fromUnitedStates(plane, 11);
-            scheduledRoutes.add(new ScheduledRoute(plane, route, DateTimeUtils.createTimeOfFlight()));
+            scheduledRoutes.add(new ScheduledRoute(plane, route, DateTimeUtils.createTimeOfFlight(11, true)));
             availablePlanes.remove(plane);
         }
         return scheduledRoutes;
