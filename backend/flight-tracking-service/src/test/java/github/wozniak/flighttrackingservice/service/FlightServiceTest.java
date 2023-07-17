@@ -48,7 +48,7 @@ class FlightServiceTest {
                     System.out.println("Next Takeoff time: " + DateTimeUtils.format(nextTakeOff));
                     System.out.println();
                 }
-                assertFalse(nextTakeOff.isBefore(landing));
+                assertFalse(nextTakeOff.isBefore(landing.plusMinutes(30)));
             }
         });
     }
