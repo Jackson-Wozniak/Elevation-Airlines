@@ -69,26 +69,38 @@ public class FlightCalendarCreator {
 
         //for each plane not being used by a daily flight, schedule 1 random flight
         scheduledRouteService.findAvailablePlanes().forEach(plane -> {
-            double maxHours;
             try{
                 Flight latestFlight = flightService.findLastFlightByCallSign(plane.getCallSign());
-                maxHours = Duration.between(latestFlight.getTakeOffDateTime(), date.atTime(23, 59)).toSeconds() * 3600;
-                flightsToday.add(new Flight(
-                        plane,
-                        routeGenerator.fromAirport(latestFlight.getRoute().getDestinationAirport(),
-                                plane, maxHours),
-                        LocalDateTime.of(date, DateTimeUtils.createTimeOfFlight(latestFlight.getLandingHour())))
-                );
+                flightsToday.addAll(scheduleFlightsUntilEOD(plane, date, latestFlight));
             }catch (FlightQueryException ex){
                 flightsToday.add(new Flight(
                         plane, routeGenerator.fromUnitedStates(plane, 11), LocalDateTime.of(date, DateTimeUtils.createTimeOfFlight(12))));
-            }catch (Exception ex){
-                //do something here later to solve for dismissed flights
-                //Currently the scheduling approach (# of flight hours and earliest flight times
-                //should reduce the possibility of this, but it should be more full-proof
-                System.out.println(ex.getMessage());
             }
         });
         return new FlightTimeTable(date, flightsToday);
+    }
+
+    /*
+    Starting at the last flights time of landing (+30min), schedule flights throughout the day with
+    30min intervals between until the landing time crosses over into the next day. Departures are set by
+    the planes current location
+     */
+    public List<Flight> scheduleFlightsUntilEOD(Plane plane, LocalDate date, Flight latestFlight){
+        List<Flight> newFlights = new ArrayList<>();
+        if(latestFlight.getLandingDateTime().toLocalDate().isAfter(date)) return List.of();
+        while(true){
+            Route route = routeGenerator.fromAirport(latestFlight.getRoute().getDestinationAirport(), plane, 11);
+            LocalDateTime takeOffTime = LocalDateTime.of(date, latestFlight.getLandingDateTime().toLocalTime().plusMinutes(30));
+
+            Flight newestFlight = new Flight(plane, route, takeOffTime);
+            newFlights.add(newestFlight);
+            //need to make sure this pus 30 is doing what I want it to (haven't tested yet)
+            //intended so that the next take-off times in loop aren't a different day
+            if(newestFlight.getLandingDateTime().plusMinutes(30).toLocalDate().isAfter(date)){
+                break;
+            }
+            latestFlight = newestFlight;
+        }
+        return newFlights;
     }
 }
