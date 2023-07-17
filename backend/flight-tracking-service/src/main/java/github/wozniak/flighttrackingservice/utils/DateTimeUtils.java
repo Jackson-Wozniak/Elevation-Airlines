@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -16,6 +17,7 @@ public class DateTimeUtils {
     private static final Random random = new Random();
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
     private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    private static final DateTimeFormatter dateParser = DateTimeFormatter.ofPattern("M/d/y");
     private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
     public static String hoursToHHMM(double hours){
@@ -70,7 +72,7 @@ public class DateTimeUtils {
     }
 
     public static LocalDate toDate(String date){
-        return dateFormatter.parse(date, LocalDate::from);
+        return LocalDate.parse(date, dateParser);
     }
 
     public static List<LocalDate> allDatesInRange(LocalDate start, LocalDate end, boolean isInclusive){

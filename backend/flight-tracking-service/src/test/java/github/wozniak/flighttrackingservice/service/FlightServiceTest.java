@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -22,10 +23,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class FlightServiceTest {
 
     private final FlightService flightService;
+    private final AirportService airportService;
+    private final ScheduledRouteService scheduledRouteService;
+    private final PlaneService planeService;
 
     @Autowired
-    public FlightServiceTest(FlightService flightService) {
+    public FlightServiceTest(FlightService flightService, AirportService airportService, ScheduledRouteService scheduledRouteService, PlaneService planeService) {
         this.flightService = flightService;
+        this.airportService = airportService;
+        this.scheduledRouteService = scheduledRouteService;
+        this.planeService = planeService;
     }
 
     @Test
@@ -50,6 +57,64 @@ class FlightServiceTest {
                 }
                 assertFalse(nextTakeOff.isBefore(landing.plusMinutes(30)));
             }
+        });
+    }
+
+    @Test
+    void liveFlightTest(){
+        LocalDateTime time = LocalDateTime.now();
+        flightService.findLiveFlights().forEach(flight -> {
+            assertTrue(flight.getLandingDateTime().isAfter(time));
+            assertTrue(flight.getTakeOffDateTime().isBefore(time));
+        });
+    }
+
+    @Test
+    void dateRangeTest(){
+        String start = DateTimeUtils.format(LocalDate.now());
+        String end = DateTimeUtils.format(LocalDate.now().plusDays(3));
+        flightService.findFlightsByDateRange(start, end).forEach(timeTable -> {
+            assertFalse(timeTable.getDate().isBefore(DateTimeUtils.toDate(start)));
+            assertFalse(timeTable.getDate().isAfter(DateTimeUtils.toDate(end)));
+        });
+    }
+
+    @Test
+    void dateTest(){
+        String today = DateTimeUtils.format(LocalDate.now());
+        flightService.findFlightsByDate(today).forEach(flight -> {
+            assertEquals(DateTimeUtils.toDate(today), flight.getTakeOffDateTime().toLocalDate());
+        });
+    }
+
+    @Test
+    void findFlightsByAirportTest(){
+        String departure = scheduledRouteService.findDailySchedule().get(0).getRoute().getDepartureAirport().getIcaoCode();
+        String destination = scheduledRouteService.findDailySchedule().get(0).getRoute().getDepartureAirport().getIcaoCode();
+        flightService.findFlightsByAirport(departure, true, airportService).forEach(flight -> {
+            assertEquals(flight.getRoute().getDepartureAirport().getIcaoCode(), departure);
+        });
+
+        flightService.findFlightsByAirport(destination, false, airportService).forEach(flight -> {
+            assertEquals(flight.getRoute().getDestinationAirport().getIcaoCode(), destination);
+        });
+    }
+
+    @Test
+    void flightByIdentifier(){
+        if(flightService.findAllFlights().isEmpty()) return;
+        Flight flight = flightService.findAllFlights().get(0);
+        assertDoesNotThrow(() -> flightService.findFlightsByIdentifier(flight.getFlightIdentifier()));
+        assertEquals(flight.getFlightIdentifier(), flightService.findFlightsByIdentifier(flight.getFlightIdentifier()).getFlightIdentifier());
+    }
+
+    @Test
+    void flightByCallSign(){
+        if(flightService.findAllFlights().isEmpty()) return;
+        String callSign = scheduledRouteService.findDailySchedule().get(0).getCallSign();
+        assertDoesNotThrow(() -> flightService.findFlightByCallSign(callSign, planeService));
+        flightService.findFlightByCallSign(callSign, planeService).forEach(flight -> {
+            assertEquals(callSign, flight.getPlane().getCallSign());
         });
     }
 }
