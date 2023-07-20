@@ -37,6 +37,6 @@ public class FlightScheduler {
             flightService.saveFlights(flightCalendarCreator.createDaysTimeTable(
                     oneWeek, scheduledRouteService.findDailySchedule()).getFlightsToday());
         }
-        //TODO: remove past flights
+        flightService.deletePastFlights();
     }
 }

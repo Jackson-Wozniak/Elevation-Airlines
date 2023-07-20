@@ -48,8 +48,7 @@ public class RouteConfig {
             scheduledRouteService.saveScheduledRoutes(createScheduledRoutes(remainingFlights));
         }
         fillMissingDaysInCalendar();
-        //TODO:
-        // remove past flights from database before filling missing dates
+        flightService.deletePastFlights();
     }
 
     public List<ScheduledRoute> createScheduledRoutes(int routesToCreate){

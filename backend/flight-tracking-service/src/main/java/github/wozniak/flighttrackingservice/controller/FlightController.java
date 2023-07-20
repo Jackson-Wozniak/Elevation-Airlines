@@ -74,5 +74,7 @@ public class FlightController {
     /*
     TODO:
         - create endpoint to generate a path between 2 airports based on scheduled flights, if possible
+            -allow for choice between finding quickest path (takeoff to landing time), least number of
+            hops, or lowest total distance
      */
 }
