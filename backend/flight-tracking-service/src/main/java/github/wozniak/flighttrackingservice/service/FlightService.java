@@ -97,4 +97,13 @@ public class FlightService {
     public void deleteAllFlights(){
         flightRepository.deleteAll();
     }
+
+    @Modifying
+    @Transactional
+    public void deletePastFlights(){
+        List<Flight> pastFlights = flightRepository.findAll().stream()
+                .filter(flight -> flight.getLandingDateTime().toLocalDate().isBefore(LocalDate.now()))
+                .toList();
+        flightRepository.deleteAll(pastFlights);
+    }
 }
