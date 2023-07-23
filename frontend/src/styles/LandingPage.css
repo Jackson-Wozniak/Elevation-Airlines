@@ -1,0 +1,17 @@
+.landing-page{
+    width : 100vw;
+    height : 100vh;
+}
+
+.landing-page-bg{
+    width : 100vw;
+    height : 100vh;
+    /* background: rgb(193,193,231);
+    background: radial-gradient(circle, rgba(193,193,231,1) 0%, rgba(146,163,231,1) 71%); */
+    background: url('../images/plane_bg.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: .8;
+}
