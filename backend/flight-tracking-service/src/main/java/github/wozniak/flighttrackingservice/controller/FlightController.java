@@ -4,12 +4,20 @@ import github.wozniak.flighttrackingservice.dto.FlightDTO;
 import github.wozniak.flighttrackingservice.dto.FlightSummaryDTO;
 import github.wozniak.flighttrackingservice.dto.FlightTimeTableDTO;
 import github.wozniak.flighttrackingservice.dto.TimeTableSummaryDTO;
+import github.wozniak.flighttrackingservice.entity.Airport;
+import github.wozniak.flighttrackingservice.planning_algorithm.Edge;
+import github.wozniak.flighttrackingservice.planning_algorithm.FlightPath;
+import github.wozniak.flighttrackingservice.planning_algorithm.FlightPathDTO;
+import github.wozniak.flighttrackingservice.planning_algorithm.PathGenerator;
 import github.wozniak.flighttrackingservice.service.AirportService;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import github.wozniak.flighttrackingservice.service.PlaneService;
+import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/v1/tracking")
@@ -19,6 +27,7 @@ public class FlightController {
     private final FlightService flightService;
     private final PlaneService planeService;
     private final AirportService airportService;
+    private final PathGenerator pathGenerator;
 
     @GetMapping(value = "")
     public ResponseEntity<?> returnAllFlights(
@@ -77,4 +86,10 @@ public class FlightController {
             -allow for choice between finding quickest path (takeoff to landing time), least number of
             hops, or lowest total distance
      */
+    @RequestMapping(value = "path_generator")
+    public List<Edge> generateConnectingFlightPath(@RequestParam("departure")String departure, @RequestParam("destination") String destination){
+        Airport departureAirport = airportService.findAirportByICAO(departure);
+        Airport destinationAirport = airportService.findAirportByICAO(destination);
+        return pathGenerator.uniquePath(departure, destination);
+    }
 }

@@ -2,6 +2,7 @@ package github.wozniak.flighttrackingservice.entity;
 
 import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @NoArgsConstructor
+@EqualsAndHashCode(exclude = {"plane", "route", "takeOffDateTime"})
 public class Flight {
 
     @Id
@@ -53,5 +55,16 @@ public class Flight {
 
     public LocalDateTime getLandingDateTime(){
         return this.takeOffDateTime.plusMinutes((int) (this.route.getFlightDurationHours() * 60));
+    }
+
+    public boolean isMatchingAirport(String icao, boolean departureQuery){
+        if(departureQuery){
+            return this.getRoute().getDepartureAirport().getIcaoCode().equals(icao);
+        }
+        return this.getRoute().getDestinationAirport().getIcaoCode().equals(icao);
+    }
+
+    public String toString(){
+        return this.getRoute().getDepartureAirport().getIcaoCode() + "->" + this.getRoute().getDestinationAirport().getIcaoCode();
     }
 }
