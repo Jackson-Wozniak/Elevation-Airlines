@@ -14,6 +14,18 @@
 
 <details>
  <summary>
+    <code>GET</code> <code>/api/v1/tracking/path_generator?departure={departure}&destination={destination}</code> generates an optimized flight plan between departure and destination airports. Uses graph algorithm optimizing by shortest path duration
+ </summary>
+
+##### URL Parameters
+>departure: icao code of root airport node | required
+>destination: icao code of target airport node | required
+</details>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<details>
+ <summary>
     <code>GET</code> <code>/api/v1/tracking/</code> returns all flights currently scheduled
  </summary>
 

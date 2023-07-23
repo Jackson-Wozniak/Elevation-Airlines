@@ -82,10 +82,11 @@ public class FlightController {
 
     /*
     TODO:
-        - create endpoint to generate a path between 2 airports based on scheduled flights, if possible
-            -allow for choice between finding quickest path (takeoff to landing time), least number of
-            hops, or lowest total distance
-     */
+     add URL param optimizer to find SPF based on total time past,
+     least # of connecting flights, or lowest distance traveled
+
+     default optimizer is quickest flight time (takeoff at departure to landing at destination)
+    */
     @RequestMapping(value = "path_generator")
     public List<Edge> generateConnectingFlightPath(@RequestParam("departure")String departure, @RequestParam("destination") String destination){
         Airport departureAirport = airportService.findAirportByICAO(departure);
