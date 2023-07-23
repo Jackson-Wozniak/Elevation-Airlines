@@ -1,6 +1,7 @@
 package github.wozniak.flighttrackingservice.service;
 
 import github.wozniak.flighttrackingservice.entity.Airport;
+import github.wozniak.flighttrackingservice.exception.AirportNotFoundException;
 import github.wozniak.flighttrackingservice.properties.AirportsList;
 import github.wozniak.flighttrackingservice.repository.AirportRepository;
 import jakarta.transaction.Transactional;
@@ -25,6 +26,10 @@ public class AirportService {
         return airportRepository.findAll().stream()
                 .filter(airport -> airport.getCountry().equals(country))
                 .toList();
+    }
+
+    public Airport findAirportByICAO(String icao){
+        return airportRepository.findById(icao).orElseThrow(() -> new AirportNotFoundException("Cannot find"));
     }
 
     @Modifying
