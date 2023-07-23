@@ -1,5 +1,5 @@
 <div align="center">
-  <kbd> <img src="https://github.com/Jackson-Wozniak/Airline-Reservation-System/assets/105665813/abdc2e68-fbc7-4d98-8abc-88fb2b9db5a8" width="420" height="260"/> </kbd>
+  <kbd> <img src="https://github.com/Jackson-Wozniak/Airline-Reservation-System/assets/105665813/b090fff2-9a40-480e-bbb8-67472ab08f26" width="586" height="262"/> </kbd>
   
 
   <h3 align="center">Airline Tracker & Reservation System</h3>
