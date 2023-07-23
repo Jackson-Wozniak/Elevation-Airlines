@@ -88,9 +88,10 @@ public class FlightController {
      default optimizer is quickest flight time (takeoff at departure to landing at destination)
     */
     @RequestMapping(value = "path_generator")
-    public List<Edge> generateConnectingFlightPath(@RequestParam("departure")String departure, @RequestParam("destination") String destination){
+    public List<FlightSummaryDTO> generateConnectingFlightPath(@RequestParam("departure")String departure, @RequestParam("destination") String destination){
         Airport departureAirport = airportService.findAirportByICAO(departure);
         Airport destinationAirport = airportService.findAirportByICAO(destination);
-        return pathGenerator.uniquePath(departure, destination);
+        return pathGenerator.uniquePath(departure, destination).stream()
+                .map(Edge::getFlight).map(FlightSummaryDTO::new).toList();
     }
 }

@@ -56,6 +56,17 @@ class PathGeneratorTest {
             assertTrue(path.get(i).getFlight().getLandingDateTime()
                     .isBefore(path.get(i + 1).getFlight().getTakeOffDateTime()));
         }
+
+        //test to make sure single flight path is found
+        List<Flight> flights2 = List.of(
+                new Flight(plane, new Route(kbos, klga, plane), LocalDateTime.now())
+        );
+        assertDoesNotThrow(() -> pathGenerator.uniquePath(flights2, "KBOS", "KLGA"));
+        List<Edge> path2 = pathGenerator.uniquePath(flights2, "KBOS", "KLGA");
+        assertEquals("KBOS", path2.get(0).getFlight().getRoute().getDepartureAirport().getIcaoCode());
+        assertEquals("KLGA", path2.get(0).getFlight().getRoute().getDestinationAirport().getIcaoCode());
+
+        assertEquals(1, path2.size());
     }
 
     @Test

@@ -40,14 +40,14 @@ public class DijkstraAlgorithm {
                 Flight route = chosenRoutes.get(i);
                 if (getShortestDistance(target) > getShortestDistance(node)
                         + route.getRoute().getFlightDistanceMiles()) {
-                    if(predecessors.get(node) != null){
-                        if(predecessors.get(node).getFlight().getLandingDateTime().isAfter(route.getTakeOffDateTime())){
-                            if(i == chosenRoutes.size() - 1){
-                                throw new RuntimeException();
-                            }
-                            continue;
-                        }
-                    }
+//                    if(predecessors.get(node) != null){
+//                        if(predecessors.get(node).getFlight().getLandingDateTime().isAfter(route.getTakeOffDateTime())){
+//                            if(i == chosenRoutes.size() - 1){
+//                                throw new RuntimeException();
+//                            }
+//                            continue;
+//                        }
+//                    }
                     distance.put(target, (int) Math.round(getShortestDistance(node)
                             + route.getRoute().getFlightDistanceMiles()));
                     predecessors.put(target, new Edge(node, route));

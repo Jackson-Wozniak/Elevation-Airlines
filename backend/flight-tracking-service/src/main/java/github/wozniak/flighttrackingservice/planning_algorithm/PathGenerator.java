@@ -2,17 +2,13 @@ package github.wozniak.flighttrackingservice.planning_algorithm;
 
 import github.wozniak.flighttrackingservice.entity.Airport;
 import github.wozniak.flighttrackingservice.entity.Flight;
-import github.wozniak.flighttrackingservice.properties.AirportsList;
 import github.wozniak.flighttrackingservice.service.AirportService;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -33,14 +29,23 @@ public class PathGenerator {
     private List<Edge> generate(List<Flight> flights, String departure, String destination){
         List<Airport> airportNames = airportService.findAllAirports();
         List<AirportNode> nodes = new ArrayList<>();
-        for (int i = 0; i < airportNames.size(); i++) {
-            String icao = airportNames.get(i).getIcaoCode();
-            try{
-                List<Flight> filteredFlights = flights.stream().filter(flight ->
-                        flight.isMatchingAirport(icao, true)).toList();
-                AirportNode location = new AirportNode(airportNames.get(i), filteredFlights);
+        for (Airport airport : airportNames) {
+            try {
+                List<Flight> filteredFlights = new ArrayList<>();
+                for (Flight flight : flights) {
+                    //if dest and dep match than that flight is the shortest path
+                    if (flight.getRoute().getDepartureAirport().getIcaoCode().equals(departure) &&
+                            flight.getRoute().getDestinationAirport().getIcaoCode().equals(destination)) {
+                        return List.of(new Edge(new AirportNode(airport, List.of(flight)), flight));
+                    }
+
+                    if (flight.isMatchingAirport(airport.getIcaoCode(), true)) {
+                        filteredFlights.add(flight);
+                    }
+                }
+                AirportNode location = new AirportNode(airport, filteredFlights);
                 nodes.add(location);
-            }catch (Exception ignored){}
+            } catch (Exception ignored) {}
         }
         for(AirportNode airport : nodes){
             airport.addConnectedAirports(nodes);
