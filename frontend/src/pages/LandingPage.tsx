@@ -1,7 +1,11 @@
+import '../styles/LandingPage.css';
+import Navbar from '../components/Navbar';
+
 function LandingPage() {
     return (  
-        <div>
-            
+        <div className="landing-page">
+            <div className="landing-page-bg"></div>
+            <Navbar></Navbar>
         </div>
     );
 }

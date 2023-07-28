@@ -1,0 +1,54 @@
+.navbar{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 10vh;
+    width : 100vw;
+    background-color: red;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+#logo-navbar{
+    width : 20vw;
+    height : auto;
+
+    border-radius: 10px;
+    margin : 5px;
+}
+
+#logo-navbar-button{
+    background: none;
+    border : none;
+    margin : 0;
+    padding : 0;
+}
+
+.middle-navbar-spacer{
+    width : 50vw;
+}
+
+.navbar-links{
+    width : 30vw;
+}
+
+.navbar-util-buttons{
+    margin: 0px 10px 0px 10px;
+    background: none;
+    border : none;
+    color : white;
+    font-family: 'Century Gothic', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.navbar-util-buttons:hover{
+    color : lightcyan;
+    font-size: 23px;
+}
