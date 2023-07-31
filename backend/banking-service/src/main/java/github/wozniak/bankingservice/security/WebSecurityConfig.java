@@ -18,17 +18,20 @@ import org.springframework.security.web.SecurityFilterChain;
  * @author : Jackson Wozniak
  * @created : 7/28/2023, Friday
  **/
+@EnableWebSecurity
 @Configuration
 @AllArgsConstructor
 public class WebSecurityConfig {
 
     private final BankAccountService bankAccountService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(req -> req.anyRequest().authenticated());
+                .cors(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(req -> req.anyRequest().permitAll());
         return http.build();
     }
 
@@ -42,15 +45,10 @@ public class WebSecurityConfig {
     }
 
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider(){
+    public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setPasswordEncoder(passwordEncoder());
+        provider.setPasswordEncoder(bCryptPasswordEncoder);
         provider.setUserDetailsService(bankAccountService);
         return provider;
-    }
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
     }
 }

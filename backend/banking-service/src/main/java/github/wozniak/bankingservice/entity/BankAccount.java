@@ -1,9 +1,6 @@
 package github.wozniak.bankingservice.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -35,9 +32,13 @@ public class BankAccount implements UserDetails {
     @Column(name = "reward_points")
     private Integer rewardPoints;
 
+    @Enumerated(EnumType.STRING)
+    private BankAccountRole role;
+
     public BankAccount(String username, String password) {
         this.username = username;
         this.password = password;
+        this.role = BankAccountRole.USER;
         this.balance = 0.0;
         this.rewardPoints = 0;
     }
@@ -49,21 +50,21 @@ public class BankAccount implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
