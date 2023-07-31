@@ -67,4 +67,22 @@ public class BankAccount implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public boolean isValidWithdrawal(double value){
+        return ((value * -1) <= balance) && (value < 0);
+    }
+
+    public boolean isValidDeposit(double value){
+        return (value > 0) && (value < 1_000_000);
+    }
+
+    public void addBalance(double value){
+        double newBalance = value + this.balance;
+        this.setBalance(newBalance);
+    }
+
+    public void subtractBalance(double value){
+        double newBalance = this.balance - value;
+        this.setBalance(newBalance);
+    }
 }

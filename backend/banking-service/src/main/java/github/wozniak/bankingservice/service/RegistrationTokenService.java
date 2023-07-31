@@ -31,7 +31,7 @@ public class RegistrationTokenService {
 
     public RegistrationToken getToken(String token) {
         return tokenRepository.findByToken(token)
-                .orElseThrow(() -> new RegistrationTokenException("Token is null"));
+                .orElseThrow(() -> new RegistrationTokenException("Cannot find matching account token"));
     }
 
     @Transactional
