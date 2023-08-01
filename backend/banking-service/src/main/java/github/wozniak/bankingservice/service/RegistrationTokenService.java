@@ -35,9 +35,9 @@ public class RegistrationTokenService {
     }
 
     @Transactional
-    public void deleteExpiredTokens(){
+    public long deleteExpiredTokens(){
         tokenRepository.deleteExpiredTokens(LocalDateTime.now());
-        logger.info(tokenRepository.findDeletedRowCount() + " tokens purged");
+        return tokenRepository.findDeletedRowCount();
     }
 
     public RegistrationToken generateToken(BankAccount account, boolean isExtended){

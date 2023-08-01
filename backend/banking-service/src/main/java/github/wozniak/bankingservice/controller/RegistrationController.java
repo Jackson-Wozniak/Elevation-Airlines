@@ -30,7 +30,7 @@ public class RegistrationController {
     private final BankAccountService bankAccountService;
 
     @PostMapping
-    public ResponseEntity<?> registerNewPilot(@RequestBody RegistrationRequest registrationRequest){
+    public ResponseEntity<?> registerNewAccount(@RequestBody RegistrationRequest registrationRequest){
         try{
             String jwtToken = registrationService.register(registrationRequest);
             return ResponseEntity.ok(jwtToken);
