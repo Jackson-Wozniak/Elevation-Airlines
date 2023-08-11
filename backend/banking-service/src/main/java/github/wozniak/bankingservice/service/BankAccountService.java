@@ -40,10 +40,30 @@ public class BankAccountService implements UserDetailsService {
             throw new TransactionException("Invalid deposit value");
         }
         account.addBalance(request.getTransactionValue());
+    }
+
+    public void depositFundsAndSave(DepositRequest request, BankAccount account){
+        if(!accountExists(account.getUsername())){
+            throw new BankAccountException("Cannot withdraw funds from non-existent account");
+        }
+        if(!account.isValidDeposit(request.getTransactionValue())){
+            throw new TransactionException("Invalid deposit value");
+        }
+        account.addBalance(request.getTransactionValue());
         accountRepository.save(account);
     }
 
     public void withdrawFunds(WithdrawalRequest request, BankAccount account){
+        if(!account.isValidWithdrawal(request.getTransactionValue())){
+            throw new TransactionException("Invalid withdrawal value");
+        }
+        account.subtractBalance(request.getTransactionValue());
+    }
+
+    public void withdrawFundsAndSave(WithdrawalRequest request, BankAccount account){
+        if(!accountExists(account.getUsername())){
+            throw new BankAccountException("Cannot withdraw funds from non-existent account");
+        }
         if(!account.isValidWithdrawal(request.getTransactionValue())){
             throw new TransactionException("Invalid withdrawal value");
         }

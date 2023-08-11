@@ -69,11 +69,11 @@ public class BankAccount implements UserDetails {
     }
 
     public boolean isValidWithdrawal(double value){
-        return ((value * -1) <= balance) && (value < 0);
+        return value > 0 && (balance - value >= 0);
     }
 
     public boolean isValidDeposit(double value){
-        return (value > 0) && (value < 1_000_000);
+        return value < 1_000_000 && value > 0;
     }
 
     public void addBalance(double value){
