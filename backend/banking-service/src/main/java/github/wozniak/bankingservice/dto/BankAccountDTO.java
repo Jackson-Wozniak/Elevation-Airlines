@@ -13,11 +13,9 @@ import lombok.Setter;
 public class BankAccountDTO {
     private final String username;
     private final double balance;
-    private final int rewardPoints;
 
     public BankAccountDTO(BankAccount account){
         this.username = account.getUsername();
         this.balance = account.getBalance();
-        this.rewardPoints = account.getRewardPoints();
     }
 }

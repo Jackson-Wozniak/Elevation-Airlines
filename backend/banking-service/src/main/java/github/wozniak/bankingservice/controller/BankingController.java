@@ -31,14 +31,14 @@ public class BankingController {
     @PutMapping(value = "/deposit")
     public ResponseEntity<?> depositFunds(@RequestBody DepositRequest request){
         BankAccount account = tokenService.getToken(request.getToken()).getBankAccount();
-        bankAccountService.depositFunds(request, account);
+        bankAccountService.depositFundsAndSave(request, account);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping(value = "/withdrawal")
     public ResponseEntity<?> withdrawFunds(@RequestBody WithdrawalRequest request){
         BankAccount account = tokenService.getToken(request.getToken()).getBankAccount();
-        bankAccountService.withdrawFunds(request, account);
+        bankAccountService.withdrawFundsAndSave(request, account);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
