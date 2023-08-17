@@ -10,7 +10,9 @@ import github.wozniak.bankingservice.request.DepositRequest;
 import github.wozniak.bankingservice.request.RegistrationRequest;
 import github.wozniak.bankingservice.request.WithdrawalRequest;
 import github.wozniak.bankingservice.utils.PasswordValidator;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -96,5 +98,12 @@ public class BankAccountService implements UserDetailsService {
         tokenService.saveConfirmationToken(confirmationToken);
 
         return confirmationToken.getToken();
+    }
+
+    @Transactional
+    @Modifying
+
+    public void deleteAccount(BankAccount account){
+        accountRepository.delete(account);
     }
 }
