@@ -28,6 +28,13 @@ public class BankingController {
         return new BankAccountDTO(tokenService.getToken(token).getBankAccount());
     }
 
+    @DeleteMapping(value = "/account")
+    public ResponseEntity<?> deleteAccount(@RequestParam("token")String token){
+        BankAccount account = tokenService.getToken(token).getBankAccount();
+        bankAccountService.deleteAccount(account);
+        return ResponseEntity.ok("Account Deleted");
+    }
+
     @PutMapping(value = "/deposit")
     public ResponseEntity<?> depositFunds(@RequestBody DepositRequest request){
         BankAccount account = tokenService.getToken(request.getToken()).getBankAccount();
