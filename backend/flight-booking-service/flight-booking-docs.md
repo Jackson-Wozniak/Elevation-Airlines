@@ -65,21 +65,15 @@
 
 <details>
  <summary>
-    <code>POST | SECURED</code> <code>/api/v1/reservations?token={token}&flight={id}</code> Buy ticket
+    <code>POST | SECURED</code> <code>/api/v1/reservations?token={token}&flight={id}&payment_method={bankToken}</code> Buy ticket
  </summary>
 
 ##### URL Parameters
 >token: user identifier given on login
 >
 >flight: id of flight to buy tickets for
-
-##### Request Parameter Objects
->card: payment card details for banking gateway
->    - card number: long value
->    - PIN: 6-digit code
->    - name on card
->    - expiration date
->
+> 
+>payment method: JSON token for bank account *only used for payment if user chooses not to cover cost with earned miles
 </details>
 
 <!-- -------------------------------------------------------------------------------- -->
