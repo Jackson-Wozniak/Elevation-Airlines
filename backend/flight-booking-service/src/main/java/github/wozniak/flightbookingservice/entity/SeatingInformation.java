@@ -1,5 +1,6 @@
 package github.wozniak.flightbookingservice.entity;
 
+import github.wozniak.flightbookingservice.payload.FlightResponse;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,4 +28,8 @@ public class SeatingInformation {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "flight_identifier")
     private Flight flight;
+
+    public SeatingInformation(FlightResponse flightResponse, Flight flight){
+
+    }
 }
