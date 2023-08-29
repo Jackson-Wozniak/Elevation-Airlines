@@ -17,7 +17,7 @@ import java.util.Collection;
  * @created : 8/19/2023, Saturday
  **/
 @Entity(name = "user")
-@Table(name = "user")
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
