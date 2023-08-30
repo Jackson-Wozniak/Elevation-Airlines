@@ -1,9 +1,6 @@
 package github.wozniak.flightbookingservice.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author : Jackson Wozniak
@@ -31,6 +29,9 @@ public class User implements UserDetails {
 
     @Column(name = "milesEarned")
     private Integer milesEarned;
+
+    @OneToMany(mappedBy = "user")
+    private List<Ticket> tickets;
 
     public User(String username, String password){
         this.username = username;

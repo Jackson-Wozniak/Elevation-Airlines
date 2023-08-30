@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author : Jackson Wozniak
@@ -37,6 +38,9 @@ public class Flight {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private SeatingInformation seatingInformation;
+
+    @OneToMany(mappedBy = "flight")
+    private List<Ticket> tickets;
 
     public Flight(FlightResponse response){
 

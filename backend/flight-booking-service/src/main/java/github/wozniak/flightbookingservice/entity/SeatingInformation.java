@@ -29,6 +29,9 @@ public class SeatingInformation {
     @JoinColumn(name = "flight_identifier")
     private Flight flight;
 
+    @Column(name = "available_seats")
+    private Integer availableSeats;
+
     public SeatingInformation(FlightResponse flightResponse, Flight flight){
 
     }

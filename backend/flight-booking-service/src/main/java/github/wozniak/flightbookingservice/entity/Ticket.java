@@ -17,9 +17,17 @@ import lombok.Setter;
 public class Ticket {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "username", nullable = false)
+    private User user;
 
     @Column(name = "cost")
     private Double ticketCost;
+
+    @ManyToOne
+    @JoinColumn(name="flight_identifier", nullable=false)
+    private Flight flight;
 }
