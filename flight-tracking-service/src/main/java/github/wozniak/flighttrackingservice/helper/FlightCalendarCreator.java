@@ -4,6 +4,7 @@ import github.wozniak.flighttrackingservice.entity.Flight;
 import github.wozniak.flighttrackingservice.entity.Plane;
 import github.wozniak.flighttrackingservice.entity.Route;
 import github.wozniak.flighttrackingservice.entity.ScheduledRoute;
+import github.wozniak.flighttrackingservice.exception.FlightNotFoundException;
 import github.wozniak.flighttrackingservice.exception.FlightQueryException;
 import github.wozniak.flighttrackingservice.model.TimeTable;
 import github.wozniak.flighttrackingservice.service.FlightService;
@@ -67,7 +68,7 @@ public class FlightCalendarCreator {
             try{
                 Flight latestFlight = flightService.findLastFlightByCallSign(plane.getCallSign());
                 flightsToday.addAll(scheduleFlightsUntilEOD(plane, date, latestFlight));
-            }catch (FlightQueryException ex){
+            }catch (FlightNotFoundException ex){
                 flightsToday.add(new Flight(
                         plane, routeGenerator.fromUnitedStates(plane, 11), LocalDateTime.of(date, DateTimeUtils.createTimeOfFlight(12))));
             }

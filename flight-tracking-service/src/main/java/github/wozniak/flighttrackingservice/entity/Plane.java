@@ -1,7 +1,7 @@
 package github.wozniak.flighttrackingservice.entity;
 
 import github.wozniak.flighttrackingservice.dto.*;
-import github.wozniak.flighttrackingservice.properties.PlaneList;
+import github.wozniak.flighttrackingservice.model.PlaneModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -36,7 +36,7 @@ public class Plane {
     @Column(name = "range_miles")
     private Integer rangeMiles;
 
-    public Plane(String callSign, PlaneList.PlaneModel planeModel){
+    public Plane(String callSign, PlaneModel planeModel){
         this.callSign = callSign;
         this.model = planeModel.getModel();
         this.seatingCapacity = planeModel.getSeatingCapacity();

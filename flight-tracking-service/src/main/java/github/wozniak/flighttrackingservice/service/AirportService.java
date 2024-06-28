@@ -2,7 +2,6 @@ package github.wozniak.flighttrackingservice.service;
 
 import github.wozniak.flighttrackingservice.entity.Airport;
 import github.wozniak.flighttrackingservice.exception.AirportNotFoundException;
-import github.wozniak.flighttrackingservice.properties.AirportsList;
 import github.wozniak.flighttrackingservice.repository.AirportRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -37,8 +36,8 @@ public class AirportService {
         airportRepository.deleteAll();
     }
 
-    public void saveDefaultAirports(){
-        airportRepository.saveAll(AirportsList.getDefaultAirports());
+    public void saveDefaultAirports(List<Airport> airports){
+        airportRepository.saveAll(airports);
     }
 
     public long airportCount(){
