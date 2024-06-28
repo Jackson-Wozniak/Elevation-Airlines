@@ -9,8 +9,8 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class TimeTableSummaryDTO {
+public class TimeTableDTO {
     private String date;
     private int flightCount;
-    private List<FlightSummaryDTO> flights;
+    private List<FlightDTO> flights;
 }

@@ -1,11 +1,5 @@
 package github.wozniak.flighttrackingservice.controller;
 
-import github.wozniak.flighttrackingservice.dto.FlightDTO;
-import github.wozniak.flighttrackingservice.dto.FlightSummaryDTO;
-import github.wozniak.flighttrackingservice.dto.TimeTableSummaryDTO;
-import github.wozniak.flighttrackingservice.entity.Airport;
-import github.wozniak.flighttrackingservice.planning_algorithm.Edge;
-import github.wozniak.flighttrackingservice.planning_algorithm.PathGenerator;
 import github.wozniak.flighttrackingservice.service.AirportService;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import github.wozniak.flighttrackingservice.service.PlaneService;
@@ -13,7 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import static github.wozniak.flighttrackingservice.utils.DTOListMapper.*;
 
 @RestController
 @RequestMapping(value = "/api/v1/flights")
@@ -26,52 +20,46 @@ public class FlightController {
 
     @GetMapping
     public ResponseEntity<?> getFlights(){
-        return ResponseEntity.ok(flightService.findAllFlights().stream().map(FlightSummaryDTO::new).toList());
+        return ResponseEntity.ok(flightSummaryDTOs(flightService.findAllFlights()));
     }
 
     @GetMapping(params = "departure")
     public ResponseEntity<?> getFlightsByDeparture(
             @RequestParam(value = "departure", defaultValue = "") String departure){
-        return ResponseEntity.ok(flightService.findFlightsByAirport(
-                departure, true, airportService)
-                .stream().map(FlightSummaryDTO::new).toList());
+        return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlightsByAirport(
+                departure, true, airportService)));
     }
 
     @GetMapping(params = "destination")
     public ResponseEntity<?> getFlightsByDestination(
             @RequestParam(value = "destination", defaultValue = "") String destination){
-        return ResponseEntity.ok(flightService.findFlightsByAirport(
-                        destination, true, airportService)
-                .stream().map(FlightSummaryDTO::new).toList());
+        return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlightsByAirport(
+                destination, false, airportService)));
     }
 
     @GetMapping(value = "/identifier/{identifier}")
     public ResponseEntity<?> getFlightsByIdentifier(@PathVariable(value = "identifier") long identifier){
-        return ResponseEntity.ok(new FlightDTO(flightService.findFlightsByIdentifier(identifier)));
+        return ResponseEntity.ok(flightService.findFlightsByIdentifier(identifier).getDTO());
     }
 
     @GetMapping(value = "/live")
     public ResponseEntity<?> getLiveFlights(){
-        return ResponseEntity.ok(flightService.findLiveFlights().stream()
-                .map(FlightDTO::new).toList());
+        return ResponseEntity.ok(flightDTOs(flightService.findLiveFlights()));
     }
 
     @GetMapping(value = "/call_sign/{callSign}")
     public ResponseEntity<?> getFlightsByCallSign(@PathVariable("callSign") String callSign){
-        return ResponseEntity.ok(flightService.findFlightByCallSign(callSign, planeService).stream()
-                .map(FlightDTO::new).toList());
+        return ResponseEntity.ok(flightDTOs(flightService.findFlightByCallSign(callSign, planeService)));
     }
 
     @GetMapping(value = "/time_table")
     public ResponseEntity<?> getFlightsByDate(@RequestParam("date") String date){
-        return ResponseEntity.ok().body(flightService.findFlightsByDate(date).stream()
-                .map(FlightSummaryDTO::new).toList());
+        return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlightsByDate(date)));
     }
 
     @GetMapping(value = "/time_table", params = {"start", "end"})
     public ResponseEntity<?> returnFlightsOnDate(
             @RequestParam("start") String start, @RequestParam("end") String end){
-        return ResponseEntity.ok().body(flightService.findFlightsByDateRange(start, end).stream()
-                        .map(TimeTableSummaryDTO::new).toList());
+        return ResponseEntity.ok(timeTableSummaryDTOS(flightService.findFlightsByDateRange(start, end)));
     }
 }

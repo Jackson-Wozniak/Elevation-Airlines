@@ -1,5 +1,7 @@
 package github.wozniak.flighttrackingservice.entity;
 
+import github.wozniak.flighttrackingservice.dto.AirportDTO;
+import github.wozniak.flighttrackingservice.dto.AirportSummaryDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -35,4 +37,12 @@ public class Airport {
 
     @Column(name = "country")
     private String country;
+
+    public AirportDTO getDTO(){
+        return new AirportDTO(icaoCode, name, latitude, longitude, continent, country);
+    }
+
+    public AirportSummaryDTO getDTOSummary(){
+        return new AirportSummaryDTO(icaoCode, name, country);
+    }
 }

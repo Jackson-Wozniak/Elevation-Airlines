@@ -2,7 +2,7 @@ package github.wozniak.flighttrackingservice.service;
 
 import github.wozniak.flighttrackingservice.entity.Flight;
 import github.wozniak.flighttrackingservice.exception.*;
-import github.wozniak.flighttrackingservice.model.FlightTimeTable;
+import github.wozniak.flighttrackingservice.model.TimeTable;
 import github.wozniak.flighttrackingservice.repository.FlightRepository;
 import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import jakarta.transaction.Transactional;
@@ -64,7 +64,7 @@ public class FlightService {
         return flights;
     }
 
-    public List<FlightTimeTable> findFlightsByDateRange(String start, String end){
+    public List<TimeTable> findFlightsByDateRange(String start, String end){
         HashMap<LocalDate, ArrayList<Flight>> flightsOnDate = new HashMap<>();
         List<LocalDate> dates = DateTimeUtils.allDatesInRange(
                 DateTimeUtils.toDate(start), DateTimeUtils.toDate(end), true);
@@ -77,7 +77,7 @@ public class FlightService {
             if(!dates.contains(flight.getTakeOffDateTime().toLocalDate())) return;
             flightsOnDate.get(flight.getTakeOffDateTime().toLocalDate()).add(flight);
         });
-        return FlightTimeTable.generate(flightsOnDate);
+        return TimeTable.generate(flightsOnDate);
     }
 
     public List<Flight> findAllFlights(){

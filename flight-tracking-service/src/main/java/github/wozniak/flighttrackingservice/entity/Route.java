@@ -1,5 +1,9 @@
 package github.wozniak.flighttrackingservice.entity;
 
+import github.wozniak.flighttrackingservice.dto.FlightDTO;
+import github.wozniak.flighttrackingservice.dto.RouteDTO;
+import github.wozniak.flighttrackingservice.dto.RouteSummaryDTO;
+import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -56,5 +60,19 @@ public class Route {
 
     private static double knotsToMPH(int knots){
         return Double.parseDouble(String.format("%.02f", knots * 1.15078));
+    }
+
+    public String getFlightTime(){
+        return DateTimeUtils.hoursToHHMM(flightDurationHours);
+    }
+
+    public RouteDTO getDTO(){
+        return new RouteDTO(departureAirport.getDTO(), destinationAirport.getDTO(),
+                getFlightTime(), flightDistanceMiles);
+    }
+
+    public RouteSummaryDTO getDTOSummary(){
+        return new RouteSummaryDTO(departureAirport.getDTOSummary(), destinationAirport.getDTOSummary(),
+                getFlightTime(), flightDistanceMiles);
     }
 }

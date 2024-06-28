@@ -1,5 +1,6 @@
 package github.wozniak.flighttrackingservice.entity;
 
+import github.wozniak.flighttrackingservice.dto.*;
 import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
@@ -57,6 +58,14 @@ public class Flight {
         return this.takeOffDateTime.plusMinutes((int) (this.route.getFlightDurationHours() * 60));
     }
 
+    public String getFormattedTakeOffTime(){
+        return DateTimeUtils.format(takeOffDateTime);
+    }
+
+    public String getFormattedLandingTime(){
+        return DateTimeUtils.format(takeOffDateTime);
+    }
+
     public boolean isMatchingAirport(String icao, boolean departureQuery){
         if(departureQuery){
             return this.getRoute().getDepartureAirport().getIcaoCode().equals(icao);
@@ -64,7 +73,16 @@ public class Flight {
         return this.getRoute().getDestinationAirport().getIcaoCode().equals(icao);
     }
 
+    @Override
     public String toString(){
         return this.getRoute().getDepartureAirport().getIcaoCode() + "->" + this.getRoute().getDestinationAirport().getIcaoCode();
+    }
+
+    public FlightDTO getDTO(){
+        return new FlightDTO(flightIdentifier, route.getDTO(), plane.getDTO(), getFormattedTakeOffTime(), getFormattedLandingTime());
+    }
+
+    public FlightSummaryDTO getDTOSummary(){
+        return new FlightSummaryDTO(flightIdentifier, route.getDTOSummary(), plane.getDTOSummary(), getFormattedTakeOffTime(), getFormattedLandingTime());
     }
 }

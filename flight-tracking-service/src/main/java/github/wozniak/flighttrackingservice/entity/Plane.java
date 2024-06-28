@@ -1,5 +1,6 @@
 package github.wozniak.flighttrackingservice.entity;
 
+import github.wozniak.flighttrackingservice.dto.*;
 import github.wozniak.flighttrackingservice.properties.PlaneList;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,5 +43,13 @@ public class Plane {
         this.luxurySeats = planeModel.getLuxurySeats();
         this.cruisingSpeedKnots = planeModel.getCruisingSpeedKnots();
         this.rangeMiles = planeModel.getRangeMiles();
+    }
+
+    public PlaneDTO getDTO(){
+        return new PlaneDTO(callSign, model, seatingCapacity, luxurySeats, cruisingSpeedKnots, rangeMiles);
+    }
+
+    public PlaneSummaryDTO getDTOSummary(){
+        return new PlaneSummaryDTO(callSign, model);
     }
 }

@@ -5,8 +5,7 @@ import github.wozniak.flighttrackingservice.entity.Plane;
 import github.wozniak.flighttrackingservice.entity.Route;
 import github.wozniak.flighttrackingservice.entity.ScheduledRoute;
 import github.wozniak.flighttrackingservice.exception.FlightQueryException;
-import github.wozniak.flighttrackingservice.exception.RouteGeneratorException;
-import github.wozniak.flighttrackingservice.model.FlightTimeTable;
+import github.wozniak.flighttrackingservice.model.TimeTable;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import github.wozniak.flighttrackingservice.service.PlaneService;
 import github.wozniak.flighttrackingservice.service.ScheduledRouteService;
@@ -14,14 +13,10 @@ import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -52,7 +47,7 @@ public class FlightCalendarCreator {
         return missingDays;
     }
 
-    public FlightTimeTable createDaysTimeTable(LocalDate date, List<ScheduledRoute> dailyRoutes){
+    public TimeTable createDaysTimeTable(LocalDate date, List<ScheduledRoute> dailyRoutes){
         ArrayList<Flight> flightsToday = new ArrayList<>(dailyRoutes.stream()
                 .map(route -> new Flight(route, LocalDateTime.of(date, route.getTime())))
                 .toList());
@@ -77,7 +72,7 @@ public class FlightCalendarCreator {
                         plane, routeGenerator.fromUnitedStates(plane, 11), LocalDateTime.of(date, DateTimeUtils.createTimeOfFlight(12))));
             }
         });
-        return new FlightTimeTable(date, flightsToday);
+        return new TimeTable(date, flightsToday);
     }
 
     /*
