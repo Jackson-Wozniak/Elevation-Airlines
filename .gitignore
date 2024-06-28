@@ -1,2 +1,4 @@
-.idea/
-dist/
+**/.idea/
+**/.mvn/
+frontend/node_modules/
+frontend/package-lock.json
