@@ -16,7 +16,6 @@ import java.util.List;
 public class AirportService {
 
     private final AirportRepository airportRepository;
-    private final FlightService flightService;
 
     public List<Airport> findAllAirports(){
         return airportRepository.findAll();
@@ -34,9 +33,8 @@ public class AirportService {
 
     @Modifying
     @Transactional
-    public void deleteAllAirportsAndFlights(){
+    public void deleteAllAirports(){
         airportRepository.deleteAll();
-        flightService.deleteAllFlights();
     }
 
     public void saveDefaultAirports(){

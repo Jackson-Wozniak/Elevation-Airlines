@@ -1,7 +1,6 @@
 package github.wozniak.flighttrackingservice.configuration;
 
 import github.wozniak.flighttrackingservice.properties.AirportsList;
-import github.wozniak.flighttrackingservice.properties.PlaneList;
 import github.wozniak.flighttrackingservice.service.AirportService;
 import github.wozniak.flighttrackingservice.service.PlaneService;
 import jakarta.annotation.PostConstruct;
@@ -29,7 +28,7 @@ public class FlightComponentConfig {
         }
         if(AirportsList.getDefaultAirports().size() != airportService.airportCount()){
             logger.info("Saving Default Airports");
-            airportService.deleteAllAirportsAndFlights();
+            airportService.deleteAllAirports();
             airportService.saveDefaultAirports();
         }
     }

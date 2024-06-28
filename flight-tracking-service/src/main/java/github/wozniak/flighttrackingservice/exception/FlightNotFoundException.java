@@ -4,11 +4,11 @@ import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 @Getter
-public class AirportNotFoundException extends RuntimeException{
+public class FlightNotFoundException extends RuntimeException{
 
     private final HttpStatus status = HttpStatus.NOT_FOUND;
 
-    public AirportNotFoundException(String message){
+    public FlightNotFoundException(String message){
         super(message);
     }
 }

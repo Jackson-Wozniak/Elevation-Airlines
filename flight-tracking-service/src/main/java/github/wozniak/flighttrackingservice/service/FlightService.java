@@ -18,18 +18,15 @@ import java.util.*;
 public class FlightService {
 
     private final FlightRepository flightRepository;
+    private final AirportService airportService;
 
     public void saveFlights(List<Flight> flights){
         flightRepository.saveAll(flights);
     }
 
     public Flight findFlightsByIdentifier(long identifier){
-        try{
-            return flightRepository.findById(identifier)
-                    .orElseThrow(() -> new FlightQueryException("Cannot find flight #" + identifier));
-        }catch (Exception ex){
-            throw new FlightIdentifierException();
-        }
+        return flightRepository.findById(identifier)
+                .orElseThrow(() -> new FlightNotFoundException("Cannot find flight #" + identifier));
     }
 
     public List<Flight> findFlightByCallSign(String callSign, PlaneService service){
@@ -44,21 +41,20 @@ public class FlightService {
     public Flight findLastFlightByCallSign(String callSign){
         return flightRepository.findFlightsByCallSign(callSign).stream()
                 .max(Comparator.comparing(Flight::getTakeOffDateTime))
-                .orElseThrow(() -> new FlightQueryException("Cannot find most recent flight"));
+                .orElseThrow(() -> new FlightNotFoundException("Cannot find most recent flight"));
     }
 
-    public List<Flight> findFlightsByAirport(String icao, boolean isDeparture, AirportService service){
+    public List<Flight> findFlightsByAirport(String icao, boolean isDeparture){
+        if(!airportService.airportExists(icao)) throw new AirportNotFoundException(icao + " does not exist");
         List<Flight> flights = isDeparture ? flightRepository.findFlightsByDeparture(icao)
                 : flightRepository.findFlightsByDestination(icao);
-        if(!flights.isEmpty()) return flights;
-        if(!service.airportExists(icao)){
-            throw new AirportNotFoundException(icao + " does not exist");
-        }
-        throw new FlightQueryException("No flights are scheduled " + (isDeparture ? "from " : "to ") + icao);
+        if(flights.isEmpty()) throw new FlightQueryException("No flights are scheduled " + (isDeparture ? "from " : "to ") + icao);
+
+        return flights;
     }
 
     public List<Flight> findFlightsByDate(String date){
-        if(!DateTimeUtils.isValid(date)) throw new DateFormatException();
+        if(!DateTimeUtils.isValid(date)) throw new DateFormatException(date, false);
         List<Flight> flights = flightRepository.findFlightsByDate(DateTimeUtils.stringToSQLDate(date));
         if(flights.isEmpty()) throw new FlightQueryException("No flights are scheduled on " + date);
         return flights;
