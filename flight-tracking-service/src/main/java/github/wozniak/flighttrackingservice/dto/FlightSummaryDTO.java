@@ -1,7 +1,5 @@
 package github.wozniak.flighttrackingservice.dto;
 
-import github.wozniak.flighttrackingservice.entity.Flight;
-import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

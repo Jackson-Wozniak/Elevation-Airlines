@@ -11,7 +11,7 @@ function Navbar() {
             </button>
             <div className="middle-navbar-spacer"></div>
             <div className="navbar-links">
-                <button className="navbar-util-buttons">Flight Tracker</button>
+                <button className="navbar-util-buttons" onClick={() => navigate("/flights")}>Flight Tracker</button>
                 <button className="navbar-util-buttons">Reserve Tickets</button>
             </div>
         </div>

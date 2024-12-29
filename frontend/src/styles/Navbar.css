@@ -11,8 +11,9 @@
     align-items: center;
     text-align: center;
     color: #fff;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgb(9, 6, 21);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid gray;
 }
 
 #logo-navbar{
@@ -49,6 +50,6 @@
 }
 
 .navbar-util-buttons:hover{
-    color : lightcyan;
-    font-size: 23px;
+    color : goldenrod;
+    font-size: 22px;
 }

@@ -16,18 +16,19 @@ import static github.wozniak.flighttrackingservice.utils.DTOListMapper.*;
 @RestController
 @RequestMapping(value = "/api/v1/flights")
 @AllArgsConstructor
+@CrossOrigin("http://localhost:3000")
 public class FlightController {
 
     private final FlightService flightService;
     private final PlaneService planeService;
 
     @GetMapping
-    public ResponseEntity<List<FlightSummaryDTO>> getFlights(
+    public ResponseEntity<List<?>> getFlights(
             @RequestParam(value = "departure", required = false) String departure,
             @RequestParam(value = "destination", required = false) String dest
     ){
         if(departure == null && dest == null){
-            return ResponseEntity.ok(flightSummaryDTOs(flightService.findAllFlights()));
+            return ResponseEntity.ok(flightInfoDTOs(flightService.findAllFlights()));
         }
         if(departure == null){
             return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlightsByAirport(dest, false)));
