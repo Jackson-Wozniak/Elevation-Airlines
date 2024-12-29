@@ -18,7 +18,9 @@
  </summary>
 
 ##### URL Parameters
+
 >departure: icao code of root airport node | required
+
 >destination: icao code of target airport node | required
 </details>
 
@@ -81,11 +83,13 @@
 
 <details>
  <summary>
-    <code>GET</code> <code>/api/v1/tracking?departure={departureAirport}</code> returns all flights scheduled to depart from given airport
+    <code>GET</code> <code>/api/v1/flights</code> returns all flights scheduled to depart from given airport
  </summary>
 
 ##### URL Parameters
->departureAirport: String containing airport ICAO code | not required
+>departure: String containing airport ICAO code | not required
+> 
+>destination: String containing ICAO code | not required
 </details>
 
 <!-- -------------------------------------------------------------------------------- -->

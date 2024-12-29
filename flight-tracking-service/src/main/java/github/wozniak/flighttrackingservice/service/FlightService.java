@@ -53,6 +53,16 @@ public class FlightService {
         return flights;
     }
 
+    public List<Flight> findFlights(String departure, String dest){
+        if(!airportService.airportExists(departure)) throw new AirportNotFoundException(departure + " does not exist");
+        if(!airportService.airportExists(dest)) throw new AirportNotFoundException(dest + " does not exist");
+
+        return flightRepository.findAll().stream()
+                .filter(flight -> flight.getRoute().getDepartureAirport().getIcaoCode().equals(departure))
+                .filter(flight -> flight.getRoute().getDestinationAirport().getIcaoCode().equals(dest))
+                .toList();
+    }
+
     public List<Flight> findFlightsByDate(String date){
         if(!DateTimeUtils.isValid(date)) throw new DateFormatException(date, false);
         List<Flight> flights = flightRepository.findFlightsByDate(DateTimeUtils.stringToSQLDate(date));

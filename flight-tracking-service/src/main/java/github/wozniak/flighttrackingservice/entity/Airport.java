@@ -47,6 +47,12 @@ public class Airport {
         this.country = builder.country;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(!(obj instanceof Airport)) return false;
+        return this.icaoCode.equalsIgnoreCase(((Airport) obj).getIcaoCode());
+    }
+
     public AirportDTO getDTO(){
         return new AirportDTO(icaoCode, name, latitude, longitude, continent, country);
     }

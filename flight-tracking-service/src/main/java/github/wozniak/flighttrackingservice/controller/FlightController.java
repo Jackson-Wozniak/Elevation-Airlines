@@ -22,20 +22,20 @@ public class FlightController {
     private final PlaneService planeService;
 
     @GetMapping
-    public ResponseEntity<List<FlightSummaryDTO>> getFlights(){
-        return ResponseEntity.ok(flightSummaryDTOs(flightService.findAllFlights()));
-    }
-
-    @GetMapping(params = "departure")
-    public ResponseEntity<List<FlightSummaryDTO>> getFlightsByDeparture(
-            @RequestParam(value = "departure", defaultValue = "") String departure){
-        return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlightsByAirport(departure, true)));
-    }
-
-    @GetMapping(params = "destination")
-    public ResponseEntity<List<FlightSummaryDTO>> getFlightsByDestination(
-            @RequestParam(value = "destination", defaultValue = "") String destination){
-        return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlightsByAirport(destination, false)));
+    public ResponseEntity<List<FlightSummaryDTO>> getFlights(
+            @RequestParam(value = "departure", required = false) String departure,
+            @RequestParam(value = "destination", required = false) String dest
+    ){
+        if(departure == null && dest == null){
+            return ResponseEntity.ok(flightSummaryDTOs(flightService.findAllFlights()));
+        }
+        if(departure == null){
+            return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlightsByAirport(dest, false)));
+        }
+        if(dest == null){
+            return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlightsByAirport(departure, true)));
+        }
+        return ResponseEntity.ok(flightSummaryDTOs(flightService.findFlights(departure, dest)));
     }
 
     @GetMapping(value = "/identifier/{identifier}")
