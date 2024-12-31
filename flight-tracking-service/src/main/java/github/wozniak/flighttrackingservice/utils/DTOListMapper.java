@@ -12,11 +12,11 @@ import java.util.List;
 public class DTOListMapper {
 
     public static List<FlightDTO> flightDTOs(List<Flight> flight){
-        return flight.stream().map(Flight::getDTO).toList();
+        return flight.stream().map(FlightDTO::new).toList();
     }
 
     public static List<FlightSummaryDTO> flightSummaryDTOs(List<Flight> flight){
-        return flight.stream().map(Flight::getDTOSummary).toList();
+        return flight.stream().map(FlightSummaryDTO::new).toList();
     }
 
     public static List<FlightInfoDTO> flightInfoDTOs(List<Flight> flight){
@@ -24,6 +24,6 @@ public class DTOListMapper {
     }
 
     public static List<TimeTableSummaryDTO> timeTableSummaryDTOS(List<TimeTable> timeTables){
-        return timeTables.stream().map(TimeTable::getDTOSummary).toList();
+        return timeTables.stream().map(TimeTableSummaryDTO::new).toList();
     }
 }

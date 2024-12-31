@@ -41,7 +41,7 @@ public class FlightController {
 
     @GetMapping(value = "/identifier/{identifier}")
     public ResponseEntity<FlightDTO> getFlightsByIdentifier(@PathVariable(value = "identifier") long identifier){
-        return ResponseEntity.ok(flightService.findFlightsByIdentifier(identifier).getDTO());
+        return ResponseEntity.ok(new FlightDTO(flightService.findFlightsByIdentifier(identifier)));
     }
 
     @GetMapping(value = "/live")

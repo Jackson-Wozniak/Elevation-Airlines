@@ -15,4 +15,11 @@ public class RouteSummaryDTO {
     private AirportSummaryDTO destination;
     private String flightTime;
     private double distanceMiles;
+
+    public RouteSummaryDTO(Route route){
+        this.departure = new AirportSummaryDTO(route.getDepartureAirport());
+        this.destination = new AirportSummaryDTO(route.getDestinationAirport());
+        this.flightTime = route.getFlightTime();
+        this.distanceMiles = route.getFlightDistanceMiles();
+    }
 }

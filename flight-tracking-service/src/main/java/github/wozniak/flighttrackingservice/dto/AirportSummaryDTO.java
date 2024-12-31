@@ -13,4 +13,10 @@ public class AirportSummaryDTO {
     private String icaoCode;
     private String name;
     private String country;
+
+    public AirportSummaryDTO(Airport airport){
+        this.icaoCode = airport.getIcaoCode();
+        this.name = airport.getName();
+        this.country = airport.getCountry();
+    }
 }

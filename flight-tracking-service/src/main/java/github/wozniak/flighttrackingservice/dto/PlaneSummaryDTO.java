@@ -12,4 +12,9 @@ public class PlaneSummaryDTO {
 
     private String callSign;
     private String model;
+
+    public PlaneSummaryDTO(Plane plane){
+        this.callSign = plane.getCallSign();
+        this.model = plane.getModel();
+    }
 }

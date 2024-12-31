@@ -44,12 +44,4 @@ public class Plane {
         this.cruisingSpeedKnots = planeModel.getCruisingSpeedKnots();
         this.rangeMiles = planeModel.getRangeMiles();
     }
-
-    public PlaneDTO getDTO(){
-        return new PlaneDTO(callSign, model, seatingCapacity, luxurySeats, cruisingSpeedKnots, rangeMiles);
-    }
-
-    public PlaneSummaryDTO getDTOSummary(){
-        return new PlaneSummaryDTO(callSign, model);
-    }
 }

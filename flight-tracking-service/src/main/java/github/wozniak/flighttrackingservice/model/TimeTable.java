@@ -29,16 +29,4 @@ public class TimeTable {
         }
         return daysInCalendar;
     }
-
-    public String getFormattedDate(){
-        return DateTimeUtils.format(date);
-    }
-
-    public TimeTableDTO getDTO(){
-        return new TimeTableDTO(getFormattedDate(), flightsToday.size(), DTOListMapper.flightDTOs(flightsToday));
-    }
-
-    public TimeTableSummaryDTO getDTOSummary(){
-        return new TimeTableSummaryDTO(getFormattedDate(), flightsToday.size(), DTOListMapper.flightSummaryDTOs(flightsToday));
-    }
 }

@@ -65,14 +65,4 @@ public class Route {
     public String getFlightTime(){
         return DateTimeUtils.hoursToHHMM(flightDurationHours);
     }
-
-    public RouteDTO getDTO(){
-        return new RouteDTO(departureAirport.getDTO(), destinationAirport.getDTO(),
-                getFlightTime(), flightDistanceMiles);
-    }
-
-    public RouteSummaryDTO getDTOSummary(){
-        return new RouteSummaryDTO(departureAirport.getDTOSummary(), destinationAirport.getDTOSummary(),
-                getFlightTime(), flightDistanceMiles);
-    }
 }

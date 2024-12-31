@@ -16,4 +16,12 @@ public class FlightDTO {
     private PlaneDTO plane;
     private String departureTime;
     private String estimatedTOA;
+
+    public FlightDTO(Flight flight){
+        this.identifier = flight.getFlightIdentifier();
+        this.route = new RouteDTO(flight.getRoute());
+        this.plane = new PlaneDTO(flight.getPlane());
+        this.departureTime = DateTimeUtils.format(flight.getTakeOffDateTime());
+        this.estimatedTOA = DateTimeUtils.format(flight.getLandingDateTime());
+    }
 }
