@@ -1,13 +1,5 @@
 package github.wozniak.flighttrackingservice.controller;
 
-import github.wozniak.flighttrackingservice.dto.FlightSummaryDTO;
-import github.wozniak.flighttrackingservice.entity.Airport;
-import github.wozniak.flighttrackingservice.planning_algorithm.Edge;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
-
 public class FlightPathController {
 
     /*
