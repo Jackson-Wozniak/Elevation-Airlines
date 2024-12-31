@@ -12,34 +12,26 @@
 ### Flight Tracking URL Endpoints
 *All endpoints are publicly available*
 
+*For each endpoint, a query parameter 'is_detailed'=true can be added to return the full entity in the response, rather than the summary information*
+
+<!-- -------------------------------------------------------------------------------- -->
+
 <details>
  <summary>
-    <code>GET</code> <code>/api/v1/tracking/path_generator?departure={departure}&destination={destination}</code> generates an optimized flight plan between departure and destination airports. Uses graph algorithm optimizing by shortest path duration
+    <code>GET</code> <code>/api/v1/flights</code> returns all flights currently scheduled
  </summary>
 
 ##### URL Parameters
-
->departure: icao code of root airport node | required
-
->destination: icao code of target airport node | required
+>departure: ICAO code
+> 
+>destination: ICAO code
 </details>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <details>
  <summary>
-    <code>GET</code> <code>/api/v1/tracking/</code> returns all flights currently scheduled
- </summary>
-
-##### URL Parameters
->None
-</details>
-
-<!-- -------------------------------------------------------------------------------- -->
-
-<details>
- <summary>
-    <code>GET</code> <code>/api/v1/tracking/live_flights</code> returns all flights currently in the air
+    <code>GET</code> <code>/api/v1/flights/live</code> returns all flights currently in the air
  </summary>
 
 ##### URL Parameters
@@ -50,7 +42,7 @@
 
 <details>
  <summary>
-    <code>GET</code> <code>/api/v1/tracking/call_sign/{callSign}</code> returns all flights scheduled for a given plane
+    <code>GET</code> <code>/api/v1/flights/call_sign/{callSign}</code> returns all flights scheduled for a given plane
  </summary>
 
 ##### URL Parameters
@@ -61,58 +53,24 @@
 
 <details>
  <summary>
-    <code>GET</code> <code>/api/v1/tracking/time_table?date={date}</code> returns all flights scheduled on given date
+    <code>GET</code> <code>/api/v1/flights/time_table</code> returns all flights scheduled in given date range
  </summary>
 
 ##### URL Parameters
->date: String formatted as mm/dd/yyyy | required
+>start: String formatted as mm/dd/yyyy | required
+> 
+>end: String formatted as mm/dd/yyyy | required
 </details>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <details>
  <summary>
-    <code>GET</code> <code>/api/v1/tracking/{identifier}</code> return a flight by the given identifier
+    <code>GET</code> <code>/api/v1/flights/identifier/{identifier}</code> return a flight by the given identifier
  </summary>
 
 ##### URL Parameters
 >identifier: 64-bit integer | required
-</details>
-
-<!-- -------------------------------------------------------------------------------- -->
-
-<details>
- <summary>
-    <code>GET</code> <code>/api/v1/flights</code> returns all flights scheduled to depart from given airport
- </summary>
-
-##### URL Parameters
->departure: String containing airport ICAO code | not required
-> 
->destination: String containing ICAO code | not required
-</details>
-
-<!-- -------------------------------------------------------------------------------- -->
-
-<details>
- <summary>
-    <code>GET</code> <code>/api/v1/tracking?destination={destinationAirport}</code> returns all flights scheduled to arrive at a given airport
- </summary>
-
-##### URL Parameters
->destinationAirport: String containing airport ICAO code | not required
-</details>
-
-<!-- -------------------------------------------------------------------------------- -->
-
-<details>
- <summary>
-    <code>POST</code> <code>/api/v1/tracking/generate_path?departure={departure}&destination={destination}</code> If possible, generate a path from one airport to another based on scheduled flight plans
- </summary>
-
-##### URL Parameters
->departure: String containing airport ICAO code | required
->destination: String containing airport ICAO code | required
 </details>
 
 <!-- -------------------------------------------------------------------------------- -->
