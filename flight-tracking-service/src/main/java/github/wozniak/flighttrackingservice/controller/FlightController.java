@@ -2,7 +2,6 @@ package github.wozniak.flighttrackingservice.controller;
 
 import github.wozniak.flighttrackingservice.dto.FlightDTO;
 import github.wozniak.flighttrackingservice.dto.FlightSummaryDTO;
-import github.wozniak.flighttrackingservice.dto.TimeTableSummaryDTO;
 import github.wozniak.flighttrackingservice.entity.Flight;
 import github.wozniak.flighttrackingservice.service.FlightService;
 import github.wozniak.flighttrackingservice.service.PlaneService;

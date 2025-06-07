@@ -1,5 +1,7 @@
 package github.wozniak.flighttrackingservice.utils;
 
+import github.wozniak.flighttrackingservice.entity.Flight;
+
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -107,5 +109,10 @@ public class DateTimeUtils {
         } catch (Exception ex) {
             return false;
         }
+    }
+
+    public static String expectedTimeOfArrival(LocalDateTime takeOffTime, double flightHours){
+        long elapsedMinutes = (long) (flightHours * 60);
+        return format(takeOffTime.plusMinutes(elapsedMinutes));
     }
 }
