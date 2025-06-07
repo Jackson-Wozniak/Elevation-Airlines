@@ -1,11 +1,7 @@
 package github.wozniak.flighttrackingservice.entity;
 
-import github.wozniak.flighttrackingservice.dto.FlightDTO;
-import github.wozniak.flighttrackingservice.dto.RouteDTO;
-import github.wozniak.flighttrackingservice.dto.RouteSummaryDTO;
 import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,10 +1,6 @@
 package github.wozniak.flighttrackingservice.model;
 
-import github.wozniak.flighttrackingservice.dto.TimeTableDTO;
-import github.wozniak.flighttrackingservice.dto.TimeTableSummaryDTO;
 import github.wozniak.flighttrackingservice.entity.Flight;
-import github.wozniak.flighttrackingservice.utils.DTOListMapper;
-import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

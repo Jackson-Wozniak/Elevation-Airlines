@@ -14,14 +14,16 @@ public class FlightDTO {
     private long identifier;
     private RouteDTO route;
     private PlaneDTO plane;
-    private String departureTime;
+    private String timeOfDeparture;
+    private String expectedArrival;
     private String estimatedTOA;
 
     public FlightDTO(Flight flight){
         this.identifier = flight.getFlightIdentifier();
         this.route = new RouteDTO(flight.getRoute());
         this.plane = new PlaneDTO(flight.getPlane());
-        this.departureTime = DateTimeUtils.format(flight.getTakeOffDateTime());
+        this.timeOfDeparture = DateTimeUtils.format(flight.getTakeOffDateTime());
+        this.expectedArrival = DateTimeUtils.expectedTimeOfArrival(flight.getTakeOffDateTime(), flight.getRoute().getFlightDurationHours());
         this.estimatedTOA = DateTimeUtils.format(flight.getLandingDateTime());
     }
 }

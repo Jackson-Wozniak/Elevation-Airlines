@@ -1,10 +1,16 @@
 package github.wozniak.flighttrackingservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import github.wozniak.flighttrackingservice.entity.Flight;
 import github.wozniak.flighttrackingservice.utils.DateTimeUtils;
 import lombok.Getter;
 import lombok.Setter;
 
+/*
+This class is used as a way to summarize all flight information, and is most
+    relevant for returning to flight tables and other displays that contain many flights
+    and only basic info is needed for each one
+ */
 @Getter
 @Setter
 public class FlightSummaryDTO {
@@ -12,8 +18,8 @@ public class FlightSummaryDTO {
     private String destination;
     private String callsign;
     private String planeType;
-    private String departureTime;
-    private String flightTime;
+    private String timeOfDeparture;
+    private String expectedArrival;
     private double distanceMiles;
 
     public FlightSummaryDTO(Flight flight){
@@ -21,8 +27,8 @@ public class FlightSummaryDTO {
         this.destination = flight.getRoute().getDestinationAirport().getIcaoCode();
         this.callsign = flight.getPlane().getCallSign();
         this.planeType = flight.getPlane().getModel();
-        this.departureTime = DateTimeUtils.format(flight.getTakeOffDateTime());
-        this.flightTime = DateTimeUtils.hoursToHRMIN(flight.getRoute().getFlightDurationHours());
+        this.timeOfDeparture = DateTimeUtils.format(flight.getTakeOffDateTime());
+        this.expectedArrival = DateTimeUtils.expectedTimeOfArrival(flight.getTakeOffDateTime(), flight.getRoute().getFlightDurationHours());
         this.distanceMiles = flight.getRoute().getFlightDistanceMiles();
     }
 }
