@@ -1,9 +1,6 @@
 package internal.parser.objects;
 
-/*
-Stores all information for a given airport, based on the specs from airports.csv in resources
- */
-public class AirportInfo {
+public class AirportOutput {
     private final String code;
     private final String size;
     private final String name;
@@ -11,8 +8,10 @@ public class AirportInfo {
     private final String longitude;
     private final String continent;
     private final String country;
+    private final int passengers;
+    private final int runwayLengthFt;
 
-    public AirportInfo(String code, String size, String name, String latitude, String longitude, String continent, String country) {
+    public AirportOutput(String code, String size, String name, String latitude, String longitude, String continent, String country, int passengers, int runwayLengthFt) {
         this.code = code;
         this.size = size;
         this.name = name;
@@ -20,6 +19,8 @@ public class AirportInfo {
         this.longitude = longitude;
         this.continent = continent;
         this.country = country;
+        this.passengers = passengers;
+        this.runwayLengthFt = runwayLengthFt;
     }
 
     public String getCode() {
@@ -48,5 +49,13 @@ public class AirportInfo {
 
     public String getCountry() {
         return country;
+    }
+
+    public int getPassengers() {
+        return passengers;
+    }
+
+    public int getRunwayLengthFt() {
+        return runwayLengthFt;
     }
 }
