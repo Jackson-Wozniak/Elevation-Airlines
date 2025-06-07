@@ -17,7 +17,7 @@ Stores a map of all runways from runways.csv in resources folder
  */
 public class RunwayCSVFile {
     private static RunwayCSVFile runwayCSVFile;
-    private static final String FILE_PATH = "unparsed_data/runways.csv";
+    private static final String FILE_PATH = "runways.csv";
     private static final int MINIMUM_RUNWAY_LENGTH = 4000;
 
     private Map<String, Integer> runwaysPerAirport = new HashMap<>();

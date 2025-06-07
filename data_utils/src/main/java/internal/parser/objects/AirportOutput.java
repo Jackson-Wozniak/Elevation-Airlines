@@ -11,51 +11,28 @@ public class AirportOutput {
     private final int passengers;
     private final int runwayLengthFt;
 
-    public AirportOutput(String code, String size, String name, String latitude, String longitude, String continent, String country, int passengers, int runwayLengthFt) {
-        this.code = code;
-        this.size = size;
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.continent = continent;
-        this.country = country;
+    public AirportOutput(AirportInfo airportInfo, int passengers, int runwayLengthFt) {
+        this.code = airportInfo.getCode();
+        this.size = airportInfo.getSize();
+        this.name = airportInfo.getName();
+        this.latitude = airportInfo.getLatitude();
+        this.longitude = airportInfo.getLongitude();
+        this.continent = airportInfo.getContinent();
+        this.country = airportInfo.getCountry();
         this.passengers = passengers;
         this.runwayLengthFt = runwayLengthFt;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public String getContinent() {
-        return continent;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public int getPassengers() {
-        return passengers;
-    }
-
-    public int getRunwayLengthFt() {
-        return runwayLengthFt;
+    @Override
+    public String toString(){
+        return this.code + "," +
+                this.size + "," +
+                this.name + "," +
+                this.latitude + "," +
+                this.longitude + "," +
+                this.continent + "," +
+                this.country + "," +
+                this.passengers + "," +
+                this.runwayLengthFt + "\n";
     }
 }

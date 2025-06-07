@@ -16,7 +16,7 @@ Stores all information for the passengers.csv file, with a PassengerInfo.java fo
  */
 public class PassengerCSVFile {
     private static PassengerCSVFile passengerCSVFile;
-    private static final String FILE_PATH = "unparsed_data/passengers.csv";
+    private static final String FILE_PATH = "passengers.csv";
 
     private Map<String, Integer> passengersPerAirport = new HashMap<>();
 
