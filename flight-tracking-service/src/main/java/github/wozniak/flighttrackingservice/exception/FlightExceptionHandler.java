@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
+import java.time.format.DateTimeParseException;
 import java.util.Objects;
 
 @ControllerAdvice
@@ -19,6 +20,11 @@ public class FlightExceptionHandler {
     @ExceptionHandler(DateFormatException.class)
     public ResponseEntity<String> dateFormatException(DateFormatException ex){
         return ResponseEntity.status(ex.getStatus()).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(DateTimeParseException.class)
+    public ResponseEntity<String> dateTimeParseException(DateTimeParseException ex){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
     @ExceptionHandler(FlightNotFoundException.class)

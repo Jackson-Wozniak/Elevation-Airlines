@@ -71,6 +71,9 @@ public class FlightService {
     }
 
     public List<TimeTable> findFlightsByDateRange(String start, String end){
+        if(start == null || start.isBlank()) throw new FlightQueryException("Start date is invalid");
+        if(end == null || end.isBlank()) throw new FlightQueryException("End date is invalid");
+
         HashMap<LocalDate, ArrayList<Flight>> flightsOnDate = new HashMap<>();
         List<LocalDate> dates = DateTimeUtils.allDatesInRange(
                 DateTimeUtils.toDate(start), DateTimeUtils.toDate(end), true);
@@ -88,6 +91,16 @@ public class FlightService {
 
     public List<Flight> findAllFlights(){
         return flightRepository.findAll();
+    }
+
+    public List<Flight> findAllFlights(String departureCode, String destinationCode){
+        boolean departureEmpty = departureCode == null || departureCode.isBlank();
+        boolean destinationEmpty = destinationCode == null || destinationCode.isBlank();
+
+        if(departureEmpty && destinationEmpty) return findAllFlights();
+        if(departureEmpty) return findFlightsByAirport(destinationCode, false);
+        if(destinationEmpty) return findFlightsByAirport(departureCode, true);
+        return findAllFlights(departureCode, destinationCode);
     }
 
     public List<Flight> findLiveFlights(){

@@ -3,7 +3,6 @@ package github.wozniak.flighttrackingservice.utils;
 import github.wozniak.flighttrackingservice.dto.FlightDTO;
 import github.wozniak.flighttrackingservice.dto.FlightSummaryDTO;
 import github.wozniak.flighttrackingservice.dto.TimeTableDTO;
-import github.wozniak.flighttrackingservice.dto.TimeTableSummaryDTO;
 import github.wozniak.flighttrackingservice.entity.Flight;
 import github.wozniak.flighttrackingservice.model.TimeTable;
 
@@ -21,9 +20,5 @@ public class DTOListMapper {
 
     public static List<TimeTableDTO> timeTableDTOS(List<TimeTable> timeTables){
         return timeTables.stream().map(TimeTableDTO::new).toList();
-    }
-
-    public static List<TimeTableSummaryDTO> timeTableSummaryDTOS(List<TimeTable> timeTables){
-        return timeTables.stream().map(TimeTableSummaryDTO::new).toList();
     }
 }
