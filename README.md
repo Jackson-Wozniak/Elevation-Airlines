@@ -26,6 +26,7 @@
     <li><a href="#tracking">Flight Tracking</a></li>
     <li><a href="#technologies">Technologies</a></li>
     <li><a href="#local-dev">Local Deployment</a></li>
+    <li><a href="#credits">Credits</a></li>
 </ol>    
 
 <br/> 
@@ -33,10 +34,6 @@
 
 ## 📓 Features & Overview <a id="features"></a>
 An airline tracking system that generates flights to popular airports across the world. The airline used in this simulation is called Elevation Airlines, and is a fake airline. Route generation is largely random, and the flights each plane takes does not necessarily match the popular flights real airlines fly.
-
-Airport data is found from <a href="https://ourairports.com/data"/>ourairports.com</a> and is filtered to only include those that have the large_airports tag
-
-The image used as the preview for this repo can be found <a href="https://wallpaperaccess.com/full/254381.jpg" />here </a>
 
 <br>
 
@@ -86,3 +83,16 @@ to shut down the application, run:
 to restart the app after making local changes (to rebuild the jar file), run:
 -docker-compose up --build
 ```
+
+## Credits <a id="credits"></a>
+
+Airport and runway data is found from <a href="https://ourairports.com/data"/>ourairports.com</a>
+
+    Airport and runway data is cleaned and filtered in the data_utils directory, to ensure
+    that all airports used by Elevation Airlines are capable of handling the specs for each plane in the fleet.
+    This is largely done by determining if an airport has a long enough runway, but attributes such as
+    the presence of lights and other features work to determine which airports are included as well.
+
+    After the data is cleaned in data_utils, I move the csv to the flight tracking service to be read by the config files in Spring Boot
+
+The image used as the preview for this repo can be found <a href="https://wallpaperaccess.com/full/254381.jpg" />here </a>

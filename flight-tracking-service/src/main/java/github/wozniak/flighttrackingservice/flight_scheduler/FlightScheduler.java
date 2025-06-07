@@ -1,4 +1,4 @@
-package github.wozniak.flighttrackingservice.scheduler;
+package github.wozniak.flighttrackingservice.flight_scheduler;
 
 import github.wozniak.flighttrackingservice.helper.FlightCalendarCreator;
 import github.wozniak.flighttrackingservice.properties.SchedulingProperties;
