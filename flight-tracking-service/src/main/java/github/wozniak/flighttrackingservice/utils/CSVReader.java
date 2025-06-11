@@ -35,10 +35,20 @@ public class CSVReader {
     }
 
     private static Airport mapAirportFromLine(String[] line){
-        return new Airport.Builder(line[0].trim(), line[1].trim())
-                .coordinates(Double.parseDouble(line[2]), Double.parseDouble(line[3]))
-                .location(line[4].trim(), line[5].trim())
+        return new Airport.Builder(line[0].trim(), line[2].trim())
+                .coordinates(Double.parseDouble(line[3]), Double.parseDouble(line[4]))
+                .location(line[5].trim(), line[6].trim())
+                .specs(safeIntegerParse(line[7]), safeIntegerParse(line[8]))
                 .build();
+    }
+
+    private static int safeIntegerParse(String value){
+        try{
+            return Integer.parseInt(value);
+        }catch(Exception ex){
+            //TODO: manually go through each digit if needed
+            return 0;
+        }
     }
 
     private static PlaneModel mapPlanesFromLine(String[] line){

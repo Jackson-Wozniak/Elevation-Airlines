@@ -36,6 +36,12 @@ public class Airport {
     @Column(name = "country")
     private String country;
 
+    @Column(name = "passengersPerYear")
+    private int passengersPerYear;
+
+    @Column(name = "runwayLengthFt")
+    private int runwayLengthFt;
+
     public Airport(Builder builder){
         this.icaoCode = builder.icaoCode;
         this.name = builder.name;
@@ -43,6 +49,8 @@ public class Airport {
         this.longitude = builder.longitude;
         this.continent = builder.continent;
         this.country = builder.country;
+        this.passengersPerYear = builder.passengersPerYear;
+        this.runwayLengthFt = builder.runwayLengthFt;
     }
 
     @Override
@@ -58,6 +66,8 @@ public class Airport {
         private double longitude;
         private String continent;
         private String country;
+        private int passengersPerYear;
+        private int runwayLengthFt;
 
         public Builder(String icaoCode, String name){
             this.icaoCode = icaoCode;
@@ -75,6 +85,12 @@ public class Airport {
             this.continent = continent;
             this.country = country;
 
+            return this;
+        }
+
+        public Builder specs(int passengersPerYear, int runwayLengthFt){
+            this.passengersPerYear = passengersPerYear;
+            this.runwayLengthFt = runwayLengthFt;
             return this;
         }
 
