@@ -1,11 +1,13 @@
 package github.wozniak.flighttrackingservice.planning_algorithm;
 
-import github.wozniak.flighttrackingservice.entity.Airport;
-import github.wozniak.flighttrackingservice.entity.Flight;
-import github.wozniak.flighttrackingservice.entity.Plane;
-import github.wozniak.flighttrackingservice.entity.Route;
-import github.wozniak.flighttrackingservice.service.AirportService;
-import github.wozniak.flighttrackingservice.service.FlightService;
+import github.wozniak.flighttrackingservice.core.entity.Airport;
+import github.wozniak.flighttrackingservice.flight_management.entity.Flight;
+import github.wozniak.flighttrackingservice.core.entity.Plane;
+import github.wozniak.flighttrackingservice.flight_management.entity.Route;
+import github.wozniak.flighttrackingservice.flight_management.planning_algorithm.Edge;
+import github.wozniak.flighttrackingservice.flight_management.planning_algorithm.PathGenerator;
+import github.wozniak.flighttrackingservice.core.service.AirportService;
+import github.wozniak.flighttrackingservice.flight_management.service.FlightService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

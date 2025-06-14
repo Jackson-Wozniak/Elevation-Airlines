@@ -1,6 +1,7 @@
 package github.wozniak.flighttrackingservice.service;
 
-import github.wozniak.flighttrackingservice.entity.Plane;
+import github.wozniak.flighttrackingservice.core.entity.Plane;
+import github.wozniak.flighttrackingservice.core.service.PlaneService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

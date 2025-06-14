@@ -1,5 +1,9 @@
 package github.wozniak.flighttrackingservice.entity;
 
+import github.wozniak.flighttrackingservice.core.entity.Airport;
+import github.wozniak.flighttrackingservice.core.entity.Plane;
+import github.wozniak.flighttrackingservice.flight_management.entity.Flight;
+import github.wozniak.flighttrackingservice.flight_management.entity.Route;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
