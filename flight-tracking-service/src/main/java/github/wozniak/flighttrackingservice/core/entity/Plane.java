@@ -1,6 +1,5 @@
 package github.wozniak.flighttrackingservice.core.entity;
 
-import github.wozniak.flighttrackingservice.dto.*;
 import github.wozniak.flighttrackingservice.core.model.PlaneModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

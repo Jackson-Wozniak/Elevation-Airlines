@@ -14,7 +14,7 @@ Stores all information for the airports.csv file, with an AirportInfo.java for e
  */
 public class AirportCSVFile {
     private static AirportCSVFile airportCSVFile;
-    private static final String FILE_PATH = "airports.csv";
+    private static final String FILE_PATH = "data_utils/unparsed_data/airports.csv";
 
     private final List<AirportInfo> airports = new ArrayList<>();
 

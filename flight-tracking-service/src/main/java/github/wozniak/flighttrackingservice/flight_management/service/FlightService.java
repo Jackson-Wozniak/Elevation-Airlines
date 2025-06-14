@@ -2,7 +2,6 @@ package github.wozniak.flighttrackingservice.flight_management.service;
 
 import github.wozniak.flighttrackingservice.core.exception.*;
 import github.wozniak.flighttrackingservice.flight_management.entity.Flight;
-import github.wozniak.flighttrackingservice.exception.*;
 import github.wozniak.flighttrackingservice.flight_management.model.TimeTable;
 import github.wozniak.flighttrackingservice.flight_management.repository.FlightRepository;
 import github.wozniak.flighttrackingservice.core.service.AirportService;
