@@ -11,8 +11,14 @@ public class AirportInfo {
     private final String longitude;
     private final String continent;
     private final String country;
+    private final String region;
+    private final String city;
+    private final String localCode;
 
-    public AirportInfo(String code, String size, String name, String latitude, String longitude, String continent, String country) {
+    public AirportInfo(String code, String size, String name,
+                       String latitude, String longitude,
+                       String continent, String country,
+                       String region, String city, String localCode) {
         this.code = code;
         this.size = size;
         this.name = name;
@@ -20,6 +26,9 @@ public class AirportInfo {
         this.longitude = longitude;
         this.continent = continent;
         this.country = country;
+        this.region = region;
+        this.city = city;
+        this.localCode = localCode;
     }
 
     public String getCode() {
@@ -48,5 +57,17 @@ public class AirportInfo {
 
     public String getCountry() {
         return country;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getLocalCode() {
+        return localCode;
     }
 }

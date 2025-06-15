@@ -1,5 +1,7 @@
 package internal.parser.objects;
 
+import internal.parser.utils.CSVReaderUtils;
+
 public class AirportOutput {
     private final String code;
     private final String size;
@@ -8,10 +10,11 @@ public class AirportOutput {
     private final String longitude;
     private final String continent;
     private final String country;
-    private final int passengers;
+    private final String region;
+    private final String city;
     private final int runwayLengthFt;
 
-    public AirportOutput(AirportInfo airportInfo, int passengers, int runwayLengthFt) {
+    public AirportOutput(AirportInfo airportInfo, int runwayLengthFt) {
         this.code = airportInfo.getCode();
         this.size = airportInfo.getSize();
         this.name = airportInfo.getName();
@@ -19,7 +22,8 @@ public class AirportOutput {
         this.longitude = airportInfo.getLongitude();
         this.continent = airportInfo.getContinent();
         this.country = airportInfo.getCountry();
-        this.passengers = passengers;
+        this.region = airportInfo.getRegion();
+        this.city = airportInfo.getCity();
         this.runwayLengthFt = runwayLengthFt;
     }
 
@@ -30,9 +34,10 @@ public class AirportOutput {
                 this.name + "," +
                 this.latitude + "," +
                 this.longitude + "," +
-                this.continent + "," +
+                CSVReaderUtils.continentCodeToName(this.continent) + "," +
                 this.country + "," +
-                this.passengers + "," +
+                this.region + "," +
+                this.city + "," +
                 this.runwayLengthFt + "\n";
     }
 }

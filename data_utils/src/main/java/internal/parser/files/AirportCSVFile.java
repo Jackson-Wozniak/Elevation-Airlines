@@ -14,7 +14,7 @@ Stores all information for the airports.csv file, with an AirportInfo.java for e
  */
 public class AirportCSVFile {
     private static AirportCSVFile airportCSVFile;
-    private static final String FILE_PATH = "data_utils/unparsed_data/airports.csv";
+    private static final String FILE_PATH = "airports.csv";
 
     private final List<AirportInfo> airports = new ArrayList<>();
 
@@ -34,12 +34,15 @@ public class AirportCSVFile {
             String lon = allLine[4];
             String continent = allLine[5];
             String country = allLine[6];
-            airports.add(new AirportInfo(code, size, name, lat, lon, continent, country));
+            String region = allLine[8];
+            String city = allLine[10];
+            String localCode = allLine[11];
+            airports.add(new AirportInfo(code, size, name, lat, lon, continent, country, region, city, localCode));
         }
     }
 
     private static List<String[]> toArray(List<String> strings){
-        return strings.stream().map(str -> str.split(",")).toList();
+        return strings.stream().map(str -> str.split(",", -1)).toList();
     }
 
     public static AirportCSVFile getInstance() throws IOException {

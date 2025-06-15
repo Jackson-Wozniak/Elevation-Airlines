@@ -16,7 +16,7 @@ Stores all information for the passengers.csv file, with a PassengerInfo.java fo
  */
 public class PassengerCSVFile {
     private static PassengerCSVFile passengerCSVFile;
-    private static final String FILE_PATH = "data_utils/unparsed_data/passengers.csv";
+    private static final String FILE_PATH = "passengers.csv";
 
     private Map<String, Integer> passengersPerAirport = new HashMap<>();
 
@@ -29,9 +29,15 @@ public class PassengerCSVFile {
         List<String[]> allLines = toArray(new BufferedReader(passengerReader).lines().toList());
 
         for (String[] allLine : allLines) {
+            StringBuilder passengerStr = new StringBuilder(allLine[1]);
+            if(allLine.length > 2){
+                passengerStr = new StringBuilder();
+                for(int i = 1; i < allLine.length; i++){
+                    passengerStr.append(allLine[i]);
+                }
+            }
             String code = allLine[0];
-            String passengerStr = allLine[2];
-            int passengers = CSVReaderUtils.safeIntegerParse(passengerStr);
+            int passengers = CSVReaderUtils.safeIntegerParse(passengerStr.toString());
 
             passengersPerAirport.put(code, passengers);
         }
