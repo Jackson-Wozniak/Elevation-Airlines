@@ -1,10 +1,9 @@
 package internal.parser;
 
-import internal.parser.files.AirportCSVFile;
-import internal.parser.files.PassengerCSVFile;
-import internal.parser.files.RunwayCSVFile;
+import internal.parser.files.*;
 import internal.parser.objects.AirportInfo;
 import internal.parser.objects.AirportOutput;
+import internal.parser.objects.CityInfo;
 
 import java.io.FileWriter;
 import java.io.IOException;

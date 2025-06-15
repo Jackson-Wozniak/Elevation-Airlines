@@ -117,4 +117,6 @@ https://catalog.data.gov/dataset/consumer-airfare-report-table-2-top-1000-city-p
 
 https://simplemaps.com/data/us-cities
 
+https://www.bea.gov/data/gdp/gdp-state
+
 The image used as the preview for this repo can be found <a href="https://wallpaperaccess.com/full/254381.jpg" />here </a>
