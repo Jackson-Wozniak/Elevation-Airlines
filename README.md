@@ -111,4 +111,10 @@ Airport and runway data is found from <a href="https://ourairports.com/data"/>ou
 
 Passenger data is found from <a href="https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/cy23_all_enplanements">FAA.gov</a>
 
+More passenger data: https://www.bts.gov/browse-statistical-products-and-data/state-transportation-statistics/us-airline-traffic-airport
+
+https://catalog.data.gov/dataset/consumer-airfare-report-table-2-top-1000-city-pair-markets
+
+https://simplemaps.com/data/us-cities
+
 The image used as the preview for this repo can be found <a href="https://wallpaperaccess.com/full/254381.jpg" />here </a>

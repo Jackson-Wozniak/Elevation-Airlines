@@ -13,8 +13,9 @@ public class AirportOutput {
     private final String region;
     private final String city;
     private final int runwayLengthFt;
+    private final int passengerCount;
 
-    public AirportOutput(AirportInfo airportInfo, int runwayLengthFt) {
+    public AirportOutput(AirportInfo airportInfo, int runwayLengthFt, int passengerCount) {
         this.code = airportInfo.getCode();
         this.size = airportInfo.getSize();
         this.name = airportInfo.getName();
@@ -25,6 +26,7 @@ public class AirportOutput {
         this.region = airportInfo.getRegion();
         this.city = airportInfo.getCity();
         this.runwayLengthFt = runwayLengthFt;
+        this.passengerCount = passengerCount;
     }
 
     @Override
@@ -38,6 +40,7 @@ public class AirportOutput {
                 this.country + "," +
                 this.region + "," +
                 this.city + "," +
-                this.runwayLengthFt + "\n";
+                this.runwayLengthFt + "," +
+                this.passengerCount + "\n";
     }
 }

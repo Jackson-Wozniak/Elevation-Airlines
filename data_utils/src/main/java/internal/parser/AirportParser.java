@@ -23,7 +23,6 @@ public class AirportParser {
 
         List<AirportOutput> validAirports = new ArrayList<>();
 
-        AtomicInteger count = new AtomicInteger(0);
         airports.forEach(airport -> {
             if(!runways.containsKey(airport.getCode())) return;
 
@@ -33,21 +32,16 @@ public class AirportParser {
             }else if(passengers.containsKey(airport.getLocalCode())){
                 passengerCount = passengers.get(airport.getLocalCode());
             }
-            if(passengerCount != 0){
-                System.out.println(airport.getCode() + ": " + passengerCount);
-                count.incrementAndGet();
-            }
 
-            validAirports.add(new AirportOutput(airport, runways.get(airport.getCode())));
+            validAirports.add(new AirportOutput(airport, runways.get(airport.getCode()), passengerCount));
         });
 
-        System.out.println(count);
         writeAirportsToOutput(validAirports);
     }
 
     private static void writeAirportsToOutput(List<AirportOutput> airports){
         try (FileWriter writer = new FileWriter(OUTPUT_PATH)) {
-            writer.write("Code,Size,Name,Latitude,Longitude,Continent,Country,Region,City,Runway Length (FT)\n");
+            writer.write("Code,Size,Name,Latitude,Longitude,Continent,Country,Region,City,Runway Length (FT),Passengers-Per-Year\n");
             for(AirportOutput airport : airports){
                 writer.write(airport.toString());
             }
