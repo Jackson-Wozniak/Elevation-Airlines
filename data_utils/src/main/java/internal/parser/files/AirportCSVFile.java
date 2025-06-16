@@ -35,9 +35,10 @@ public class AirportCSVFile {
             String continent = allLine[5];
             String country = allLine[6];
             String region = allLine[8];
+            String regionCode = allLine[9];
             String city = allLine[10];
             String localCode = allLine[11];
-            airports.add(new AirportInfo(code, size, name, lat, lon, continent, country, region, city, localCode));
+            airports.add(new AirportInfo(code, size, name, lat, lon, continent, country, region, regionCode, city, localCode));
         }
     }
 

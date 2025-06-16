@@ -35,4 +35,10 @@ public class CountyEconomicInfo {
     public String toString(){
         return county + "," + state + "," + unit + "," + Arrays.toString(gdpValues2001To2023);
     }
+
+    public String getKey(){
+        String key = this.county + "," + this.state;
+        key = key.replace(" ", "");
+        return key;
+    }
 }

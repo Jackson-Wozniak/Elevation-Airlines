@@ -34,4 +34,10 @@ public class CityInfo {
     public String getRanking() {
         return ranking;
     }
+
+    public String getKey(){
+        String key = this.name + "," + this.state;
+        key = key.replace(" ", "").replace(".", "");
+        return key;
+    }
 }

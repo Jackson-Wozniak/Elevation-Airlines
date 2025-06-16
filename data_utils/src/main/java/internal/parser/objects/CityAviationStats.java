@@ -9,9 +9,8 @@ public class CityAviationStats {
     private final String passengerCount;
     private final String averageFareUSD;
 
-    public CityAviationStats(String averageFareUSD, String passengerCount,
-                             String connectedMarkets, String state, String city,
-                             String quarter, String year) {
+    public CityAviationStats(String year, String quarter, String city, String state,
+                             String connectedMarkets, String passengerCount, String averageFareUSD) {
         this.averageFareUSD = averageFareUSD;
         this.passengerCount = passengerCount;
         this.connectedMarkets = connectedMarkets;
@@ -47,5 +46,15 @@ public class CityAviationStats {
 
     public String getAverageFareUSD() {
         return averageFareUSD;
+    }
+
+    public String getKey(){
+        String key = this.city + "," + this.state;
+        key = key.replace(" ", "");
+        return key;
+    }
+
+    public String getTimePeriod(){
+        return "Q" + this.quarter + " " + this.year;
     }
 }

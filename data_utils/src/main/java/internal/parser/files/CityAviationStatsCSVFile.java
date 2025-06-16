@@ -7,15 +7,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class CityAviationStatsCSVFile {
     private static CityAviationStatsCSVFile cityAviationStatsCSVFile;
     private static final String FILE_PATH = "city_aviation_stats.csv";
 
-    private final List<CityAviationStats> cityStats = new ArrayList<>();
+    private final Map<String, Map<String, CityAviationStats>> cityStats = new HashMap<>();
 
     private CityAviationStatsCSVFile() throws IOException {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(FILE_PATH);
@@ -33,7 +31,11 @@ public class CityAviationStatsCSVFile {
             String connectedMarkets = allLine[4];
             String passengerCount = allLine[5];
             String averageFare = allLine[6];
-            cityStats.add(new CityAviationStats(year, quarter, city, state, connectedMarkets, passengerCount, averageFare));
+            CityAviationStats stats = new CityAviationStats(year, quarter, city, state,
+                    connectedMarkets, passengerCount, averageFare);
+            if(!cityStats.containsKey(stats.getKey())) cityStats.put(stats.getKey(), new HashMap<>());
+
+            cityStats.get(stats.getKey()).put(stats.getTimePeriod(), stats);
         }
     }
 
@@ -48,7 +50,7 @@ public class CityAviationStatsCSVFile {
         return cityAviationStatsCSVFile;
     }
 
-    public List<CityAviationStats> getCityStats(){
+    public Map<String, Map<String, CityAviationStats>> getCityStats(){
         return cityStats;
     }
 }

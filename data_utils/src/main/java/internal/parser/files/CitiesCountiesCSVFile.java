@@ -8,13 +8,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CitiesCountiesCSVFile {
     private static CitiesCountiesCSVFile citiesCountiesCSVFile;
     private static final String FILE_PATH = "cities_and_counties.csv";
 
-    private final List<CityInfo> cities = new ArrayList<>();
+    private final Map<String, CityInfo> cities = new HashMap<>();
 
     private CitiesCountiesCSVFile() throws IOException {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(FILE_PATH);
@@ -30,7 +32,8 @@ public class CitiesCountiesCSVFile {
             String county = allLine[3];
             String population = allLine[4];
             String ranking = allLine[5];
-            cities.add(new CityInfo(name, state, county, population, ranking));
+            CityInfo cityInfo = new CityInfo(name, state, county, population, ranking);
+            if(!cities.containsKey(cityInfo.getKey())) cities.put(cityInfo.getKey(), cityInfo);
         }
     }
 
@@ -45,7 +48,7 @@ public class CitiesCountiesCSVFile {
         return citiesCountiesCSVFile;
     }
 
-    public List<CityInfo> getCities(){
+    public Map<String, CityInfo> getCities(){
         return cities;
     }
 }
