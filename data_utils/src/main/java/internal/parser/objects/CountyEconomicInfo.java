@@ -28,6 +28,10 @@ public class CountyEconomicInfo {
             }catch (Exception ignored) { }
         }
 
+        if(values.isEmpty()){
+            this.CAGR = 0;
+            return;
+        }
         double rate = (Math.pow(values.get(values.size() - 1) / values.get(0), (1.0 / values.size()))) - 1;
 
         this.CAGR = Math.round((rate * 100.0) * 100.00) / 100.00;

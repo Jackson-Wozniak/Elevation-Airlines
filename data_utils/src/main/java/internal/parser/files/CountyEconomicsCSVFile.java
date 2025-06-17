@@ -23,6 +23,7 @@ public class CountyEconomicsCSVFile {
         List<String[]> allLines = toArray(new BufferedReader(countyReader).lines().toList());
 
         for (String[] allLine : allLines) {
+            if(allLine[0].equalsIgnoreCase("Area")) continue;
             String county = allLine[0].replace("\"", "").trim();
             String state = allLine[1].replace("\"", "")
                     .replace("*", "").trim();

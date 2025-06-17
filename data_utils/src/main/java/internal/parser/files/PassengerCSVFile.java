@@ -29,6 +29,7 @@ public class PassengerCSVFile {
         List<String[]> allLines = toArray(new BufferedReader(passengerReader).lines().toList());
 
         for (String[] allLine : allLines) {
+            if(allLine[0].equalsIgnoreCase("Airport")) continue;
             StringBuilder passengerStr = new StringBuilder(allLine[1]);
             if(allLine.length > 2){
                 passengerStr = new StringBuilder();

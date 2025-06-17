@@ -29,6 +29,10 @@ public class AirportOutput {
         this.passengerCount = passengerCount;
     }
 
+    public String getSize(){
+        return this.size;
+    }
+
     @Override
     public String toString(){
         return this.code + "," +

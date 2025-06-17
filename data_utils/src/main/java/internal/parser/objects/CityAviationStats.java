@@ -50,7 +50,7 @@ public class CityAviationStats {
 
     public String getKey(){
         String key = this.city + "," + this.state;
-        key = key.replace(" ", "");
+        key = key.replace(" ", "").replace(".", "");
         return key;
     }
 

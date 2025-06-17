@@ -27,6 +27,7 @@ public class CitiesCountiesCSVFile {
         List<String[]> allLines = toArray(new BufferedReader(cityReader).lines().toList());
 
         for (String[] allLine : allLines) {
+            if(allLine[0].equalsIgnoreCase("City")) continue;
             String name = allLine[0];
             String state = allLine[1];
             String county = allLine[3];

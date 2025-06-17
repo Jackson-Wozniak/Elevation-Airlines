@@ -32,6 +32,7 @@ public class RunwayCSVFile {
 
         Map<String, ArrayList<RunwayInfo>> possibleRunways = new HashMap<>();
         for (String[] allLine : allLines) {
+            if(allLine[0].equalsIgnoreCase("Airport")) continue;
             String code = allLine[0];
             String runwayLengthStr = allLine[1];
             int runwayLength = CSVReaderUtils.safeIntegerParse(runwayLengthStr);

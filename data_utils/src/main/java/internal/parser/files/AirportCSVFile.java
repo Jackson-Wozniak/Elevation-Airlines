@@ -27,6 +27,7 @@ public class AirportCSVFile {
         List<String[]> allLines = toArray(new BufferedReader(airportReader).lines().toList());
 
         for (String[] allLine : allLines) {
+            if(allLine[0].equalsIgnoreCase("Code")) continue;
             String code = allLine[0];
             String size = allLine[1];
             String name = allLine[2];

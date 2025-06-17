@@ -24,6 +24,7 @@ public class CityAviationStatsCSVFile {
         List<String[]> allLines = toArray(new BufferedReader(cityReader).lines().toList());
 
         for (String[] allLine : allLines) {
+            if(allLine[1].equalsIgnoreCase("quarter")) continue;
             String year = allLine[0];
             String quarter = allLine[1];
             String city = allLine[2];

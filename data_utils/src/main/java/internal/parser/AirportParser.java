@@ -14,13 +14,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AirportParser {
     private static final String AIRPORTS_OUTPUT = "./data_utils/output/airports.csv";
     private static final String COUNTY_ECONOMICS_OUTPUT = "./data_utils/output/county_economics.csv";
+    private static final String CITY_INFO_OUTPUT = "./data_utils/output/city_info.csv";
 
     public static void main( String[] args ) throws IOException {
         Map<String, Integer> passengers = PassengerCSVFile.getInstance().getPassengersPerAirport();
         Map<String, Integer> runways = RunwayCSVFile.getInstance().getRunwaysPerAirport();
         List<AirportInfo> airports = AirportCSVFile.getInstance().getAirports();
-        Map<String, CityInfo> cityInfo = CitiesCountiesCSVFile.getInstance().getCities();
-        Map<String, Map<String, CityAviationStats>> cityAviationStats = CityAviationStatsCSVFile.getInstance().getCityStats();
 
         List<AirportOutput> validAirports = new ArrayList<>();
         airports.forEach(airport -> {
@@ -36,10 +35,10 @@ public class AirportParser {
 
             validAirports.add(new AirportOutput(airport, runways.get(airport.getCode()), passengerCount));
         });
-
         writeAirportsToOutput(validAirports);
 
         writeCountiesToOutput();
+        writeCitiesToOutput();
     }
 
     private static void writeAirportsToOutput(List<AirportOutput> airports){
@@ -62,6 +61,29 @@ public class AirportParser {
                 writer.write(county.toString());
             }
             System.out.println("County Economics written successfully to " + COUNTY_ECONOMICS_OUTPUT);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public static void writeCitiesToOutput() throws IOException {
+        Map<String, CityInfo> cityInfo = CitiesCountiesCSVFile.getInstance().getCities();
+        Map<String, Map<String, CityAviationStats>> cityAviationStats = CityAviationStatsCSVFile.getInstance().getCityStats();
+
+        try (FileWriter writer = new FileWriter(CITY_INFO_OUTPUT)) {
+            writer.write("City,State,County,Population,Ranking,Connected Markets," +
+                    "Q1 Passengers,Q2 Passengers,Q3 Passengers,Q4 Passengers,Passengers CAGR\n");
+            for(CityInfo city : cityInfo.values()){
+                Map<String, CityAviationStats> passengersByQuarter;
+                if(!cityAviationStats.containsKey(city.getKey())){
+                    passengersByQuarter = new HashMap<>();
+                }else{
+                    passengersByQuarter = cityAviationStats.get(city.getKey());
+                }
+                CityOutput output = CityOutput.create(city, passengersByQuarter);
+                writer.write(output.toString());
+            }
+            System.out.println("City Info written successfully to " + CITY_INFO_OUTPUT);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
