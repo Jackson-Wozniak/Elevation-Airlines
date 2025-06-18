@@ -4,7 +4,9 @@ import github.wozniak.flighttrackingservice.core.entity.Plane;
 import github.wozniak.flighttrackingservice.flight_management.entity.ScheduledRoute;
 import github.wozniak.flighttrackingservice.flight_management.repository.ScheduledRouteRepository;
 import github.wozniak.flighttrackingservice.core.service.PlaneService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -40,5 +42,11 @@ public class ScheduledRouteService {
         List<ScheduledRoute> routes = scheduledRouteRepository.findAll();
         if(routes.size() >= 15) return 0;
         return 15 - routes.size();
+    }
+
+    @Modifying
+    @Transactional
+    public void deleteAllRoutes(){
+        scheduledRouteRepository.deleteAll();
     }
 }

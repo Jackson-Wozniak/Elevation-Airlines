@@ -4,9 +4,10 @@ import github.wozniak.flighttrackingservice.core.entity.Airport;
 import github.wozniak.flighttrackingservice.core.model.PlaneModel;
 import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProperties;
 import github.wozniak.flighttrackingservice.core.service.AirportService;
-import github.wozniak.flighttrackingservice.flight_management.service.FlightService;
 import github.wozniak.flighttrackingservice.core.service.PlaneService;
 import github.wozniak.flighttrackingservice.core.utils.CSVReader;
+import github.wozniak.flighttrackingservice.flight_management.service.FlightService;
+import github.wozniak.flighttrackingservice.flight_management.service.ScheduledRouteService;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -20,28 +21,25 @@ import java.util.List;
 @Configuration
 @AllArgsConstructor
 @Order(1)
-public class FlightComponentConfig {
+public class AirportConfiguration {
 
-    private final PlaneService planeService;
     private final AirportService airportService;
     private final FlightService flightService;
-    private static final Logger logger = LoggerFactory.getLogger(FlightComponentConfig.class);
+    private final ScheduledRouteService scheduledRouteService;
+    private static final Logger logger = LoggerFactory.getLogger(AirportConfiguration.class);
 
     @PostConstruct
-    public void configureFlightComponents() throws IOException {
-        List<Airport> airports = CSVReader.readAllAirports();
-        List<PlaneModel> models = CSVReader.readAllPlaneModels();
-
-        if(airports.size() != airportService.airportCount() || ElevationAirlineProperties.FLEET_COUNT != planeService.planeCount()){
-            logger.info("Database inconsistency noted on startup. Recreating new flights");
+    public void configureAirports() throws IOException {
+        logger.info("DELETE DATA ON STARTUP MODE: " + ElevationAirlineProperties.DELETE_DATA_ON_STARTUP_MODE);
+        if(ElevationAirlineProperties.DELETE_DATA_ON_STARTUP_MODE){
             flightService.deleteAllFlights();
-            logger.info("Saving Default Planes");
-            planeService.deleteAllPlanes();
-            planeService.generateAndSavePlanes(models);
-
-            logger.info("Saving Default Airports");
+            scheduledRouteService.deleteAllRoutes();
             airportService.deleteAllAirports();
-            airportService.saveDefaultAirports(airports);
+
+            List<Airport> defaultAirports = CSVReader.readAllAirports();
+
+            logger.info("SAVING (" + defaultAirports.size() + ") AIRPORTS");
+            airportService.saveDefaultAirports(defaultAirports);
         }
     }
 }
