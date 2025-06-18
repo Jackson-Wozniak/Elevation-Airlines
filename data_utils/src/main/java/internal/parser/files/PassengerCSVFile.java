@@ -29,9 +29,16 @@ public class PassengerCSVFile {
         List<String[]> allLines = toArray(new BufferedReader(passengerReader).lines().toList());
 
         for (String[] allLine : allLines) {
+            if(allLine[0].equalsIgnoreCase("Airport")) continue;
+            StringBuilder passengerStr = new StringBuilder(allLine[1]);
+            if(allLine.length > 2){
+                passengerStr = new StringBuilder();
+                for(int i = 1; i < allLine.length; i++){
+                    passengerStr.append(allLine[i]);
+                }
+            }
             String code = allLine[0];
-            String passengerStr = allLine[2];
-            int passengers = CSVReaderUtils.safeIntegerParse(passengerStr);
+            int passengers = CSVReaderUtils.safeIntegerParse(passengerStr.toString());
 
             passengersPerAirport.put(code, passengers);
         }

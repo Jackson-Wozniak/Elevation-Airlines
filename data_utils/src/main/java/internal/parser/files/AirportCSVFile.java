@@ -27,6 +27,7 @@ public class AirportCSVFile {
         List<String[]> allLines = toArray(new BufferedReader(airportReader).lines().toList());
 
         for (String[] allLine : allLines) {
+            if(allLine[0].equalsIgnoreCase("Code")) continue;
             String code = allLine[0];
             String size = allLine[1];
             String name = allLine[2];
@@ -34,12 +35,16 @@ public class AirportCSVFile {
             String lon = allLine[4];
             String continent = allLine[5];
             String country = allLine[6];
-            airports.add(new AirportInfo(code, size, name, lat, lon, continent, country));
+            String region = allLine[8];
+            String regionCode = allLine[9];
+            String city = allLine[10];
+            String localCode = allLine[11];
+            airports.add(new AirportInfo(code, size, name, lat, lon, continent, country, region, regionCode, city, localCode));
         }
     }
 
     private static List<String[]> toArray(List<String> strings){
-        return strings.stream().map(str -> str.split(",")).toList();
+        return strings.stream().map(str -> str.split(",", -1)).toList();
     }
 
     public static AirportCSVFile getInstance() throws IOException {

@@ -22,7 +22,7 @@
 ## :books: Table of Contents
 
 <ol>
-    <li><a href="#features">Features</a></li>
+    <li><a href="#features">Overview & Current Undertakings</a></li>
     <li><a href="#tracking">Flight Tracking</a></li>
     <li><a href="#technologies">Technologies</a></li>
     <li><a href="#local-dev">Local Deployment</a></li>
@@ -32,22 +32,36 @@
 <br/> 
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-## 📓 Features & Overview <a id="features"></a>
+## 📓 Overview & Current Undertakings <a id="features"></a>
 An airline tracking system that generates flights to popular airports across the world. The airline used in this simulation is called Elevation Airlines, and is a fake airline. Route generation is largely random, and the flights each plane takes does not necessarily match the popular flights real airlines fly.
+
+I am currently in the process of transforming the way flight scheduling works. I have increased the number
+    of airports in the database by including smaller regional airports, and also added passenger data
+    for larger airports. Currently, the scheduling algorithm works by a point-to-point system, not
+    accounting for airport economics or passenger data, meaning that it is entirely randomized.
+    In transforming this algorithm, Elevation Airlines will include a hub-and-spoke style flight network,
+    and incorporate location and passenger count into the frequency of certain routes. Likewise, certain
+    planes (identified with callsigns) will fill certain popular routes, such as KJFK-KLAX. This frees
+    up the remainder of the fleet to fly through the hubs, much like a legacy airline would in real life.
+
+The details of the hubs is up for change, however it is likely that the system will generate multiply
+    'hub' airports, flying a plane to a destination, then flying back to the hub etc. This maximizes the realism
+    and economic feasibility of this scheduling system, and could be scaled up to include more comprehensive
+    passenger data in the future. Although this remains a project built for fun, the idea would be
+    for me to explore the philosophy of airline scheduling, to better understand the real-world process.
+
+Current passenger data remains limited, with only ~1000 airports (out of nearly 6500) including a
+    count of real-world visitors. This can be scaled up in the future to be more accurate, and
+    hone in the scheduling algorithm to focus on economic factors. Furthermore, this focus on
+    economics can also introduce features such as increasing fleet count, allowing me to
+    simulate the purchase of new planes and therefore more routes as the airline makes more money.
 
 <br>
 
 ## ✈️ Flight Tracking <a id="tracking"></a>
 Elevation airlines runs two categories of flights. Scheduled flights are those scheduled from the same airports each day, and run at the same time-of-day no matter what. These are round trip flights, meaning the plane will travel to and from each airport once a day. The second type of flight is random routes, which are scheduled once daily and all planes in the airlines fleet that do not have a scheduled route will fly to a random airport once a day. Departures are set based on the location of the plane at the time, meaning planes will follow a path and can only depart from their current location.
 
-Full API docs can be found <a href="https://github.com/Jackson-Wozniak/Airline-Reservation-System/blob/main/backend/flight-tracking-service/flight-tracking-documentation.md" />here</a>
-
-<br>
-
-## 🔌 Demo <a id="demo"></a>
-coming soon...
-
-<br>
+Full API docs can be found <a href="https://github.com/Jackson-Wozniak/Elevation-Airlines/blob/main/backend/flight-tracking-service/flight-tracking-documentation.md" />here</a>
 
 ## 📱 Technologies Used <a id="technologies"></a>
 
@@ -96,5 +110,13 @@ Airport and runway data is found from <a href="https://ourairports.com/data"/>ou
     After the data is cleaned in data_utils, I move the csv to the flight tracking service to be read by the config files in Spring Boot
 
 Passenger data is found from <a href="https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/cy23_all_enplanements">FAA.gov</a>
+
+More passenger data: https://www.bts.gov/browse-statistical-products-and-data/state-transportation-statistics/us-airline-traffic-airport
+
+https://catalog.data.gov/dataset/consumer-airfare-report-table-2-top-1000-city-pair-markets
+
+https://simplemaps.com/data/us-cities
+
+https://www.bea.gov/data/gdp/gdp-state
 
 The image used as the preview for this repo can be found <a href="https://wallpaperaccess.com/full/254381.jpg" />here </a>

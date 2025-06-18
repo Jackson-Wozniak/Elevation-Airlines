@@ -1,10 +1,11 @@
 package github.wozniak.flighttrackingservice.helper;
 
-import github.wozniak.flighttrackingservice.entity.Flight;
-import github.wozniak.flighttrackingservice.model.TimeTable;
-import github.wozniak.flighttrackingservice.service.FlightService;
-import github.wozniak.flighttrackingservice.service.PlaneService;
-import github.wozniak.flighttrackingservice.service.ScheduledRouteService;
+import github.wozniak.flighttrackingservice.flight_management.entity.Flight;
+import github.wozniak.flighttrackingservice.flight_management.helper.FlightCalendarCreator;
+import github.wozniak.flighttrackingservice.flight_management.model.TimeTable;
+import github.wozniak.flighttrackingservice.flight_management.service.FlightService;
+import github.wozniak.flighttrackingservice.core.service.PlaneService;
+import github.wozniak.flighttrackingservice.flight_management.service.ScheduledRouteService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

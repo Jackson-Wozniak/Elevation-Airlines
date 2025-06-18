@@ -1,5 +1,7 @@
 package internal.parser.objects;
 
+import internal.parser.utils.CSVReaderUtils;
+
 public class AirportOutput {
     private final String code;
     private final String size;
@@ -8,19 +10,32 @@ public class AirportOutput {
     private final String longitude;
     private final String continent;
     private final String country;
-    private final int passengers;
+    private final String region;
+    private final String city;
     private final int runwayLengthFt;
+    private final int passengerCount;
 
-    public AirportOutput(AirportInfo airportInfo, int passengers, int runwayLengthFt) {
+    public AirportOutput(AirportInfo airportInfo, int runwayLengthFt, int passengerCount) {
         this.code = airportInfo.getCode();
-        this.size = airportInfo.getSize();
+        this.size = mapSize(airportInfo.getSize());
         this.name = airportInfo.getName();
         this.latitude = airportInfo.getLatitude();
         this.longitude = airportInfo.getLongitude();
         this.continent = airportInfo.getContinent();
         this.country = airportInfo.getCountry();
-        this.passengers = passengers;
+        this.region = airportInfo.getRegion();
+        this.city = airportInfo.getCity();
         this.runwayLengthFt = runwayLengthFt;
+        this.passengerCount = passengerCount;
+    }
+
+    private static String mapSize(String size){
+        return switch (size.toLowerCase()){
+            case "small_airport" -> "SMALL";
+            case "medium_airport" -> "MEDIUM";
+            case "large_airport" -> "LARGE";
+            default -> "UNKNOWN";
+        };
     }
 
     @Override
@@ -30,9 +45,11 @@ public class AirportOutput {
                 this.name + "," +
                 this.latitude + "," +
                 this.longitude + "," +
-                this.continent + "," +
+                CSVReaderUtils.continentCodeToName(this.continent) + "," +
                 this.country + "," +
-                this.passengers + "," +
-                this.runwayLengthFt + "\n";
+                this.region + "," +
+                this.city + "," +
+                this.runwayLengthFt + "," +
+                this.passengerCount + "\n";
     }
 }
