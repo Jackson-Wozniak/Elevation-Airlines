@@ -64,9 +64,9 @@ public class CityOutput {
         long q3Avg = quarterAverage(q3.values());
         long q4Avg = quarterAverage(q4.values());
 
-        double totalCAGR = (quarterCAGR(q1) + quarterCAGR(q2) + quarterCAGR(q3) + quarterCAGR(q4)) / 4.0;
+        double totalCAGR = Math.round((quarterCAGR(q1) + quarterCAGR(q2) + quarterCAGR(q3)
+                + quarterCAGR(q4)) * 100.00) / 100.00;
 
-        if(totalCAGR > 0) System.out.println(totalCAGR);
         return new CityOutput(city.getName(), city.getState(), city.getCounty(),
                 city.getPopulation(), city.getRanking(), "0",
                 q1Avg, q2Avg,q3Avg,q4Avg, totalCAGR,0
@@ -92,13 +92,13 @@ public class CityOutput {
     }
 
     private static double quarterCAGR(Map<Integer, CityAviationStats> stats){
-        if(stats.size() < 2) return 0.0;
+        if(stats.keySet().size() < 2) return 0.0;
         long minYearPassengers = Long.parseLong(stats.get(Collections.min(stats.keySet())).getPassengerCount());
-        long maxYearPassengers = Long.parseLong(stats.get(Collections.min(stats.keySet())).getPassengerCount());
+        long maxYearPassengers = Long.parseLong(stats.get(Collections.max(stats.keySet())).getPassengerCount());
 
-        double rate = (Math.pow((double) maxYearPassengers / minYearPassengers, (1.0 / stats.size()))) - 1;
+        double rate = (Math.pow(((double) maxYearPassengers / minYearPassengers), (1.0 / stats.size()))) - 1;
 
-        return Math.round((rate * 100.0) * 100.00) / 100.00;
+        return rate * 100.0;
     }
 
     @Override
