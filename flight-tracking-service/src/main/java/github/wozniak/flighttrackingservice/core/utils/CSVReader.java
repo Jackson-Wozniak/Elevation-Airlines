@@ -35,10 +35,22 @@ public class CSVReader {
     }
 
     private static Airport mapAirportFromLine(String[] line){
-        return new Airport.Builder(line[0].trim(), line[2].trim())
-                .coordinates(Double.parseDouble(line[3]), Double.parseDouble(line[4]))
-                .location(line[5].trim(), line[6].trim())
-                .specs(safeIntegerParse(line[7]), safeIntegerParse(line[8]))
+        String code = line[0];
+        String size = line[1];
+        String name = line[2];
+        double latitude = Double.parseDouble(line[3]);
+        double longitude = Double.parseDouble(line[4]);
+        String continent = line[5];
+        String country = line[6];
+        String state = line[7];
+        String city = line[8];
+        int runwayLengthFt = safeIntegerParse(line[9]);
+        int passengersPerYear = safeIntegerParse(line[10]);
+
+        return new Airport.Builder(code, name, size)
+                .coordinates(latitude, longitude)
+                .location(continent, country, state, city)
+                .specs(passengersPerYear, runwayLengthFt)
                 .build();
     }
 

@@ -17,7 +17,7 @@ public class AirportOutput {
 
     public AirportOutput(AirportInfo airportInfo, int runwayLengthFt, int passengerCount) {
         this.code = airportInfo.getCode();
-        this.size = airportInfo.getSize();
+        this.size = mapSize(airportInfo.getSize());
         this.name = airportInfo.getName();
         this.latitude = airportInfo.getLatitude();
         this.longitude = airportInfo.getLongitude();
@@ -29,8 +29,13 @@ public class AirportOutput {
         this.passengerCount = passengerCount;
     }
 
-    public String getSize(){
-        return this.size;
+    private static String mapSize(String size){
+        return switch (size.toLowerCase()){
+            case "small_airport" -> "SMALL";
+            case "medium_airport" -> "MEDIUM";
+            case "large_airport" -> "LARGE";
+            default -> "UNKNOWN";
+        };
     }
 
     @Override

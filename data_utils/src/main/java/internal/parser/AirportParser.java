@@ -43,7 +43,7 @@ public class AirportParser {
 
     private static void writeAirportsToOutput(List<AirportOutput> airports){
         try (FileWriter writer = new FileWriter(AIRPORTS_OUTPUT)) {
-            writer.write("Code,Size,Name,Latitude,Longitude,Continent,Country,Region,City,Runway Length (FT),Passengers-Per-Year\n");
+            //writer.write("Code,Size,Name,Latitude,Longitude,Continent,Country,Region,City,Runway Length (FT),Passengers-Per-Year\n");
             for(AirportOutput airport : airports){
                 writer.write(airport.toString());
             }
@@ -56,7 +56,7 @@ public class AirportParser {
     public static void writeCountiesToOutput() throws IOException {
         Map<String, CountyEconomicInfo> countyEconomicInfo = CountyEconomicsCSVFile.getInstance().getCounties();
         try (FileWriter writer = new FileWriter(COUNTY_ECONOMICS_OUTPUT)) {
-            writer.write("County, State, GDP ($), CAGR %\n");
+            //writer.write("County, State, GDP ($), CAGR %\n");
             for(CountyEconomicInfo county : countyEconomicInfo.values()){
                 writer.write(county.toString());
             }
@@ -71,8 +71,8 @@ public class AirportParser {
         Map<String, Map<String, CityAviationStats>> cityAviationStats = CityAviationStatsCSVFile.getInstance().getCityStats();
 
         try (FileWriter writer = new FileWriter(CITY_INFO_OUTPUT)) {
-            writer.write("City,State,County,Population,Ranking,Connected Markets," +
-                    "Q1 Passengers,Q2 Passengers,Q3 Passengers,Q4 Passengers,Passengers CAGR\n");
+            /*writer.write("City,State,County,Population,Ranking,Connected Markets," +
+                    "Q1 Passengers,Q2 Passengers,Q3 Passengers,Q4 Passengers,Passengers CAGR\n");*/
             for(CityInfo city : cityInfo.values()){
                 Map<String, CityAviationStats> passengersByQuarter;
                 if(!cityAviationStats.containsKey(city.getKey())){
