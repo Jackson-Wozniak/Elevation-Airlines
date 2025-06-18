@@ -51,8 +51,8 @@ public class Route {
     }
 
     private double getFlightHours(Plane plane){
-        if(plane.getCruisingSpeedKnots() == 0) throw new RuntimeException("Plane must have positive cruise speed");
-        double time = this.flightDistanceMiles / knotsToMPH(plane.getCruisingSpeedKnots());
+        if(plane.getModel().getCruisingSpeedKnots() == 0) throw new RuntimeException("Plane must have positive cruise speed");
+        double time = this.flightDistanceMiles / knotsToMPH(plane.getModel().getCruisingSpeedKnots());
         return Double.parseDouble(String.format("%.02f", time));
     }
 

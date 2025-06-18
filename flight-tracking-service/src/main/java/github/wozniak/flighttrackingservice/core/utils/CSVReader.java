@@ -1,7 +1,8 @@
 package github.wozniak.flighttrackingservice.core.utils;
 
 import github.wozniak.flighttrackingservice.core.entity.Airport;
-import github.wozniak.flighttrackingservice.core.model.PlaneModel;
+import github.wozniak.flighttrackingservice.core.entity.PlaneModel;
+import github.wozniak.flighttrackingservice.core.enums.ModelType;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.BufferedReader;
@@ -64,6 +65,11 @@ public class CSVReader {
     }
 
     private static PlaneModel mapPlanesFromLine(String[] line){
-        return new PlaneModel(line[0], 0, 0, Integer.parseInt(line[1]), Integer.parseInt(line[2]));
+        String make = line[0].split(" ")[0];
+        String model = line[0].split(" ")[1];
+        int cruiseSpeed = Integer.parseInt(line[1]);
+        int range = Integer.parseInt(line[2]);
+        ModelType type = ModelType.valueOf(line[3].toUpperCase());
+        return new PlaneModel.Builder(make, model, type).stats(cruiseSpeed, range).build();
     }
 }
