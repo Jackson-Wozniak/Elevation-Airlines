@@ -14,6 +14,10 @@ import java.util.List;
 public class CityService {
     private final CityRepository cityRepository;
 
+    public List<City> findAllCities(){
+        return cityRepository.findAll();
+    }
+
     public void saveDefaultCities(List<City> cities){
         cityRepository.saveAll(cities);
     }

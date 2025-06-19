@@ -2,10 +2,14 @@ package github.wozniak.flighttrackingservice.economics.entity;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name = "city")
 @Table(name = "cities")
+@Getter
+@Setter
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class City {

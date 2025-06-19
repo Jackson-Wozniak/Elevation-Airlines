@@ -14,6 +14,10 @@ import java.util.List;
 public class CountyService {
     private final CountyRepository countyRepository;
 
+    public List<County> findAllCounties(){
+        return countyRepository.findAll();
+    }
+
     public List<County> saveDefaultCounties(List<County> counties){
         return countyRepository.saveAll(counties);
     }
