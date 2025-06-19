@@ -1,9 +1,18 @@
 package github.wozniak.flighttrackingservice.core.configuration;
 
+import github.wozniak.flighttrackingservice.airline_management.fleet_manager.configuration.FleetConfiguration;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.configuration.FlightManagerConfiguration;
+import github.wozniak.flighttrackingservice.core.data.CSVReader;
+import github.wozniak.flighttrackingservice.core.entity.PlaneModel;
+import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProperties;
+import github.wozniak.flighttrackingservice.economics.configuration.EconomicsConfiguration;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+
+import java.io.IOException;
+import java.util.List;
 
 /*
 TODO:
@@ -14,10 +23,13 @@ TODO:
 @AllArgsConstructor
 @Order(3)
 public class ElevationAirlinesConfig {
+    private final FleetConfiguration fleetConfiguration;
+    private final FlightManagerConfiguration flightManagerConfiguration;
+    private final EconomicsConfiguration economicsConfiguration;
 
     @PostConstruct
-    public void configureOnStartup(){
-
+    public void configureOnStartup() throws IOException {
+        economicsConfiguration.configure();
     }
     /*
     private final ScheduledRouteService scheduledRouteService;
