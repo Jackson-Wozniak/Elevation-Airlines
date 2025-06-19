@@ -1,10 +1,10 @@
 package github.wozniak.flighttrackingservice.core.utils;
 
-import github.wozniak.flighttrackingservice.flight_management.dto.FlightDTO;
-import github.wozniak.flighttrackingservice.flight_management.dto.FlightSummaryDTO;
-import github.wozniak.flighttrackingservice.flight_management.dto.TimeTableDTO;
-import github.wozniak.flighttrackingservice.flight_management.entity.Flight;
-import github.wozniak.flighttrackingservice.flight_management.model.TimeTable;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.dto.FlightDTO;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.dto.FlightSummaryDTO;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.dto.TimeTableDTO;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.entity.Flight;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.model.TimeTable;
 
 import java.util.List;
 

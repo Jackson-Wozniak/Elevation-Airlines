@@ -5,8 +5,8 @@ import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProp
 import github.wozniak.flighttrackingservice.core.service.AirportService;
 import github.wozniak.flighttrackingservice.core.service.PlaneModelService;
 import github.wozniak.flighttrackingservice.core.utils.CSVReader;
-import github.wozniak.flighttrackingservice.flight_management.service.FlightService;
-import github.wozniak.flighttrackingservice.flight_management.service.ScheduledRouteService;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.FlightService;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.ScheduledRouteService;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;

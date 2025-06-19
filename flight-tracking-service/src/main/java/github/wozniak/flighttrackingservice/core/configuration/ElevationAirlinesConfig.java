@@ -1,5 +1,6 @@
 package github.wozniak.flighttrackingservice.core.configuration;
 
+import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -13,6 +14,11 @@ TODO:
 @AllArgsConstructor
 @Order(3)
 public class ElevationAirlinesConfig {
+
+    @PostConstruct
+    public void configureOnStartup(){
+
+    }
     /*
     private final ScheduledRouteService scheduledRouteService;
     private final RouteGenerator routeGenerator;

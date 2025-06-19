@@ -1,5 +1,6 @@
 package github.wozniak.flighttrackingservice.core.exception;
 
+import github.wozniak.flighttrackingservice.airline_management.fleet_manager.exceptions.PlaneNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

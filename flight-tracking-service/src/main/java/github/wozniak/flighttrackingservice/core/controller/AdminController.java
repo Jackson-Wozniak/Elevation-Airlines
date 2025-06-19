@@ -1,6 +1,8 @@
 package github.wozniak.flighttrackingservice.core.controller;
 
+import github.wozniak.flighttrackingservice.core.dto.AirportDTO;
 import github.wozniak.flighttrackingservice.core.dto.PlaneModelDTO;
+import github.wozniak.flighttrackingservice.core.service.AirportService;
 import github.wozniak.flighttrackingservice.core.service.PlaneModelService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +18,15 @@ import java.util.List;
 public class AdminController {
 
     private final PlaneModelService planeModelService;
+    private final AirportService airportService;
 
     @GetMapping(value = "/models")
     public ResponseEntity<List<PlaneModelDTO>> getPlaneModels(){
         return ResponseEntity.ok(PlaneModelDTO.fromList(planeModelService.findAllModels()));
+    }
+    
+    @GetMapping(value = "/airports")
+    public ResponseEntity<List<AirportDTO>> getAirports(){
+        return ResponseEntity.ok(AirportDTO.fromList(airportService.findAllAirports()));
     }
 }
