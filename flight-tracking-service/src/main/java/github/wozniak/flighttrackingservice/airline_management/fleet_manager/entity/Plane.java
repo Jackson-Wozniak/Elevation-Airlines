@@ -1,6 +1,6 @@
 package github.wozniak.flighttrackingservice.airline_management.fleet_manager.entity;
 
-import github.wozniak.flighttrackingservice.core.entity.PlaneModel;
+import github.wozniak.flighttrackingservice.core.entity.Aircraft;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,10 +18,10 @@ public class Plane {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "model_name", nullable = false)
-    private PlaneModel model;
+    private Aircraft model;
 
-    public Plane(String callSign, PlaneModel planeModel){
+    public Plane(String callSign, Aircraft aircraft){
         this.callSign = callSign;
-        this.model = planeModel;
+        this.model = aircraft;
     }
 }

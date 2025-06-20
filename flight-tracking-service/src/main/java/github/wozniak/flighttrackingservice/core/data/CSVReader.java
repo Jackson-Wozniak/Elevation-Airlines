@@ -1,7 +1,7 @@
 package github.wozniak.flighttrackingservice.core.data;
 
 import github.wozniak.flighttrackingservice.core.entity.Airport;
-import github.wozniak.flighttrackingservice.core.entity.PlaneModel;
+import github.wozniak.flighttrackingservice.core.entity.Aircraft;
 import github.wozniak.flighttrackingservice.economics.entity.City;
 import github.wozniak.flighttrackingservice.economics.entity.County;
 
@@ -49,7 +49,7 @@ public abstract class CSVReader<T> {
         return AirportReader.getInstance().read();
     }
 
-    public static List<PlaneModel> planeModels() throws IOException{
+    public static List<Aircraft> planeModels() throws IOException{
         return PlaneModelReader.getInstance().read();
     }
 

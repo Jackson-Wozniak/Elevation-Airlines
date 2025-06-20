@@ -4,7 +4,7 @@ import github.wozniak.flighttrackingservice.core.data.CSVReader;
 import github.wozniak.flighttrackingservice.core.entity.Airport;
 import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProperties;
 import github.wozniak.flighttrackingservice.core.service.AirportService;
-import github.wozniak.flighttrackingservice.core.service.PlaneModelService;
+import github.wozniak.flighttrackingservice.core.service.AircraftService;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.FlightService;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.ScheduledRouteService;
 import github.wozniak.flighttrackingservice.economics.service.CityService;
@@ -27,7 +27,7 @@ public class AirportConfiguration {
     private final AirportService airportService;
     private final FlightService flightService;
     private final ScheduledRouteService scheduledRouteService;
-    private final PlaneModelService planeModelService;
+    private final AircraftService aircraftService;
     private final CityService cityService;
     private final CountyService countyService;
     private static final Logger logger = LoggerFactory.getLogger(AirportConfiguration.class);
@@ -36,7 +36,7 @@ public class AirportConfiguration {
     public void configureAirports() throws IOException {
         logger.info("DELETE DATA ON STARTUP MODE: " + ElevationAirlineProperties.DELETE_DATA_ON_STARTUP_MODE);
         if(ElevationAirlineProperties.DELETE_DATA_ON_STARTUP_MODE){
-            planeModelService.deleteAllModels();
+            aircraftService.deleteAllAircraft();
             flightService.deleteAllFlights();
             scheduledRouteService.deleteAllRoutes();
             airportService.deleteAllAirports();

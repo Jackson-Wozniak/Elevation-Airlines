@@ -1,7 +1,6 @@
 package github.wozniak.flighttrackingservice.economics.configuration;
 
 import github.wozniak.flighttrackingservice.core.data.CSVReader;
-import github.wozniak.flighttrackingservice.core.entity.PlaneModel;
 import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProperties;
 import github.wozniak.flighttrackingservice.economics.entity.City;
 import github.wozniak.flighttrackingservice.economics.entity.County;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Configuration
 @AllArgsConstructor
