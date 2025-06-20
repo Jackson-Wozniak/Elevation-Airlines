@@ -18,9 +18,9 @@ public class PlaneDTO {
 
     public PlaneDTO(Plane plane){
         this.callSign = plane.getCallSign();
-        this.model = plane.getModel().getName();
-        this.seatCapacity = plane.getModel().getSeatingCapacity();
-        this.speedKnots = plane.getModel().getCruisingSpeedKnots();
-        this.rangeMiles = plane.getModel().getRangeMiles();
+        this.model = plane.getAircraft().getName();
+        this.seatCapacity = plane.getAircraft().getSeatingCapacity();
+        this.speedKnots = plane.getAircraft().getCruisingSpeedKnots();
+        this.rangeMiles = plane.getAircraft().getRangeMiles();
     }
 }
