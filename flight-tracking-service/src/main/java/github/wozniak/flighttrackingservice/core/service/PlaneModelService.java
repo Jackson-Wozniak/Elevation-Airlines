@@ -1,6 +1,6 @@
 package github.wozniak.flighttrackingservice.core.service;
 
-import github.wozniak.flighttrackingservice.core.entity.PlaneModel;
+import github.wozniak.flighttrackingservice.core.entity.Aircraft;
 import github.wozniak.flighttrackingservice.core.repository.PlaneModelRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -20,11 +20,11 @@ public class PlaneModelService {
         planeModelRepository.deleteAll();
     }
 
-    public void saveDefaultModels(List<PlaneModel> models){
+    public void saveDefaultModels(List<Aircraft> models){
         planeModelRepository.saveAll(models);
     }
 
-    public List<PlaneModel> findAllModels(){
+    public List<Aircraft> findAllModels(){
         return planeModelRepository.findAll();
     }
 }

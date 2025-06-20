@@ -1,17 +1,17 @@
 package github.wozniak.flighttrackingservice.core.entity;
 
-import github.wozniak.flighttrackingservice.core.enums.ModelType;
+import github.wozniak.flighttrackingservice.core.enums.AircraftCategory;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity(name = "planeModel")
-@Table(name = "plane_models")
+@Entity(name = "aircraft")
+@Table(name = "aircrafts")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class PlaneModel {
+public class Aircraft {
     @Id
     @Column(name = "name")
     @EqualsAndHashCode.Include
@@ -24,7 +24,8 @@ public class PlaneModel {
     private String model;
 
     @Enumerated(EnumType.STRING)
-    private ModelType type;
+    @Column(name = "aircraft_category")
+    private AircraftCategory aircraftCategory;
 
     @Column(name = "seating_capacity")
     private Integer seatingCapacity;
@@ -35,11 +36,11 @@ public class PlaneModel {
     @Column(name = "range_miles")
     private Integer rangeMiles;
 
-    public PlaneModel(Builder builder){
+    public Aircraft(Builder builder){
         this.name = builder.make + " " + builder.model;
         this.make = builder.make;
         this.model = builder.model;
-        this.type = builder.type;
+        this.aircraftCategory = builder.type;
         this.seatingCapacity = builder.seats;
         this.cruisingSpeedKnots = builder.cruiseSpeed;
         this.rangeMiles = builder.range;
@@ -48,12 +49,12 @@ public class PlaneModel {
     public static class Builder{
         private final String make;
         private final String model;
-        private final ModelType type;
+        private final AircraftCategory type;
         private int seats;
         private int cruiseSpeed;
         private int range;
 
-        public Builder(String make, String model, ModelType type){
+        public Builder(String make, String model, AircraftCategory type){
             this.make = make;
             this.model = model;
             this.type = type;
@@ -73,8 +74,8 @@ public class PlaneModel {
             return this;
         }
 
-        public PlaneModel build(){
-            return new PlaneModel(this);
+        public Aircraft build(){
+            return new Aircraft(this);
         }
     }
 }

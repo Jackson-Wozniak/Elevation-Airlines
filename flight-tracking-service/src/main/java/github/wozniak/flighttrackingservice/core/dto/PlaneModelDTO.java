@@ -1,10 +1,6 @@
 package github.wozniak.flighttrackingservice.core.dto;
 
-import github.wozniak.flighttrackingservice.core.entity.PlaneModel;
-import github.wozniak.flighttrackingservice.core.enums.ModelType;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import github.wozniak.flighttrackingservice.core.entity.Aircraft;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,7 +16,7 @@ public class PlaneModelDTO {
     private Integer cruisingSpeedKnots;
     private Integer rangeMiles;
 
-    public PlaneModelDTO(PlaneModel model){
+    public PlaneModelDTO(Aircraft model){
         this.make = model.getMake();
         this.model = model.getModel();
         this.type = model.getType().toString();
@@ -29,7 +25,7 @@ public class PlaneModelDTO {
         this.rangeMiles = model.getRangeMiles();
     }
 
-    public static List<PlaneModelDTO> fromList(List<PlaneModel> models){
+    public static List<PlaneModelDTO> fromList(List<Aircraft> models){
         return models.stream().map(PlaneModelDTO::new).toList();
     }
 }
