@@ -1,8 +1,8 @@
 package github.wozniak.flighttrackingservice.entity;
 
 import github.wozniak.flighttrackingservice.core.entity.Airport;
-import github.wozniak.flighttrackingservice.core.entity.Plane;
-import github.wozniak.flighttrackingservice.flight_management.entity.Route;
+import github.wozniak.flighttrackingservice.airline_management.fleet_manager.entity.Plane;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.entity.Route;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

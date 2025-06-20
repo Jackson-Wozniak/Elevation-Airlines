@@ -1,9 +1,9 @@
 package github.wozniak.flighttrackingservice.helper;
 
-import github.wozniak.flighttrackingservice.core.entity.Plane;
-import github.wozniak.flighttrackingservice.flight_management.entity.Route;
+import github.wozniak.flighttrackingservice.airline_management.fleet_manager.entity.Plane;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.entity.Route;
 import github.wozniak.flighttrackingservice.core.exception.RouteGeneratorException;
-import github.wozniak.flighttrackingservice.flight_management.helper.RouteGenerator;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.helper.RouteGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

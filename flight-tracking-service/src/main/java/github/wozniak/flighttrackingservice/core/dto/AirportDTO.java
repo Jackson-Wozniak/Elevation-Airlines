@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,5 +26,9 @@ public class AirportDTO {
         this.longitude = airport.getLongitude();
         this.continent = airport.getContinent();
         this.country = airport.getCountry();
+    }
+
+    public static List<AirportDTO> fromList(List<Airport> airports){
+        return airports.stream().map(AirportDTO::new).toList();
     }
 }
