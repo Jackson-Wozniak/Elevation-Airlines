@@ -42,4 +42,8 @@ public class PlaneService {
         planes.removeAll(usedPlanes);
         return planes;
     }
+
+    public int savePlanes(List<Plane> planes){
+        return planeRepository.saveAll(planes).size();
+    }
 }
