@@ -6,6 +6,7 @@ import github.wozniak.flighttrackingservice.economics.configuration.EconomicsCon
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.annotation.Order;
 
 import java.io.IOException;
@@ -18,6 +19,7 @@ TODO:
 @Configuration
 @AllArgsConstructor
 @Order(3)
+@DependsOn({"airportConfiguration","aircraftConfiguration"})
 public class ElevationAirlinesConfig {
     private final FleetConfiguration fleetConfiguration;
     private final FlightManagerConfiguration flightManagerConfiguration;

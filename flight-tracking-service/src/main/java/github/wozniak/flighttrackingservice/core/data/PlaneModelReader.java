@@ -23,15 +23,21 @@ class PlaneModelReader extends CSVReader<Aircraft> {
         InputStreamReader streamReader = new InputStreamReader(resource.getInputStream());
 
         List<String[]> allLines = toArray(new BufferedReader(streamReader).lines().toList());
-        return allLines.stream().map(this::mapPlanesFromLine).toList();
+        return allLines.stream().map(this::mapPlanesFromLine)
+                .filter(aircraft -> !aircraft.getMake().contains("#")).toList();
     }
 
     private Aircraft mapPlanesFromLine(String[] line){
-        String make = line[0].split(" ")[0];
-        String model = line[0].split(" ")[1];
-        int cruiseSpeed = safeIntegerParse(line[1]);
-        int range = safeIntegerParse(line[2]);
-        AircraftCategory type = AircraftCategory.valueOf(line[3].toUpperCase());
-        return new Aircraft.Builder(make, model, type).stats(cruiseSpeed, range).build();
+        String make = line[0];
+        String model = line[1];
+        int cruiseSpeed = safeIntegerParse(line[2]);
+        int range = safeIntegerParse(line[3]);
+        int seats = safeIntegerParse(line[4]);
+        AircraftCategory type = AircraftCategory.fromString(line[5]);
+
+        return new Aircraft.Builder(make, model, type)
+                .seating(seats)
+                .stats(cruiseSpeed, range)
+                .build();
     }
 }

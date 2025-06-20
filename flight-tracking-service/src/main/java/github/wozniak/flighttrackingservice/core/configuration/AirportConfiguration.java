@@ -36,7 +36,7 @@ public class AirportConfiguration {
     public void configureAirports() throws IOException {
         logger.info("DELETE DATA ON STARTUP MODE: " + ElevationAirlineProperties.DELETE_DATA_ON_STARTUP_MODE);
         if(ElevationAirlineProperties.DELETE_DATA_ON_STARTUP_MODE){
-            aircraftService.deleteAllModels();
+            aircraftService.deleteAllAircraft();
             flightService.deleteAllFlights();
             scheduledRouteService.deleteAllRoutes();
             airportService.deleteAllAirports();

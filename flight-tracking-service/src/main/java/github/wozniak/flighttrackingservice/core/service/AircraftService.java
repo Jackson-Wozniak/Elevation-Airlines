@@ -16,15 +16,15 @@ public class AircraftService {
 
     @Modifying
     @Transactional
-    public void deleteAllModels(){
+    public void deleteAllAircraft(){
         aircraftRepository.deleteAll();
     }
 
-    public void saveDefaultModels(List<Aircraft> models){
+    public void saveDefaultAircraft(List<Aircraft> models){
         aircraftRepository.saveAll(models);
     }
 
-    public List<Aircraft> findAllModels(){
+    public List<Aircraft> findAllAircraft(){
         return aircraftRepository.findAll();
     }
 }
