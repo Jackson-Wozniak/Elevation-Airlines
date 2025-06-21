@@ -21,9 +21,9 @@ public class Edge  {
     }
 
     public String toString(){
-        return format(this.getFlight().getTakeOffDateTime())
+        return format(this.getFlight().getScheduledBoardingTime())
                 + " : " + this.getFlight().getRoute().getDepartureAirport().getIcaoCode() + "->" + this.getFlight().getRoute().getDestinationAirport().getIcaoCode()
-                + " : " + format(this.getFlight().getLandingDateTime());
+                + " : " + format(this.getFlight().getScheduledLandingTime());
     }
 
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd HH:mm");

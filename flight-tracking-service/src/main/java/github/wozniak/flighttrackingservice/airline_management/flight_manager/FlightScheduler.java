@@ -34,8 +34,8 @@ public class FlightScheduler {
         LocalDate oneWeek = LocalDate.now().plusDays(7);
         if(flightCalendarCreator.isDayMissing(oneWeek)){
             logger.info("Generating time table for " + DateTimeUtils.format(oneWeek));
-            flightService.saveFlights(flightCalendarCreator.createDaysTimeTable(
-                    oneWeek, scheduledRouteService.findDailySchedule()).getFlightsToday());
+//            flightService.saveFlights(flightCalendarCreator.createDaysTimeTable(
+//                    oneWeek, scheduledRouteService.findDailySchedule()).getFlightsToday());
         }
         flightService.deletePastFlights();
     }
