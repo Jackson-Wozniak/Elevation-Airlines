@@ -5,15 +5,19 @@ import github.wozniak.flighttrackingservice.airline_management.network_planner.e
 import github.wozniak.flighttrackingservice.core.enums.TimeOfDay;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name = "servicedRoute")
 @Table(name = "serviced_routes")
+@Getter
+@Setter
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class ServicedRoute {
     @Id
-    public String id;
+    private String id;
 
     @Column(name = "flights_per_day")
     private Integer flightsPerInterval;
@@ -40,5 +44,10 @@ public class ServicedRoute {
         this.timeOfDay = time;
         this.route = route;
         this.timesFlown = 0L;
+    }
+
+    public long incrementFlightsFlown(){
+        this.timesFlown++;
+        return this.timesFlown;
     }
 }

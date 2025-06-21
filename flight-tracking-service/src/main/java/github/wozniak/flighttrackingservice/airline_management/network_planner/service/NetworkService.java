@@ -27,11 +27,7 @@ public class NetworkService {
         throw new RuntimeException("Use findPrimaryHubs(), 1 hub total");
     }
 
-    public List<ServicedRoute> findAllServicedRoutes(){
-        return servicedRouteRepository.findAll();
-    }
-
     public long servicedRouteFlown(Flight flight){
-
+        return servicedRouteService.incrementServicedRoute(flight);
     }
 }
