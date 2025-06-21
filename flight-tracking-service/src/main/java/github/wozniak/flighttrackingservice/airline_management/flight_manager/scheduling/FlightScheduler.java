@@ -1,9 +1,8 @@
-package github.wozniak.flighttrackingservice.airline_management.flight_manager;
+package github.wozniak.flighttrackingservice.airline_management.flight_manager.scheduling;
 
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.helper.FlightCalendarCreator;
+import github.wozniak.flighttrackingservice.airline_management.flight_manager.helpers.FlightCalendarCreator;
 import github.wozniak.flighttrackingservice.core.properties.SchedulingProperties;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.FlightService;
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.ScheduledRouteService;
 import github.wozniak.flighttrackingservice.core.utils.DateTimeUtils;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -21,7 +20,6 @@ public class FlightScheduler {
 
     private final FlightCalendarCreator flightCalendarCreator;
     private final FlightService flightService;
-    private final ScheduledRouteService scheduledRouteService;
     private static final Logger logger = LoggerFactory.getLogger(FlightScheduler.class);
 
     /*

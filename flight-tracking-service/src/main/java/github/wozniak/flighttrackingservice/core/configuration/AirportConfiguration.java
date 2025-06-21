@@ -7,7 +7,6 @@ import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProp
 import github.wozniak.flighttrackingservice.core.service.AirportService;
 import github.wozniak.flighttrackingservice.core.service.AircraftService;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.FlightService;
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.ScheduledRouteService;
 import github.wozniak.flighttrackingservice.economics.service.CityService;
 import github.wozniak.flighttrackingservice.economics.service.CountyService;
 import jakarta.annotation.PostConstruct;
@@ -27,7 +26,6 @@ public class AirportConfiguration {
 
     private final AirportService airportService;
     private final FlightService flightService;
-    private final ScheduledRouteService scheduledRouteService;
     private final AircraftService aircraftService;
     private final CityService cityService;
     private final CountyService countyService;
@@ -41,7 +39,6 @@ public class AirportConfiguration {
             fleetService.deleteFleet();
             aircraftService.deleteAllAircraft();
             flightService.deleteAllFlights();
-            scheduledRouteService.deleteAllRoutes();
             airportService.deleteAllAirports();
             cityService.deleteAllCities();
             countyService.deleteAllCounties();

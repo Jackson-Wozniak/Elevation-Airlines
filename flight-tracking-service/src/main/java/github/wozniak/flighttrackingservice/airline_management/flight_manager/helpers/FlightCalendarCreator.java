@@ -1,20 +1,12 @@
-package github.wozniak.flighttrackingservice.airline_management.flight_manager.helper;
+package github.wozniak.flighttrackingservice.airline_management.flight_manager.helpers;
 
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.entity.Flight;
-import github.wozniak.flighttrackingservice.airline_management.fleet_manager.entity.Plane;
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.entity.Route;
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.entity.ScheduledRoute;
-import github.wozniak.flighttrackingservice.core.exception.FlightNotFoundException;
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.model.TimeTable;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.FlightService;
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.service.PlaneService;
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.ScheduledRouteService;
 import github.wozniak.flighttrackingservice.core.utils.DateTimeUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -27,7 +19,6 @@ public class FlightCalendarCreator {
     private final RouteGenerator routeGenerator;
     private final PlaneService planeService;
     private final FlightService flightService;
-    private final ScheduledRouteService scheduledRouteService;
 
     public boolean isDayMissing(LocalDate date){
         Set<LocalDate> dates = flightService.findAllFlights().stream()

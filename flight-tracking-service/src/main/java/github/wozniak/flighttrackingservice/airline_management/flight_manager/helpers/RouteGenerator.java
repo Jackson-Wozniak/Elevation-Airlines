@@ -1,4 +1,4 @@
-package github.wozniak.flighttrackingservice.airline_management.flight_manager.helper;
+package github.wozniak.flighttrackingservice.airline_management.flight_manager.helpers;
 
 import github.wozniak.flighttrackingservice.core.entity.Airport;
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.entity.Plane;

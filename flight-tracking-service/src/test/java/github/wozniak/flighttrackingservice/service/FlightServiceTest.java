@@ -4,7 +4,6 @@ import github.wozniak.flighttrackingservice.core.service.AirportService;
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.service.PlaneService;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.entity.Flight;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.FlightService;
-import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.ScheduledRouteService;
 import github.wozniak.flighttrackingservice.core.utils.DateTimeUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
