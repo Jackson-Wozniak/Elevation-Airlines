@@ -45,4 +45,8 @@ public class FleetService {
         }
         return planeService.savePlanes(fleet.values().stream().toList());
     }
+
+    public void deleteFleet(){
+        planeService.deleteAllPlanes();
+    }
 }

@@ -2,9 +2,9 @@ package github.wozniak.flighttrackingservice.core.service;
 
 import github.wozniak.flighttrackingservice.core.entity.Aircraft;
 import github.wozniak.flighttrackingservice.core.repository.AircraftRepository;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -8,9 +8,9 @@ import github.wozniak.flighttrackingservice.airline_management.flight_manager.re
 import github.wozniak.flighttrackingservice.core.service.AirportService;
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.service.PlaneService;
 import github.wozniak.flighttrackingservice.core.utils.DateTimeUtils;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

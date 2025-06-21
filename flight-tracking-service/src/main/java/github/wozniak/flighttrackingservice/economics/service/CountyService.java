@@ -2,9 +2,9 @@ package github.wozniak.flighttrackingservice.economics.service;
 
 import github.wozniak.flighttrackingservice.economics.entity.County;
 import github.wozniak.flighttrackingservice.economics.repository.CountyRepository;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
