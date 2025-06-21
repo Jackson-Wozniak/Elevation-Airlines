@@ -3,9 +3,9 @@ package github.wozniak.flighttrackingservice.airline_management.fleet_manager.se
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.entity.Plane;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.service.FlightService;
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.repository.PlaneRepository;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,5 +41,9 @@ public class PlaneService {
         List<Plane> planes = planeRepository.findAll();
         planes.removeAll(usedPlanes);
         return planes;
+    }
+
+    public int savePlanes(List<Plane> planes){
+        return planeRepository.saveAll(planes).size();
     }
 }

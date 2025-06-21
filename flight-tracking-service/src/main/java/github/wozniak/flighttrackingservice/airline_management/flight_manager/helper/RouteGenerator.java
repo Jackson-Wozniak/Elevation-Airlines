@@ -45,7 +45,7 @@ public class RouteGenerator {
             Airport destination = airports.get(random.nextInt(airports.size()));
 
             Route route = new Route(departure, destination, plane);
-            if(route.getFlightDistanceMiles() <= plane.getModel().getRangeMiles()){
+            if(route.getFlightDistanceMiles() <= plane.getAircraft().getRangeMiles()){
                 if(route.getFlightDurationHours() > maxHours){
                     airports.remove(destination);
                     continue;

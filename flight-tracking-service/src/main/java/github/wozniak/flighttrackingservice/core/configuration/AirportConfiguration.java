@@ -1,5 +1,6 @@
 package github.wozniak.flighttrackingservice.core.configuration;
 
+import github.wozniak.flighttrackingservice.airline_management.fleet_manager.service.FleetService;
 import github.wozniak.flighttrackingservice.core.data.CSVReader;
 import github.wozniak.flighttrackingservice.core.entity.Airport;
 import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProperties;
@@ -30,12 +31,14 @@ public class AirportConfiguration {
     private final AircraftService aircraftService;
     private final CityService cityService;
     private final CountyService countyService;
+    private final FleetService fleetService;
     private static final Logger logger = LoggerFactory.getLogger(AirportConfiguration.class);
 
     @PostConstruct
     public void configureAirports() throws IOException {
         logger.info("DELETE DATA ON STARTUP MODE: " + ElevationAirlineProperties.DELETE_DATA_ON_STARTUP_MODE);
         if(ElevationAirlineProperties.DELETE_DATA_ON_STARTUP_MODE){
+            fleetService.deleteFleet();
             aircraftService.deleteAllAircraft();
             flightService.deleteAllFlights();
             scheduledRouteService.deleteAllRoutes();

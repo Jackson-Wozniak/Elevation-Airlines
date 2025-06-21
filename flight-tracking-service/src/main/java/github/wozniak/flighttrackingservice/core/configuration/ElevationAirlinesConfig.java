@@ -28,6 +28,7 @@ public class ElevationAirlinesConfig {
     @PostConstruct
     public void configureOnStartup() throws IOException {
         economicsConfiguration.configure();
+        fleetConfiguration.configureFleet();
     }
     /*
     private final ScheduledRouteService scheduledRouteService;

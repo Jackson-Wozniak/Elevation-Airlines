@@ -25,7 +25,7 @@ public class FlightSummaryDTO {
         this.departure = flight.getRoute().getDepartureAirport().getIcaoCode();
         this.destination = flight.getRoute().getDestinationAirport().getIcaoCode();
         this.callsign = flight.getPlane().getCallSign();
-        this.planeType = flight.getPlane().getModel().getName();
+        this.planeType = flight.getPlane().getAircraft().getName();
         this.timeOfDeparture = DateTimeUtils.format(flight.getTakeOffDateTime());
         this.expectedArrival = DateTimeUtils.expectedTimeOfArrival(flight.getTakeOffDateTime(), flight.getRoute().getFlightDurationHours());
         this.distanceMiles = flight.getRoute().getFlightDistanceMiles();

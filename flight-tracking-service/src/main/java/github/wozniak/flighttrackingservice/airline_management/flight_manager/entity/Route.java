@@ -14,11 +14,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Route {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "departure_icao")
     private Airport departureAirport;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "destination_icao")
     private Airport destinationAirport;
 
@@ -51,8 +51,8 @@ public class Route {
     }
 
     private double getFlightHours(Plane plane){
-        if(plane.getModel().getCruisingSpeedKnots() == 0) throw new RuntimeException("Plane must have positive cruise speed");
-        double time = this.flightDistanceMiles / knotsToMPH(plane.getModel().getCruisingSpeedKnots());
+        if(plane.getAircraft().getCruisingSpeedKnots() == 0) throw new RuntimeException("Plane must have positive cruise speed");
+        double time = this.flightDistanceMiles / knotsToMPH(plane.getAircraft().getCruisingSpeedKnots());
         return Double.parseDouble(String.format("%.02f", time));
     }
 
@@ -62,5 +62,9 @@ public class Route {
 
     public String getFlightTime(){
         return DateTimeUtils.hoursToHHMM(flightDurationHours);
+    }
+
+    public String getCodesKey(){
+        return departureAirport.getIcaoCode() + " to " + destinationAirport.getIcaoCode();
     }
 }

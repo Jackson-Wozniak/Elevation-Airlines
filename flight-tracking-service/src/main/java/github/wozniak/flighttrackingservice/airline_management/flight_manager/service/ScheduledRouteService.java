@@ -4,9 +4,9 @@ import github.wozniak.flighttrackingservice.airline_management.fleet_manager.ent
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.entity.ScheduledRoute;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.repository.ScheduledRouteRepository;
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.service.PlaneService;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

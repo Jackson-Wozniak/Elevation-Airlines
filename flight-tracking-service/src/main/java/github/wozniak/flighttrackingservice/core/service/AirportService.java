@@ -3,9 +3,9 @@ package github.wozniak.flighttrackingservice.core.service;
 import github.wozniak.flighttrackingservice.core.entity.Airport;
 import github.wozniak.flighttrackingservice.core.exception.AirportNotFoundException;
 import github.wozniak.flighttrackingservice.core.repository.AirportRepository;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
