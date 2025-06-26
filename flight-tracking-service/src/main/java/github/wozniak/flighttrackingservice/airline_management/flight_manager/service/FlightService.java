@@ -43,7 +43,7 @@ public class FlightService {
 
     public Flight findLastFlightByCallSign(String callSign){
         return flightRepository.findFlightsByCallSign(callSign).stream()
-                .max(Comparator.comparing(Flight::getTakeOffDateTime))
+                .max(Comparator.comparing(Flight::getScheduledBoardingTime))
                 .orElseThrow(() -> new FlightNotFoundException("Cannot find most recent flight"));
     }
 
@@ -86,8 +86,8 @@ public class FlightService {
         }
 
         flightRepository.findAll().forEach(flight -> {
-            if(!dates.contains(flight.getTakeOffDateTime().toLocalDate())) return;
-            flightsOnDate.get(flight.getTakeOffDateTime().toLocalDate()).add(flight);
+            if(!dates.contains(flight.getScheduledBoardingTime().toLocalDate())) return;
+            flightsOnDate.get(flight.getScheduledBoardingTime().toLocalDate()).add(flight);
         });
         return TimeTable.generate(flightsOnDate);
     }
@@ -108,9 +108,9 @@ public class FlightService {
 
     public List<Flight> findLiveFlights(){
         return flightRepository.findAll().stream()
-                .filter(flight -> flight.getTakeOffDateTime().toLocalDate().equals(LocalDate.now()))
+                .filter(flight -> flight.getScheduledBoardingTime().toLocalDate().equals(LocalDate.now()))
                 .filter(flight -> DateTimeUtils.isLiveFlight(
-                        flight.getTakeOffDateTime(), flight.getRoute().getFlightDurationHours()))
+                        flight.getScheduledBoardingTime(), flight.getFlightHours()))
                 .toList();
     }
 
@@ -124,7 +124,7 @@ public class FlightService {
     @Transactional
     public void deletePastFlights(){
         List<Flight> pastFlights = flightRepository.findAll().stream()
-                .filter(flight -> flight.getLandingDateTime().toLocalDate().isBefore(LocalDate.now()))
+                .filter(flight -> flight.getScheduledLandingTime().toLocalDate().isBefore(LocalDate.now()))
                 .toList();
         flightRepository.deleteAll(pastFlights);
     }

@@ -17,8 +17,9 @@ public class FlightSummaryDTO {
     private String destination;
     private String callsign;
     private String planeType;
-    private String timeOfDeparture;
-    private String expectedArrival;
+    private String scheduledBoarding;
+    private String scheduledTakeoff;
+    private String scheduledArrival;
     private double distanceMiles;
 
     public FlightSummaryDTO(Flight flight){
@@ -26,8 +27,9 @@ public class FlightSummaryDTO {
         this.destination = flight.getRoute().getDestinationAirport().getIcaoCode();
         this.callsign = flight.getPlane().getCallSign();
         this.planeType = flight.getPlane().getAircraft().getName();
-        this.timeOfDeparture = DateTimeUtils.format(flight.getTakeOffDateTime());
-        this.expectedArrival = DateTimeUtils.expectedTimeOfArrival(flight.getTakeOffDateTime(), flight.getRoute().getFlightDurationHours());
+        this.scheduledBoarding = DateTimeUtils.format(flight.getScheduledBoardingTime());
+        this.scheduledTakeoff = DateTimeUtils.format(flight.getScheduledDepartureTime());
+        this.scheduledArrival = DateTimeUtils.format(flight.getScheduledLandingTime());
         this.distanceMiles = flight.getRoute().getFlightDistanceMiles();
     }
 }

@@ -29,6 +29,12 @@ public class DateTimeUtils {
         return String.format("%02d:%02d", roundHour, minutes);
     }
 
+    public static LocalDateTime plusHours(LocalDateTime time, double hours){
+        int hrs = (int) Math.floor(hours);
+        int mins = (int) Math.ceil((hours - hrs) * 60);
+        return time.plusHours(hrs).plusMinutes(mins);
+    }
+
     public static String hoursToHRMIN(double hours){
         int roundHour = (int) Math.floor(hours);
         if(roundHour == 0){

@@ -1,4 +1,4 @@
-package github.wozniak.flighttrackingservice.airline_management.flight_manager.helper;
+package github.wozniak.flighttrackingservice.airline_management.flight_manager.helpers;
 
 import github.wozniak.flighttrackingservice.core.entity.Airport;
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.entity.Plane;
@@ -44,12 +44,8 @@ public class RouteGenerator {
             if(airports.size() == 0) throw new RouteGeneratorException("Could not create route");
             Airport destination = airports.get(random.nextInt(airports.size()));
 
-            Route route = new Route(departure, destination, plane);
+            Route route = new Route(departure, destination);
             if(route.getFlightDistanceMiles() <= plane.getAircraft().getRangeMiles()){
-                if(route.getFlightDurationHours() > maxHours){
-                    airports.remove(destination);
-                    continue;
-                }
                 return route;
             }
             airports.remove(destination);

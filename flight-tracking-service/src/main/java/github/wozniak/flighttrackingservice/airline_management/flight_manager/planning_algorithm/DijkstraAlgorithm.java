@@ -62,7 +62,7 @@ public class DijkstraAlgorithm {
     private List<Flight> getRoutes(AirportNode node, AirportNode target) {
         return node.getDepartingFlights().stream()
                 .filter(dest -> dest.getRoute().getDestinationAirport().getIcaoCode().equals(target.getAirport().getIcaoCode()))
-                .sorted(Comparator.comparing(Flight::getTakeOffDateTime)).toList();
+                .sorted(Comparator.comparing(Flight::getScheduledBoardingTime)).toList();
     }
 
     private AirportNode getMinimum(Set<AirportNode> airportNodes) {

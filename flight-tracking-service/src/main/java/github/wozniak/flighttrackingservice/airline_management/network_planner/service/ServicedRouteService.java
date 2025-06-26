@@ -6,11 +6,15 @@ import github.wozniak.flighttrackingservice.airline_management.network_planner.e
 import github.wozniak.flighttrackingservice.airline_management.network_planner.repository.ServicedRouteRepository;
 import github.wozniak.flighttrackingservice.core.exception.RouteGeneratorException;
 import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
-class ServicedRouteService {
+public class ServicedRouteService {
     private final ServicedRouteRepository servicedRouteRepository;
 
     public ServicedRoute findServicedRoute(String id){
@@ -28,5 +32,15 @@ class ServicedRouteService {
         ServicedRoute route = findServicedRoute(flight.getRoute().getCodesKey());
         route.incrementFlightsFlown();
         return servicedRouteRepository.save(route).getTimesFlown();
+    }
+
+    public void saveDefaultRoutes(List<ServicedRoute> servicedRoutes){
+        servicedRouteRepository.saveAll(servicedRoutes);
+    }
+
+    @Modifying
+    @Transactional
+    public void deleteAllRoutes(){
+        servicedRouteRepository.deleteAll();
     }
 }

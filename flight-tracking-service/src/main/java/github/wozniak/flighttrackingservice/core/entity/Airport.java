@@ -4,10 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity(name = "airport")
 @Table(name = "airports")
@@ -15,10 +12,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Airport {
 
     @Id
     @Column(name = "icao_code")
+    @EqualsAndHashCode.Include
     private String icaoCode;
 
     @Column(name = "name")
@@ -65,10 +64,8 @@ public class Airport {
         this.runwayLengthFt = builder.runwayLengthFt;
     }
 
-    @Override
-    public boolean equals(Object obj){
-        if(!(obj instanceof Airport)) return false;
-        return this.icaoCode.equalsIgnoreCase(((Airport) obj).getIcaoCode());
+    public String getCityKey(){
+        return city + ", " + state;
     }
 
     public static class Builder{

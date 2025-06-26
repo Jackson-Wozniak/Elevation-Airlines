@@ -1,4 +1,4 @@
-package github.wozniak.flighttrackingservice.airline_management.flight_manager;
+package github.wozniak.flighttrackingservice.airline_management.flight_manager.enums;
 
 public enum FlightRangeCategory {
     REGIONAL("Regional"),

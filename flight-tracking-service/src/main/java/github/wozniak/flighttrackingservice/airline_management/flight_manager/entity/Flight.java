@@ -1,6 +1,8 @@
 package github.wozniak.flighttrackingservice.airline_management.flight_manager.entity;
 
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.entity.Plane;
+import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProperties;
+import github.wozniak.flighttrackingservice.core.utils.DateTimeUtils;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -28,31 +30,36 @@ public class Flight {
     @Embedded
     private Route route;
 
-    @Column(name = "scheduled_takeoff_time_and_date")
-    private LocalDateTime takeOffDateTime;
+    @Column(name = "scheduled_boarding_time")
+    private LocalDateTime scheduledBoardingTime;
 
-    public Flight(Plane plane, Route route, LocalDateTime takeOffDateTime){
+    public Flight(Plane plane, Route route, LocalDateTime scheduledBoardingTime){
         this.plane = plane;
         this.route = route;
-        this.takeOffDateTime = takeOffDateTime;
+        this.scheduledBoardingTime = scheduledBoardingTime;
     }
 
-    public Flight(ScheduledRoute dailyScheduledRoute, LocalDateTime takeOffDateTime){
-        this.plane = dailyScheduledRoute.getPlane();
-        this.route = dailyScheduledRoute.getRoute();
-        this.takeOffDateTime = takeOffDateTime;
+    public LocalDateTime getScheduledDepartureTime(){
+        return scheduledBoardingTime.plusMinutes(ElevationAirlineProperties.BOARDING_MINUTES);
     }
 
-    public int getLandingHour(){
-        //this could technically return a number greater than 24 so this has to be fixed later.
-        //I currently have it this was because the current scheduling technically
-        //allows for invalid flights to be dismissed, but this should be resolved later
-        //so that flights aren't dismissed.
-        return this.takeOffDateTime.plusMinutes((int) (this.route.getFlightDurationHours() * 60)).getHour() + 1;
+    public double getFlightHours(){
+        double time = this.route.getFlightDistanceMiles()
+                / knotsToMPH(plane.getAircraft().getCruisingSpeedKnots());
+        return Double.parseDouble(String.format("%.02f", time));
     }
 
-    public LocalDateTime getLandingDateTime(){
-        return this.takeOffDateTime.plusMinutes((int) (this.route.getFlightDurationHours() * 60));
+    private static double knotsToMPH(int knots){
+        return Double.parseDouble(String.format("%.02f", knots * 1.15078));
+    }
+
+    public String getFlightTime(){
+        return DateTimeUtils.hoursToHHMM(getFlightHours());
+    }
+
+    public LocalDateTime getScheduledLandingTime(){
+        return DateTimeUtils.plusHours(getScheduledDepartureTime()
+                .plusMinutes(ElevationAirlineProperties.TAXI_MINUTES), getFlightHours());
     }
 
     public boolean isMatchingAirport(String icao, boolean departureQuery){
