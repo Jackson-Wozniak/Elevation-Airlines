@@ -23,7 +23,7 @@ public class AirportOutput {
         this.longitude = airportInfo.getLongitude();
         this.continent = airportInfo.getContinent();
         this.country = airportInfo.getCountry();
-        this.region = airportInfo.getRegion();
+        this.region = airportInfo.getRegionCode();
         this.city = airportInfo.getCity();
         this.runwayLengthFt = runwayLengthFt;
         this.passengerCount = passengerCount;

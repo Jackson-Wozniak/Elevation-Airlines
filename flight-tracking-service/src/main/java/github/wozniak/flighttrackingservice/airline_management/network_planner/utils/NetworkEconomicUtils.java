@@ -34,16 +34,15 @@ public class NetworkEconomicUtils {
      */
     public static List<Airport> sortAirportsByDemand(Map<String, City> cities,
                                                             List<Airport> airports){
-        Map<Airport, Double> totalCAGR = new HashMap<>();
+        Map<Airport, Long> totalCAGR = new HashMap<>();
         airports.forEach(airport -> {
-            if(!cities.containsKey(airport.getCityKey())) return;
-            City city = cities.get(airport.getCityKey());
-            double passengerCAGR = city.getEconomics().getPassengersCAGR();
-            double gdpCAGR = city.getCounty().getGdpCAGR();
-            totalCAGR.put(airport, passengerCAGR + gdpCAGR);
+            if(!cities.containsKey(airport.getCityKey().toUpperCase().replace(" ", ""))) return;
+            City city = cities.get(airport.getCityKey().toUpperCase().replace(" ", ""));
+            long passengers = city.getEconomics().totalAveragePassengers();
+            totalCAGR.put(airport, passengers);
         });
         return totalCAGR.entrySet().stream()
-                .sorted(Map.Entry.<Airport, Double>comparingByValue().reversed())
+                .sorted(Map.Entry.<Airport, Long>comparingByValue().reversed())
                 .map(Map.Entry::getKey)
                 .toList();
     }

@@ -12,4 +12,6 @@ public class ElevationAirlineProperties {
     public static final int TURNAROUND_MINUTES = 60;
     public static final int TAXI_MINUTES = 15;
     public static final int BOARDING_MINUTES = 30;
+
+    public static final int SERVICED_ROUTE_COUNT = 60;
 }

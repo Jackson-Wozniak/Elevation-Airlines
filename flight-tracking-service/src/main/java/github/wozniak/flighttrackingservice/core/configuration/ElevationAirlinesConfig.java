@@ -2,6 +2,7 @@ package github.wozniak.flighttrackingservice.core.configuration;
 
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.configuration.FleetConfiguration;
 import github.wozniak.flighttrackingservice.airline_management.flight_manager.configuration.FlightManagerConfiguration;
+import github.wozniak.flighttrackingservice.airline_management.network_planner.configuration.ServicedRouteConfiguration;
 import github.wozniak.flighttrackingservice.economics.configuration.EconomicsConfiguration;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
@@ -24,11 +25,13 @@ public class ElevationAirlinesConfig {
     private final FleetConfiguration fleetConfiguration;
     private final FlightManagerConfiguration flightManagerConfiguration;
     private final EconomicsConfiguration economicsConfiguration;
+    private final ServicedRouteConfiguration servicedRouteConfiguration;
 
     @PostConstruct
     public void configureOnStartup() throws IOException {
         economicsConfiguration.configure();
         fleetConfiguration.configureFleet();
+        servicedRouteConfiguration.configureRouteNetworkUnfinished();
     }
     /*
     private final ScheduledRouteService scheduledRouteService;

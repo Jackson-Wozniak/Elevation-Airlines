@@ -1,6 +1,7 @@
 package github.wozniak.flighttrackingservice.core.configuration;
 
 import github.wozniak.flighttrackingservice.airline_management.fleet_manager.service.FleetService;
+import github.wozniak.flighttrackingservice.airline_management.network_planner.service.ServicedRouteService;
 import github.wozniak.flighttrackingservice.core.data.CSVReader;
 import github.wozniak.flighttrackingservice.core.entity.Airport;
 import github.wozniak.flighttrackingservice.core.properties.ElevationAirlineProperties;
@@ -30,6 +31,7 @@ public class AirportConfiguration {
     private final CityService cityService;
     private final CountyService countyService;
     private final FleetService fleetService;
+    private final ServicedRouteService servicedRouteService;
     private static final Logger logger = LoggerFactory.getLogger(AirportConfiguration.class);
 
     @PostConstruct
@@ -39,6 +41,7 @@ public class AirportConfiguration {
             fleetService.deleteFleet();
             aircraftService.deleteAllAircraft();
             flightService.deleteAllFlights();
+            servicedRouteService.deleteAllRoutes();
             airportService.deleteAllAirports();
             cityService.deleteAllCities();
             countyService.deleteAllCounties();
