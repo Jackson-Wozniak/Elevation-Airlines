@@ -31,4 +31,8 @@ public class CityStats {
         this.averagePassengersQ4 = averagePassengersQ4;
         this.passengersCAGR = passengersCAGR;
     }
+
+    public long totalAveragePassengers(){
+        return averagePassengersQ1 + averagePassengersQ2 + averagePassengersQ3 + averagePassengersQ4;
+    }
 }
