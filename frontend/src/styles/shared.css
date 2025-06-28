@@ -5,7 +5,8 @@
     --dark-accent: #1e1e1e;
     --dark-grey-background: #212121;
     --dark-lightgrey-background: #303030;
-    --purple-accent: #6200EE;
+    --purple-accent: #8330f7;
+    --green-accent: rgb(59, 209, 111);
 }
 
 html, body {
