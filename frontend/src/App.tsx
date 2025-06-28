@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import DocumentationPage from "./pages/DocumentationPage";
-import './App.css'
+import './styles/shared.css'
 import HomePage from "./pages/HomePage";
 
 function App() {

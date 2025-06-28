@@ -1,0 +1,129 @@
+:root{
+    --dark-background: #121212;
+    --dark-blue-background: #0a0a0f;
+    --darkish-blue-background: #0d0d14;
+    --dark-accent: #1e1e1e;
+    --dark-grey-background: #212121;
+    --dark-lightgrey-background: #303030;
+    --purple-accent: #6200EE;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.page-container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-blue-background);
+}
+
+.content-container{
+    min-width: 78%;
+    max-width: 78%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar-container{
+    min-width: 22%;
+    max-width: 22%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--darkish-blue-background);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar-collapsed-container{
+    min-width: 3%;
+    max-width: 3%;
+}
+
+#sidebar-logo-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#sidebar-logo-caption{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar-logo-subtext{
+    color: white;
+    font-family: Georgia, serif;
+    position: relative;
+    font-size: 7px;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+#sidebar-logo-caption p {
+    background: linear-gradient(to bottom, #be9d55 27%, #ffecb3 40%, #a17724 78%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 660;
+}
+
+#sidebar-logo-caption p::after {
+    background: none;
+    content: attr(data-heading) / "";
+    left: 0;
+    top: 0;
+    z-index: -1;
+    position: absolute;
+    text-shadow: 
+    -1px 0 1px #c6bb9f, 
+    0 1px 1px #c6bb9f, 
+    5px 5px 10px rgba(0, 0, 0, 0.4),
+    -5px -5px 10px rgba(0, 0, 0, 0.4);
+}
+
+#sidebar-menu-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.sidebar-links{
+    color: whitesmoke;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
