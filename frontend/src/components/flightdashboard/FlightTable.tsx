@@ -1,7 +1,8 @@
 import type { FlightTableEntry } from '../../types/FlightTypes';
 import '../../styles/FlightTable.css';
+import type { FlightDto } from '../../types/Dtos';
 
-function FlightTable({flights}: {flights: FlightTableEntry[]}){
+function FlightTable({flights}: {flights: FlightDto[]}){
     function getStatusClassname(status: string){
         switch(status){
             case "IN FLIGHT": return "in-progress-color"
@@ -22,15 +23,15 @@ function FlightTable({flights}: {flights: FlightTableEntry[]}){
                     <p>Status</p>
                 </div>
 
-                {flights.map((flight: FlightTableEntry, index: number) => {
+                {flights.map((flight: FlightDto, index: number) => {
                     return (
                         <div key={index} className={"flight-table-row" + (index % 2 == 0 ? "": " flight-table-row-even")}>
+                            <p>{flight.identifier}</p>
+                            <p>{flight.departure}</p>
+                            <p>{flight.destination}</p>
                             <p>{flight.callsign}</p>
-                            <p>{flight.departureCode}</p>
-                            <p>{flight.departureTime}</p>
-                            <p>{flight.destinationCode}</p>
                             <p>{flight.planeType}</p>
-                            <p className={getStatusClassname(flight.status)}>{flight.status}</p>
+                            <p>{flight.scheduledBoarding}</p>
                         </div>
                     )
                 })}

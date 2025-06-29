@@ -7,3 +7,7 @@ export interface FlightTableEntry{
     planeType: string
     status: string
 }
+
+export interface FlightSearchConstraints{
+    
+}
