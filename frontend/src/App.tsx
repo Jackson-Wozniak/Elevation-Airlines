@@ -1,15 +1,10 @@
-import { Routes, Route } from "react-router-dom";
-import DocumentationPage from "./pages/DocumentationPage";
-import './App.css'
-import HomePage from "./pages/HomePage";
+import './styles/shared.css'
+import AppInitializer from "./AppInitializer";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="docs" element={<DocumentationPage />} />
-    </Routes>
-  )
+    return (
+        <AppInitializer />
+    )
 }
 
 export default App

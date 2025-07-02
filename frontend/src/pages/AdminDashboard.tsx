@@ -1,5 +1,5 @@
 
-function HomePage(){
+function AdminDashboard(){
     return (
         <div>
             
@@ -7,4 +7,4 @@ function HomePage(){
     )
 }
 
-export default HomePage;
+export default AdminDashboard;
