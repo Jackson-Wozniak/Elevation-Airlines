@@ -13,6 +13,7 @@ This class is used as a way to summarize all flight information, and is most
 @Getter
 @Setter
 public class FlightSummaryDTO {
+    private long identifer;
     private String departure;
     private String destination;
     private String callsign;
@@ -23,6 +24,7 @@ public class FlightSummaryDTO {
     private double distanceMiles;
 
     public FlightSummaryDTO(Flight flight){
+        this.identifer = flight.getFlightIdentifier();
         this.departure = flight.getRoute().getDepartureAirport().getIcaoCode();
         this.destination = flight.getRoute().getDestinationAirport().getIcaoCode();
         this.callsign = flight.getPlane().getCallSign();

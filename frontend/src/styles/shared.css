@@ -122,6 +122,31 @@ html, body {
     justify-content: center;
 }
 
+#sidebar-filler-container{
+    flex: 1 1 auto;
+}
+
+#sidebar-utils-container{
+    flex: 0 1 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidebar-demo-button{
+    margin: 5px 5px 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #181826;
+    color: crimson;
+    height: 40px;
+    min-width: 40px;
+}
+
 .sidebar-links{
     color: whitesmoke;
     margin-left: 8px;

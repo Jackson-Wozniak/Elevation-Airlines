@@ -3,6 +3,10 @@ import type { FlightDto } from '../types/Dtos';
 const ROOT_URL: string = "http://localhost:8080/api/v1";
 const FLIGHTS_URL: string = ROOT_URL + "/flights";
 
+export async function isServerRunning(){
+    return false;
+}
+
 export async function getAllFlights(){
     // let response = await fetch(FLIGHTS_URL);
 
