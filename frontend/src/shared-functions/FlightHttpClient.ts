@@ -1,4 +1,6 @@
 import type { FlightDto } from '../types/Dtos';
+import { getAllFlightsSample } from '../data/HttpClientDemoData';
+import { useDemoMode } from '../AppInitializer';
 
 const ROOT_URL: string = "http://localhost:8080/api/v1";
 const FLIGHTS_URL: string = ROOT_URL + "/flights";
@@ -7,39 +9,29 @@ export async function isServerRunning(){
     return false;
 }
 
-export async function getAllFlights(){
-    // let response = await fetch(FLIGHTS_URL);
+export async function getAllFlights(isDemo: boolean){
+    if(isDemo) return getAllFlightsSample(25);
 
-    // if(!response.ok){
-    //     alert("ERROR IN getAllFlights()");
-    //     return [];
-    // }
+    let response = await fetch(FLIGHTS_URL);
 
-    // const data = await response.json();
+    if(!response.ok){
+        alert("ERROR IN getAllFlights()");
+        return [];
+    }
 
-    // const mapped: FlightDto[] = data.map((flight: any) => ({
-    //     identifier: flight.identifier,
-    //     departure: flight.departure,
-    //     destination: flight.destination,
-    //     callsign: flight.callsign,
-    //     planeType: flight.planeType,
-    //     scheduledBoarding: flight.scheduledBoarding,
-    //     scheduledTakeoff: flight.scheduledTakeoff,
-    //     scheduledArrival: flight.scheduledArrival,
-    //     distanceMiles: flight.distanceMiles
-    // }));
+    const data = await response.json();
 
-    // return mapped;
-    let flights: FlightDto[] = [{
-        identifier: 1100321,
-        departure: "departure",
-        destination: "destination",
-        callsign: "flight.callsign",
-        planeType: "flight.planeType",
-        scheduledBoarding: "flight.scheduledBoarding",
-        scheduledTakeoff: "flight.scheduledTakeoff",
-        scheduledArrival: "flight.scheduledArrival",
-        distanceMiles: 100.0
-    }];
-    return flights;
+    const mapped: FlightDto[] = data.map((flight: any) => ({
+        identifier: flight.identifier,
+        departure: flight.departure,
+        destination: flight.destination,
+        callsign: flight.callsign,
+        planeType: flight.planeType,
+        scheduledBoarding: flight.scheduledBoarding,
+        scheduledTakeoff: flight.scheduledTakeoff,
+        scheduledArrival: flight.scheduledArrival,
+        distanceMiles: flight.distanceMiles
+    }));
+
+    return mapped;
 }

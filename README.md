@@ -4,7 +4,7 @@
 
   <h3 align="center">Airline Tracker & Reservation System</h3>
 
-  <a href="https://github.com/Jackson-Wozniak/Airline-Reservation-System/edit/main/backend"><strong>Explore The Code»</strong></a>
+  <a href="#"><strong>Live Demo»</strong></a>
     </br>
     <p>
       <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Jackson-Wozniak/Elevation-Airlines?style=plastic&color=green">
