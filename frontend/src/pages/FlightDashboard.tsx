@@ -7,13 +7,15 @@ import type { FlightDto } from "../types/Dtos";
 import { useState, useEffect } from "react";
 import { getAllFlights } from "../shared-functions/FlightHttpClient";
 import FlightSearch from "../components/flightdashboard/FlightSearch";
+import { useDemoMode } from "../AppInitializer";
 
 function FlightDashboard(){
+    const isDemo: boolean = useDemoMode();
     const [flights, setFlights] = useState<FlightDto[]>([]);
 
     useEffect(() => {
         const httpClientGetAllFlights = async () => {
-            let data = await getAllFlights();
+            let data = await getAllFlights(isDemo);
             return data;
         }
 
@@ -29,7 +31,7 @@ function FlightDashboard(){
         <Page>
             <SideBar/>
             <Container>
-                <FlightSearch updateSearchConstraints={searchFlights}/>
+                {/* <FlightSearch updateSearchConstraints={searchFlights}/> */}
                 <FlightTable flights={flights}/>
             </Container>
         </Page>

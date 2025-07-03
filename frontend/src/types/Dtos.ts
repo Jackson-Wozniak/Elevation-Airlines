@@ -12,4 +12,5 @@ export interface FlightDto{
     scheduledTakeoff: string;
     scheduledArrival: string;
     distanceMiles: number;
+    status: string;
 }
