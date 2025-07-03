@@ -4,6 +4,16 @@ import { Link } from 'react-router-dom';
 import { useDemoMode } from '../../AppInitializer';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
+import SidebarSection from './SidebarSection';
+import AirplanemodeActiveOutlinedIcon from '@mui/icons-material/AirplanemodeActiveOutlined';
+import GpsFixedOutlinedIcon from '@mui/icons-material/GpsFixedOutlined';
+import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
+import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
 
 const DEMO_MESSAGE: string = "The server could not be reached. If you believe there was an issue, reload the page."
     + "\n\nDemo mode uses sample data in place of all API calls to simulate application functionality. Enjoy!";
@@ -18,10 +28,31 @@ function SideBar(){
                 <p id="sidebar-logo-subtext">REACHING NEW HEIGHTS</p>
             </div>
             <div id="sidebar-menu-container">
-                <Link className="sidebar-links" to="/">Home</Link>
-                <Link className="sidebar-links" to="documentation">Project Docs</Link>
-                <Link className="sidebar-links" to="admin">Admin Dashboard</Link>
+                <SidebarSection
+                    title="Dashboard"
+                    icon={<HomeOutlinedIcon className="sidebar-icons" />}
+                    links={[
+                        { label: 'Flights', to: '/', element: <AirplanemodeActiveOutlinedIcon className="sidebar-icons"/>},
+                        { label: 'Tracker', to: '/', element: <GpsFixedOutlinedIcon className="sidebar-icons"/>},
+                        { label: 'Map', to: '/', element: <MapOutlinedIcon className="sidebar-icons"/>},
+                    ]}
+                />
+                <SidebarSection
+                    title="Project Documentation"
+                    icon={<DescriptionOutlinedIcon className="sidebar-icons" />}
+                    links={[
+                        { label: 'Overview', to: '/docs', element: <MenuBookOutlinedIcon className="sidebar-icons"/>},
+                        { label: 'Frontend', to: '/docs', element: <CodeOutlinedIcon className="sidebar-icons"/>},
+                        { label: 'Backend', to: '/docs', element: <DnsOutlinedIcon className="sidebar-icons"/>},
+                    ]}
+                />
+                <SidebarSection
+                    title="Admin Dashboard"
+                    icon={<SupervisorAccountOutlinedIcon className="sidebar-icons" />}
+                    links={[]}
+                />
             </div>
+
             <div id="sidebar-filler-container"></div>
             <div id="sidebar-utils-container">
                 {useDemoMode() && (

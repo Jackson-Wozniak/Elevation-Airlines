@@ -3,6 +3,7 @@
     --dark-blue-background: #0a0a0f;
     --darkish-blue-background: #0d0d14;
     --dark-accent: #1e1e1e;
+    --dark-lighter-accent: #181826;
     --dark-grey-background: #212121;
     --dark-lightgrey-background: #303030;
     --purple-accent: #8330f7;
@@ -42,12 +43,6 @@ html, body {
     background-color: var(--darkish-blue-background);
     display: flex;
     flex-direction: column;
-
-}
-
-.sidebar-collapsed-container{
-    min-width: 3%;
-    max-width: 3%;
 }
 
 #sidebar-logo-container{
@@ -61,7 +56,8 @@ html, body {
     margin: 0;
     padding: 0;
     margin-top: 10px;
-    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--dark-lighter-accent);
 }
 
 #sidebar-logo-caption{
@@ -94,7 +90,7 @@ html, body {
     color: #fff;
     font-family: 'Playfair Display', serif;
     position: relative;
-    font-size: 18px;
+    font-size: 17px;
     margin: 0;
     letter-spacing: 2px;
     font-weight: 660;
@@ -120,6 +116,7 @@ html, body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin-top: 10px;
 }
 
 #sidebar-filler-container{
@@ -141,15 +138,70 @@ html, body {
     text-align: center;
     border: none;
     border-radius: 5px;
-    background-color: #181826;
+    background-color: var(--dark-lighter-accent);
     color: crimson;
     height: 40px;
     min-width: 40px;
+    cursor: pointer;
 }
 
-.sidebar-links{
-    color: whitesmoke;
-    margin-left: 8px;
+.sidebar-icons{
+    margin-right: 8px;
+}
+
+.sidebar-section-container {
+    width: 100%;
     margin-bottom: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar-section-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 550;
+}
+
+.sidebar-expand-icon{
+    margin-left: auto;
+}
+
+.sidebar-section-header:hover {
+    background-color: var(--dark-lighter-accent);
+}
+
+.sidebar-sub-link-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-sub-link {
+    padding: 0;
+    height: 40px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: .9rem;
+}
+
+.sidebar-link{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     text-decoration: none;
+    color: white;
+    padding-left: 15%;
+}
+
+.sidebar-sub-link:hover {
+    background-color: var(--dark-lighter-accent);
 }
