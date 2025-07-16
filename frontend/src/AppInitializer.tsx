@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import FlightDashboard from './pages/FlightDashboard';
-import FlightDetailsPage from './pages/FlightDetailsPage';
+import FlightDashboard from './components/flight-listings/FlightDashboard';
+import FlightDetailsPage from './components/flight-listings/FlightDetailsPage';
 import { isServerRunning } from './shared-functions/FlightHttpClient';
 import ProjectOverviewPage from './components/project-docs/ProjectOverviewPage';
 import ApiDocsPage from './components/project-docs/ApiDocsPage';

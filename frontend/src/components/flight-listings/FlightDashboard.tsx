@@ -1,13 +1,12 @@
-import FlightTable from "../components/flightdashboard/FlightTable";
-import Container from "../components/shared/Container";
-import Page from "../components/shared/Page";
-import SideBar from "../components/shared/SideBar";
-import type { FlightSearchConstraints, FlightTableEntry } from "../types/FlightTypes";
-import type { FlightDto } from "../types/Dtos";
+import FlightTable from "../flight-listings/FlightTable";
+import Container from "../shared/Container";
+import Page from "../shared/Page";
+import SideBar from "../shared/SideBar";
+import type { FlightSearchConstraints } from "./../../types/FlightTypes";
+import type { FlightDto } from "./../../types/Dtos";
 import { useState, useEffect } from "react";
-import { getAllFlights } from "../shared-functions/FlightHttpClient";
-import FlightSearch from "../components/flightdashboard/FlightSearch";
-import { useDemoMode } from "../AppInitializer";
+import { getAllFlights } from "./../../shared-functions/FlightHttpClient";
+import { useDemoMode } from "./../../AppInitializer";
 
 function FlightDashboard(){
     const isDemo: boolean = useDemoMode();

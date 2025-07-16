@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import SideBar from "../components/shared/SideBar";
-import Container from "../components/shared/Container";
-import Page from "../components/shared/Page";
+import SideBar from "../shared/SideBar";
+import Container from "../shared/Container";
+import Page from "../shared/Page";
 
 
 function FlightDetailsPage(){
