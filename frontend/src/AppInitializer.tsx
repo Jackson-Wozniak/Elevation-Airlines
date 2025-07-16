@@ -2,8 +2,9 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FlightDashboard from './pages/FlightDashboard';
 import FlightDetailsPage from './pages/FlightDetailsPage';
-import DocumentationPage from './pages/DocumentationPage';
 import { isServerRunning } from './shared-functions/FlightHttpClient';
+import ProjectOverviewPage from './components/project-docs/ProjectOverviewPage';
+import ApiDocsPage from './components/project-docs/ApiDocsPage';
 
 export const DemoModeContext = createContext<boolean>(false);
 export const useDemoMode = () => useContext(DemoModeContext);
@@ -30,7 +31,8 @@ function AppInitializer(){
             <Routes>
                 <Route path="/" element={<FlightDashboard />} />
                 <Route path="flights/:flightId" element={<FlightDetailsPage />} />
-                <Route path="docs" element={<DocumentationPage />} />
+                <Route path="docs" element={<ProjectOverviewPage />} />
+                <Route path="docs/api" element={<ApiDocsPage />} />
             </Routes>
         </BrowserRouter>
       </DemoModeContext.Provider>
