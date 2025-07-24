@@ -4,6 +4,7 @@
     --darkish-blue-background: #0d0d14;
     --dark-accent: #1e1e1e;
     --dark-lighter-accent: #181826;
+    --dark-lightest-accent: #202036;
     --dark-grey-background: #212121;
     --dark-lightgrey-background: #303030;
     --purple-accent: #8330f7;
@@ -24,25 +25,36 @@ html, body {
     top: 0;
     left: 0;
     background-color: var(--dark-blue-background);
+    overflow: hidden;
 }
 
 .content-container{
     min-width: 78%;
     max-width: 78%;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
+
+.content-container::-webkit-scrollbar {
+    width: 6px;
+}
+
 
 #sidebar-container{
     min-width: 22%;
     max-width: 22%;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: var(--darkish-blue-background);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 #sidebar-logo-container{
