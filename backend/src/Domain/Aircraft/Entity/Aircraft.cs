@@ -1,6 +1,8 @@
-﻿namespace backend.Domain.Aircraft.Entity;
+﻿using backend.Core.Entity;
 
-public class Aircraft
+namespace backend.Domain.Aircraft.Entity;
+
+public class Aircraft : BaseEntity
 {
     
 }

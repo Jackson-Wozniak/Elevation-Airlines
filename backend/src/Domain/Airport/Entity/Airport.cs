@@ -1,6 +1,8 @@
-﻿namespace backend.Domain.Airport.Entity;
+﻿using backend.Core.Entity;
 
-public class Airport
+namespace backend.Domain.Airport.Entity;
+
+public class Airport : BaseEntity
 {
     
 }

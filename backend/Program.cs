@@ -10,8 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<SimulationSettings>(
     builder.Configuration.GetSection("SimulationSettings"));
-builder.Services.Configure<AirlineSettings>(
-    builder.Configuration.GetSection("AirlineSettings"));
+builder.Services.Configure<InitializerSettings>(
+    builder.Configuration.GetSection("InitializerSettings"));
 
 // Add services to the container.
 string connectionString = builder.Configuration.GetConnectionString("ElevationAirlinesDbConnection");
