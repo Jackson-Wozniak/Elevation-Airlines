@@ -1,13 +1,25 @@
 using backend.Core.Data;
 using backend.Core.Exception;
+using backend.Core.Initializer;
+using backend.Core.Interface;
+using backend.Core.Settings;
+using backend.Engine.Initializer;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<SimulationSettings>(
+    builder.Configuration.GetSection("SimulationSettings"));
+builder.Services.Configure<AirlineSettings>(
+    builder.Configuration.GetSection("AirlineSettings"));
 
 // Add services to the container.
 string connectionString = builder.Configuration.GetConnectionString("ElevationAirlinesDbConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+builder.Services.AddScoped<DatabaseInitializer>();
+builder.Services.AddScoped<AirlineInitializer>();
 
 builder.Services.AddControllers(options =>
 {
@@ -23,6 +35,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    scope.ServiceProvider.GetRequiredService<DatabaseInitializer>().Initialize();
+    scope.ServiceProvider.GetRequiredService<AirlineInitializer>().Initialize();
 }
 
 app.UseHttpsRedirection();
