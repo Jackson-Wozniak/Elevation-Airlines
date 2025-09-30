@@ -1,0 +1,904 @@
+#Code,Size,Name,Latitude,Longitude,Country,State,City,Economic Value Percentile
+5A8,MEDIUM,Aleknagik / New Airport,59.2826004,-158.6179962,United States,AK,Aleknagik,11.0
+PADK,MEDIUM,Adak Airport,51.883564,-176.642783,United States,AK,Adak,25.0
+PADQ,MEDIUM,Kodiak Airport,57.75,-152.4940033,United States,AK,Kodiak,75.0
+PAFE,MEDIUM,Kake Airport,56.961312,-133.910202,United States,AK,Kake,40.0
+PAFM,MEDIUM,Ambler Airport,67.105529,-157.855339,United States,AK,Ambler,27.0
+PAKN,MEDIUM,King Salmon Airport,58.677845,-156.651965,United States,AK,King Salmon,47.0
+PAKP,MEDIUM,Anaktuvuk Pass Airport,68.133598,-151.742996,United States,AK,Anaktuvuk Pass,31.0
+PAKW,MEDIUM,Klawock Airport,55.579201,-133.076004,United States,AK,Klawock,51.0
+PANC,LARGE,Ted Stevens Anchorage International Airport,61.179004,-149.992561,United States,AK,Anchorage,96.0
+PANI,MEDIUM,Aniak Airport,61.581600189208984,-159.5429993,United States,AK,Aniak,41.0
+PANT,MEDIUM,Annette Island Airport,55.037663,-131.572609,United States,AK,Metlakatla,57.0
+PANV,MEDIUM,Anvik Airport,62.646702,-160.190994,United States,AK,Anvik,18.0
+PAQT,MEDIUM,Nuiqsut Airport,70.209999,-151.005998,United States,AK,Nuiqsut,37.0
+PARC,MEDIUM,Arctic Village Airport,68.1147,-145.578995,United States,AK,Arctic Village,26.0
+PATQ,MEDIUM,Atqasuk Edward Burnell Sr Memorial Airport,70.46704,-157.436013,United States,AK,Atqasuk,24.0
+PAWI,MEDIUM,Wainwright Airport,70.638,-159.994995,United States,AK,Wainwright,39.0
+PABV,MEDIUM,Birchwood Airport,61.4165,-149.507004,United States,AK,Birchwood,0.0
+PABE,MEDIUM,Bethel Airport,60.77980042,-161.8379974,United States,AK,Bethel,78.0
+PABI,MEDIUM,Allen Army Airfield,63.99449921,-145.7220001,United States,AK,Delta Junction,54.0
+PABR,MEDIUM,Wiley Post Will Rogers Memorial Airport,71.285402,-156.766008,United States,AK,Utqiaġvik,0.0
+PABA,MEDIUM,Barter Island Long Range Radar Station Airport,70.134003,-143.582001,United States,AK,Barter Island,0.0
+PACD,MEDIUM,Cold Bay Airport,55.207871,-162.725029,United States,AK,Cold Bay,27.0
+PACV,MEDIUM,Merle K (Mudhole) Smith Airport,60.491798,-145.477997,United States,AK,Cordova,62.0
+PACZ,MEDIUM,Cape Romanzof LRRS Airport,61.78030014,-166.0390015,United States,AK,Cape Romanzof,0.0
+PADE,MEDIUM,Deering Airport,66.068901,-162.766914,United States,AK,Deering,26.0
+PADL,MEDIUM,Dillingham Airport,59.04470062,-158.5050049,United States,AK,Dillingham,64.0
+PADU,MEDIUM,Tom Madsen (Dutch Harbor) Airport,53.89881,-166.544996,United States,AK,Unalaska,67.0
+PAED,MEDIUM,Elmendorf Air Force Base,61.251709,-149.807097,United States,AK,Anchorage,66.0
+PAEH,MEDIUM,Cape Newenham LRRS Airport,58.646400451699996,-162.0630035,United States,AK,Cape Newenham,0.0
+PAII,MEDIUM,Egegik Airport,58.184386,-157.374873,United States,AK,Egegik,18.0
+PAEI,MEDIUM,Eielson Air Force Base,64.66570282,-147.102005,United States,AK,Fairbanks,64.0
+PAEN,MEDIUM,Kenai Municipal Airport,60.570946,-151.245174,United States,AK,Kenai,76.0
+PAEM,MEDIUM,Emmonak Airport,62.78609848,-164.4909973,United States,AK,Emmonak,49.0
+PANN,MEDIUM,Nenana Municipal Airport,64.548772,-149.074516,United States,AK,Nenana,21.0
+PAFA,MEDIUM,Fairbanks International Airport,64.815102,-147.856003,United States,AK,Fairbanks,91.0
+PAFB,MEDIUM,Ladd Army Airfield,64.837502,-147.613998,United States,AK,Fairbanks,51.0
+PFYU,MEDIUM,Fort Yukon Airport,66.571651,-145.249987,United States,AK,Fort Yukon,42.0
+PAGA,MEDIUM,Edward G. Pitka Sr Airport,64.736198,-156.936997,United States,AK,Galena,45.0
+PAGM,MEDIUM,Gambell Airport,63.767694,-171.733303,United States,AK,Gambell,37.0
+PAGK,MEDIUM,Gulkana Airport,62.155859,-145.454662,United States,AK,Gulkana,16.0
+PAGS,MEDIUM,Gustavus Airport,58.4253006,-135.7070007,United States,AK,Gustavus,45.0
+PAHC,MEDIUM,Holy Cross Airport,62.18830108642578,-159.7749939,United States,AK,Holy Cross,23.0
+PAHL,MEDIUM,Huslia Airport,65.697899,-156.350998,United States,AK,Huslia,27.0
+PAHN,MEDIUM,Haines Airport,59.243921,-135.523925,United States,AK,Haines,54.0
+PAHO,MEDIUM,Homer Airport,59.644456,-151.479235,United States,AK,Homer,72.0
+PAIK,MEDIUM,Bob Baker Memorial Airport,66.976128,-160.439014,United States,AK,Kiana,36.0
+PAIL,MEDIUM,Iliamna Airport,59.754398,-154.910996,United States,AK,Iliamna,25.0
+PAWS,MEDIUM,Wasilla Airport,61.571701,-149.539993,United States,AK,Wasilla,49.0
+PAJN,MEDIUM,Juneau International Airport,58.355,-134.576004,United States,AK,Juneau,89.0
+PAPC,MEDIUM,Port Clarence Coast Guard Station,65.25370026,-166.8589935,United States,AK,Port Clarence,8.0
+PAKT,MEDIUM,Ketchikan International Airport,55.35559845,-131.7140045,United States,AK,Ketchikan,80.0
+PALU,MEDIUM,Cape Lisburne LRRS Airport,68.875099,-166.110001,United States,AK,Cape Lisburne,0.0
+PAMC,MEDIUM,McGrath Airport,62.95289993,-155.6060028,United States,AK,McGrath,28.0
+PAMR,MEDIUM,Merrill Field,61.212792,-149.843988,United States,AK,Anchorage,81.0
+PAMY,MEDIUM,Mekoryuk Airport,60.372338,-166.269751,United States,AK,Mekoryuk,29.0
+PAOM,MEDIUM,Nome Airport,64.51219940185547,-165.4450073,United States,AK,Nome,71.0
+PAOR,MEDIUM,Northway Airport,62.9613,-141.929001,United States,AK,Northway,19.0
+PAOT,MEDIUM,Ralph Wien Memorial Airport,66.88469696,-162.598999,United States,AK,Kotzebue,69.0
+PAAQ,MEDIUM,Warren Bud Woods Palmer Municipal Airport,61.594898,-149.08901,United States,AK,Palmer,43.0
+PAPB,MEDIUM,St George Airport,56.577345,-169.663823,United States,AK,St George,15.0
+PPIZ,MEDIUM,Point Lay LRRS Airport,69.732903,-163.005005,United States,AK,Point Lay,29.0
+PAPG,MEDIUM,Petersburg James A Johnson Airport,56.80170059,-132.9450073,United States,AK,Petersburg,67.0
+PAPH,MEDIUM,Port Heiden Airport,56.957893,-158.630219,United States,AK,Port Heiden,18.0
+PAPM,MEDIUM,Platinum Airport,59.017675,-161.827927,United States,AK,Platinum,14.0
+PARY,MEDIUM,Ruby Airport,64.727203,-155.470001,United States,AK,Ruby,25.0
+PASC,MEDIUM,Deadhorse Airport,70.19470215,-148.4649963,United States,AK,Deadhorse,0.0
+PASD,MEDIUM,Sand Point Airport,55.313908,-160.522099,United States,AK,Sand Point,46.0
+PASI,MEDIUM,Sitka Rocky Gutierrez Airport,57.04710006713867,-135.3619995,United States,AK,Sitka,78.0
+PASN,MEDIUM,St Paul Island Airport,57.166311,-170.222555,United States,AK,St Paul Island,0.0
+PASA,MEDIUM,Savoonga Airport,63.686401,-170.492996,United States,AK,Savoonga,42.0
+PASV,MEDIUM,Sparrevohn LRRS Airport,61.09740067,-155.5740051,United States,AK,Sparrevohn,0.0
+PAWD,MEDIUM,Seward Airport,60.130478,-149.418612,United States,AK,Seward,39.0
+PASX,MEDIUM,Soldotna Airport,60.474935,-151.038471,United States,AK,Soldotna,40.0
+PASY,MEDIUM,Eareckson Air Station,52.71229935,174.1139984,United States,AK,Shemya,0.0
+PATK,MEDIUM,Talkeetna Airport,62.32049942,-150.0939941,United States,AK,Talkeetna,51.0
+PATL,MEDIUM,Tatalina LRRS Airport,62.894401550299996,-155.977005,United States,AK,Takotna,7.0
+PAUN,MEDIUM,Unalakleet Airport,63.888401,-160.798996,United States,AK,Unalakleet,47.0
+PAIM,MEDIUM,Indian Mountain LRRS Airport,65.992798,-153.703995,United States,AK,Utopia Creek,0.0
+PAVD,MEDIUM,Valdez Pioneer Field,61.132712,-146.246567,United States,AK,Valdez,59.0
+PAWG,MEDIUM,Wrangell Airport,56.48429871,-132.3699951,United States,AK,Wrangell,60.0
+PAYA,MEDIUM,Yakutat Airport,59.508717,-139.660435,United States,AK,Yakutat,44.0
+PACL,MEDIUM,Clear Airport,64.299738,-149.117432,United States,AK,Clear,0.0
+K79J,MEDIUM,South Alabama Regional At Bill Benton Field Airport,31.3088,-86.393799,United States,AL,Andalusia,86.0
+KANB,MEDIUM,Anniston Regional Airport,33.5882,-85.8581,United States,AL,Anniston,98.0
+KBFM,MEDIUM,Mobile Downtown Airport,30.626800537100003,-88.06809998,United States,AL,Mobile,75.0
+KBHM,MEDIUM,Birmingham-Shuttlesworth International Airport,33.562901,-86.753502,United States,AL,Birmingham,79.0
+KDHN,MEDIUM,Dothan Regional Airport,31.321300506591797,-85.44960022,United States,AL,Dothan,81.0
+KEET,MEDIUM,Shelby County Airport,33.17699814,-86.78279877,United States,AL,Alabaster,96.0
+KHSV,MEDIUM,Huntsville International Carl T Jones Field,34.637199,-86.775101,United States,AL,Huntsville,93.0
+KHUA,MEDIUM,Redstone Army Air Field,34.67869949,-86.68479919,United States,AL,Redstone Arsnl Huntsville,0.0
+KMGM,MEDIUM,Montgomery Regional (Dannelly Field) Airport,32.300598,-86.393997,United States,AL,Montgomery,88.0
+KMOB,MEDIUM,Mobile Regional Airport,30.6912,-88.242798,United States,AL,Mobile,89.0
+KMSL,MEDIUM,Northwest Alabama Regional Airport,34.745123,-87.612981,United States,AL,Muscle Shoals,68.0
+KMXF,MEDIUM,Maxwell Air Force Base,32.3829,-86.365799,United States,AL,Montgomery,59.0
+KOZR,MEDIUM,Cairns AAF (Fort Rucker) Air Field,31.27569962,-85.71340179,United States,AL,Fort Rucker,80.0
+KTCL,MEDIUM,Tuscaloosa National Airport,33.2206,-87.611397,United States,AL,Tuscaloosa,70.0
+KTOI,MEDIUM,Troy Municipal Airport at N Kenneth Campbell Field,31.860399,-86.012101,United States,AL,Troy,48.0
+KBPK,MEDIUM,Ozark Regional Airport,36.3689003,-92.47049713,United States,AR,Mountain Home,90.0
+KBYH,MEDIUM,Arkansas International Airport,35.96429825,-89.94400024,United States,AR,Blytheville,47.0
+KELD,MEDIUM,South Arkansas Regional Airport at Goodwin Field,33.221001,-92.813301,United States,AR,El Dorado,66.0
+KFSM,MEDIUM,Fort Smith Regional Airport,35.336601,-94.367401,United States,AR,Fort Smith,83.0
+KFYV,MEDIUM,Drake Field,36.00510025024414,-94.17009735,United States,AR,Fayetteville,45.0
+KHOT,MEDIUM,Memorial Field Airport,34.4788,-93.096262,United States,AR,Hot Springs,69.0
+KHRO,MEDIUM,Boone County Airport,36.26150131225586,-93.15470123,United States,AR,Harrison,66.0
+KJBR,MEDIUM,Jonesboro Municipal Airport,35.83169937133789,-90.64640045,United States,AR,Jonesboro,67.0
+KLIT,MEDIUM,Bill & Hillary Clinton National Airport/Adams Field,34.729582,-92.223728,United States,AR,Little Rock,75.0
+KLLQ,MEDIUM,Monticello Municipal Ellis Field,33.638599,-91.750999,United States,AR,Monticello,85.0
+KLRF,MEDIUM,Little Rock Air Force Base,34.916900634799994,-92.14969635,United States,AR,Jacksonville,61.0
+KPBF,MEDIUM,Pine Bluff Regional Airport Grider Field,34.174121,-91.935643,United States,AR,Pine Bluff,97.0
+KSUZ,MEDIUM,Saline County Regional Airport,34.590599,-92.479401,United States,AR,Bryant,93.0
+KTXK,MEDIUM,Texarkana Regional Airport (Webb Field),33.453701,-93.990997,United States,AR,Texarkana,80.0
+KXNA,MEDIUM,Northwest Arkansas National Airport,36.281898,-94.306801,United States,AR,Fayetteville,64.0
+KDMA,MEDIUM,Davis Monthan Air Force Base,32.16650009,-110.8830032,United States,AZ,Tucson,62.0
+KDUG,MEDIUM,Bisbee Douglas International Airport,31.46899986,-109.6039963,United States,AZ,Douglas,92.0
+KFHU,MEDIUM,Sierra Vista Municipal Airport / Libby Army Air Field,31.587383,-110.348225,United States,AZ,Sierra Vista,57.0
+KFLG,MEDIUM,Flagstaff Pulliam International Airport,35.1385,-111.670998,United States,AZ,Flagstaff,84.0
+KGCN,MEDIUM,Grand Canyon National Park Airport,35.9524,-112.147003,United States,AZ,Grand Canyon - Tusayan,0.0
+KHII,MEDIUM,Lake Havasu City International Airport,34.571098,-114.358002,United States,AZ,Lake Havasu City,54.0
+KIFP,MEDIUM,Laughlin Bullhead International Airport,35.157398,-114.559998,United States,AZ,Bullhead City,83.0
+KIGM,MEDIUM,Kingman Airport,35.259499,-113.938004,United States,AZ,Kingman,57.0
+KINW,MEDIUM,Winslow Lindbergh Regional Airport,35.02190018,-110.7229996,United States,AZ,Winslow,86.0
+KIWA,MEDIUM,Mesa Gateway Airport,33.3078,-111.654999,United States,AZ,Mesa,94.0
+KLUF,MEDIUM,Luke Air Force Base,33.535,-112.383003,United States,AZ,Glendale,100.0
+KNYL,MEDIUM,Yuma International Airport / Marine Corps Air Station Yuma,32.650938,-114.609375,United States,AZ,Yuma,85.0
+KOLS,MEDIUM,Nogales International Airport,31.4177,-110.848,United States,AZ,Nogales,93.0
+KPGA,MEDIUM,Page Municipal Airport,36.924234,-111.447716,United States,AZ,Page,70.0
+KPHX,LARGE,Phoenix Sky Harbor International Airport,33.435302,-112.005905,United States,AZ,Phoenix,96.0
+KPRC,MEDIUM,Prescott International Airport - Ernest A. Love Field,34.654499,-112.419998,United States,AZ,Prescott,79.0
+KSOW,MEDIUM,Show Low Regional Airport,34.264062,-110.007091,United States,AZ,Show Low,65.0
+KTUS,MEDIUM,Tucson International Airport / Morris Air National Guard Base,32.115004,-110.938053,United States,AZ,Tucson,81.0
+US-0254,MEDIUM,Yuma Auxiliary Army Airfield 2,32.547501,-114.511786,United States,AZ,Yuma,99.0
+KACV,MEDIUM,California Redwood Coast-Humboldt County Airport,40.978101,-124.109,United States,CA,Arcata,83.0
+KBAB,MEDIUM,Beale Air Force Base,39.136101,-121.436996,United States,CA,Beale Air Force Base,0.0
+KBFL,MEDIUM,Meadows Field,35.433601,-119.056999,United States,CA,Bakersfield,88.0
+KBIH,MEDIUM,Eastern Sierra Regional Airport,37.3731,-118.363998,United States,CA,Bishop,62.0
+KBLH,MEDIUM,Blythe Airport,33.61920166,-114.7170029,United States,CA,Blythe,92.0
+KBUR,MEDIUM,Hollywood Burbank Airport,34.197703,-118.356378,United States,CA,Burbank,96.0
+KBYS,MEDIUM,Bicycle Lake Army Air Field,35.2804985,-116.6299973,United States,CA,Fort Irwin,86.0
+KCCR,MEDIUM,Buchanan Field,37.9897,-122.056999,United States,CA,Concord,78.0
+KCEC,MEDIUM,Jack Mc Namara Field Airport,41.778929,-124.236403,United States,CA,Crescent City,64.0
+KCMA,MEDIUM,Camarillo International Airport,34.213699,-119.094002,United States,CA,Camarillo,59.0
+KCRQ,MEDIUM,McClellan-Palomar Airport,33.1283,-117.279999,United States,CA,Carlsbad,71.0
+KDAG,MEDIUM,Barstow Daggett Airport,34.85369873,-116.7870026,United States,CA,Daggett,0.0
+KEDW,MEDIUM,Edwards Air Force Base,34.905399,-117.884003,United States,CA,Edwards,0.0
+KEED,MEDIUM,Needles Airport,34.7663002,-114.6230011,United States,CA,Needles,79.0
+KEKA,MEDIUM,Murray Field,40.803398,-124.112999,United States,CA,Eureka,95.0
+KFAT,MEDIUM,Fresno Yosemite International Airport,36.776199,-119.718002,United States,CA,Fresno,71.0
+KHHR,MEDIUM,Jack Northrop Field Hawthorne Municipal Airport,33.922798,-118.334999,United States,CA,Hawthorne,71.0
+KIPL,MEDIUM,Imperial County Airport,32.83539,-115.574026,United States,CA,Imperial,70.0
+KL45,MEDIUM,Bakersfield International Airport,35.324799,-118.996002,United States,CA,Bakersfield,100.0
+KLAX,LARGE,Los Angeles International Airport,33.942501,-118.407997,United States,CA,Los Angeles,100.0
+KLGB,MEDIUM,Long Beach Airport (Daugherty Field),33.816523,-118.149891,United States,CA,Long Beach,95.0
+KMCC,MEDIUM,McClellan Airfield,38.667599,-121.401001,United States,CA,Sacramento,67.0
+KMCE,MEDIUM,Merced Regional Macready Field,37.284698,-120.514,United States,CA,Merced,70.0
+KMER,MEDIUM,Castle Airport,37.38050079,-120.5680008,United States,CA,Merced,54.0
+KMHR,MEDIUM,Sacramento Mather Airport,38.554744,-121.297989,United States,CA,Sacramento,64.0
+KMOD,MEDIUM,Modesto City Co-Harry Sham Field,37.625801,-120.954002,United States,CA,Modesto,54.0
+KMRY,MEDIUM,Monterey Peninsula Airport,36.58700180053711,-121.8430023,United States,CA,Monterey,86.0
+KMYV,MEDIUM,Yuba County Airport,39.09780121,-121.5699997,United States,CA,Marysville,48.0
+KNFG,MEDIUM,Camp Pendleton MCAS (Munn Field) Airport,33.30130005,-117.3550034,United States,CA,Oceanside,100.0
+KNID,MEDIUM,China Lake Naws (Armitage Field) Airport,35.6853981,-117.6920013,United States,CA,China Lake,0.0
+KNJK,MEDIUM,El Centro NAF Airport (Vraciu Field),32.829201,-115.671996,United States,CA,El Centro,97.0
+KNKX,MEDIUM,Miramar Marine Corps Air Station - Mitscher Field,32.86840057,-117.1429977,United States,CA,San Diego,72.0
+KNLC,MEDIUM,Lemoore Naval Air Station (Reeves Field) Airport,36.33300018,-119.9520035,United States,CA,Lemoore,95.0
+KNTD,MEDIUM,Point Mugu Naval Air Station (Naval Base Ventura Co),34.12030029,-119.1210022,United States,CA,Point Mugu,0.0
+KNUQ,MEDIUM,Moffett Federal Airfield,37.4161,-122.049004,United States,CA,Mountain View,62.0
+KNXP,MEDIUM,Twentynine Palms Strategic Expeditionary Landing Field,34.2962,-116.162003,United States,CA,Twentynine Palms,95.0
+KNZY,MEDIUM,North Island Naval Air Station-Halsey Field,32.69919968,-117.2149963,United States,CA,San Diego,71.0
+KOAK,LARGE,San Francisco Bay Oakland International Airport,37.720085,-122.221184,United States,CA,Oakland,98.0
+KONT,LARGE,Ontario International Airport,34.056,-117.600998,United States,CA,Ontario,97.0
+KOXR,MEDIUM,Oxnard Airport,34.20080185,-119.2070007,United States,CA,Oxnard,57.0
+KPAO,MEDIUM,Palo Alto Airport,37.461102,-122.114998,United States,CA,Palo Alto,58.0
+KPMD,MEDIUM,Palmdale Regional Airport / USAF Plant 42 Airport,34.629398,-118.084999,United States,CA,Palmdale,100.0
+KPRB,MEDIUM,Paso Robles Municipal Airport,35.67290115,-120.6269989,United States,CA,Paso Robles,0.0
+KPSP,MEDIUM,Palm Springs International Airport,33.8297,-116.507004,United States,CA,Palm Springs,72.0
+KRAL,MEDIUM,Riverside Municipal Airport,33.9519,-117.445,United States,CA,Riverside,100.0
+KRBL,MEDIUM,Red Bluff Municipal Airport,40.15069962,-122.2519989,United States,CA,Red Bluff,49.0
+KRDD,MEDIUM,Redding Municipal Airport,40.50899887,-122.2929993,United States,CA,Redding,85.0
+KRIV,MEDIUM,March Air Reserve Base,33.880699,-117.259003,United States,CA,Riverside,81.0
+KSAC,MEDIUM,Sacramento Executive Airport,38.51250076,-121.4929962,United States,CA,Sacramento,63.0
+KSAN,LARGE,San Diego International Airport,32.73360062,-117.1900024,United States,CA,San Diego,94.0
+KSBA,MEDIUM,Santa Barbara Municipal Airport,34.426201,-119.839996,United States,CA,Santa Barbara,64.0
+KSBD,MEDIUM,San Bernardino International Airport,34.095402,-117.235001,United States,CA,San Bernardino,80.0
+KSBP,MEDIUM,San Luis County Regional Airport,35.236801147499996,-120.6419983,United States,CA,San Luis Obispo,88.0
+KSCK,MEDIUM,Stockton Metropolitan Airport,37.893279,-121.238079,United States,CA,Stockton,84.0
+KSDM,MEDIUM,Brown Field Municipal Airport,32.572639,-116.980019,United States,CA,San Diego,69.0
+KSFO,LARGE,San Francisco International Airport,37.619806,-122.374821,United States,CA,San Francisco,99.0
+KSJC,LARGE,Norman Y. Mineta San Jose International Airport,37.362452,-121.929188,United States,CA,San Jose,98.0
+KSLI,MEDIUM,Los Alamitos Army Air Field,33.79000092,-118.052002,United States,CA,Los Alamitos,56.0
+KSMF,LARGE,Sacramento International Airport,38.6954,-121.591003,United States,CA,Sacramento,90.0
+KSMO,MEDIUM,Santa Monica Municipal Airport,34.0158,-118.450996,United States,CA,Santa Monica,60.0
+KSMX,MEDIUM,Santa Maria Public Airport Captain G Allan Hancock Field,34.898899,-120.457001,United States,CA,Santa Maria,77.0
+KSNA,LARGE,John Wayne Orange County International Airport,33.675701,-117.867996,United States,CA,Santa Ana,98.0
+KSNS,MEDIUM,Salinas Municipal Airport,36.66279984,-121.6060028,United States,CA,Salinas,50.0
+KSQL,MEDIUM,San Carlos Airport,37.51313,-122.250838,United States,CA,San Carlos,68.0
+KSTS,MEDIUM,Charles M. Schulz Sonoma County Airport,38.50899887,-122.8130035,United States,CA,Santa Rosa,90.0
+KSUU,MEDIUM,Travis Air Force Base,38.262699,-121.927002,United States,CA,Fairfield,65.0
+KTRK,MEDIUM,Truckee Tahoe Airport,39.318628,-120.140562,United States,CA,Truckee,63.0
+KTRM,MEDIUM,Jacqueline Cochran Regional Airport,33.62670135,-116.1600037,United States,CA,Palm Springs,49.0
+KTVL,MEDIUM,Lake Tahoe Airport,38.89390182495117,-119.9950027,United States,CA,South Lake Tahoe,54.0
+KUKI,MEDIUM,Ukiah Municipal Airport,39.125999,-123.200996,United States,CA,Ukiah,92.0
+KVBG,MEDIUM,Vandenberg Space Force Base,34.737301,-120.584,United States,CA,Lompoc,97.0
+KVIS,MEDIUM,Visalia Municipal Airport,36.318699,-119.392998,United States,CA,Visalia,56.0
+KVNY,MEDIUM,Van Nuys Airport,34.20980072,-118.4899979,United States,CA,Van Nuys,0.0
+KWJF,MEDIUM,General William J Fox Airfield,34.7411,-118.219002,United States,CA,Lancaster,52.0
+KALS,MEDIUM,San Luis Valley Regional Airport/Bergman Field,37.434898,-105.866997,United States,CO,Alamosa,69.0
+KAPA,MEDIUM,Centennial Airport,39.57009888,-104.848999,United States,CO,Denver,73.0
+KASE,MEDIUM,Aspen-Pitkin County Airport (Sardy Field),39.223202,-106.869003,United States,CO,Aspen,81.0
+KBJC,MEDIUM,Rocky Mountain Metropolitan Airport,39.908798,-105.116997,United States,CO,Denver,85.0
+KBKF,MEDIUM,Buckley Space Force Base,39.701698,-104.751999,United States,CO,Aurora,100.0
+KCEZ,MEDIUM,Cortez Municipal Airport,37.303001,-108.627998,United States,CO,Cortez,67.0
+KCOS,MEDIUM,City of Colorado Springs Municipal Airport,38.805801,-104.700996,United States,CO,Colorado Springs,76.0
+KDEN,LARGE,Denver International Airport,39.86169815,-104.6729965,United States,CO,Denver,97.0
+KDRO,MEDIUM,Durango La Plata County Airport,37.151501,-107.753998,United States,CO,Durango,85.0
+KEGE,MEDIUM,Eagle County Regional Airport,39.64260101,-106.9179993,United States,CO,Eagle,80.0
+KFCS,MEDIUM,Butts AAF (Fort Carson) Air Field,38.67839813,-104.7570038,United States,CO,Fort Carson,93.0
+KFNL,MEDIUM,Northern Colorado Regional Airport,40.44969,-105.011272,United States,CO,Loveland,69.0
+KGJT,MEDIUM,Grand Junction Regional Airport,39.126663,-108.529387,United States,CO,Grand Junction,88.0
+KGUC,MEDIUM,Gunnison Crested Butte Regional Airport,38.534672,-106.934566,United States,CO,Gunnison,74.0
+KHDN,MEDIUM,Yampa Valley Airport,40.481201,-107.218002,United States,CO,Hayden,70.0
+KLAA,MEDIUM,Southeast Colorado Regional Airport,38.066407,-102.691373,United States,CO,Lamar,45.0
+KMTJ,MEDIUM,Montrose Regional Airport,38.5098,-107.893997,United States,CO,Montrose,85.0
+KPUB,MEDIUM,Pueblo Memorial Airport,38.289101,-104.497002,United States,CO,Pueblo,70.0
+KRIL,MEDIUM,Garfield County Regional Airport,39.526299,-107.726997,United States,CO,Rifle,57.0
+KTEX,MEDIUM,Telluride Regional Airport,37.9538,-107.907997,United States,CO,Telluride,60.0
+KBDL,LARGE,Bradley International Airport,41.93851,-72.688066,United States,CT,Hartford,86.0
+KBDR,MEDIUM,Igor I Sikorsky Memorial Airport,41.163502,-73.126198,United States,CT,Bridgeport,64.0
+KDXR,MEDIUM,Danbury Municipal Airport,41.371656,-73.482227,United States,CT,Danbury,59.0
+KGON,MEDIUM,Groton New London Airport,41.330101,-72.045097,United States,CT,Groton,0.0
+KHFD,MEDIUM,Hartford Brainard Airport,41.73669815,-72.6493988,United States,CT,Hartford,60.0
+KHVN,MEDIUM,Tweed New Haven Airport,41.26369858,-72.88680267,United States,CT,New Haven,70.0
+KDCA,LARGE,Ronald Reagan Washington National Airport,38.8521,-77.037697,United States,DC,Washington,98.0
+KDOV,MEDIUM,Dover Air Force Base,39.129501,-75.466003,United States,DE,Dover,62.0
+KILG,MEDIUM,Wilmington Airport,39.678699,-75.606499,United States,DE,Wilmington,86.0
+KAPF,MEDIUM,Naples Municipal Airport,26.15259933,-81.77529907,United States,FL,Naples,61.0
+KBCT,MEDIUM,Boca Raton Airport,26.3785,-80.107697,United States,FL,Boca Raton,66.0
+KCEW,MEDIUM,Bob Sikes Airport,30.77879906,-86.52210236,United States,FL,Crestview,52.0
+KCOF,MEDIUM,Patrick Space Force Base,28.2349,-80.6101,United States,FL,Cocoa Beach,57.0
+KCRG,MEDIUM,Jacksonville Executive at Craig Airport,30.3362999,-81.51439667,United States,FL,Jacksonville,62.0
+KDAB,MEDIUM,Daytona Beach International Airport,29.179899,-81.058098,United States,FL,Daytona Beach,89.0
+KDTS,MEDIUM,Destin Executive Airport,30.400101,-86.471497,United States,FL,Destin,67.0
+KECP,MEDIUM,Northwest Florida Beaches International Airport,30.357106,-85.795414,United States,FL,Panama City Beach,89.0
+KEGI,MEDIUM,Duke Field,30.65040016,-86.52290344,United States,FL,Crestview,95.0
+KEYW,MEDIUM,Key West International Airport,24.556101,-81.759598,United States,FL,Key West,64.0
+KFLL,LARGE,Fort Lauderdale Hollywood International Airport,26.072599,-80.152702,United States,FL,Fort Lauderdale,99.0
+KFMY,MEDIUM,Page Field,26.58659935,-81.86329651,United States,FL,Fort Myers,62.0
+KFPR,MEDIUM,St Lucie County International Airport,27.49510002,-80.36830139,United States,FL,Fort Pierce,59.0
+KFXE,MEDIUM,Fort Lauderdale Executive Airport,26.19729996,-80.17070007,United States,FL,Fort Lauderdale,75.0
+KGNV,MEDIUM,Gainesville Regional Airport,29.69009972,-82.27179718,United States,FL,Gainesville,89.0
+KHRT,MEDIUM,Hurlburt Field,30.427799,-86.689301,United States,FL,Mary Esther,52.0
+KHST,MEDIUM,Homestead ARB Airport,25.48859978,-80.38359833,United States,FL,Homestead,60.0
+KISM,MEDIUM,Kissimmee Gateway Airport,28.28980064,-81.43710327,United States,FL,Orlando,70.0
+KJAX,LARGE,Jacksonville International Airport,30.492469,-81.687813,United States,FL,Jacksonville,85.0
+KLAL,MEDIUM,Lakeland Linder International Airport,27.987656,-82.018776,United States,FL,Lakeland,61.0
+KLEE,MEDIUM,Leesburg International Airport,28.82309914,-81.80870056,United States,FL,Leesburg,56.0
+KMCF,MEDIUM,MacDill Air Force Base,27.8493,-82.521202,United States,FL,Tampa,69.0
+KMCO,LARGE,Orlando International Airport,28.429399490356445,-81.30899811,United States,FL,Orlando,97.0
+KMIA,LARGE,Miami International Airport,25.79319953918457,-80.29060364,United States,FL,Miami,97.0
+KMLB,MEDIUM,Melbourne Orlando International Airport,28.1028,-80.645302,United States,FL,Melbourne,90.0
+KMTH,MEDIUM,The Florida Keys Marathon Airport,24.726101,-81.051399,United States,FL,Marathon,52.0
+KNDZ,MEDIUM,Whiting Field Naval Air Station South Airport,30.704399,-87.023003,United States,FL,Milton,88.0
+KNIP,MEDIUM,Jacksonville Naval Air Station (Towers Field),30.2358,-81.680603,United States,FL,Jacksonville,70.0
+KNPA,MEDIUM,Naval Air Station Pensacola Forrest Sherman Field,30.352699,-87.318604,United States,FL,Pensacola,66.0
+KNQX,MEDIUM,Naval Air Station Key West/Boca Chica Field,24.57579994,-81.68890381,United States,FL,Key West,46.0
+KNRB,MEDIUM,Naval Station Mayport / Admiral David L McDonald Field,30.3911,-81.424698,United States,FL,Jacksonville,81.0
+KNSE,MEDIUM,Whiting Field Naval Air Station - North,30.7241993,-87.02189636,United States,FL,Milton,88.0
+KOPF,MEDIUM,Miami-Opa Locka Executive Airport,25.907,-80.278397,United States,FL,Miami,80.0
+KPAM,MEDIUM,Tyndall Air Force Base,30.069599,-85.575401,United States,FL,Panama City,46.0
+KPBI,LARGE,Palm Beach International Airport,26.683201,-80.095596,United States,FL,West Palm Beach,86.0
+KPGD,MEDIUM,Punta Gorda Airport,26.9202,-81.990501,United States,FL,Punta Gorda,65.0
+KPIE,MEDIUM,St. Petersburg Clearwater International Airport,27.9102,-82.687401,United States,FL,Pinellas Park,93.0
+KPNS,MEDIUM,Pensacola International Airport,30.4734,-87.1866,United States,FL,Pensacola,74.0
+KRSW,LARGE,Southwest Florida International Airport,26.53619956970215,-81.75520325,United States,FL,Fort Myers,87.0
+KSFB,LARGE,Orlando Sanford International Airport,28.777599334716797,-81.23750305,United States,FL,Orlando,94.0
+KSGJ,MEDIUM,Northeast Florida Regional Airport,29.9592,-81.339798,United States,FL,St Augustine,61.0
+KSRQ,LARGE,Sarasota Bradenton International Airport,27.394631,-82.554359,United States,FL,Sarasota,76.0
+KTIX,MEDIUM,Space Coast Regional Airport,28.51479912,-80.79920197,United States,FL,Titusville,54.0
+KTLH,MEDIUM,Tallahassee Regional Airport,30.3965,-84.350304,United States,FL,Tallahassee,62.0
+KTMB,MEDIUM,Miami Executive Airport,25.6479,-80.4328,United States,FL,Miami,73.0
+KTPA,LARGE,Tampa International Airport,27.9755,-82.533203,United States,FL,Tampa,94.0
+KTTS,MEDIUM,Space Florida Launch and Landing Facility,28.615,-80.694504,United States,FL,Titusville,97.0
+KVPS,MEDIUM,Destin-Fort Walton Beach Airport,30.4832,-86.525398,United States,FL,Valparaiso,58.0
+KVQQ,MEDIUM,Cecil Airport,30.2187,-81.876701,United States,FL,Jacksonville,62.0
+KVRB,MEDIUM,Vero Beach Regional Airport,27.6556,-80.417901,United States,FL,Vero Beach,78.0
+KXMR,MEDIUM,Cape Canaveral SFS Skid Strip,28.4676,-80.566597,United States,FL,Cocoa Beach,89.0
+KABY,MEDIUM,Southwest Georgia Regional Airport,31.532946,-84.196215,United States,GA,Albany,80.0
+KAGS,MEDIUM,Augusta Regional At Bush Field,33.3699,-81.9645,United States,GA,Augusta,89.0
+KAHN,MEDIUM,Athens Ben Epps Airport,33.948842,-83.325634,United States,GA,Athens,67.0
+KATL,LARGE,Hartsfield Jackson Atlanta International Airport,33.6367,-84.428101,United States,GA,Atlanta,97.0
+KBQK,MEDIUM,Brunswick Golden Isles Airport,31.258801,-81.466499,United States,GA,Brunswick,80.0
+KCSG,MEDIUM,Columbus Metropolitan Airport,32.516300201416016,-84.93890381,United States,GA,Columbus,84.0
+KDNL,MEDIUM,Daniel Field,33.46649933,-82.03939819,United States,GA,Augusta,60.0
+KFTY,MEDIUM,Fulton County Airport Brown Field,33.77909851,-84.52140045,United States,GA,Atlanta,72.0
+KLSF,MEDIUM,Lawson Army Air Field,32.332546,-84.988003,United States,GA,Fort Benning,0.0
+KMCN,MEDIUM,Middle Georgia Regional Airport,32.69279861450195,-83.64920044,United States,GA,Macon,77.0
+KMGE,MEDIUM,Dobbins Air Reserve Base,33.915401,-84.516296,United States,GA,Marietta,63.0
+KPDK,MEDIUM,DeKalb Peachtree Airport,33.87633,-84.30213,United States,GA,Atlanta,76.0
+KRMG,MEDIUM,Richard B Russell Airport,34.3506012,-85.15799713,United States,GA,Rome,51.0
+KRYY,MEDIUM,Cobb County International Airport-McCollum Field,34.01316,-84.59721,United States,GA,Atlanta,68.0
+KSAV,LARGE,Savannah Hilton Head International Airport,32.127602,-81.202103,United States,GA,Savannah,76.0
+KSSI,MEDIUM,St Simons Island Airport,31.1518,-81.391296,United States,GA,St Simons Island,0.0
+KSVN,MEDIUM,Hunter Army Air Field,32.00999832,-81.14569855,United States,GA,Savannah,62.0
+KVAD,MEDIUM,Moody Air Force Base,30.96780014,-83.19300079,United States,GA,Valdosta,63.0
+KVLD,MEDIUM,Valdosta Regional Airport,30.782499313354492,-83.27670288,United States,GA,Valdosta,81.0
+KWRB,MEDIUM,Robins Air Force Base,32.640099,-83.591904,United States,GA,Warner Robins,100.0
+PHBK,MEDIUM,Barking Sands Airport,22.0228,-159.785004,United States,HI,Kekaha,74.0
+PHIK,MEDIUM,Hickam Air Force Base,21.335278,-157.948333,United States,HI,Honolulu,100.0
+PHNL,LARGE,Daniel K Inouye International Airport,21.32062,-157.924228,United States,HI,Honolulu Oahu,0.0
+PHHN,MEDIUM,Hana Airport,20.795601,-156.014008,United States,HI,Hana,41.0
+PHTO,MEDIUM,Hilo International Airport,19.721399,-155.048004,United States,HI,Hilo,92.0
+PHJH,MEDIUM,Kapalua Airport,20.9629,-156.673004,United States,HI,Lahaina,65.0
+PHJR,MEDIUM,Kalaeloa Airport,21.3074,-158.070009,United States,HI,Kapolei,94.0
+PHKO,MEDIUM,Ellison Onizuka Kona International Airport at Keahole,19.738783,-156.045603,United States,HI,Kailua-Kona,0.0
+PHLI,MEDIUM,Lihue Airport,21.976,-159.339005,United States,HI,Lihue,87.0
+PHNY,MEDIUM,Lanai Airport,20.785675,-156.951324,United States,HI,Lanai City,68.0
+PHMK,MEDIUM,Molokai Airport,21.152901,-157.095993,United States,HI,Kaunakakai,73.0
+PHMU,MEDIUM,Waimea Kohala Airport,20.001301,-155.667999,United States,HI,Waimea ,64.0
+PHNG,MEDIUM,Kaneohe Bay MCAS (Marion E. Carl Field) Airport,21.4505,-157.768005,United States,HI,Kaneohe,65.0
+PHOG,LARGE,Kahului International Airport,20.896263,-156.431837,United States,HI,Kahului,94.0
+KALO,MEDIUM,Waterloo Regional Airport,42.557098388671875,-92.40029907,United States,IA,Waterloo,76.0
+KBRL,MEDIUM,Southeast Iowa Regional Airport,40.783199310302734,-91.12550354,United States,IA,Burlington,68.0
+KCCY,MEDIUM,Northeast Iowa Regional Airport,43.07260132,-92.6108017,United States,IA,Charles City,84.0
+KCID,MEDIUM,The Eastern Iowa Airport,41.884701,-91.7108,United States,IA,Cedar Rapids,93.0
+KDBQ,MEDIUM,Dubuque Regional Airport,42.402,-90.709503,United States,IA,Dubuque,77.0
+KDSM,MEDIUM,Des Moines International Airport,41.534,-93.663101,United States,IA,Des Moines,75.0
+KFOD,MEDIUM,Fort Dodge Regional Airport,42.552624,-94.191237,United States,IA,Fort Dodge,70.0
+KMCW,MEDIUM,Mason City Municipal Airport,43.159801,-93.329716,United States,IA,Mason City,70.0
+KOTM,MEDIUM,Ottumwa Regional Airport,41.106368,-92.449837,United States,IA,Ottumwa,48.0
+KSUX,MEDIUM,Sioux Gateway Airport / Brigadier General Bud Day Field,42.397605,-96.382237,United States,IA,Sioux City,80.0
+KBOI,MEDIUM,Boise Air Terminal/Gowen Field,43.5644,-116.223,United States,ID,Boise,80.0
+KBYI,MEDIUM,Burley Municipal Airport,42.542598724399994,-113.7720032,United States,ID,Burley,89.0
+KCOE,MEDIUM,Coeur D'Alene Airport - Pappy Boyington Field,47.7743,-116.82,United States,ID,Coeur d'Alene,59.0
+KIDA,MEDIUM,Idaho Falls Regional Airport,43.514599,-112.070999,United States,ID,Idaho Falls,88.0
+KLWS,MEDIUM,Lewiston Nez Perce County Airport,46.37450027,-117.0149994,United States,ID,Lewiston,80.0
+KMUO,MEDIUM,Mountain Home Air Force Base,43.043598,-115.872002,United States,ID,Mountain Home,60.0
+KMYL,MEDIUM,McCall Municipal Airport,44.888837,-116.101112,United States,ID,McCall,45.0
+KPIH,MEDIUM,Pocatello Regional Airport,42.90980148,-112.5960007,United States,ID,Pocatello,78.0
+KSMN,MEDIUM,Lemhi County Airport,45.122233,-113.88196,United States,ID,Salmon,73.0
+KSUN,MEDIUM,Friedman Memorial Airport,43.50439835,-114.2959976,United States,ID,Hailey,79.0
+KTWF,MEDIUM,Joslin Field Magic Valley Regional Airport,42.4818,-114.487999,United States,ID,Twin Falls,78.0
+KALN,MEDIUM,St Louis Regional Airport,38.89030075069999,-90.04599762,United States,IL,Alton,99.0
+KBLV,MEDIUM,Scott AFB/Midamerica Airport,38.5452,-89.835197,United States,IL,Belleville,86.0
+KBMI,MEDIUM,Central Illinois Regional Airport at Bloomington-Normal,40.4771,-88.915901,United States,IL,Bloomington,87.0
+KCMI,MEDIUM,University of Illinois Willard Airport,40.039819,-88.276249,United States,IL,Savoy,77.0
+KDEC,MEDIUM,Decatur Airport,39.834598541259766,-88.86569977,United States,IL,Decatur,75.0
+KDPA,MEDIUM,Dupage Airport,41.90779877,-88.24859619,United States,IL,Chicago,73.0
+KIKK,MEDIUM,Greater Kankakee Airport,41.07139968869999,-87.84629822,United States,IL,Kankakee,54.0
+KMDH,MEDIUM,Southern Illinois Airport,37.778099,-89.251999,United States,IL,Murphysboro,54.0
+KMDW,LARGE,Chicago Midway International Airport,41.785999,-87.752403,United States,IL,Chicago,99.0
+KMLI,MEDIUM,Quad City International Airport,41.448502,-90.5075,United States,IL,Moline,87.0
+KMWA,MEDIUM,Veterans Airport of Southern Illinois,37.751208,-89.016568,United States,IL,Marion,71.0
+KORD,LARGE,Chicago O'Hare International Airport,41.9786,-87.9048,United States,IL,Chicago,100.0
+KPIA,MEDIUM,General Wayne A. Downing Peoria International Airport,40.6642,-89.693298,United States,IL,Peoria,90.0
+KPWK,MEDIUM,Chicago Executive Airport,42.114222,-87.901494,United States,IL,Chicago,74.0
+KRFD,MEDIUM,Chicago Rockford International Airport,42.1954,-89.097198,United States,IL,Chicago,91.0
+KSPI,MEDIUM,Abraham Lincoln Capital Airport,39.844101,-89.677902,United States,IL,Springfield,83.0
+KUIN,MEDIUM,Quincy Regional Airport Baldwin Field,39.942699,-91.194603,United States,IL,Quincy,70.0
+KBAK,MEDIUM,Columbus Municipal Airport,39.262386,-85.895576,United States,IN,Columbus,54.0
+KBMG,MEDIUM,Monroe County Airport,39.145999908447266,-86.61669922,United States,IN,Bloomington,68.0
+KEVV,MEDIUM,Evansville Regional Airport,38.03699875,-87.53240204,United States,IN,Evansville,88.0
+KFWA,MEDIUM,Fort Wayne International Airport,40.9785,-85.195099,United States,IN,Fort Wayne,91.0
+KGUS,MEDIUM,Grissom Air Reserve Base,40.648102,-86.1521,United States,IN,Peru,88.0
+KGYY,MEDIUM,Gary Chicago International Airport,41.61629867553711,-87.41280365,United States,IN,Gary,70.0
+KHUF,MEDIUM,Terre Haute Regional Airport Hulman Field,39.4515,-87.307602,United States,IN,Terre Haute,62.0
+KIND,LARGE,Indianapolis International Airport,39.7173,-86.294403,United States,IN,Indianapolis,88.0
+KLAF,MEDIUM,Purdue University Airport,40.412875,-86.939363,United States,IN,West Lafayette,67.0
+KMIE,MEDIUM,Delaware County Johnson Field,40.242298,-85.395897,United States,IN,Muncie,99.0
+KSBN,MEDIUM,South Bend Regional Airport,41.708698,-86.317299,United States,IN,South Bend,91.0
+KVPZ,MEDIUM,Porter County Municipal Airport,41.45399857,-87.00710297,United States,IN,Valparaiso,96.0
+KCNU,MEDIUM,Chanute Martin Johnson Airport,37.668173,-95.486727,United States,KS,Chanute,86.0
+KDDC,MEDIUM,Dodge City Regional Airport,37.76340103149414,-99.96559906,United States,KS,Dodge City,70.0
+KFOE,MEDIUM,Topeka Regional Airport,38.950901,-95.663597,United States,KS,Topeka,73.0
+KFRI,MEDIUM,Marshall Army Air Field,39.053021,-96.764202,United States,KS,Fort Riley ,86.0
+KGCK,MEDIUM,Garden City Regional Airport,37.92750168,-100.723999,United States,KS,Garden City,78.0
+KGLD,MEDIUM,Goodland Municipal Airport,39.370701,-101.699753,United States,KS,Goodland,76.0
+KHUT,MEDIUM,Hutchinson Municipal Airport,38.06549835,-97.86060333,United States,KS,Hutchinson,53.0
+KHYS,MEDIUM,Hays Regional Airport,38.844521,-99.273148,United States,KS,Hays,72.0
+KIAB,MEDIUM,McConnell Air Force Base,37.621899,-97.268204,United States,KS,Wichita,51.0
+KICT,MEDIUM,Wichita Eisenhower National Airport,37.649899,-97.433098,United States,KS,Wichita,63.0
+KLBL,MEDIUM,Liberal Mid-America Regional Airport,37.0442009,-100.9599991,United States,KS,Liberal,70.0
+KMHK,MEDIUM,Manhattan Regional Airport,39.14099884033203,-96.67079926,United States,KS,Manhattan,82.0
+KRSL,MEDIUM,Russell Municipal Airport,38.87210083,-98.8117981,United States,KS,Russell,77.0
+KSLN,MEDIUM,Salina Municipal Airport,38.79100036621094,-97.65219879,United States,KS,Salina,76.0
+KTOP,MEDIUM,Philip Billard Municipal Airport,39.069899,-95.622606,United States,KS,Topeka,100.0
+KBWG,MEDIUM,Bowling Green Warren County Regional Airport,36.964500427199994,-86.41970062,United States,KY,Bowling Green,65.0
+KCVG,LARGE,Cincinnati Northern Kentucky International Airport,39.048801,-84.667801,United States,KY,Covington,96.0
+KFTK,MEDIUM,Godman Army Air Field,37.907100677500004,-85.9720993,United States,KY,Fort Knox,86.0
+KHOP,MEDIUM,Campbell Army Airfield (Fort Campbell),36.674154,-87.48974,United States,KY,Fort Campbell,0.0
+KJKL,MEDIUM,Julian Carroll Airport,37.59389877319336,-83.31729889,United States,KY,Jackson,65.0
+KLEX,MEDIUM,Blue Grass Airport,38.036499,-84.605904,United States,KY,Lexington,93.0
+KLOU,MEDIUM,Bowman Field,38.22800064,-85.66369629,United States,KY,Louisville,59.0
+KLOZ,MEDIUM,London-Corbin Airport/Magee Field,37.0821991,-84.0848999,United States,KY,London,48.0
+KOWB,MEDIUM,Owensboro Daviess County Airport,37.74010086,-87.16680145,United States,KY,Owensboro,75.0
+KPAH,MEDIUM,Barkley Regional Airport,37.06079864501953,-88.77380371,United States,KY,Paducah,74.0
+KI39,MEDIUM,Central Kentucky Regional Airport,37.630798,-84.332298,United States,KY,Richmond,50.0
+KSDF,LARGE,Louisville Muhammad Ali International Airport,38.1744,-85.736,United States,KY,Louisville,82.0
+KSME,MEDIUM,Lake Cumberland Regional Airport,37.053398132299996,-84.61589813,United States,KY,Somerset,51.0
+KAEX,MEDIUM,Alexandria International Airport,31.3274,-92.549797,United States,LA,Alexandria,87.0
+KARA,MEDIUM,Acadiana Regional Airport,30.0378,-91.883904,United States,LA,New Iberia,95.0
+KBAD,MEDIUM,Barksdale Air Force Base,32.501801,-93.662697,United States,LA,Bossier City,64.0
+KBTR,MEDIUM,Baton Rouge Metropolitan Airport,30.533199,-91.149597,United States,LA,Baton Rouge,91.0
+KDRI,MEDIUM,Beauregard Regional Airport,30.831699,-93.339897,United States,LA,DeRidder,87.0
+KESF,MEDIUM,Esler Army Airfield / Esler Regional Airport,31.394266,-92.294082,United States,LA,Alexandria,98.0
+KLCH,MEDIUM,Lake Charles Regional Airport,30.126100540161133,-93.22329712,United States,LA,Lake Charles,85.0
+KLFT,MEDIUM,Lafayette Regional Airport,30.205299,-91.987602,United States,LA,Lafayette,88.0
+KMLU,MEDIUM,Monroe Regional Airport,32.510899,-92.037697,United States,LA,Monroe,85.0
+KMSY,LARGE,Louis Armstrong New Orleans International Airport,29.993401,-90.258003,United States,LA,New Orleans,90.0
+KNBG,MEDIUM,New Orleans NAS JRB/Alvin Callender Field,29.82530022,-90.03500366,United States,LA,New Orleans,65.0
+KNEW,MEDIUM,Lakefront Airport,30.04240036,-90.02829742,United States,LA,New Orleans,65.0
+KPOE,MEDIUM,Polk Army Air Field,31.0447998,-93.1917038,United States,LA,Fort Polk,0.0
+KSHV,MEDIUM,Shreveport Regional Airport,32.446602,-93.8256,United States,LA,Shreveport,89.0
+KACK,MEDIUM,Nantucket Memorial Airport,41.25310135,-70.06020355,United States,MA,Nantucket,0.0
+KBAF,MEDIUM,Westfield-Barnes Regional Airport,42.157799,-72.715599,United States,MA,Westfield,65.0
+KBED,MEDIUM,Laurence G Hanscom Field,42.470001,-71.289001,United States,MA,Bedford,0.0
+KBOS,LARGE,Logan International Airport,42.36197,-71.0079,United States,MA,Boston,98.0
+KBVY,MEDIUM,Beverly Regional Airport,42.584202,-70.916496,United States,MA,Beverly ,60.0
+KCEF,MEDIUM,Westover Metropolitan Airport / Westover Air Reserve Base,42.194,-72.534798,United States,MA,Chicopee,63.0
+KEWB,MEDIUM,New Bedford Regional Airport,41.67610168457031,-70.95690155,United States,MA,New Bedford,67.0
+KHYA,MEDIUM,Cape Cod Gateway Airport,41.6693,-70.280403,United States,MA,Hyannis,0.0
+KLWM,MEDIUM,Lawrence Municipal Airport,42.717201232899995,-71.12339783,United States,MA,Lawrence,57.0
+KORH,MEDIUM,Worcester Regional Airport,42.2673,-71.875702,United States,MA,Worcester,86.0
+KOWD,MEDIUM,Norwood Memorial Airport,42.19049835,-71.17289734,United States,MA,Norwood,0.0
+KADW,LARGE,Joint Base Andrews,38.810799,-76.866997,United States,MD,Camp Springs,66.0
+KAPG,MEDIUM,Phillips Army Air Field,39.466202,-76.1688,United States,MD,Aberdeen,92.0
+KBWI,LARGE,Baltimore/Washington International Thurgood Marshall Airport,39.1754,-76.668297,United States,MD,Baltimore,99.0
+KFME,MEDIUM,Tipton Airport,39.08539962769999,-76.75939941,United States,MD,Fort Meade,52.0
+KHGR,MEDIUM,Hagerstown Regional Richard A Henson Field,39.708771,-77.728014,United States,MD,Hagerstown,81.0
+KMTN,MEDIUM,Martin State Airport,39.325699,-76.413803,United States,MD,Baltimore,61.0
+KNHK,MEDIUM,Patuxent River Naval Air Station (Trapnell Field),38.285999,-76.411797,United States,MD,Patuxent River,0.0
+KSBY,MEDIUM,Salisbury Ocean City Wicomico Regional Airport,38.34049987792969,-75.51029968,United States,MD,Salisbury,82.0
+KAUG,MEDIUM,Augusta State Airport,44.320598602299995,-69.79730225,United States,ME,Augusta,68.0
+KBGR,MEDIUM,Bangor International Airport,44.8074,-68.828102,United States,ME,Bangor,88.0
+KBHB,MEDIUM,Hancock County-Bar Harbor Airport,44.45000076,-68.3615036,United States,ME,Bar Harbor,0.0
+KBXM,MEDIUM,Brunswick Executive Airport,43.89220047,-69.93859863,United States,ME,Brunswick,0.0
+KCAR,MEDIUM,Caribou Municipal Airport,46.871498,-68.017899,United States,ME,Caribou,47.0
+KHUL,MEDIUM,Houlton International Airport,46.12310028,-67.792099,United States,ME,Houlton,0.0
+KPQI,MEDIUM,Presque Isle International Airport,46.688999,-68.0448,United States,ME,Presque Isle,72.0
+KPWM,LARGE,Portland International Jetport,43.646198,-70.309303,United States,ME,Portland,71.0
+KRKD,MEDIUM,Knox County Regional Airport,44.060101,-69.099197,United States,ME,Rockland,65.0
+KAPN,MEDIUM,Alpena County Regional Airport,45.0780983,-83.56030273,United States,MI,Alpena,67.0
+KAZO,MEDIUM,Kalamazoo Battle Creek International Airport,42.234901428222656,-85.55210114,United States,MI,Kalamazoo,85.0
+KBTL,MEDIUM,Battle Creek Executive Airport at Kellogg Field,42.307301,-85.251503,United States,MI,Battle Creek,98.0
+KCIU,MEDIUM,Chippewa County International Airport,46.247707,-84.471379,United States,MI,Kincheloe,65.0
+KCMX,MEDIUM,Houghton County Memorial Airport,47.168399810791016,-88.4890976,United States,MI,Hancock,69.0
+KDET,MEDIUM,Coleman A. Young Municipal Airport,42.40919876,-83.00990295,United States,MI,Detroit,67.0
+KDTW,LARGE,Detroit Metropolitan Wayne County Airport,42.21377,-83.353786,United States,MI,Detroit,93.0
+KESC,MEDIUM,Delta County Airport,45.723199,-87.088623,United States,MI,Escanaba,72.0
+KFNT,MEDIUM,Bishop International Airport,42.96540069580078,-83.74359894,United States,MI,Flint,63.0
+KGRR,MEDIUM,Gerald R. Ford International Airport,42.88079834,-85.52279663,United States,MI,Grand Rapids,77.0
+KIMT,MEDIUM,Ford Airport,45.81911,-88.114557,United States,MI,Kingsford,68.0
+KJXN,MEDIUM,Jackson County Airport/Reynolds Field,42.260509,-84.463019,United States,MI,Jackson,99.0
+KLAN,MEDIUM,Capital City Airport,42.77870178222656,-84.58740234,United States,MI,Lansing,86.0
+KMBS,MEDIUM,MBS International Airport,43.531913,-84.082275,United States,MI,Freeland,78.0
+KMKG,MEDIUM,Muskegon County Airport,43.169498,-86.238197,United States,MI,Muskegon,71.0
+KMTC,MEDIUM,Selfridge Air National Guard Base Airport,42.613463,-82.836919,United States,MI,Mount Clemens,53.0
+KPLN,MEDIUM,Pellston Regional Airport of Emmet County Airport,45.57089996,-84.79669952,United States,MI,Pellston,53.0
+KPTK,MEDIUM,Oakland County International Airport,42.66550064,-83.42009735,United States,MI,Pontiac,62.0
+KSAW,MEDIUM,Marquette/Sawyer International Airport,46.3536,-87.395401,United States,MI,Gwinn,60.0
+KTVC,MEDIUM,Cherry Capital Airport,44.74140167236328,-85.5821991,United States,MI,Traverse City,86.0
+KYIP,MEDIUM,Willow Run Airport,42.23789978,-83.53040314,United States,MI,Detroit,74.0
+KAXN,MEDIUM,Chandler Field,45.866299,-95.394699,United States,MN,Alexandria,91.0
+KBDE,MEDIUM,Baudette International Airport,48.72840118,-94.61219788,United States,MN,Baudette,53.0
+KBJI,MEDIUM,Bemidji Regional Airport,47.50939941,-94.93370056,United States,MN,Bemidji,76.0
+KBRD,MEDIUM,Brainerd Lakes Regional Airport,46.402861,-94.129727,United States,MN,Brainerd,73.0
+KDLH,MEDIUM,Duluth International Airport,46.842098,-92.193604,United States,MN,Duluth,86.0
+KELO,MEDIUM,Ely Municipal Airport,47.82450104,-91.83070374,United States,MN,Ely,37.0
+KHIB,MEDIUM,Range Regional Airport,47.384831,-92.836905,United States,MN,Hibbing,72.0
+KINL,MEDIUM,Falls International Airport,48.566200256347656,-93.40309906,United States,MN,International Falls,67.0
+KMSP,LARGE,Minneapolis–Saint Paul International Airport / Wold–Chamberlain Field,44.880081,-93.221741,United States,MN,Minneapolis,94.0
+KRST,MEDIUM,Rochester International Airport,43.908298,-92.5,United States,MN,Rochester,85.0
+KRWF,MEDIUM,Redwood Falls Municipal Airport,44.547199,-95.082298,United States,MN,Redwood Falls,79.0
+KSTC,MEDIUM,Saint Cloud Regional Airport,45.5466,-94.059898,United States,MN,Saint Cloud,0.0
+KSTP,MEDIUM,Saint Paul Downtown Holman Field,44.93479,-93.060036,United States,MN,Saint Paul,0.0
+KTVF,MEDIUM,Thief River Falls Regional Airport,48.065701,-96.184998,United States,MN,Thief River Falls,67.0
+KBBG,MEDIUM,Branson Airport,36.532082,-93.200544,United States,MO,Branson,63.0
+KCGI,MEDIUM,Cape Girardeau Regional Airport,37.2253,-89.570801,United States,MO,Cape Girardeau,72.0
+KCOU,MEDIUM,Columbia Regional Airport,38.8181,-92.219597,United States,MO,Columbia,86.0
+KIRK,MEDIUM,Kirksville Regional Airport,40.09349822998047,-92.54489899,United States,MO,Kirksville,67.0
+KJLN,MEDIUM,Joplin Regional Airport,37.151798,-94.498299,United States,MO,Joplin,77.0
+KMCI,LARGE,Kansas City International Airport,39.2976,-94.713898,United States,MO,Kansas City,91.0
+KMKC,MEDIUM,Charles B. Wheeler Downtown Airport,39.123199,-94.592796,United States,MO,Kansas City,74.0
+KSGF,MEDIUM,Springfield Branson National Airport,37.245701,-93.388603,United States,MO,Springfield,92.0
+KSTJ,MEDIUM,Rosecrans Memorial Airport,39.77190018,-94.90969849,United States,MO,St Joseph,98.0
+KSTL,LARGE,St. Louis Lambert International Airport,38.748697,-90.370003,United States,MO,St Louis,92.0
+KSUS,MEDIUM,Spirit of St Louis Airport,38.662102,-90.652,United States,MO,St Louis,71.0
+KSZL,MEDIUM,Whiteman Air Force Base,38.730301,-93.547897,United States,MO,Knob Noster,47.0
+KTBN,MEDIUM,Waynesville-St. Robert Regional Airport-Forney Field,37.7416,-92.140701,United States,MO,Fort Leonard Wood,72.0
+KBIX,MEDIUM,Keesler Air Force Base,30.41040039,-88.92440033,United States,MS,Biloxi,97.0
+KCBM,MEDIUM,Columbus Air Force Base,33.643799,-88.443802,United States,MS,Columbus,94.0
+KGLH,MEDIUM,Mid Delta Regional Airport,33.482899,-90.985603,United States,MS,Greenville,71.0
+KGPT,MEDIUM,Gulfport Biloxi International Airport,30.407301,-89.070099,United States,MS,Gulfport,90.0
+KGTR,MEDIUM,Golden Triangle Regional Airport,33.450298,-88.5914,United States,MS,Columbus,79.0
+KGWO,MEDIUM,Greenwood–Leflore Airport,33.495025,-90.088204,United States,MS,Greenwood,50.0
+KHBG,MEDIUM,Hattiesburg Bobby L Chain Municipal Airport,31.26479912,-89.25279999,United States,MS,Hattiesburg,53.0
+KJAN,MEDIUM,Jackson-Medgar Wiley Evers International Airport,32.311199,-90.075897,United States,MS,Jackson,66.0
+KMCB,MEDIUM,McComb-Pike County Airport / John E Lewis Field,31.178499,-90.471901,United States,MS,McComb,89.0
+KMEI,MEDIUM,Key Field / Meridian Regional Airport,32.3326,-88.7519,United States,MS,Meridian,76.0
+KNMM,MEDIUM,Naval Air Station Meridian / McCain Field,32.5531,-88.55406,United States,MS,Lauderdale,24.0
+KPIB,MEDIUM,Hattiesburg Laurel Regional Airport,31.4671,-89.337097,United States,MS,Moselle,30.0
+KTUP,MEDIUM,Tupelo Regional Airport,34.26810073852539,-88.76989746,United States,MS,Tupelo,75.0
+KUOX,MEDIUM,University Oxford Airport,34.38430023,-89.53679657,United States,MS,Oxford,57.0
+KBIL,MEDIUM,Billings Logan International Airport,45.807701,-108.542999,United States,MT,Billings,91.0
+KBTM,MEDIUM,Bert Mooney Airport,45.95479965209961,-112.4970016,United States,MT,Butte,76.0
+KBZN,MEDIUM,Bozeman Yellowstone International Airport,45.7775,-111.153,United States,MT,Bozeman,73.0
+KCTB,MEDIUM,Cut Bank International Airport,48.608657,-112.378183,United States,MT,Cut Bank,72.0
+KGDV,MEDIUM,Dawson Community Airport,47.137658,-104.80691,United States,MT,Glendive,57.0
+KGGW,MEDIUM,Glasgow Valley County Airport Wokal Field,48.212502,-106.614998,United States,MT,Glasgow,55.0
+KGPI,MEDIUM,Glacier Park International Airport,48.31050109863281,-114.2559967,United States,MT,Kalispell,89.0
+KGTF,MEDIUM,Great Falls International Airport,47.48199844,-111.3710022,United States,MT,Great Falls,87.0
+KHLN,MEDIUM,Helena Regional Airport,46.6068,-111.983002,United States,MT,Helena,83.0
+KHVR,MEDIUM,Havre City County Airport,48.541387,-109.762859,United States,MT,Havre,62.0
+KLVM,MEDIUM,Mission Field,45.69940186,-110.447998,United States,MT,Livingston,45.0
+KLWT,MEDIUM,Lewistown Municipal Airport,47.048429,-109.466143,United States,MT,Lewistown,41.0
+KMLS,MEDIUM,Miles City Airport - Frank Wiley Field,46.427268,-105.885372,United States,MT,Miles City,85.0
+KMSO,MEDIUM,Missoula International Airport,46.91630173,-114.0910034,United States,MT,Missoula,91.0
+KOLF,MEDIUM,L M Clayton Airport,48.094501,-105.574997,United States,MT,Wolf Point,54.0
+KSDY,MEDIUM,Sidney - Richland Regional Airport,47.705141,-104.194422,United States,MT,Sidney,65.0
+KWYS,MEDIUM,Yellowstone Airport,44.6884,-111.117996,United States,MT,West Yellowstone,54.0
+KAVL,MEDIUM,Asheville Regional Airport,35.436199,-82.541801,United States,NC,Asheville,68.0
+KCLT,LARGE,Charlotte Douglas International Airport,35.2140007,-80.94309998,United States,NC,Charlotte,92.0
+KECG,MEDIUM,Elizabeth City Regional Airport & Coast Guard Air Station,36.260601,-76.174599,United States,NC,Elizabeth City,93.0
+KEWN,MEDIUM,Coastal Carolina Regional Airport,35.07300186,-77.04290009,United States,NC,New Bern,81.0
+KFAY,MEDIUM,Fayetteville Regional Airport - Grannis Field,34.991199,-78.880302,United States,NC,Fayetteville,88.0
+KFBG,MEDIUM,Simmons Army Air Field,35.13180161,-78.93669891,United States,NC,Fort Bragg,0.0
+KGSB,MEDIUM,Seymour Johnson Air Force Base,35.339401,-77.960602,United States,NC,Goldsboro,62.0
+KGSO,MEDIUM,Piedmont Triad International Airport,36.097801,-79.937302,United States,NC,Greensboro,75.0
+KHKY,MEDIUM,Hickory Regional Airport,35.74110031,-81.38950348,United States,NC,Hickory,65.0
+KILM,MEDIUM,Wilmington International Airport,34.270599365234375,-77.90260315,United States,NC,Wilmington,93.0
+KINT,MEDIUM,Smith Reynolds Airport,36.13370132446289,-80.22200012,United States,NC,Winston Salem,0.0
+KISO,MEDIUM,Kinston Regional Jetport At Stallings Field,35.33140183,-77.6088028,United States,NC,Kinston,48.0
+KJNX,MEDIUM,Johnston Regional Airport,35.540901,-78.390297,United States,NC,Smithfield,47.0
+KJQF,MEDIUM,Concord-Padgett Regional Airport,35.387798,-80.709099,United States,NC,Concord,86.0
+KLBT,MEDIUM,Lumberton Regional Airport,34.610773,-79.05943,United States,NC,Lumberton,48.0
+KNCA,MEDIUM,MCAS New River / McCutcheon Field,34.708401,-77.439697,United States,NC,Jacksonville,99.0
+KNKT,MEDIUM,Cherry Point MCAS / Cunningham Field/,34.900902,-76.880699,United States,NC,Cherry Point,0.0
+KOAJ,MEDIUM,Albert J Ellis Airport,34.829201,-77.612099,United States,NC,Richlands,70.0
+KPGV,MEDIUM,Pitt-Greenville Airport,35.635535,-77.384262,United States,NC,Greenville,81.0
+KPOB,MEDIUM,Pope Field,35.170898,-79.014503,United States,NC,Fort Bragg,0.0
+KRDU,LARGE,Raleigh Durham International Airport,35.877602,-78.787498,United States,NC,Raleigh,89.0
+KRHP,MEDIUM,Western Carolina Regional Airport,35.195202,-83.862999,United States,NC,Andrews,34.0
+KRWI,MEDIUM,Rocky Mount Wilson Regional Airport,35.8563,-77.891899,United States,NC,Rocky Mount,53.0
+KBIS,MEDIUM,Bismarck Municipal Airport,46.772701263427734,-100.7460022,United States,ND,Bismarck,88.0
+KDIK,MEDIUM,Dickinson Theodore Roosevelt Regional Airport,46.797533,-102.801905,United States,ND,Dickinson,77.0
+KDVL,MEDIUM,Devils Lake Regional Airport,48.115454,-98.908796,United States,ND,Devils Lake,0.0
+KFAR,MEDIUM,Hector International Airport,46.92070007324219,-96.81580353,United States,ND,Fargo,92.0
+KGFK,MEDIUM,Grand Forks International Airport,47.949299,-97.176102,United States,ND,Grand Forks,85.0
+KJMS,MEDIUM,Jamestown Regional Airport,46.92969894,-98.67819977,United States,ND,Jamestown,71.0
+KMIB,MEDIUM,Minot Air Force Base,48.4156,-101.358002,United States,ND,Minot,62.0
+KMOT,MEDIUM,Minot International Airport,48.25939941,-101.2799988,United States,ND,Minot,86.0
+KRDR,MEDIUM,Grand Forks Air Force Base,47.96110153,-97.40119934,United States,ND,Grand Forks,98.0
+KXWA,MEDIUM,Williston Basin International Airport,48.258387,-103.748797,United States,ND,Williston,82.0
+KAIA,MEDIUM,Alliance Municipal Airport,42.052543,-102.803965,United States,NE,Alliance,63.0
+KBFF,MEDIUM,Western Neb. Rgnl/William B. Heilig Airport,41.87400055,-103.5960007,United States,NE,Scottsbluff,71.0
+KCDR,MEDIUM,Chadron Municipal Airport,42.837601,-103.095001,United States,NE,Chadron,58.0
+KEAR,MEDIUM,Kearney Regional Airport,40.727001,-99.006798,United States,NE,Kearney,75.0
+KGRI,MEDIUM,Central Nebraska Regional Airport,40.967498779296875,-98.30960083,United States,NE,Grand Island,83.0
+KLBF,MEDIUM,North Platte Regional Airport Lee Bird Field,41.12620163,-100.6839981,United States,NE,North Platte,74.0
+KLNK,MEDIUM,Lincoln Airport,40.85100173950195,-96.75920105,United States,NE,Lincoln,87.0
+KMCK,MEDIUM,McCook Ben Nelson Regional Airport,40.207787,-100.592794,United States,NE,McCook,60.0
+KOFF,MEDIUM,Offutt Air Force Base,41.119307,-95.90851,United States,NE,Omaha,62.0
+KOFK,MEDIUM,Karl Stefan Memorial Airport,41.98550034,-97.43509674,United States,NE,Norfolk,49.0
+KOLU,MEDIUM,Columbus Municipal Airport,41.448145,-97.340174,United States,NE,Columbus,94.0
+KOMA,LARGE,Eppley Airfield,41.3032,-95.894096,United States,NE,Omaha,83.0
+KSNY,MEDIUM,Sidney Municipal Airport Lloyd W Carr Field,41.101299,-102.985001,United States,NE,Sidney,43.0
+KVTN,MEDIUM,Miller Field,42.856211,-100.549192,United States,NE,Valentine,39.0
+KCON,MEDIUM,Concord Municipal Airport,43.20270157,-71.50229645,United States,NH,Concord,56.0
+KEEN,MEDIUM,Dillant Hopkins Airport,42.898399,-72.270798,United States,NH,Keene,54.0
+KLEB,MEDIUM,Lebanon Municipal Airport,43.626098632799994,-72.30419922,United States,NH,Lebanon,71.0
+KMHT,MEDIUM,Manchester-Boston Regional Airport,42.932598,-71.435699,United States,NH,Manchester,92.0
+KPSM,MEDIUM,Portsmouth International at Pease Airport,43.07789993,-70.82330322,United States,NH,Portsmouth,83.0
+KACY,MEDIUM,Atlantic City International Airport,39.45759963989258,-74.57720184,United States,NJ,Atlantic City,69.0
+KEWR,LARGE,Newark Liberty International Airport,40.692501,-74.168701,United States,NJ,Newark,100.0
+KMIV,MEDIUM,Millville Municipal Airport,39.367802,-75.072197,United States,NJ,Millville,53.0
+KMMU,MEDIUM,Morristown Municipal Airport,40.799062,-74.414949,United States,NJ,Morristown,63.0
+KNEL,MEDIUM,Lakehurst Maxfield Field Airport,40.03329849,-74.353302,United States,NJ,Lakehurst,69.0
+KTEB,MEDIUM,Teterboro Airport,40.850101,-74.060799,United States,NJ,Teterboro,33.0
+KTTN,MEDIUM,Trenton Mercer Airport,40.276699,-74.813499,United States,NJ,Ewing Township,0.0
+KWRI,MEDIUM,Mc Guire Air Force Base,40.0155983,-74.59169769,United States,NJ,Wrightstown,35.0
+KWWD,MEDIUM,Cape May County Airport,39.008499145500004,-74.90830231,United States,NJ,Wildwood,46.0
+KABQ,LARGE,Albuquerque International Sunport,35.039976,-106.608925,United States,NM,Albuquerque,85.0
+KALM,MEDIUM,Alamogordo White Sands Regional Airport,32.837818,-105.993149,United States,NM,Alamogordo,96.0
+KCNM,MEDIUM,Cavern City Air Terminal,32.337501525878906,-104.2630005,United States,NM,Carlsbad,70.0
+KCVN,MEDIUM,Clovis Municipal Airport,34.426594,-103.078794,United States,NM,Clovis,75.0
+KCVS,MEDIUM,Cannon Air Force Base,34.382801,-103.321999,United States,NM,Clovis,60.0
+KDMN,MEDIUM,Deming Municipal Airport,32.26229858,-107.7210007,United States,NM,Deming,49.0
+KFMN,MEDIUM,Four Corners Regional Airport,36.741199,-108.230003,United States,NM,Farmington,54.0
+KGUP,MEDIUM,Gallup Municipal Airport,35.511653,-108.788166,United States,NM,Gallup,65.0
+KHMN,MEDIUM,Holloman Air Force Base,32.852501,-106.107002,United States,NM,Alamogordo,61.0
+KHOB,MEDIUM,Lea County Regional Airport,32.6875,-103.217003,United States,NM,Hobbs,78.0
+KLRU,MEDIUM,Las Cruces International Airport,32.289398,-106.921997,United States,NM,Las Cruces,67.0
+KLVS,MEDIUM,Las Vegas Municipal Airport,35.654202,-105.141998,United States,NM,Las Vegas,90.0
+KROW,MEDIUM,Roswell Air Center Airport,33.301601,-104.530998,United States,NM,Roswell,81.0
+KSAF,MEDIUM,Santa Fe Municipal Airport,35.6171,-106.088997,United States,NM,Santa Fe,86.0
+KSKX,MEDIUM,Taos Regional Airport,36.452494,-105.67749,United States,NM,Taos,64.0
+KSRR,MEDIUM,Sierra Blanca Regional Airport,33.462799,-105.535004,United States,NM,Alto,0.0
+KSVC,MEDIUM,Grant County Airport,32.636701,-108.154736,United States,NM,Silver City,66.0
+KTCC,MEDIUM,Tucumcari Municipal Airport,35.18280029,-103.6029968,United States,NM,Tucumcari,80.0
+KTCS,MEDIUM,Truth or Consequences Municipal Airport,33.2369,-107.272003,United States,NM,Truth or Consequences,81.0
+K67L,MEDIUM,Mesquite International Airport,36.833105,-114.055928,United States,NV,Mesquite,55.0
+K61B,MEDIUM,Boulder City Municipal Airport,35.947161,-114.858799,United States,NV,Boulder City,78.0
+KEKO,MEDIUM,Elko Regional Airport,40.82490158081055,-115.7919998,United States,NV,Elko,72.0
+KELY,MEDIUM,Ely Airport Yelland Field,39.29970169,-114.8420029,United States,NV,Ely,40.0
+KLAS,LARGE,Harry Reid International Airport,36.083361,-115.151817,United States,NV,Las Vegas,98.0
+KLOL,MEDIUM,Derby Field,40.06639862,-118.5650024,United States,NV,Lovelock,60.0
+KLSV,MEDIUM,Nellis Air Force Base,36.23619843,-115.0339966,United States,NV,Las Vegas,76.0
+KNFL,MEDIUM,Fallon Naval Air Station,39.41659927,-118.7009964,United States,NV,Fallon,56.0
+KDRA,MEDIUM,Desert Rock Airport,36.6194,-116.032997,United States,NV,Mercury,0.0
+KRNO,LARGE,Reno Tahoe International Airport,39.4991,-119.767998,United States,NV,Reno,83.0
+KTPH,MEDIUM,Tonopah Airport,38.06019974,-117.086998,United States,NV,Tonopah,64.0
+KVGT,MEDIUM,North Las Vegas Metropolitan International Airport,36.210701,-115.194,United States,NV,Las Vegas,77.0
+KWMC,MEDIUM,Winnemucca Municipal Airport,40.89659882,-117.8059998,United States,NV,Winnemucca,46.0
+KXTA,MEDIUM,Homey (Area 51) Airport,37.23500061035156,-115.810997,United States,NV,Groom Lake,0.0
+KALB,MEDIUM,Albany International Airport,42.74829864501953,-73.80169678,United States,NY,Albany,77.0
+KART,MEDIUM,Watertown International Airport,43.991901,-76.021698,United States,NY,Watertown,76.0
+KBGM,MEDIUM,Greater Binghamton/Edwin A Link field,42.20869827,-75.97979736,United States,NY,Binghamton,81.0
+KBUF,LARGE,Buffalo Niagara International Airport,42.940498,-78.732201,United States,NY,Buffalo,84.0
+KELM,MEDIUM,Elmira Corning Regional Airport,42.15990067,-76.89160156,United States,NY,Elmira,82.0
+KFRG,MEDIUM,Republic Airport,40.72880173,-73.41339874,United States,NY,Farmingdale,68.0
+KGFL,MEDIUM,Floyd Bennett Memorial Airport,43.34120178,-73.61029816,United States,NY,Glens Falls,58.0
+KGTB,MEDIUM,Wheeler Sack Army Air Field,44.05559921,-75.71949768,United States,NY,Fort Drum,70.0
+KHPN,MEDIUM,Westchester County Airport,41.06700134277344,-73.70760345,United States,NY,White Plains,93.0
+KIAG,MEDIUM,Niagara Falls International Airport,43.1073,-78.946198,United States,NY,Niagara Falls,82.0
+KISP,MEDIUM,Long Island Mac Arthur Airport,40.79520035,-73.10019684,United States,NY,Islip,0.0
+KITH,MEDIUM,Ithaca Tompkins Regional Airport,42.49100112915039,-76.45839691,United States,NY,Ithaca,82.0
+KJFK,LARGE,John F Kennedy International Airport,40.639447,-73.779317,United States,NY,New York,100.0
+KJHW,MEDIUM,Chautauqua County-Jamestown Airport,42.15425,-79.254008,United States,NY,Jamestown,56.0
+KLGA,LARGE,LaGuardia Airport,40.777199,-73.872597,United States,NY,New York,100.0
+KMSS,MEDIUM,Massena International Airport Richards Field,44.936157,-74.844304,United States,NY,Massena,0.0
+KOGS,MEDIUM,Ogdensburg International Airport,44.6819,-75.4655,United States,NY,Ogdensburg,66.0
+KPBG,MEDIUM,Plattsburgh International Airport,44.650901794433594,-73.4681015,United States,NY,Plattsburgh,81.0
+KPOU,MEDIUM,Dutchess County Airport,41.62659836,-73.88420105,United States,NY,Poughkeepsie,58.0
+KRME,MEDIUM,Griffiss International Airport,43.23379898,-75.40699768,United States,NY,Rome,55.0
+KROC,MEDIUM,Frederick Douglass Greater Rochester International Airport,43.1189,-77.672401,United States,NY,Rochester,77.0
+KSCH,MEDIUM,Schenectady County Airport,42.85250092,-73.92890167,United States,NY,Schenectady,57.0
+KSLK,MEDIUM,Adirondack Regional Airport,44.38691,-74.204629,United States,NY,Saranac Lake,61.0
+KSWF,MEDIUM,New York Stewart International Airport,41.504101,-74.104797,United States,NY,Newburgh,0.0
+KSYR,LARGE,Syracuse Hancock International Airport,43.11119842529297,-76.10630035,United States,NY,Syracuse,74.0
+KAKR,MEDIUM,Akron Fulton International Airport,41.037355,-81.46784,United States,OH,Akron,56.0
+KBKL,MEDIUM,Burke Lakefront Airport,41.51750183105469,-81.6832962,United States,OH,Cleveland,68.0
+KCAK,MEDIUM,Akron Canton Regional Airport,40.916099548339844,-81.44219971,United States,OH,Akron,90.0
+KCGF,MEDIUM,Cuyahoga County Airport,41.56510162,-81.48639679,United States,OH,Cleveland,63.0
+KCLE,LARGE,Cleveland Hopkins International Airport,41.411701,-81.8498,United States,OH,Cleveland,89.0
+KCMH,LARGE,John Glenn Columbus International Airport,39.998001,-82.891899,United States,OH,Columbus,87.0
+KDAY,MEDIUM,James M Cox Dayton International Airport,39.902401,-84.219398,United States,OH,Dayton,76.0
+KFDY,MEDIUM,Findlay Airport,41.013500213600004,-83.66870117,United States,OH,Findlay,54.0
+KFFO,MEDIUM,Wright-Patterson Air Force Base,39.826099,-84.048302,United States,OH,Dayton,57.0
+KHZY,MEDIUM,Northeast Ohio Regional Airport,41.778,-80.695503,United States,OH,Ashtabula,50.0
+KILN,MEDIUM,Wilmington Airpark,39.42789841,-83.792099,United States,OH,Wilmington,50.0
+KLCK,MEDIUM,Rickenbacker International Airport,39.813801,-82.927803,United States,OH,Columbus,80.0
+KLUK,MEDIUM,Cincinnati Municipal Airport Lunken Field,39.102357,-84.418945,United States,OH,Cincinnati,66.0
+KMFD,MEDIUM,Mansfield Lahm Regional Airport,40.82139968869999,-82.51660156,United States,OH,Mansfield,55.0
+KOSU,MEDIUM,The Ohio State University Airport - Don Scott Field,40.0798,-83.072998,United States,OH,Columbus,60.0
+KPCW,MEDIUM,Carl R Keller Field,41.515647,-82.868328,United States,OH,Port Clinton,45.0
+KSGH,MEDIUM,Springfield-Beckley Municipal Airport,39.84030151,-83.84020233,United States,OH,Springfield,52.0
+KTOL,MEDIUM,Eugene F. Kranz Toledo Express Airport,41.5868,-83.8078,United States,OH,Toledo,84.0
+KYNG,MEDIUM,Youngstown Warren Regional Airport,41.26070023,-80.67910004,United States,OH,Youngstown,64.0
+KZZV,MEDIUM,Zanesville Municipal Airport,39.94440079,-81.89209747,United States,OH,Zanesville,51.0
+KADH,MEDIUM,Ada Regional Airport,34.805214,-96.671988,United States,OK,Ada,92.0
+KDUA,MEDIUM,Durant Regional Airport - Eaker Field,33.939675,-96.395072,United States,OK,Durant,49.0
+KEND,MEDIUM,Vance Air Force Base,36.339199,-97.916496,United States,OK,Enid,97.0
+KFSI,MEDIUM,Henry Post Army Air Field,34.649799,-98.402199,United States,OK,Fort Sill,0.0
+KGUY,MEDIUM,Guymon Municipal Airport,36.68510056,-101.5080032,United States,OK,Guymon,89.0
+KHBR,MEDIUM,Hobart Regional Airport,34.991317,-99.051313,United States,OK,Hobart,73.0
+KLAW,MEDIUM,Lawton Fort Sill Regional Airport,34.567699,-98.416603,United States,OK,Lawton,82.0
+KLTS,MEDIUM,Altus Air Force Base,34.667099,-99.266701,United States,OK,Altus,93.0
+KMLC,MEDIUM,Mc Alester Regional Airport,34.882401,-95.783501,United States,OK,Mc Alester,49.0
+KOKC,LARGE,Will Rogers World Airport,35.393388,-97.598248,United States,OK,Oklahoma City,81.0
+KPNC,MEDIUM,Ponca City Regional Airport,36.73199844,-97.09980011,United States,OK,Ponca City,94.0
+KRVS,MEDIUM,Tulsa Riverside Airport,36.0396,-95.984596,United States,OK,Tulsa,53.0
+KSWO,MEDIUM,Stillwater Regional Airport,36.162132,-97.085581,United States,OK,Stillwater,80.0
+KTIK,MEDIUM,Tinker Air Force Base,35.4147,-97.386597,United States,OK,Oklahoma City,58.0
+KTUL,LARGE,Tulsa International Airport,36.19839859008789,-95.88809967,United States,OK,Tulsa,78.0
+KWWR,MEDIUM,West Woodward Airport,36.438,-99.5226667,United States,OK,Woodward,89.0
+KAST,MEDIUM,Astoria Regional Airport,46.15800095,-123.8789978,United States,OR,Astoria,47.0
+KBKE,MEDIUM,Baker City Municipal Airport,44.837299346900004,-117.8089981,United States,OR,Baker City,44.0
+KBNO,MEDIUM,Burns Municipal Airport,43.590463,-118.955154,United States,OR,Burns,70.0
+KCVO,MEDIUM,Corvallis Municipal Airport,44.49720001,-123.2900009,United States,OR,Corvallis,58.0
+KDLS,MEDIUM,Columbia Gorge Regional Airport,45.620979,-121.170777,United States,OR,Dallesport ,0.0
+KEUG,MEDIUM,Mahlon Sweet Field,44.12459945678711,-123.211998,United States,OR,Eugene,70.0
+KHIO,MEDIUM,Portland Hillsboro Airport,45.540401,-122.949997,United States,OR,Portland,65.0
+KLMT,MEDIUM,Crater Lake-Klamath Regional Airport,42.156101,-121.733002,United States,OR,Klamath Falls,53.0
+KMFR,MEDIUM,Rogue Valley International Medford Airport,42.37419891357422,-122.8730011,United States,OR,Medford,91.0
+KMMV,MEDIUM,Mc Minnville Municipal Airport,45.19440079,-123.1360016,United States,OR,Mc Minnville,54.0
+KONO,MEDIUM,Ontario Municipal Airport,44.0198,-117.013289,United States,OR,Oregon,0.0
+KONP,MEDIUM,Newport Municipal Airport,44.580399,-124.057999,United States,OR,Newport,88.0
+KOTH,MEDIUM,Southwest Oregon Regional Airport,43.41709899902344,-124.2460022,United States,OR,North Bend,73.0
+KPDT,MEDIUM,Eastern Oregon Regional Airport at Pendleton,45.695099,-118.841003,United States,OR,Pendleton,68.0
+KPDX,LARGE,Portland International Airport,45.588699,-122.598,United States,OR,Portland,92.0
+KRDM,MEDIUM,Roberts Field,44.254101,-121.150002,United States,OR,Redmond,90.0
+KSLE,MEDIUM,Salem-Willamette Valley Airport/McNary Field,44.9095,-123.002998,United States,OR,Salem,73.0
+KTTD,MEDIUM,Portland Troutdale Airport,45.54940033,-122.401001,United States,OR,Portland,91.0
+KUAO,MEDIUM,Aurora State Airport,45.247100830078125,-122.7699966,United States,OR,Aurora,30.0
+KABE,MEDIUM,Lehigh Valley International Airport,40.651773,-75.442797,United States,PA,Allentown,91.0
+KAGC,MEDIUM,Allegheny County Airport,40.354401,-79.930199,United States,PA,Pittsburgh,64.0
+KAOO,MEDIUM,Altoona Blair County Airport,40.296398,-78.32,United States,PA,Altoona,69.0
+KAVP,MEDIUM,Wilkes Barre Scranton International Airport,41.338500976599995,-75.7233963,United States,PA,Wilkes-Barre,86.0
+KBFD,MEDIUM,Bradford Regional Airport,41.80310059,-78.64009857,United States,PA,Bradford,63.0
+KBVI,MEDIUM,Beaver County Airport,40.772499,-80.391403,United States,PA,Beaver Falls,86.0
+KDUJ,MEDIUM,DuBois Regional Airport,41.17829895,-78.8986969,United States,PA,Dubois,0.0
+KERI,MEDIUM,Erie International Tom Ridge Field,42.083127,-80.173867,United States,PA,Erie,82.0
+KFKL,MEDIUM,Venango Regional Airport,41.37789917,-79.86039734,United States,PA,Franklin,81.0
+KIPT,MEDIUM,Williamsport Regional Airport,41.242126,-76.92245,United States,PA,Williamsport,58.0
+KJST,MEDIUM,John Murtha Johnstown Cambria County Airport,40.31610107421875,-78.83390045,United States,PA,Johnstown,73.0
+KLBE,MEDIUM,Arnold Palmer Regional Airport,40.275902,-79.4048,United States,PA,Latrobe,77.0
+KLNS,MEDIUM,Lancaster Airport,40.121700286865234,-76.2960968,United States,PA,Lancaster,73.0
+KMDT,MEDIUM,Harrisburg International Airport,40.193501,-76.763397,United States,PA,Harrisburg,93.0
+KMUI,MEDIUM,Muir Army Air Field (Fort Indiantown Gap) Airport,40.435214,-76.568661,United States,PA,Fort Indiantown Gap,0.0
+KPHL,LARGE,Philadelphia International Airport,39.871899,-75.241096,United States,PA,Philadelphia,94.0
+KPIT,LARGE,Pittsburgh International Airport,40.491501,-80.232903,United States,PA,Pittsburgh,88.0
+KPNE,MEDIUM,Northeast Philadelphia Airport,40.082406,-75.010614,United States,PA,Philadelphia,69.0
+KRDG,MEDIUM,Reading Regional Airport (Carl A Spaatz Field),40.378502,-75.965202,United States,PA,Reading,59.0
+KUNV,MEDIUM,State College Regional Airport,40.849374,-77.84852,United States,PA,State College,86.0
+KOQU,MEDIUM,Quonset State Airport,41.5970993,-71.41210175,United States,RI,North Kingstown,0.0
+KPVD,LARGE,Theodore Francis Green State Airport,41.725038,-71.425668,United States,RI,Warwick,94.0
+KWST,MEDIUM,Westerly State Airport,41.349602,-71.803398,United States,RI,Westerly,0.0
+KAND,MEDIUM,Anderson Regional Airport,34.49459839,-82.70939636,United States,SC,Anderson,95.0
+KCAE,MEDIUM,Columbia Metropolitan Airport,33.938801,-81.119499,United States,SC,Columbia,92.0
+KCHS,MEDIUM,Charleston International Airport,32.898602,-80.040497,United States,SC,Charleston,80.0
+KCRE,MEDIUM,Grand Strand Airport,33.81169891,-78.72389984,United States,SC,North Myrtle Beach,53.0
+KCUB,MEDIUM,Jim Hamilton L.B. Owens Airport,33.97050095,-80.99520111,United States,SC,Columbia,55.0
+KFLO,MEDIUM,Florence Regional Airport,34.18539810180664,-79.72389984,United States,SC,Florence,79.0
+KGMU,MEDIUM,Greenville Downtown Airport,34.847903,-82.350217,United States,SC,Greenville,47.0
+KGSP,MEDIUM,Greenville Spartanburg International Airport,34.895699,-82.218903,United States,SC,Greer,93.0
+KHXD,MEDIUM,Hilton Head Airport,32.2244,-80.697502,United States,SC,Hilton Head Island,84.0
+KMMT,MEDIUM,Mc Entire Joint National Guard Base,33.92079926,-80.80130005,United States,SC,Eastover,39.0
+KMYR,MEDIUM,Myrtle Beach International Airport,33.679699,-78.928299,United States,SC,Myrtle Beach,75.0
+KNBC,MEDIUM,Beaufort MCAS - Merritt Field,32.47740173,-80.72319794,United States,SC,Beaufort,60.0
+KOGB,MEDIUM,Orangeburg Municipal Airport,33.45679855,-80.85949707,United States,SC,Orangeburg,50.0
+KSSC,MEDIUM,Shaw Air Force Base,33.972698,-80.470596,United States,SC,Sumter,67.0
+KABR,MEDIUM,Aberdeen Regional Airport,45.449100494384766,-98.42179871,United States,SD,Aberdeen,77.0
+KATY,MEDIUM,Watertown Regional Airport,44.91400146,-97.15470123,United States,SD,Watertown,75.0
+KFSD,MEDIUM,Sioux Falls Regional Airport / Joe Foss Field,43.585463,-96.741152,United States,SD,Sioux Falls,93.0
+KHON,MEDIUM,Huron Regional Airport,44.385201,-98.2285,United States,SD,Huron,91.0
+KMBG,MEDIUM,Mobridge Municipal Airport,45.54650116,-100.4079971,United States,SD,Mobridge,71.0
+KPIR,MEDIUM,Pierre Regional Airport,44.38270187,-100.2860031,United States,SD,Pierre,73.0
+KRAP,MEDIUM,Rapid City Regional Airport,44.04529953,-103.0569992,United States,SD,Rapid City,89.0
+KRCA,MEDIUM,Ellsworth Air Force Base,44.14500046,-103.1039963,United States,SD,Rapid City,65.0
+KYKN,MEDIUM,Chan Gurney Municipal Airport,42.91669846,-97.3859024,United States,SD,Yankton,91.0
+KBNA,LARGE,Nashville International Airport,36.1245,-86.6782,United States,TN,Nashville,91.0
+KCHA,MEDIUM,Chattanooga Metropolitan Airport (Lovell Field),35.035301,-85.203796,United States,TN,Chattanooga,92.0
+KCSV,MEDIUM,Crossville Memorial Airport Whitson Field,35.95131,-85.08499,United States,TN,Crossville,48.0
+KMEM,LARGE,Memphis International Airport,35.0424,-89.9767,United States,TN,Memphis,83.0
+KMKL,MEDIUM,McKellar-Sipes Regional Airport,35.599899,-88.915604,United States,TN,Jackson,69.0
+KMQY,MEDIUM,Smyrna Airport,36.00899887,-86.52010345,United States,TN,Smyrna,65.0
+KNQA,MEDIUM,Millington-Memphis Airport,35.356701,-89.8703,United States,TN,Millington,88.0
+KTRI,MEDIUM,Tri-Cities Regional TN/VA Airport,36.475201,-82.407401,United States,TN,Blountville,75.0
+KTYS,MEDIUM,McGhee Tyson Airport,35.811001,-83.994003,United States,TN,Alcoa,89.0
+K76F,MEDIUM,Van Zandt County Regional Airport,32.681499,-95.9841,United States,TX,Wills Point,75.0
+KABI,MEDIUM,Abilene Regional Airport,32.41130066,-99.68190002,United States,TX,Abilene,84.0
+KACT,MEDIUM,Waco Regional Airport,31.611299514770508,-97.23049927,United States,TX,Waco,83.0
+KAFW,MEDIUM,Perot Field/Fort Worth Alliance Airport,32.99044,-97.31947,United States,TX,Fort Worth,69.0
+KALI,MEDIUM,Alice International Airport,27.7409,-98.026901,United States,TX,Alice,53.0
+KAMA,MEDIUM,Rick Husband Amarillo International Airport,35.219398,-101.706001,United States,TX,Amarillo,64.0
+KAUS,LARGE,Austin Bergstrom International Airport,30.197535,-97.662015,United States,TX,Austin,91.0
+KBAZ,MEDIUM,New Braunfels Municipal Airport,29.7045,-98.042198,United States,TX,New Braunfels,58.0
+KBBD,MEDIUM,Curtis Field,31.178931,-99.324732,United States,TX,Brady,42.0
+KBIF,MEDIUM,Biggs Army Air Field (Fort Bliss),31.84950066,-106.3799973,United States,TX,Fort Bliss,74.0
+KBPT,MEDIUM,Jack Brooks Regional Airport,29.9508,-94.020699,United States,TX,Beaumont,81.0
+KBRO,MEDIUM,Brownsville South Padre Island International Airport,25.90679931640625,-97.42590332,United States,TX,Brownsville,88.0
+KCDS,MEDIUM,Childress Municipal Airport,34.43379974,-100.288002,United States,TX,Childress,81.0
+KCLL,MEDIUM,Easterwood Field,30.5886,-96.3638,United States,TX,College Station,83.0
+KCRP,MEDIUM,Corpus Christi International Airport,27.770399,-97.501198,United States,TX,Corpus Christi,90.0
+KCXO,MEDIUM,Conroe-North Houston Regional Airport,30.351801,-95.414497,United States,TX,Houston,68.0
+KDAL,MEDIUM,Dallas Love Field,32.847099,-96.851799,United States,TX,Dallas,97.0
+KDFW,LARGE,Dallas Fort Worth International Airport,32.896801,-97.038002,United States,TX,Dallas,98.0
+KDHT,MEDIUM,Dalhart Municipal Airport,36.02259827,-102.5469971,United States,TX,Dalhart,46.0
+KDLF,MEDIUM,Laughlin Air Force Base,29.359501,-100.778002,United States,TX,Del Rio,96.0
+KDRT,MEDIUM,Del Rio International Airport,29.37420082,-100.927002,United States,TX,Del Rio,70.0
+KDYS,MEDIUM,Dyess Air Force Base,32.420799,-99.854599,United States,TX,Abilene,63.0
+KEFD,MEDIUM,Ellington Airport,29.607299804700002,-95.15879822,United States,TX,Houston,69.0
+KELP,MEDIUM,El Paso International Airport,31.807199,-106.377998,United States,TX,El Paso,81.0
+KFST,MEDIUM,Fort Stockton Pecos County Airport,30.91570091,-102.9160004,United States,TX,Fort Stockton,85.0
+KFTW,MEDIUM,Fort Worth Meacham International Airport,32.819801,-97.362396,United States,TX,Fort Worth,68.0
+KGGG,MEDIUM,East Texas Regional Airport,32.38399887084961,-94.71150208,United States,TX,Longview,81.0
+KGLS,MEDIUM,Scholes International At Galveston Airport,29.265301,-94.860397,United States,TX,Galveston,54.0
+KGRK,MEDIUM,Killeen Regional Airport / Robert Gray Army Airfield,31.0672,-97.828903,United States,TX,Fort Cavazos,0.0
+KGYI,MEDIUM,North Texas Regional Airport Perrin Field,33.7141,-96.673698,United States,TX,Denison,50.0
+KHOU,MEDIUM,William P Hobby Airport,29.645399,-95.2789,United States,TX,Houston,94.0
+KHRL,MEDIUM,Valley International Airport,26.228500366210938,-97.65440369,United States,TX,Harlingen,65.0
+KHYI,MEDIUM,San Marcos Regional Airport,29.8927,-97.862999,United States,TX,San Marcos,98.0
+KIAH,LARGE,George Bush Intercontinental Houston Airport,29.984399795532227,-95.34140015,United States,TX,Houston,95.0
+KINK,MEDIUM,Winkler County Airport,31.779600143399996,-103.2009964,United States,TX,Wink,57.0
+KJCT,MEDIUM,Kimble County Airport,30.51129913,-99.7634964,United States,TX,Junction,68.0
+KJWY,MEDIUM,Mid-Way Regional Airport,32.4587,-96.912399,United States,TX,Midlothian,50.0
+KLBB,MEDIUM,Lubbock Preston Smith International Airport,33.663601,-101.822998,United States,TX,Lubbock,68.0
+KLBX,MEDIUM,Texas Gulf Coast Regional Airport,29.108601,-95.462097,United States,TX,Angleton,93.0
+KLFK,MEDIUM,Angelina County Airport,31.23399925,-94.75,United States,TX,Lufkin,96.0
+KLRD,MEDIUM,Laredo International Airport,27.543800354003906,-99.46160126,United States,TX,Laredo,87.0
+KMAF,MEDIUM,Midland International Air and Space Port,31.942499,-102.202003,United States,TX,Midland,68.0
+KMFE,MEDIUM,McAllen Miller International Airport,26.176141,-98.237965,United States,TX,McAllen,92.0
+KNFW,MEDIUM,NAS Fort Worth JRB / Carswell Field,32.769199,-97.441498,United States,TX,Fort Worth,100.0
+KNGP,MEDIUM,Naval Air Station Corpus Christi Truax Field,27.6926,-97.2911,United States,TX,Corpus Christi,100.0
+KNQI,MEDIUM,Kingsville Naval Air Station,27.50720024,-97.80970001,United States,TX,Kingsville,95.0
+KPRX,MEDIUM,Cox Field,33.63660049,-95.45079803,United States,TX,Paris,94.0
+KRND,MEDIUM,Randolph Air Force Base,29.529699,-98.2789,United States,TX,Universal City,93.0
+KSAT,LARGE,San Antonio International Airport,29.533701,-98.469803,United States,TX,San Antonio,87.0
+KSGR,MEDIUM,Sugar Land Regional Airport,29.62229919,-95.65650177,United States,TX,Houston,70.0
+KSJT,MEDIUM,San Angelo Regional Mathis Field,31.35770034790039,-100.4960022,United States,TX,San Angelo,83.0
+KSKF,MEDIUM,Lackland Air Force Base,29.38419914,-98.58110046,United States,TX,San Antonio,65.0
+KSOA,MEDIUM,Sonora Municipal Airport,30.58569908,-100.6490021,United States,TX,Sonora,70.0
+KSPS,MEDIUM,Wichita Falls Municipal Airport / Sheppard Air Force Base,33.9888,-98.491898,United States,TX,Wichita Falls,80.0
+KSSF,MEDIUM,Stinson Municipal Airport,29.33699989,-98.47109985,United States,TX,San Antonio,84.0
+KTPL,MEDIUM,Draughon Miller Central Texas Regional Airport,31.1525,-97.407799,United States,TX,Temple,54.0
+KTYR,MEDIUM,Tyler Pounds Regional Airport,32.35409927368164,-95.40239716,United States,TX,Tyler,83.0
+KUTS,MEDIUM,Huntsville Regional Airport,30.74690056,-95.58719635,United States,TX,Huntsville,97.0
+KVCT,MEDIUM,Victoria Regional Airport,28.85260009765625,-96.91850281,United States,TX,Victoria,75.0
+KBCE,MEDIUM,Bryce Canyon Airport,37.70640183,-112.1449966,United States,UT,Bryce Canyon,15.0
+KCDC,MEDIUM,Cedar City Regional Airport,37.70100021362305,-113.098999,United States,UT,Cedar City,74.0
+KCNY,MEDIUM,Canyonlands Regional Airport,38.755001,-109.754997,United States,UT,Moab,69.0
+KENV,MEDIUM,Wendover Airport,40.71870041,-114.0309982,United States,UT,Wendover,29.0
+KHIF,MEDIUM,Hill Air Force Base,41.12403,-111.973086,United States,UT,Ogden,66.0
+KLGU,MEDIUM,Logan-Cache Airport,41.79119873,-111.8519974,United States,UT,Logan,67.0
+KOGD,MEDIUM,Ogden Hinckley Airport,41.19589996,-112.012001,United States,UT,Ogden,61.0
+KPVU,MEDIUM,Provo-Utah Lake International Airport,40.2192,-111.723,United States,UT,Provo,61.0
+KSGU,MEDIUM,St George Regional Airport,37.036389,-113.510306,United States,UT,St George,87.0
+KSLC,LARGE,Salt Lake City International Airport,40.78886,-111.979866,United States,UT,Salt Lake City,93.0
+KU42,MEDIUM,South Valley Regional Airport,40.619499,-111.992996,United States,UT,Salt Lake City,90.0
+KVEL,MEDIUM,Vernal Regional Airport,40.436214,-109.511661,United States,UT,Vernal,71.0
+KCHO,MEDIUM,Charlottesville Albemarle Airport,38.13859939575195,-78.45290375,United States,VA,Charlottesville,89.0
+KDAA,MEDIUM,Davison Army Air Field,38.715000152600005,-77.18099976,United States,VA,Fort Belvoir,85.0
+KDAN,MEDIUM,Danville Regional Airport,36.572899,-79.336098,United States,VA,Danville,54.0
+KFAF,MEDIUM,Felker Army Air Field,37.1325,-76.608803,United States,VA,Newport News ,100.0
+KHEF,MEDIUM,Manassas Regional Airport/Harry P. Davis Field,38.721401,-77.515404,United States,VA,Manassas,59.0
+KIAD,LARGE,Washington Dulles International Airport,38.9445,-77.455803,United States,VA,Dulles,89.0
+KLFI,MEDIUM,Langley Air Force Base,37.082901,-76.360497,United States,VA,Hampton,64.0
+KLYH,MEDIUM,Lynchburg Regional Airport - Preston Glenn Field,37.326698,-79.200401,United States,VA,Lynchburg,84.0
+KNGU,MEDIUM,Norfolk Naval Station (Chambers Field),36.937599,-76.289299,United States,VA,Norfolk,71.0
+KNTU,MEDIUM,Oceana Naval Air Station,36.820702,-76.033501,United States,VA,Virginia Beach,56.0
+KNYG,MEDIUM,Quantico Marine Corps Airfield / Turner Field,38.501701,-77.305298,United States,VA,Quantico,40.0
+KORF,LARGE,Norfolk International Airport,36.895341,-76.201,United States,VA,Norfolk,82.0
+KPHF,MEDIUM,Newport News Williamsburg International Airport,37.131901,-76.492996,United States,VA,Newport News,84.0
+KRIC,LARGE,Richmond International Airport,37.505199,-77.319702,United States,VA,Richmond,80.0
+KROA,MEDIUM,Roanoke–Blacksburg Regional Airport,37.3255,-79.975403,United States,VA,Roanoke,90.0
+KSHD,MEDIUM,Shenandoah Valley Regional Airport,38.263802,-78.8964,United States,VA,Weyers Cave,57.0
+KW63,MEDIUM,Lake Country Regional Airport,36.595798,-78.560097,United States,VA,Clarksville,62.0
+KBTV,MEDIUM,Burlington International Airport,44.471901,-73.153297,United States,VT,South Burlington,89.0
+KMPV,MEDIUM,Edward F Knapp State Airport,44.20349884,-72.56230164,United States,VT,Barre,49.0
+KRUT,MEDIUM,Rutland - Southern Vermont Regional Airport,43.5294,-72.9496,United States,VT,Rutland,68.0
+KALW,MEDIUM,Walla Walla Regional Airport,46.09489822,-118.288002,United States,WA,Walla Walla,78.0
+KAWO,MEDIUM,Arlington Municipal Airport,48.161448,-122.158442,United States,WA,Arlington,49.0
+KBFI,MEDIUM,Boeing Field King County International Airport,47.529999,-122.302002,United States,WA,Seattle,83.0
+KBLI,MEDIUM,Bellingham International Airport,48.79280090332031,-122.538002,United States,WA,Bellingham,68.0
+KCLM,MEDIUM,William R Fairchild International Airport,48.120201,-123.5,United States,WA,Port Angeles,59.0
+KEAT,MEDIUM,Pangborn Memorial Airport,47.398899,-120.207001,United States,WA,Wenatchee,80.0
+KFHR,MEDIUM,Friday Harbor Airport,48.523654,-123.024645,United States,WA,Friday Harbor,61.0
+KGEG,MEDIUM,Spokane International Airport,47.6199,-117.533997,United States,WA,Spokane,81.0
+KGRF,MEDIUM,Gray Army Air Field,47.07920074,-122.5810013,United States,WA,Fort Lewis,90.0
+KHQM,MEDIUM,Bowerman Airport,46.971199035599994,-123.9369965,United States,WA,Hoquiam,86.0
+KKLS,MEDIUM,Southwest Washington Regional Airport,46.11800003049999,-122.8980026,United States,WA,Kelso,90.0
+KMWH,MEDIUM,Grant County International Airport,47.20769882,-119.3199997,United States,WA,Moses Lake,60.0
+KNUW,MEDIUM,Whidbey Island Naval Air Station (Ault Field),48.351799,-122.655998,United States,WA,Oak Harbor,61.0
+KOLM,MEDIUM,Olympia Regional Airport,46.969399,-122.903,United States,WA,Olympia,57.0
+KORS,MEDIUM,Orcas Island Airport,48.708199,-122.910004,United States,WA,Eastsound,0.0
+KPAE,MEDIUM,Seattle Paine Field International Airport,47.9063,-122.281998,United States,WA,Everett,67.0
+KPSC,MEDIUM,Tri Cities Airport,46.264702,-119.119003,United States,WA,Pasco,90.0
+KPUW,MEDIUM,Pullman-Moscow Regional Airport,46.741601,-117.11163,United States,WA,Pullman,82.0
+KPWT,MEDIUM,Bremerton National Airport,47.49020004,-122.7649994,United States,WA,Bremerton,54.0
+KSEA,LARGE,Seattle–Tacoma International Airport,47.447943,-122.310276,United States,WA,Seattle,96.0
+KSFF,MEDIUM,Felts Field,47.682899,-117.321925,United States,WA,Spokane,54.0
+KSKA,MEDIUM,Fairchild Air Force Base,47.615101,-117.655998,United States,WA,Spokane,61.0
+KTCM,MEDIUM,McChord Air Force Base,47.137699,-122.475998,United States,WA,Tacoma,72.0
+KTIW,MEDIUM,Tacoma Narrows Airport,47.267407,-122.577295,United States,WA,Tacoma,57.0
+KYKM,MEDIUM,Yakima Air Terminal McAllister Field,46.56819916,-120.5439987,United States,WA,Yakima,79.0
+KATW,MEDIUM,Appleton International Airport,44.258099,-88.519096,United States,WI,Appleton,91.0
+KAUW,MEDIUM,Wausau Downtown Airport,44.92620087,-89.62660217,United States,WI,Wausau,52.0
+KCWA,MEDIUM,Central Wisconsin Airport,44.777448,-89.670238,United States,WI,Mosinee,74.0
+KEAU,MEDIUM,Chippewa Valley Regional Airport,44.86579895019531,-91.48429871,United States,WI,Eau Claire,80.0
+KENW,MEDIUM,Kenosha Regional Airport,42.59569931,-87.92780304,United States,WI,Kenosha,56.0
+KGRB,MEDIUM,Austin Straubel International Airport,44.483459,-88.130805,United States,WI,Green Bay,90.0
+KHYR,MEDIUM,Sawyer County Airport,46.025199890100005,-91.44429779,United States,WI,Hayward,39.0
+KLSE,MEDIUM,La Crosse Regional Airport,43.879002,-91.256699,United States,WI,La Crosse,82.0
+KMKE,LARGE,General Mitchell International Airport,42.947201,-87.896599,United States,WI,Milwaukee,86.0
+KMSN,MEDIUM,Dane County Regional Truax Field,43.1399,-89.337502,United States,WI,Madison,69.0
+KOSH,MEDIUM,Wittman Regional Airport,43.98440170288086,-88.55699921,United States,WI,Oshkosh,53.0
+KRHI,MEDIUM,Rhinelander Oneida County Airport,45.63119888305664,-89.46749878,United States,WI,Rhinelander,72.0
+KRNH,MEDIUM,New Richmond Regional Airport,45.1483,-92.538101,United States,WI,New Richmond,87.0
+KVOK,MEDIUM,Volk Field,43.93899918,-90.25340271,United States,WI,Camp Douglas,36.0
+KBKW,MEDIUM,Raleigh County Memorial Airport,37.7873,-81.124199,United States,WV,Beaver,42.0
+KBLF,MEDIUM,Mercer County Airport,37.295799,-81.207703,United States,WV,Bluefield,87.0
+KCKB,MEDIUM,North Central West Virginia Airport,39.2966,-80.228104,United States,WV,Bridgeport,76.0
+KCRW,MEDIUM,Yeager Airport,38.3731,-81.593201,United States,WV,Charleston,88.0
+KEKN,MEDIUM,Elkins-Randolph County Regional Airport,38.889759,-79.857651,United States,WV,Elkins,44.0
+KHLG,MEDIUM,Wheeling Ohio County Airport,40.17499924,-80.64630127,United States,WV,Wheeling,52.0
+KHTS,MEDIUM,Tri-State Airport / Milton J. Ferguson Field,38.366699,-82.557999,United States,WV,Huntington,85.0
+KLWB,MEDIUM,Greenbrier Valley Airport,37.857914,-80.400438,United States,WV,Lewisburg,62.0
+KMGW,MEDIUM,Morgantown Municipal Airport Walter L. (Bill) Hart Field,39.643305,-79.917598,United States,WV,Morgantown,72.0
+KMRB,MEDIUM,Eastern WV Regional Airport/Shepherd Field,39.40190125,-77.98459625,United States,WV,Martinsburg,49.0
+KPKB,MEDIUM,Mid Ohio Valley Regional Airport,39.3451,-81.439201,United States,WV,Parkersburg ,70.0
+KBPI,MEDIUM,Miley Memorial Field,42.58509827,-110.1110001,United States,WY,Big Piney,34.0
+KCOD,MEDIUM,Yellowstone Regional Airport,44.520199,-109.024002,United States,WY,Cody,75.0
+KCPR,MEDIUM,Casper-Natrona County International Airport,42.908001,-106.463997,United States,WY,Casper,84.0
+KCYS,MEDIUM,Cheyenne Regional Jerry Olson Field,41.155701,-104.811997,United States,WY,Cheyenne,76.0
+KEVW,MEDIUM,Evanston-Uinta County Airport-Burns Field,41.27479935,-111.0350037,United States,WY,Evanston,89.0
+KGCC,MEDIUM,Northeast Wyoming Regional Airport,44.3489,-105.539001,United States,WY,Gillette,78.0
+KJAC,MEDIUM,Jackson Hole Airport,43.6072998,-110.737999,United States,WY,Jackson,86.0
+KLAR,MEDIUM,Laramie Regional Airport,41.31209945678711,-105.6750031,United States,WY,Laramie,77.0
+KLND,MEDIUM,Hunt Field,42.815201,-108.730003,United States,WY,Lander,84.0
+KPNA,MEDIUM,Ralph Wenz Field,42.79550171,-109.8069992,United States,WY,Pinedale,35.0
+KRIW,MEDIUM,Central Wyoming Regional Airport,43.064201,-108.459999,United States,WY,Riverton,71.0
+KRKS,MEDIUM,Southwest Wyoming Regional Airport,41.5942,-109.065001,United States,WY,Rock Springs,75.0
+KRWL,MEDIUM,Rawlins Municipal Airport/Harvey Field,41.80559921,-107.1999969,United States,WY,Rawlins,43.0
+KSHR,MEDIUM,Sheridan County Airport,44.76919937133789,-106.9800034,United States,WY,Sheridan,77.0
+KWRL,MEDIUM,Worland Municipal Airport,43.965698,-107.950996,United States,WY,Worland,78.0

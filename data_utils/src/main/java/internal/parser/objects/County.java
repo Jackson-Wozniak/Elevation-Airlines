@@ -31,6 +31,10 @@ public class County {
         return gdpValues2001To2023;
     }
 
+    public double gdp(){
+        return gdpValues2001To2023[gdpValues2001To2023.length - 1];
+    }
+
     public double getCAGR(){
         return CAGR;
     }

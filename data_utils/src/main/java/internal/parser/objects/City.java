@@ -2,6 +2,7 @@ package internal.parser.objects;
 
 import internal.parser.objects.csv.CityCSVObject;
 import internal.parser.objects.csv.CityStatsCSVObject;
+import internal.parser.utils.CSVReaderUtils;
 
 import java.util.*;
 
@@ -34,6 +35,15 @@ public class City {
         this.averagePassengersQ3 = averagePassengersQ3;
         this.averagePassengersQ4 = averagePassengersQ4;
         this.passengersCAGR = passengersCAGR;
+    }
+
+    public double passengerSum(){
+        return averagePassengersQ1 + averagePassengersQ2 +
+                averagePassengersQ3 + averagePassengersQ4;
+    }
+
+    public double getPopulation() {
+        return CSVReaderUtils.safeDoubleParse(population);
     }
 
     public static City create(CityCSVObject city, Map<String, CityStatsCSVObject> stats){

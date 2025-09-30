@@ -1,7 +1,6 @@
 package internal.parser.objects;
 
 import internal.parser.objects.csv.AirportCSVObject;
-import internal.parser.utils.CSVReaderUtils;
 
 public class Airport {
     private final String code;
@@ -14,7 +13,7 @@ public class Airport {
     private final String state;
     private final String city;
     private final int passengerCount;
-    public int economySize = 0;
+    public double economyValuePercentile = 0;
 
     public Airport(AirportCSVObject airportCSVObject, int passengerCount) {
         this.code = airportCSVObject.getCode();
@@ -55,7 +54,7 @@ public class Airport {
                 this.country + "," +
                 this.state + "," +
                 this.city + "," +
-                this.economySize + "\n";
+                this.economyValuePercentile + "\n";
     }
 
     public String getCode() {
