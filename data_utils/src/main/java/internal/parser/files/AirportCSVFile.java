@@ -1,6 +1,6 @@
 package internal.parser.files;
 
-import internal.parser.objects.AirportInfo;
+import internal.parser.objects.csv.AirportCSVObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class AirportCSVFile {
     private static AirportCSVFile airportCSVFile;
     private static final String FILE_PATH = "airports.csv";
 
-    private final List<AirportInfo> airports = new ArrayList<>();
+    private final List<AirportCSVObject> airports = new ArrayList<>();
 
     private AirportCSVFile() throws IOException {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(FILE_PATH);
@@ -39,7 +39,7 @@ public class AirportCSVFile {
             String regionCode = allLine[9];
             String city = allLine[10];
             String localCode = allLine[11];
-            airports.add(new AirportInfo(code, size, name, lat, lon, continent, country, region, regionCode, city, localCode));
+            airports.add(new AirportCSVObject(code, size, name, lat, lon, continent, country, region, regionCode, city, localCode));
         }
     }
 
@@ -54,7 +54,7 @@ public class AirportCSVFile {
         return airportCSVFile;
     }
 
-    public List<AirportInfo> getAirports(){
+    public List<AirportCSVObject> getAirports(){
         return airports;
     }
 }

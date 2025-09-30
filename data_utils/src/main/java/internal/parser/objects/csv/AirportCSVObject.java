@@ -1,11 +1,11 @@
-package internal.parser.objects;
+package internal.parser.objects.csv;
 
 import internal.parser.utils.CSVReaderUtils;
 
 /*
 Stores all information for a given airport, based on the specs from airports.csv in resources
  */
-public class AirportInfo {
+public class AirportCSVObject {
     private final String code;
     private final String size;
     private final String name;
@@ -18,12 +18,12 @@ public class AirportInfo {
     private final String city;
     private final String localCode;
 
-    public AirportInfo(String code, String size, String name,
-                       String latitude, String longitude,
-                       String continent, String country,
-                       String region, String regionCode, String city, String localCode) {
+    public AirportCSVObject(String code, String size, String name,
+                            String latitude, String longitude,
+                            String continent, String country,
+                            String region, String regionCode, String city, String localCode) {
         this.code = code;
-        this.size = size;
+        this.size = mapSize(size);
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -33,6 +33,15 @@ public class AirportInfo {
         this.regionCode = regionCode;
         this.city = formatCity(city);
         this.localCode = localCode;
+    }
+
+    private static String mapSize(String size){
+        return switch (size.toLowerCase()){
+            case "small_airport" -> "SMALL";
+            case "medium_airport" -> "MEDIUM";
+            case "large_airport" -> "LARGE";
+            default -> "UNKNOWN";
+        };
     }
 
     public String getCode() {

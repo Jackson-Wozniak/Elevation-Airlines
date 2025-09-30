@@ -1,12 +1,12 @@
-package internal.parser.objects;
+package internal.parser.objects.csv;
 
-public class RunwayInfo {
+public class RunwayCSVObject {
     private final int lengthFt;
     private final String surface;
     private final boolean hasLights;
     private final boolean isClosed;
 
-    public RunwayInfo(int lengthFt, String surface, boolean hasLights, boolean isClosed){
+    public RunwayCSVObject(int lengthFt, String surface, boolean hasLights, boolean isClosed){
         this.lengthFt = lengthFt;
         this.surface = surface;
         this.hasLights = hasLights;

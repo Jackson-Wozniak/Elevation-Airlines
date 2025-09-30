@@ -1,17 +1,16 @@
-package internal.parser.objects;
+package internal.parser.objects.csv;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class CountyEconomicInfo {
+public class CountyCSVObject {
     private final String county;
     private final String state;
     private final String unit;
     private final String[] gdpValues2001To2023;
     private double CAGR;
 
-    public CountyEconomicInfo(String county, String state, String unit, String[] gdpValues2001To2023) {
+    public CountyCSVObject(String county, String state, String unit, String[] gdpValues2001To2023) {
         this.county = county;
         this.state = state;
         this.unit = unit;

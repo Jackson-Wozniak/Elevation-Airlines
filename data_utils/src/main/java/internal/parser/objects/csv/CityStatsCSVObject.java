@@ -1,6 +1,6 @@
-package internal.parser.objects;
+package internal.parser.objects.csv;
 
-public class CityAviationStats {
+public class CityStatsCSVObject {
     private final String year;
     private final String quarter;
     private final String city;
@@ -9,8 +9,8 @@ public class CityAviationStats {
     private final String passengerCount;
     private final String averageFareUSD;
 
-    public CityAviationStats(String year, String quarter, String city, String state,
-                             String connectedMarkets, String passengerCount, String averageFareUSD) {
+    public CityStatsCSVObject(String year, String quarter, String city, String state,
+                              String connectedMarkets, String passengerCount, String averageFareUSD) {
         this.averageFareUSD = averageFareUSD;
         this.passengerCount = passengerCount;
         this.connectedMarkets = connectedMarkets;

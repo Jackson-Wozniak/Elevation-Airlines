@@ -14,6 +14,16 @@ public class CSVReaderUtils {
         }
     }
 
+    public static double safeDoubleParse(String value){
+        value = value.replace(",", "").replace("\"", "").trim();
+        try{
+            return Double.parseDouble(value);
+        }catch (Exception ex){
+            //TODO: if there is a parse exception, we have to manually go through each digit and verify it
+            return 0;
+        }
+    }
+
     public static String continentCodeToName(String continentCode){
         return switch(continentCode.toUpperCase()){
             case "NA" -> "North America";

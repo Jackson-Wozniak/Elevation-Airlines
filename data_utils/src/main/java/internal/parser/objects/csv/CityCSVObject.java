@@ -1,13 +1,13 @@
-package internal.parser.objects;
+package internal.parser.objects.csv;
 
-public class CityInfo {
+public class CityCSVObject {
     private final String name;
     private final String state;
     private final String county;
     private final String population;
     private final String ranking;
 
-    public CityInfo(String name, String state, String county, String population, String ranking) {
+    public CityCSVObject(String name, String state, String county, String population, String ranking) {
         this.name = name;
         this.state = state;
         this.county = county;

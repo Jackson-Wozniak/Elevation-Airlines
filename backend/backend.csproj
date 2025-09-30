@@ -21,8 +21,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Resources\" />
       <Folder Include="src\domain\" />
-      <Folder Include="src\engine\" />
+      <Folder Include="src\engine\scheduler\" />
+      <Folder Include="src\engine\simulator\" />
     </ItemGroup>
 
 </Project>

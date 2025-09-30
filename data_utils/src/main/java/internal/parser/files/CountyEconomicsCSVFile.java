@@ -1,6 +1,6 @@
 package internal.parser.files;
 
-import internal.parser.objects.CountyEconomicInfo;
+import internal.parser.objects.csv.CountyCSVObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +12,7 @@ public class CountyEconomicsCSVFile {
     private static CountyEconomicsCSVFile countyEconomicsCSVFile;
     private static final String FILE_PATH = "county_economics.csv";
 
-    private final Map<String, CountyEconomicInfo> counties = new HashMap<>();
+    private final Map<String, CountyCSVObject> counties = new HashMap<>();
 
     private CountyEconomicsCSVFile() throws IOException {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(FILE_PATH);
@@ -29,7 +29,7 @@ public class CountyEconomicsCSVFile {
                     .replace("*", "").trim();
             String unit = allLine[2];
             String[] values = Arrays.copyOfRange(allLine, 3, allLine.length);
-            CountyEconomicInfo info = new CountyEconomicInfo(county, state, unit, values);
+            CountyCSVObject info = new CountyCSVObject(county, state, unit, values);
             if(!counties.containsKey(info.getKey())) counties.put(info.getKey(), info);
         }
     }
@@ -45,7 +45,7 @@ public class CountyEconomicsCSVFile {
         return countyEconomicsCSVFile;
     }
 
-    public Map<String, CountyEconomicInfo> getCounties(){
+    public Map<String, CountyCSVObject> getCounties(){
         return counties;
     }
 }

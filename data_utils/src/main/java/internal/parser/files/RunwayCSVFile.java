@@ -1,6 +1,6 @@
 package internal.parser.files;
 
-import internal.parser.objects.RunwayInfo;
+import internal.parser.objects.csv.RunwayCSVObject;
 import internal.parser.utils.CSVReaderUtils;
 
 import java.io.BufferedReader;
@@ -30,7 +30,7 @@ public class RunwayCSVFile {
 
         List<String[]> allLines = toArray(new BufferedReader(runwayReader).lines().toList());
 
-        Map<String, ArrayList<RunwayInfo>> possibleRunways = new HashMap<>();
+        Map<String, ArrayList<RunwayCSVObject>> possibleRunways = new HashMap<>();
         for (String[] allLine : allLines) {
             if(allLine[0].equalsIgnoreCase("Airport")) continue;
             String code = allLine[0];
@@ -43,17 +43,17 @@ public class RunwayCSVFile {
             if(!possibleRunways.containsKey(code)){
                 possibleRunways.put(code, new ArrayList<>());
             }
-            possibleRunways.get(code).add(new RunwayInfo(runwayLength, surface, hasLights, isClosed));
+            possibleRunways.get(code).add(new RunwayCSVObject(runwayLength, surface, hasLights, isClosed));
         }
         addAllowedAirports(possibleRunways);
     }
 
     //ensure at least one runway fits requirements for airport to be allowed in network
-    private void addAllowedAirports(Map<String, ArrayList<RunwayInfo>> possibleRunways){
+    private void addAllowedAirports(Map<String, ArrayList<RunwayCSVObject>> possibleRunways){
         possibleRunways.forEach((code, runwayInfos) -> {
             int maxLength = runwayInfos.stream()
                     .filter(runway -> runway.hasLights() && !runway.isClosed())
-                    .mapToInt(RunwayInfo::getLengthFt)
+                    .mapToInt(RunwayCSVObject::getLengthFt)
                     .max().orElse(0);
 
             if(maxLength >= MINIMUM_RUNWAY_LENGTH) runwaysPerAirport.put(code, maxLength);

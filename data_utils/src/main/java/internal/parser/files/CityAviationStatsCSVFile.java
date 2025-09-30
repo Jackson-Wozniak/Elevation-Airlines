@@ -1,7 +1,6 @@
 package internal.parser.files;
 
-import internal.parser.objects.AirportInfo;
-import internal.parser.objects.CityAviationStats;
+import internal.parser.objects.csv.CityStatsCSVObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +12,7 @@ public class CityAviationStatsCSVFile {
     private static CityAviationStatsCSVFile cityAviationStatsCSVFile;
     private static final String FILE_PATH = "city_aviation_stats.csv";
 
-    private final Map<String, Map<String, CityAviationStats>> cityStats = new HashMap<>();
+    private final Map<String, Map<String, CityStatsCSVObject>> cityStats = new HashMap<>();
 
     private CityAviationStatsCSVFile() throws IOException {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(FILE_PATH);
@@ -32,7 +31,7 @@ public class CityAviationStatsCSVFile {
             String connectedMarkets = allLine[4];
             String passengerCount = allLine[5];
             String averageFare = allLine[6];
-            CityAviationStats stats = new CityAviationStats(year, quarter, city, state,
+            CityStatsCSVObject stats = new CityStatsCSVObject(year, quarter, city, state,
                     connectedMarkets, passengerCount, averageFare);
             if(!cityStats.containsKey(stats.getKey())) cityStats.put(stats.getKey(), new HashMap<>());
 
@@ -51,7 +50,7 @@ public class CityAviationStatsCSVFile {
         return cityAviationStatsCSVFile;
     }
 
-    public Map<String, Map<String, CityAviationStats>> getCityStats(){
+    public Map<String, Map<String, CityStatsCSVObject>> getCityStats(){
         return cityStats;
     }
 }
