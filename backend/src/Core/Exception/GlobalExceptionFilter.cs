@@ -1,8 +1,8 @@
-﻿using backend.core.Exception.types;
+﻿using backend.Core.Exception.types;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace backend.core.Exception;
+namespace backend.Core.Exception;
 
 public class GlobalExceptionFilter : IExceptionFilter
 {

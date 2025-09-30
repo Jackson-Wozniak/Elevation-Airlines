@@ -22,7 +22,8 @@
 
     <ItemGroup>
       <Folder Include="Resources\" />
-      <Folder Include="src\domain\" />
+      <Folder Include="src\Domain\Fleet\Entity\" />
+      <Folder Include="src\Domain\RouteNetwork\" />
       <Folder Include="src\engine\scheduler\" />
       <Folder Include="src\engine\simulator\" />
     </ItemGroup>

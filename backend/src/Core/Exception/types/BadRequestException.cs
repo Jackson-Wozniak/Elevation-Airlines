@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace backend.core.Exception.types;
+namespace backend.Core.Exception.types;
 
 public class BadRequestException : BaseException
 {

@@ -1,5 +1,5 @@
-using backend.core.Data;
-using backend.core.Exception;
+using backend.Core.Data;
+using backend.Core.Exception;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

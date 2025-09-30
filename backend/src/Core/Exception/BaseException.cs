@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
-namespace backend.core.Exception;
+namespace backend.Core.Exception;
 
 public abstract class BaseException : System.Exception
 {

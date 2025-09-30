@@ -1,4 +1,4 @@
-﻿namespace backend.core.Entity;
+﻿namespace backend.Core.Entity;
 
 public abstract class BaseEntity
 {
