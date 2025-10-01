@@ -16,12 +16,12 @@ public class AirportCsvReader
         {
             var code = line[0];
             var name = line[2];
-            var lat = NumberUtils.getDoubleOrDefault(line[3], -10000.0);
-            var longitude = NumberUtils.getDoubleOrDefault(line[4], -10000.0);
+            var lat = NumberUtils.GetDoubleOrDefault(line[3], -10000.0);
+            var longitude = NumberUtils.GetDoubleOrDefault(line[4], -10000.0);
             var country = line[5];
             var state = line[6];
             var city = line[7];
-            var percentile = NumberUtils.getDoubleOrDefault(line[8], -10000.0);
+            var percentile = NumberUtils.GetDoubleOrDefault(line[8], -10000.0);
             if ((int)percentile == -10000 || (int)lat == 10000 || (int)longitude == 10000)
             {
                 throw new IOException($"Error reading airport for initialization: {code}");
@@ -29,7 +29,6 @@ public class AirportCsvReader
             airports.Add(new Airport(code, name, lat, longitude, 
                 city, state, country, percentile));
         }
-
         return airports;
     }
 }

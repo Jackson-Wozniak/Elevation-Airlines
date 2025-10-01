@@ -2,7 +2,7 @@
 
 public class NumberUtils
 {
-    public static double getDoubleOrDefault(string number, double defaultVal)
+    public static double GetDoubleOrDefault(string number, double defaultVal)
     {
         try
         {
