@@ -1,6 +1,8 @@
 ﻿using backend.Core.Entity;
 using backend.Domain.aircraft.Entity;
 using backend.Domain.airport.Entity;
+using backend.Domain.fleet.Entity;
+using backend.Domain.flight.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Core.Data;
@@ -9,6 +11,7 @@ public class ApplicationDbContext : DbContext
 {
     public DbSet<Aircraft> Aircraft { get; set; }
     public DbSet<Airport> Airports { get; set; }
+    public DbSet<Plane> Planes { get; set; }
     
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options){ }
@@ -28,5 +31,20 @@ public class ApplicationDbContext : DbContext
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .ValueGeneratedOnAdd();
         }
+
+        modelBuilder.Entity<Plane>()
+            .HasOne(p => p.Aircraft)
+            .WithMany()
+            .HasForeignKey("AircraftId");
+        
+        modelBuilder.Entity<Flight>()
+            .HasOne(f => f.Plane)
+            .WithMany(p => p.ScheduledFlights)
+            .HasForeignKey("PlaneId");
+
+        modelBuilder.Entity<Flight>()
+            .HasOne(f => f.FlightPlan)
+            .WithOne(p => p.Flight)
+            .HasForeignKey<FlightPlan>("FlightId");
     }
 }

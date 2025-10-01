@@ -4,6 +4,7 @@ using backend.Domain.aircraft.IO;
 using backend.Domain.aircraft.Service;
 using backend.Domain.airport.IO;
 using backend.Domain.airport.Service;
+using backend.Domain.fleet.Service;
 using Microsoft.Extensions.Options;
 
 namespace backend.Core.Initializer;
@@ -11,6 +12,7 @@ namespace backend.Core.Initializer;
 public class DatabaseInitializer(
     AirportService airportService,
     AircraftService aircraftService,
+    PlaneService planeService,
     IOptions<InitializerSettings> settings) : IInitializer
 {
     private readonly InitializerSettings _settings = settings.Value;
@@ -19,6 +21,9 @@ public class DatabaseInitializer(
     {
         if (_settings.ResetStaticDataOnStartup)
         {
+            //resetting static data means simulation MUST be cleared for sync
+            planeService.DeleteAllPlanes();
+            
             //TODO: if resetting static data we'll need to clear simulation tables
             if(_settings.ResetStaticDataTypes.Contains("Airport")) ResetAirports();
             if(_settings.ResetStaticDataTypes.Contains("Aircraft")) ResetAircraft();

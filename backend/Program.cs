@@ -27,6 +27,8 @@ builder.Services.AddScoped<AircraftService>();
 builder.Services.AddScoped<PlaneService>();
 builder.Services.AddScoped<FleetService>();
 builder.Services.AddSingleton<FleetFactory>();
+builder.Services.AddScoped<PlaneService>();
+builder.Services.AddScoped<FleetService>();
 
 builder.Services.AddControllers(options =>
 {

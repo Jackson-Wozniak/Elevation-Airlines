@@ -1,6 +1,19 @@
-﻿namespace backend.Domain.fleet.Service;
+﻿using backend.Core.Data;
+using backend.Domain.fleet.Entity;
 
-public class PlaneService
+namespace backend.Domain.fleet.Service;
+
+public class PlaneService(ApplicationDbContext context)
 {
-    
+    public void DeleteAllPlanes()
+    {
+        context.RemoveRange(context.Planes);
+        context.SaveChanges();
+    }
+
+    public void SavePlane(List<Plane> planes)
+    {
+        context.Planes.AddRange(planes);
+        context.SaveChanges();
+    }
 }

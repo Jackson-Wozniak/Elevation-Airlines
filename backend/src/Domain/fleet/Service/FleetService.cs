@@ -1,6 +1,8 @@
-﻿namespace backend.Domain.fleet.Service;
+﻿using backend.Core.Data;
 
-public class FleetService
+namespace backend.Domain.fleet.Service;
+
+public class FleetService(ApplicationDbContext context, PlaneService planeService)
 {
     
 }
