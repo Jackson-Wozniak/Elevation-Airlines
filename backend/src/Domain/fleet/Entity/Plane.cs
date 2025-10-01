@@ -11,4 +11,13 @@ public class Plane
     public PlaneStatus Status { get; set; }
 
     public List<Flight> ScheduledFlights { get; set; } = [];
+    
+    public Plane() { }
+
+    public Plane(string callSign, Aircraft aircraft, PlaneStatus status)
+    {
+        CallSign = callSign;
+        Aircraft = aircraft;
+        Status = status;
+    }
 }

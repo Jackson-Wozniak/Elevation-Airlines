@@ -5,6 +5,11 @@ namespace backend.Domain.aircraft.Service;
 
 public class AircraftService(ApplicationDbContext context)
 {
+    public List<Aircraft> GetAllAircraft()
+    {
+        return context.Aircraft.ToList();
+    }
+    
     public void DeleteAllAircraft()
     {
         context.Aircraft.RemoveRange(context.Aircraft);
