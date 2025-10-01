@@ -13,4 +13,16 @@ public class NumberUtils
             return defaultVal;
         }
     }
+    
+    public static int GetIntOrDefault(string number, int defaultVal)
+    {
+        try
+        {
+            return Int32.Parse(number);
+        }
+        catch
+        {
+            return defaultVal;
+        }
+    }
 }
