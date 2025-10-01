@@ -17,7 +17,6 @@ public class DatabaseInitializer(
     PlaneService planeService,
     FlightService flightService,
     NetworkedRouteService networkedRouteService,
-    FleetService fleetService,
     ILogger<DatabaseInitializer> logger,
     IOptions<InitializerSettings> settings) : IInitializer
 {
