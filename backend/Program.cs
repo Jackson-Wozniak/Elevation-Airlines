@@ -4,6 +4,8 @@ using backend.Core.Initializer;
 using backend.Core.Settings;
 using backend.Domain.aircraft.Service;
 using backend.Domain.airport.Service;
+using backend.Domain.fleet.Factory;
+using backend.Domain.fleet.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +24,9 @@ builder.Services.AddScoped<DatabaseInitializer>();
 builder.Services.AddScoped<AirlineInitializer>();
 builder.Services.AddScoped<AirportService>();
 builder.Services.AddScoped<AircraftService>();
+builder.Services.AddScoped<PlaneService>();
+builder.Services.AddScoped<FleetService>();
+builder.Services.AddSingleton<FleetFactory>();
 
 builder.Services.AddControllers(options =>
 {
