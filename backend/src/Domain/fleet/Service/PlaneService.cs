@@ -7,7 +7,7 @@ public class PlaneService(ApplicationDbContext context)
 {
     public void DeleteAllPlanes()
     {
-        context.RemoveRange(context.Planes);
+        context.Planes.RemoveRange(context.Planes);
         context.SaveChanges();
     }
 

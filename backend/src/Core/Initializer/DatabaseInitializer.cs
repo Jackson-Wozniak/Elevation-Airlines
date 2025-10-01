@@ -5,6 +5,8 @@ using backend.Domain.aircraft.Service;
 using backend.Domain.airport.IO;
 using backend.Domain.airport.Service;
 using backend.Domain.fleet.Service;
+using backend.Domain.flight.Service;
+using backend.Domain.routenetwork.Service;
 using Microsoft.Extensions.Options;
 
 namespace backend.Core.Initializer;
@@ -13,6 +15,10 @@ public class DatabaseInitializer(
     AirportService airportService,
     AircraftService aircraftService,
     PlaneService planeService,
+    FlightService flightService,
+    NetworkedRouteService networkedRouteService,
+    FleetService fleetService,
+    ILogger<DatabaseInitializer> logger,
     IOptions<InitializerSettings> settings) : IInitializer
 {
     private readonly InitializerSettings _settings = settings.Value;
@@ -21,10 +27,13 @@ public class DatabaseInitializer(
     {
         if (_settings.ResetStaticDataOnStartup)
         {
-            //resetting static data means simulation MUST be cleared for sync
-            planeService.DeleteAllPlanes();
+            logger.LogInformation("Resetting static data: {%s}", string.Join(", ", _settings.ResetStaticDataTypes));
+            if(!_settings.ResetSimulationState) logger.LogDebug("ResetSimulationState is OFF, but ResetStaticDataOnStartup is ON. To avoid resetting simulation state, turn ResetStaticDataOnStartup OFF");
             
-            //TODO: if resetting static data we'll need to clear simulation tables
+            planeService.DeleteAllPlanes();
+            networkedRouteService.DeleteAllNetworkedRoutes();
+            flightService.DeleteAllFlights();
+            
             if(_settings.ResetStaticDataTypes.Contains("Airport")) ResetAirports();
             if(_settings.ResetStaticDataTypes.Contains("Aircraft")) ResetAircraft();
         }

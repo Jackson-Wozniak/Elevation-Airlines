@@ -1,10 +1,11 @@
-﻿using backend.Domain.aircraft.Entity;
+﻿using backend.Core.Entity;
+using backend.Domain.aircraft.Entity;
 using backend.Domain.fleet.Enums;
 using backend.Domain.flight.Entity;
 
 namespace backend.Domain.fleet.Entity;
 
-public class Plane
+public class Plane : BaseEntity
 {
     public string CallSign { get; set; }
     public Aircraft Aircraft { get; set; }

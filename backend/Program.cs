@@ -6,9 +6,13 @@ using backend.Domain.aircraft.Service;
 using backend.Domain.airport.Service;
 using backend.Domain.fleet.Factory;
 using backend.Domain.fleet.Service;
+using backend.Domain.flight.Service;
+using backend.Domain.routenetwork.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddLogging(logging => logging.AddConsole().AddDebug());
 
 builder.Services.Configure<SimulationSettings>(
     builder.Configuration.GetSection("SimulationSettings"));
@@ -26,24 +30,26 @@ builder.Services.AddScoped<AirportService>();
 builder.Services.AddScoped<AircraftService>();
 builder.Services.AddScoped<PlaneService>();
 builder.Services.AddScoped<FleetService>();
-builder.Services.AddSingleton<FleetFactory>();
+builder.Services.AddScoped<FleetFactory>();
 builder.Services.AddScoped<PlaneService>();
 builder.Services.AddScoped<FleetService>();
+builder.Services.AddScoped<FlightService>();
+builder.Services.AddScoped<NetworkedRouteService>();
 
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<GlobalExceptionFilter>();
 });
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 using (var scope = app.Services.CreateScope())

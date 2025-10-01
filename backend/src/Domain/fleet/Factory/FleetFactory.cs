@@ -3,11 +3,16 @@ using backend.Core.Utils;
 using backend.Domain.aircraft.Service;
 using backend.Domain.fleet.Entity;
 using backend.Domain.fleet.Enums;
+using Microsoft.Extensions.Options;
 
 namespace backend.Domain.fleet.Factory;
 
-public class FleetFactory(SimulationSettings settings, AircraftService aircraftService)
+public class FleetFactory(
+    IOptions<SimulationSettings> options, 
+    AircraftService aircraftService)
 {
+    private readonly SimulationSettings _simulationSettings = options.Value;
+    
     public List<Plane> Create(int count, List<string>? usedCallsigns = null)
     {
         usedCallsigns ??= [];
