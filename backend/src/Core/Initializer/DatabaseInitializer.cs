@@ -2,12 +2,17 @@
 using backend.Core.Interface;
 using backend.Core.Settings;
 using backend.Domain.Aircrafts.IO;
+using backend.Domain.Aircrafts.Service;
 using backend.Domain.Airports.IO;
+using backend.Domain.Airports.Service;
 using Microsoft.Extensions.Options;
 
 namespace backend.Core.Initializer;
 
-public class DatabaseInitializer(ApplicationDbContext context, IOptions<InitializerSettings> settings) : IInitializer
+public class DatabaseInitializer(
+    AirportService airportService,
+    AircraftService aircraftService,
+    IOptions<InitializerSettings> settings) : IInitializer
 {
     private readonly InitializerSettings _settings = settings.Value;
     
@@ -23,13 +28,13 @@ public class DatabaseInitializer(ApplicationDbContext context, IOptions<Initiali
 
     private void ResetAircraft()
     {
-        context.Aircraft.AddRange(AircraftCsvReader.Read());
-        context.SaveChanges();
+        aircraftService.DeleteAllAircraft();
+        aircraftService.SaveAircraft(AircraftCsvReader.Read());
     }
 
     private void ResetAirports()
     {
-        context.Airports.AddRange(AirportCsvReader.Read());
-        context.SaveChanges();
+        airportService.DeleteAllAirports();
+        airportService.SaveAirport(AirportCsvReader.Read());
     }
 }

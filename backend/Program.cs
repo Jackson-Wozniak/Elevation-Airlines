@@ -3,6 +3,8 @@ using backend.Core.Exception;
 using backend.Core.Initializer;
 using backend.Core.Interface;
 using backend.Core.Settings;
+using backend.Domain.Aircrafts.Service;
+using backend.Domain.Airports.Service;
 using backend.Engine.Initializer;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +22,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<DatabaseInitializer>();
 builder.Services.AddScoped<AirlineInitializer>();
+builder.Services.AddScoped<AirportService>();
+builder.Services.AddScoped<AircraftService>();
 
 builder.Services.AddControllers(options =>
 {
