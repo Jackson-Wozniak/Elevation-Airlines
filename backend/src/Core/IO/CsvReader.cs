@@ -12,6 +12,7 @@ public class CsvReader
         using var streamReader = new StreamReader(stream);
         return Lines(streamReader)
             .Select(line => line.Split(","))
+            .Where(line => !line[0].Contains("#"))
             .ToList();
     }
 
