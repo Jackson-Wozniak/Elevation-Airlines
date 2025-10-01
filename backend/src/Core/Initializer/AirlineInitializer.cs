@@ -1,6 +1,6 @@
 ﻿using backend.Core.Interface;
 
-namespace backend.Engine.Initializer;
+namespace backend.Core.Initializer;
 
 public class AirlineInitializer : IInitializer
 {
