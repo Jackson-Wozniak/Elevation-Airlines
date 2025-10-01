@@ -1,7 +1,7 @@
 ﻿using backend.Core.Data;
-using backend.Domain.Aircrafts.Entity;
+using backend.Domain.aircraft.Entity;
 
-namespace backend.Domain.Aircrafts.Service;
+namespace backend.Domain.aircraft.Service;
 
 public class AircraftService(ApplicationDbContext context)
 {

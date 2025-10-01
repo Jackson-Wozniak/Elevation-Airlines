@@ -1,4 +1,4 @@
-﻿namespace backend.Domain.Aircrafts.Enums;
+﻿namespace backend.Domain.aircraft.Enums;
 
 public enum ManufacturerType
 {

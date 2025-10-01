@@ -1,9 +1,9 @@
 ﻿using backend.Core.IO;
 using backend.Core.Utils;
-using backend.Domain.Aircrafts.Entity;
-using backend.Domain.Aircrafts.Enums;
+using backend.Domain.aircraft.Entity;
+using backend.Domain.aircraft.Enums;
 
-namespace backend.Domain.Aircrafts.IO;
+namespace backend.Domain.aircraft.IO;
 
 public class AircraftCsvReader
 {

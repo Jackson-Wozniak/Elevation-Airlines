@@ -1,8 +1,8 @@
 ﻿using backend.Core.IO;
 using backend.Core.Utils;
-using backend.Domain.Airports.Entity;
+using backend.Domain.airport.Entity;
 
-namespace backend.Domain.Airports.IO;
+namespace backend.Domain.airport.IO;
 
 public class AirportCsvReader
 {

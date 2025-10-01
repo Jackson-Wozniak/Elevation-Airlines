@@ -1,10 +1,9 @@
-﻿using backend.Core.Data;
-using backend.Core.Interface;
+﻿using backend.Core.Interface;
 using backend.Core.Settings;
-using backend.Domain.Aircrafts.IO;
-using backend.Domain.Aircrafts.Service;
-using backend.Domain.Airports.IO;
-using backend.Domain.Airports.Service;
+using backend.Domain.aircraft.IO;
+using backend.Domain.aircraft.Service;
+using backend.Domain.airport.IO;
+using backend.Domain.airport.Service;
 using Microsoft.Extensions.Options;
 
 namespace backend.Core.Initializer;

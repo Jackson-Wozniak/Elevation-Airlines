@@ -1,7 +1,7 @@
 ﻿using backend.Core.Entity;
-using backend.Domain.Aircrafts.Enums;
+using backend.Domain.aircraft.Enums;
 
-namespace backend.Domain.Aircrafts.Entity;
+namespace backend.Domain.aircraft.Entity;
 
 public class Aircraft : BaseEntity
 {

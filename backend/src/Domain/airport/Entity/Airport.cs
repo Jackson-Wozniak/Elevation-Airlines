@@ -1,6 +1,6 @@
 ﻿using backend.Core.Entity;
 
-namespace backend.Domain.Airports.Entity;
+namespace backend.Domain.airport.Entity;
 
 public class Airport : BaseEntity
 {

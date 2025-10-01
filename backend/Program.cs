@@ -2,8 +2,8 @@ using backend.Core.Data;
 using backend.Core.Exception;
 using backend.Core.Initializer;
 using backend.Core.Settings;
-using backend.Domain.Aircrafts.Service;
-using backend.Domain.Airports.Service;
+using backend.Domain.aircraft.Service;
+using backend.Domain.airport.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

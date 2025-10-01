@@ -1,6 +1,6 @@
 ﻿using backend.Core.Entity;
-using backend.Domain.Aircrafts.Entity;
-using backend.Domain.Airports.Entity;
+using backend.Domain.aircraft.Entity;
+using backend.Domain.airport.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Core.Data;

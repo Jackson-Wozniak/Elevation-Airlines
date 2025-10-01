@@ -1,7 +1,7 @@
 ﻿using backend.Core.Data;
-using backend.Domain.Airports.Entity;
+using backend.Domain.airport.Entity;
 
-namespace backend.Domain.Airports.Service;
+namespace backend.Domain.airport.Service;
 
 public class AirportService(ApplicationDbContext context)
 {
