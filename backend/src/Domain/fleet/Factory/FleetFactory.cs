@@ -8,7 +8,7 @@ public class FleetFactory(SimulationSettings settings)
     public List<Plane> Create(int count, List<string>? usedCallsigns = null)
     {
         usedCallsigns ??= [];
-        
-        return null;
+
+        throw new NotImplementedException();
     }
 }

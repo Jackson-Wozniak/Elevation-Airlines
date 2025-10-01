@@ -16,4 +16,10 @@ public class PlaneService(ApplicationDbContext context)
         context.Planes.AddRange(planes);
         context.SaveChanges();
     }
+    
+    public void SavePlane(Plane plane)
+    {
+        context.Planes.Add(plane);
+        context.SaveChanges();
+    }
 }
