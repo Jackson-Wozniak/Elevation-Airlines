@@ -14,4 +14,24 @@ public class RouteNetworkController(
     {
         return Ok(new RouteNetworkDto(networkedRouteService.GetNetworkedRoutes()));
     }
+    
+    [HttpGet("{airport}")]
+    public ActionResult<RouteNetworkDto> GetRouteNetworkByAirport(string airport)
+    {
+        return Ok(new RouteNetworkDto(networkedRouteService.GetNetworkedRoutes(airport)));
+    }
+    
+    [HttpGet("Routes")]
+    public ActionResult<IEnumerable<NetworkedRouteDto>> GetRoutes()
+    {
+        return Ok(networkedRouteService.GetNetworkedRoutes()
+            .Select(r => new NetworkedRouteDto(r)));
+    }
+
+    [HttpGet("Routes/{airport}")]
+    public ActionResult<IEnumerable<NetworkedRouteDto>> GetRoutesByAirport(string airport)
+    {
+        return Ok(networkedRouteService.GetNetworkedRoutes(airport)
+            .Select(r => new NetworkedRouteDto(r)));
+    }
 }

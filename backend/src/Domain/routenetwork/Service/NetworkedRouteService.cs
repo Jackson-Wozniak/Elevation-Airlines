@@ -13,6 +13,16 @@ public class NetworkedRouteService(ApplicationDbContext context)
             .Include(n => n.Route.Destination)
             .ToList();
     }
+
+    public List<NetworkedRoute> GetNetworkedRoutes(string airport)
+    {
+        return context.NetworkedRoutes
+            .Include(n => n.Route.Departure)
+            .Include(n => n.Route.Destination)
+            .Where(r => r.Route.Departure.AirportCode.Equals(airport) ||
+                r.Route.Destination.AirportCode.Equals(airport))
+            .ToList();
+    }
     
     public void DeleteAllNetworkedRoutes()
     {
