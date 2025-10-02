@@ -15,7 +15,7 @@ public class FleetController(PlaneService planeService) : ControllerBase
         return Ok(planeService.GetPlanes().Select(p => new PlaneDto(p)));
     }
     
-    [HttpGet("/{callSign}")]
+    [HttpGet("{callSign}")]
     public ActionResult<Plane> GetPlane(string callSign)
     {
         return Ok(new PlaneDto(planeService.GetPlane(callSign)));

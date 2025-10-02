@@ -17,7 +17,7 @@ public class PlaneService(ApplicationDbContext context)
         var plane = context.Planes.Include(p => p.Aircraft)
             .SingleOrDefault(p => p.CallSign.Equals(callSign));
 
-        if (plane == null) throw new NotFoundException($"No call sign: {callSign}", nameof(PlaneService));
+        if (plane == null) throw new NotFoundException($"No call sign: {callSign}", "PlaneService.GetPlane");
         return plane;
     }
     
