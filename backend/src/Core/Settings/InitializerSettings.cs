@@ -2,7 +2,7 @@
 
 public class InitializerSettings
 {
-    public bool ResetStaticDataOnStartup { get; set; } = true;
+    public bool ResetStaticData { get; set; }
     public string[] ResetStaticDataTypes { get; set; } = [];
-    public bool ResetSimulationState { get; set; } = true;
+    public bool ResetSimulationState { get; set; }
 }

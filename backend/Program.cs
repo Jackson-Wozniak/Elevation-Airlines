@@ -51,19 +51,17 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
 using (var scope = app.Services.CreateScope())
 {
     scope.ServiceProvider.GetRequiredService<DatabaseInitializer>().Initialize();
     scope.ServiceProvider.GetRequiredService<AirlineInitializer>().Initialize();
 }
 
-app.UseHttpsRedirection();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseAuthorization();
 

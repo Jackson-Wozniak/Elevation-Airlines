@@ -1,4 +1,5 @@
-﻿using backend.Domain.airport.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using backend.Domain.airport.Entity;
 
 namespace backend.Domain.shared;
 
@@ -6,6 +7,8 @@ public class Route
 {
     public Airport Departure { get; set; }
     public Airport Destination { get; set; }
+    [NotMapped]
+    public double DistanceNauticalMiles { get; set; }
 
     protected Route() { }
 
@@ -13,5 +16,6 @@ public class Route
     {
         Departure = departure;
         Destination = destination;
+        DistanceNauticalMiles = 0;
     }
 }

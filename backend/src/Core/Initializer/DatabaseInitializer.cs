@@ -24,7 +24,7 @@ public class DatabaseInitializer(
     
     public void Initialize()
     {
-        if (_settings.ResetStaticDataOnStartup)
+        if (_settings.ResetStaticData)
         {
             logger.LogInformation("Resetting static data: {%s}", string.Join(", ", _settings.ResetStaticDataTypes));
             if(!_settings.ResetSimulationState) logger.LogDebug("ResetSimulationState is OFF, but ResetStaticDataOnStartup is ON. To avoid resetting simulation state, turn ResetStaticDataOnStartup OFF");

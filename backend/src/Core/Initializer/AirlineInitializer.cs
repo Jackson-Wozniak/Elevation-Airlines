@@ -26,9 +26,9 @@ public class AirlineInitializer(
     
     public void Initialize()
     {
-        if (_initializerSettings.ResetSimulationState || _initializerSettings.ResetStaticDataOnStartup)
+        if (_initializerSettings.ResetSimulationState || _initializerSettings.ResetStaticData)
         {
-            if (!_initializerSettings.ResetStaticDataOnStartup)
+            if (!_initializerSettings.ResetStaticData)
             {
                 logger.LogInformation("Clearing previous simulation state for (Flight, Plane, NetworkedRoute");
                 flightService.DeleteAllFlights();
