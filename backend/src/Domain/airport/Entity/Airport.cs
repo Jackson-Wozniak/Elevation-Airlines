@@ -1,4 +1,5 @@
 ﻿using backend.Core.Entity;
+using backend.Domain.airport.Enum;
 
 namespace backend.Domain.airport.Entity;
 
@@ -12,8 +13,9 @@ public class Airport : BaseEntity
     public string State { get; set; } = "";
     public string Country { get; set; } = "";
     public double EconomicValuePercentile { get; set; }
+    public MarketType MarketType { get; set; }
     
-    public Airport(){ }
+    protected Airport(){ }
 
     public Airport(string airportCode, string airportName, 
         double latitude, double longitude, 
@@ -28,5 +30,6 @@ public class Airport : BaseEntity
         State = state;
         Country = country;
         EconomicValuePercentile = economicValuePercentile;
+        MarketType = MarketTypeUtils.FromEconomicPercentile(EconomicValuePercentile);
     }
 }

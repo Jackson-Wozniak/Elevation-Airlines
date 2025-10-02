@@ -8,6 +8,8 @@ using backend.Domain.fleet.Factory;
 using backend.Domain.fleet.Service;
 using backend.Domain.flight.Service;
 using backend.Domain.routenetwork.Service;
+using backend.Engine.Scheduling.Service;
+using backend.Engine.Simulation.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,6 +37,9 @@ builder.Services.AddScoped<PlaneService>();
 builder.Services.AddScoped<FleetService>();
 builder.Services.AddScoped<FlightService>();
 builder.Services.AddScoped<NetworkedRouteService>();
+builder.Services.AddScoped<NetworkPlannerService>();
+builder.Services.AddScoped<FlightSchedulingService>();
+builder.Services.AddScoped<FlightSimulationService>();
 
 builder.Services.AddControllers(options =>
 {

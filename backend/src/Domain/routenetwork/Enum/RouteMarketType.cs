@@ -1,4 +1,7 @@
-﻿namespace backend.Domain.routenetwork.Enum;
+﻿using backend.Domain.airport.Entity;
+using backend.Domain.airport.Enum;
+
+namespace backend.Domain.routenetwork.Enum;
 
 public enum RouteMarketType
 {
@@ -6,7 +9,8 @@ public enum RouteMarketType
     HubToSecondaryMarket = 2,
     ReturnToHub = 3,
     ConnectMajorMarkets = 4,
-    ConnectSecondaryMarkets = 5
+    ConnectSecondaryMarkets = 5,
+    HubToNiche = 6
 }
 
 public static class RouteMarketTypeUtils
@@ -20,5 +24,25 @@ public static class RouteMarketTypeUtils
     {
         return type is RouteMarketType.HubToMajorMarket
             or RouteMarketType.HubToSecondaryMarket;
+    }
+
+    public static RouteMarketType MapFromAirports(Airport dep, Airport dest,
+        bool includesHub, bool departsHub)
+    {
+        if (!includesHub)
+        {
+            if (dep.MarketType == MarketType.Major && dest.MarketType == MarketType.Major)
+                return RouteMarketType.ConnectMajorMarkets;
+            return RouteMarketType.ConnectSecondaryMarkets;
+        }
+
+        if (!departsHub) return RouteMarketType.ReturnToHub;
+        
+        return dest.MarketType switch
+        {
+            MarketType.Major => RouteMarketType.HubToMajorMarket,
+            MarketType.Secondary => RouteMarketType.HubToSecondaryMarket,
+            _ => RouteMarketType.HubToNiche
+        };
     }
 }

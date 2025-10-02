@@ -5,6 +5,11 @@ namespace backend.Domain.airport.Service;
 
 public class AirportService(ApplicationDbContext context)
 {
+    public List<Airport> FindAirports()
+    {
+        return context.Airports.ToList();
+    }
+    
     public void DeleteAllAirports()
     {
         context.Airports.RemoveRange(context.Airports);
