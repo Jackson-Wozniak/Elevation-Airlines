@@ -1,8 +1,8 @@
 ﻿namespace backend.Core.Utils;
 
-public class NumberUtils
+public static class NumberUtils
 {
-    public static double GetDoubleOrDefault(string number, double defaultVal)
+    public static double GetDoubleOrDefault(this string number, double defaultVal)
     {
         try
         {
@@ -14,7 +14,7 @@ public class NumberUtils
         }
     }
     
-    public static int GetIntOrDefault(string number, int defaultVal)
+    public static int GetIntOrDefault(this string number, int defaultVal)
     {
         try
         {
@@ -24,5 +24,10 @@ public class NumberUtils
         {
             return defaultVal;
         }
+    }
+
+    public static double ToRadians(this double degrees)
+    {
+        return degrees * (Math.PI / 180.0);
     }
 }

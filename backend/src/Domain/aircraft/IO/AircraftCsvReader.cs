@@ -18,9 +18,9 @@ public class AircraftCsvReader
             var make = ManufacturerTypeUtils
                 .FromName(line[0].Replace("_", ""));
             var model = line[1];
-            var speed = NumberUtils.GetIntOrDefault(line[2], -1);
-            var range = NumberUtils.GetIntOrDefault(line[3], -1);
-            var passengers = NumberUtils.GetIntOrDefault(line[4], -1);
+            var speed = line[2].GetIntOrDefault(-1);
+            var range = line[3].GetIntOrDefault(-1);
+            var passengers = line[4].GetIntOrDefault(-1);
             var category = AircraftCategoryTypeUtils
                 .FromName(line[5].Replace("_", ""));
             
