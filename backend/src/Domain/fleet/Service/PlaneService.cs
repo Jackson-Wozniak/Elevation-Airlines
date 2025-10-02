@@ -1,10 +1,26 @@
 ﻿using backend.Core.Data;
+using backend.Core.Exception.types;
 using backend.Domain.fleet.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Domain.fleet.Service;
 
 public class PlaneService(ApplicationDbContext context)
 {
+    public List<Plane> GetPlanes()
+    {
+        return context.Planes.Include(p => p.Aircraft).ToList();
+    }
+    
+    public Plane GetPlane(string callSign)
+    {
+        var plane = context.Planes.Include(p => p.Aircraft)
+            .SingleOrDefault(p => p.CallSign.Equals(callSign));
+
+        if (plane == null) throw new NotFoundException($"No call sign: {callSign}", nameof(PlaneService));
+        return plane;
+    }
+    
     public void DeleteAllPlanes()
     {
         context.Planes.RemoveRange(context.Planes);

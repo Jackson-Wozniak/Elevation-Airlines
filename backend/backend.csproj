@@ -28,8 +28,5 @@
     <ItemGroup>
       <Folder Include="src\Domain\aircraft\Controller\" />
       <Folder Include="src\Domain\airport\Controller\" />
-      <Folder Include="src\Domain\fleet\Controller\" />
-      <Folder Include="src\Domain\flight\Controller\" />
-      <Folder Include="src\Domain\flight\Dto\" />
     </ItemGroup>
 </Project>
