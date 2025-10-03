@@ -4,7 +4,7 @@ namespace backend.Domain.airport.Dto;
 
 public class AirportDto
 {
-    public string AirportCode { get; set; }
+    public string AirportCode { get; }
     public string AirportName { get; set; }
     public double Latitude { get; set; }
     public double Longitude { get; set; }
@@ -16,6 +16,8 @@ public class AirportDto
 
     public AirportDto(Airport airport)
     {
+        if (airport.AirportCode == null) throw new Exception();
+        
         AirportCode = airport.AirportCode;
         AirportName = airport.AirportName;
         Latitude = airport.Latitude;
@@ -25,5 +27,18 @@ public class AirportDto
         Country = airport.Country;
         EconomicValuePercentile = airport.EconomicValuePercentile;
         MarketType = airport.MarketType.ToString();
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj == null) return false;
+        if(obj is not AirportDto other) return false;
+
+        return AirportCode.Equals(other.AirportCode);
+    }
+
+    public override int GetHashCode()
+    {
+        return AirportCode.GetHashCode();
     }
 }

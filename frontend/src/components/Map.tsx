@@ -13,9 +13,10 @@ interface City {
   zoomPoint?: { longitude: number; latitude: number };
 }
 
+//https://www.amcharts.com/demos/flight-routes-map/
 const Map: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
-  const [currentId, setCurrentId] = useState<string>("london");
+  const [currentId, setCurrentId] = useState<string>("KBOS");
 
   useLayoutEffect(() => {
     if (!chartRef.current) return;
@@ -81,7 +82,7 @@ const Map: React.FC = () => {
     const originSeries = chart.series.push(am5map.MapPointSeries.new(root, { idField: "id" }));
     originSeries.bullets.push(() => {
       const circle = am5.Circle.new(root, {
-        radius: 10,
+        radius: 6,
         tooltipText: "{title} (Click me!)",
         cursorOverStyle: "pointer",
         tooltipY: 0,
@@ -90,7 +91,6 @@ const Map: React.FC = () => {
         strokeWidth: 2
       });
 
-      circle.events.on("click", (e) => selectOrigin((e.target as any).dataItem.get("id")));
       return am5.Bullet.new(root, { sprite: circle });
     });
 
@@ -112,33 +112,34 @@ const Map: React.FC = () => {
     let codes: string[] = [];
     let destinations: City[] = [];
 
-    fetch("http://localhost:5258/api/RouteNetwork/Routes")
+    fetch("http://localhost:5258/api/RouteNetwork/Map")
     .then(data => data.json())
     .then(data => data.forEach((element: any) => {
-        if(element.destination.airportCode == "KBOS") return;
-        codes.push(element.destination.airportCode);
+      if(element.airport.airportCode != "KBOS") return;
+        //codes.push(element.airport.airportCode);
         const city: City = {
-            id: element.departure.airportCode,
-            title: element.departure.airportCode,
-            destinations: [],
-            geometry: {type: "Point", coordinates: [element.departure.longitude, element.departure.latitude]}
+            id: element.airport.airportCode,
+            title: element.airport.airportCode,
+            destinations: [...element.servicedAirports.map((a: any) => a.airportCode)],
+            geometry: {type: "Point", coordinates: [element.airport.longitude, element.airport.latitude]}
         }
         origins.push(city);
-        const city2: City = {
-            id: element.destination.airportCode,
-            title: element.destination.airportCode,
-            destinations: [],
-            geometry: {type: "Point", coordinates: [element.destination.longitude, element.destination.latitude]}
-        }
-        destinations.push(city2);
+        const cities: City[] = element.servicedAirports.map((e: any) => { return {
+            id: e.airportCode,
+            title: e.airportCode,
+            destinations: ["KBOS"],
+            geometry: {type: "Point", coordinates: [e.longitude, e.latitude]}
+    }});
+        destinations = [...destinations, ...cities];
     })).then(_ => {
-        origins.forEach(o => o.destinations = [...codes])
+        //origins.forEach(o => o.destinations = [...codes])
         originSeries.data.setAll(origins);
         destinationSeries.data.setAll(destinations);
   });
 
     function selectOrigin(id: string) {
-  const dataItem = originSeries.getDataItemById(id);
+      if(id != "KBOS") return;
+  const dataItem = originSeries.getDataItemById("KBOS");
   if (!dataItem) return;
 
   const dataContext = dataItem.dataContext as City;
@@ -161,14 +162,14 @@ const Map: React.FC = () => {
   lineSeries.data.setAll(lineData);
 }
 
-    destinationSeries.events.on("datavalidated", () => selectOrigin(currentId));
+    destinationSeries.events.on("datavalidated", () => selectOrigin("KBOS"));
 
     chart.appear(1000, 100);
 
     return () => {
       root.dispose();
     };
-  }, [currentId]);
+  }, []);
 
   return <div ref={chartRef} style={{ width: "100%", height: "600px" }} />;
 };

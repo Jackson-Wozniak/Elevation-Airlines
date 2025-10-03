@@ -34,4 +34,11 @@ public class RouteNetworkController(
         return Ok(networkedRouteService.GetNetworkedRoutes(airport)
             .Select(r => new NetworkedRouteDto(r)));
     }
+
+    [HttpGet("Map")]
+    public ActionResult<List<AirportConnectionDto>> GetNetworkMap()
+    {
+        return Ok(new NetworkMapDto(networkedRouteService
+            .GetNetworkedRoutes()).Connections);
+    }
 }
