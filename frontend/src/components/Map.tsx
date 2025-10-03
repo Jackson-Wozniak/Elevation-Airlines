@@ -112,9 +112,9 @@ const Map: React.FC = () => {
     let codes: string[] = [];
     let destinations: City[] = [];
 
-    fetch("http://localhost:5258/api/RouteNetwork/Map")
+    fetch("http://localhost:5258/api/RouteNetwork/Map/KBOS")
     .then(data => data.json())
-    .then(data => data.forEach((element: any) => {
+    .then(element => {
       if(element.airport.airportCode != "KBOS") return;
         //codes.push(element.airport.airportCode);
         const city: City = {
@@ -129,9 +129,9 @@ const Map: React.FC = () => {
             title: e.airportCode,
             destinations: ["KBOS"],
             geometry: {type: "Point", coordinates: [e.longitude, e.latitude]}
-    }});
+        }});
         destinations = [...destinations, ...cities];
-    })).then(_ => {
+    }).then(_ => {
         //origins.forEach(o => o.destinations = [...codes])
         originSeries.data.setAll(origins);
         destinationSeries.data.setAll(destinations);
