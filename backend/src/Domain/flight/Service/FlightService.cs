@@ -1,47 +1,25 @@
-﻿using backend.Core.Data;
-using backend.Core.Exception.types;
+﻿using backend.Core.Infrastructure.Caching;
 using backend.Domain.flight.Entity;
-using Microsoft.EntityFrameworkCore;
+using backend.Domain.flight.Repository;
 
 namespace backend.Domain.flight.Service;
 
-public class FlightService(ApplicationDbContext context)
+public class FlightService(FlightRepository flightRepository)
 {
-    public List<Flight> GetFlights()
-    {
-        return context.Flights
-            .Include(f => f.FlightPlan)
-                .ThenInclude(plan => plan.Route.Departure)
-            .Include(f => f.FlightPlan)
-                .ThenInclude(plan => plan.Route.Destination)
-            .Include(f => f.Plane)
-                .ThenInclude(plane => plane.Aircraft)
-            .ToList();
-    }
-
-    public Flight GetFlight(long id)
-    {
-        var flight = GetFlights().SingleOrDefault(f => f.Id == id);
-
-        if (flight == null) throw new NotFoundException($"No flight: {id}", "FlightService.GetFlight");
-        return flight;
-    }
+    private readonly ConcurrentEntityCache<Flight> _flightCache = new(50);
     
     public void DeleteAllFlights()
     {
-        context.Flights.RemoveRange(context.Flights);
-        context.SaveChanges();
+        flightRepository.DeleteAll();
     }
 
-    public void SaveFlight(List<Flight> flights)
+    public List<Flight> GetAllFlights()
     {
-        context.Flights.AddRange(flights);
-        context.SaveChanges();
+        return flightRepository.GetAll();
     }
-    
-    public void SaveFlight(Flight flight)
+
+    public Flight GetFlightById(long id)
     {
-        context.Flights.Add(flight);
-        context.SaveChanges();
+        return flightRepository.GetById(id);
     }
 }

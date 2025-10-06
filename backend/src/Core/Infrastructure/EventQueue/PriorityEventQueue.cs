@@ -1,6 +1,4 @@
-﻿using backend.Core.Object;
-
-namespace backend.Core.Model;
+﻿namespace backend.Core.Infrastructure.EventQueue;
 
 public class PriorityEventQueue<T> where T : Event
 {

@@ -1,4 +1,4 @@
-﻿namespace backend.Core.Object;
+﻿namespace backend.Core.Infrastructure.EventQueue;
 
 public abstract class Event
 {

@@ -1,4 +1,4 @@
-﻿using backend.Core.Object;
+﻿using backend.Core.Infrastructure.EventQueue;
 
 namespace backend.Domain.flight.Object;
 
