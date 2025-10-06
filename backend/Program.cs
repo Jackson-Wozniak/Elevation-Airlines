@@ -1,16 +1,19 @@
 using backend.Core.Data;
 using backend.Core.Exception;
+using backend.Core.Infrastructure.EventQueue;
 using backend.Core.Initializer;
 using backend.Core.Settings;
 using backend.Domain.aircraft.Service;
 using backend.Domain.airport.Service;
 using backend.Domain.fleet.Factory;
 using backend.Domain.fleet.Service;
+using backend.Domain.flight.Object;
 using backend.Domain.flight.Repository;
 using backend.Domain.flight.Service;
 using backend.Domain.routenetwork.Service;
 using backend.Engine.Scheduling.Interface;
 using backend.Engine.Scheduling.Service;
+using backend.Engine.Simulation.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,8 +30,7 @@ string connectionString = builder.Configuration.GetConnectionString("ElevationAi
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-builder.Services.AddScoped<DatabaseInitializer>();
-builder.Services.AddScoped<AirlineInitializer>();
+builder.Services.AddSingleton<PriorityEventQueue<FlightEvent>>();
 builder.Services.AddScoped<AirportService>();
 builder.Services.AddScoped<AircraftService>();
 builder.Services.AddScoped<PlaneService>();
@@ -37,10 +39,16 @@ builder.Services.AddScoped<FleetFactory>();
 builder.Services.AddScoped<PlaneService>();
 builder.Services.AddScoped<FlightService>();
 builder.Services.AddScoped<FlightRepository>();
+builder.Services.AddScoped<FlightEventService>();
 builder.Services.AddScoped<NetworkedRouteService>();
 builder.Services.AddScoped<INetworkPlanService, SimpleNetworkPlanService>();
-builder.Services.AddScoped<SimpleFlightSchedulerService>();
 builder.Services.AddScoped<IFlightSchedulerService, SimpleFlightSchedulerService>();
+
+builder.Services.AddHostedService<FlightEventProcessor>();
+builder.Services.AddHostedService<AirlineBatchProcessingService>();
+
+builder.Services.AddScoped<DatabaseInitializer>();
+builder.Services.AddScoped<AirlineInitializer>();
 
 builder.Services.AddControllers(options =>
 {

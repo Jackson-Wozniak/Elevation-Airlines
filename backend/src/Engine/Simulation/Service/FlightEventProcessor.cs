@@ -1,25 +1,15 @@
 ﻿using backend.Core.Infrastructure.EventQueue;
+using backend.Domain.flight.Enum;
 using backend.Domain.flight.Object;
 using backend.Domain.flight.Service;
 
 namespace backend.Engine.Simulation.Service;
 
-public class FlightEventProcessor(FlightService flightService) : BackgroundService
+public class FlightEventProcessor(
+    IServiceProvider serviceProvider,
+    PriorityEventQueue<FlightEvent> flightQueue) : BackgroundService
 {
-    private readonly PriorityEventQueue<FlightEvent> _queue = new();
     private readonly SemaphoreSlim _semaphore = new(0);
-    
-    public void QueueEvent(FlightEvent e)
-    {
-        _queue.Enqueue(e);
-        _semaphore.Release();
-    }
-
-    public void QueueEvent(List<FlightEvent> events)
-    {
-        _queue.Enqueue(events);
-        _semaphore.Release(events.Count);
-    }
 
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
@@ -27,7 +17,7 @@ public class FlightEventProcessor(FlightService flightService) : BackgroundServi
         {
             await _semaphore.WaitAsync(cancellationToken);
 
-            var nextEvent = _queue.Dequeue();
+            var nextEvent = flightQueue.Dequeue();
 
             if (nextEvent == null) continue;
             
@@ -35,7 +25,13 @@ public class FlightEventProcessor(FlightService flightService) : BackgroundServi
         }
     }
     
-    private void HandleEvent(FlightEvent flightEvent){
-        
+    //TODO: this will not work once cache is implemented in flight service
+    //cache will clear each new scope. A FlightCache will need to be made as singleton
+    private void HandleEvent(FlightEvent flightEvent)
+    {
+        using var scope = serviceProvider.CreateScope();
+        var newStatus = flightEvent.EventType.UpdatedFlightStatus();
+        var flightService = scope.ServiceProvider.GetRequiredService<FlightService>();
+        flightService.UpdateFlightStatus(flightEvent.FlightId, newStatus);
     }
 }

@@ -44,4 +44,10 @@ public class FlightRepository(ApplicationDbContext context)
         context.Flights.Add(flight);
         context.SaveChanges();
     }
+
+    public void Update(Flight flight)
+    {
+        context.Flights.Update(flight);
+        context.SaveChanges();
+    }
 }

@@ -4,7 +4,7 @@ namespace backend.Engine.Scheduling.Interface;
 
 public interface IFlightSchedulerService
 {
-    List<Flight> Schedule(DateOnly date);
+    List<Flight> ScheduleAndSave(DateOnly date);
 
-    Dictionary<DateOnly, List<Flight>> Schedule(DateOnly start, DateOnly end);
+    Dictionary<DateOnly, List<Flight>> ScheduleAndSave(DateOnly start, DateOnly end);
 }

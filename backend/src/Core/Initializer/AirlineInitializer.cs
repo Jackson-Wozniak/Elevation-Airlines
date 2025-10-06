@@ -7,6 +7,7 @@ using backend.Domain.flight.Service;
 using backend.Domain.routenetwork.Service;
 using backend.Engine.Scheduling.Interface;
 using backend.Engine.Scheduling.Service;
+using backend.Engine.Simulation.Service;
 using Microsoft.Extensions.Options;
 
 namespace backend.Core.Initializer;
@@ -18,6 +19,7 @@ public class AirlineInitializer(
     INetworkPlanService networkPlanService,
     IFlightSchedulerService flightSchedulerService,
     FleetService fleetService,
+    FlightEventService flightEventService,
     ILogger<DatabaseInitializer> logger,
     IOptions<SimulationSettings> simulationOptions,
     IOptions<InitializerSettings> initializerOptions) : IInitializer
@@ -40,6 +42,7 @@ public class AirlineInitializer(
             InitializeFleet();
             InitializeRouteNetwork();
             InitializeFlightSchedule();
+            InitializeFlightEventQueue();
         }
     }
 
@@ -57,7 +60,14 @@ public class AirlineInitializer(
     {
         var today = DateOnly.FromDateTime(DateTime.Today);
         var scheduleStart = today.AddDays(1);
-        var scheduleEnd = scheduleStart.AddDays(7);
-        flightSchedulerService.Schedule(scheduleStart, scheduleEnd);
+        var scheduleEnd = scheduleStart.AddDays(6);
+        flightSchedulerService.ScheduleAndSave(scheduleStart, scheduleEnd);
+    }
+
+    private void InitializeFlightEventQueue()
+    {
+        var today = DateOnly.FromDateTime(DateTime.Today);
+        flightEventService.QueueEvents(today.AddDays(1));
+        flightEventService.QueueEvents(today.AddDays(2));
     }
 }
