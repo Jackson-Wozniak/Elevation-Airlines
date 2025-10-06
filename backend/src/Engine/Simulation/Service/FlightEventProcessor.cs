@@ -15,10 +15,10 @@ public class FlightEventProcessor(FlightService flightService) : BackgroundServi
         _semaphore.Release();
     }
 
-    public void QueueEvent(IEnumerable<FlightEvent> events)
+    public void QueueEvent(List<FlightEvent> events)
     {
         _queue.Enqueue(events);
-        _semaphore.Release();
+        _semaphore.Release(events.Count);
     }
 
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
