@@ -5,14 +5,15 @@ using backend.Domain.airport.Service;
 using backend.Domain.routenetwork.Entity;
 using backend.Domain.routenetwork.Enum;
 using backend.Domain.routenetwork.Service;
+using backend.Engine.Scheduling.Interface;
 using Microsoft.Extensions.Options;
 
 namespace backend.Engine.Scheduling.Service;
 
-public class NetworkPlannerService(
+public class SimpleNetworkPlanService(
     AirportService airportService,
     IOptions<SimulationSettings> options,
-    NetworkedRouteService networkedRouteService)
+    NetworkedRouteService networkedRouteService) : INetworkPlanService
 {
     private readonly SimulationSettings _simulationSettings = options.Value;
     

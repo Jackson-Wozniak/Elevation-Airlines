@@ -1,8 +1,9 @@
 ﻿using backend.Domain.flight.Entity;
+using backend.Engine.Scheduling.Interface;
 
 namespace backend.Engine.Scheduling.Service;
 
-public class FlightSchedulingService
+public class SimpleFlightSchedulerService : IFlightSchedulerService
 {
     public List<Flight> Schedule(DateOnly date)
     {
