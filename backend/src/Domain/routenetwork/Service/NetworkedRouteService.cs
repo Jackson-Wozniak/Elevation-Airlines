@@ -14,13 +14,19 @@ public class NetworkedRouteService(ApplicationDbContext context)
             .ToList();
     }
 
-    public List<NetworkedRoute> GetNetworkedRoutes(string airport)
+    public List<NetworkedRoute> GetNetworkedRoutesFrom(string airport)
     {
         return context.NetworkedRoutes
-            .Include(n => n.Route.Departure)
-            .Include(n => n.Route.Destination)
-            .Where(r => r.Route.Departure.AirportCode.Equals(airport) ||
-                r.Route.Destination.AirportCode.Equals(airport))
+            .Include(n => n.Route)
+            .Where(r => r.Route.Departure.AirportCode.Equals(airport))
+            .ToList();
+    }
+    
+    public List<NetworkedRoute> GetNetworkedRoutesTo(string airport)
+    {
+        return context.NetworkedRoutes
+            .Include(n => n.Route)
+            .Where(r => r.Route.Destination.AirportCode.Equals(airport))
             .ToList();
     }
     

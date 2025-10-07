@@ -1,44 +1,82 @@
 ﻿using backend.Core.Settings;
 using backend.Core.Utils;
+using backend.Domain.airport.Service;
 using backend.Domain.fleet.Entity;
+using backend.Domain.fleet.Repository;
 using backend.Domain.fleet.Service;
 using backend.Domain.flight.Entity;
 using backend.Domain.flight.Service;
 using backend.Domain.routenetwork.Service;
 using backend.Engine.Interface;
 using Microsoft.Extensions.Options;
+using Route = backend.Domain.shared.Route;
 
 namespace backend.Engine.Service;
 
 public class SimpleFlightSchedulerService(
     NetworkedRouteService networkedRouteService,
-    PlaneService planeService,
+    FleetService fleetService,
+    PlaneRepository planeRepository,
+    AirportService airportService,
     FlightService flightService,
     IOptions<SimulationSettings> options,
     ILogger<SimpleFlightSchedulerService> logger) : IFlightSchedulerService
 {
     private readonly SimulationSettings _settings = options.Value;
+    private static readonly TimeOnly Midnight = TimeOnly.FromTimeSpan(TimeSpan.Zero);
     
     public List<Flight> ScheduleAndSave(DateOnly date)
     {
-        var time = date.ToDateTime(new TimeOnly(1, 0));
-        var planes = planeService.GetPlanes();
-        var networkedRoutes = networkedRouteService.GetNetworkedRoutes();
-        return planes.Select(p => 
-            Flight.Create(networkedRoutes.Random().Route, p, time, 
-                time.AddMinutes(_settings.LayoverMinutes)))
-            .ToList();
+        return CreateForDate(date, fleetService.LastFlightForPlanes());
     }
     
     public List<Flight> ScheduleAndSave(DateOnly start, DateOnly end)
     {
+        Dictionary<Plane, Flight?> fleet = fleetService.LastFlightForPlanes();
         List<Flight> flightSchedule = [];
         var daysBetween = start.DaysUntil(end);
         for (var i = 0; i < daysBetween; i++)
         {
-            var flights = ScheduleAndSave(start.AddDays(i));
+            var flights = CreateForDate(start.AddDays(i), fleet);
+            flights.ForEach(f => fleet[f.Plane] = f);
             flightSchedule.AddRange(flights);
         }
         return flightService.SaveFlights(flightSchedule);
+    }
+
+    private List<Flight> CreateForDate(DateOnly date, Dictionary<Plane, Flight?> fleet)
+    {
+        var networkedRoutes = networkedRouteService.GetNetworkedRoutes();
+        return fleet.Select(pair =>
+            {
+                DateTime boardingTime;
+                if (pair.Value is null)
+                {
+                    boardingTime = new DateTime(date, Midnight);
+                    return Flight.Create(networkedRoutes.Random().Route, pair.Key,
+                        boardingTime, boardingTime.AddMinutes(30));
+                }
+
+                var lastLandingTime = pair.Value.ExpectedArrivalTime;
+                boardingTime = lastLandingTime.AddMinutes(_settings.LayoverMinutes)
+                    .RoundUpToNearestQuarter();
+                var route = CreateSubsequentRoute(pair.Value.FlightPlan.Route);
+                return Flight.Create(route, pair.Key,
+                    boardingTime, boardingTime.AddMinutes(30));
+            })
+            .ToList();
+    }
+
+    private Route CreateSubsequentRoute(Route route)
+    {
+        if (route.Destination.AirportCode.Equals(_settings.PrimaryHub))
+        {
+            var randomRoute = networkedRouteService
+                .GetNetworkedRoutesFrom(_settings.PrimaryHub).Random();
+            return new Route(randomRoute.Route.Departure, randomRoute.Route.Destination);
+        }
+
+        return new Route(route.Destination, 
+            airportService.FindAirportByCode(_settings.PrimaryHub));
     }
 }

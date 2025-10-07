@@ -4,6 +4,7 @@ using backend.Domain.aircraft.IO;
 using backend.Domain.aircraft.Service;
 using backend.Domain.airport.IO;
 using backend.Domain.airport.Service;
+using backend.Domain.fleet.Repository;
 using backend.Domain.fleet.Service;
 using backend.Domain.flight.Service;
 using backend.Domain.routenetwork.Service;
@@ -14,7 +15,7 @@ namespace backend.Engine.Initializer;
 public class DatabaseInitializer(
     AirportService airportService,
     AircraftService aircraftService,
-    PlaneService planeService,
+    PlaneRepository planeRepository,
     FlightService flightService,
     NetworkedRouteService networkedRouteService,
     ILogger<DatabaseInitializer> logger,
@@ -29,7 +30,7 @@ public class DatabaseInitializer(
             logger.LogInformation("Resetting static data: {%s}", string.Join(", ", _settings.ResetStaticDataTypes));
             if(!_settings.ResetSimulationState) logger.LogDebug("ResetSimulationState is OFF, but ResetStaticDataOnStartup is ON. To avoid resetting simulation state, turn ResetStaticDataOnStartup OFF");
             
-            planeService.DeleteAllPlanes();
+            planeRepository.DeleteAllPlanes();
             networkedRouteService.DeleteAllNetworkedRoutes();
             flightService.DeleteAllFlights();
             

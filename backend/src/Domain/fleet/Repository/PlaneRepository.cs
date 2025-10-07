@@ -3,13 +3,18 @@ using backend.Core.Exception.types;
 using backend.Domain.fleet.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace backend.Domain.fleet.Service;
+namespace backend.Domain.fleet.Repository;
 
-public class PlaneService(ApplicationDbContext context)
+public class PlaneRepository(ApplicationDbContext context)
 {
     public List<Plane> GetPlanes()
     {
-        return context.Planes.Include(p => p.Aircraft).ToList();
+        return context.Planes
+            .Include(p => p.Aircraft)
+            .Include(p => p.ScheduledFlights)
+            .ThenInclude(f => f.FlightPlan)
+            .ThenInclude(f => f.Route)
+            .ToList();
     }
     
     public Plane GetPlane(string callSign)

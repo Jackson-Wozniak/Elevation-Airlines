@@ -15,6 +15,12 @@ public class FlightService(FlightRepository flightRepository,
         flightRepository.DeleteAll();
     }
 
+    public List<Flight> GetFlightsByPlane(string callSign)
+    {
+        return GetAllFlights()
+            .Where(f => f.Plane.CallSign.Equals(callSign)).ToList();
+    }
+
     public List<Flight> GetAllFlights()
     {
         return flightRepository.GetAll();

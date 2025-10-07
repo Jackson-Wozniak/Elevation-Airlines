@@ -18,7 +18,7 @@ public class RouteNetworkController(
     [HttpGet("{airport}")]
     public ActionResult<RouteNetworkDto> GetRouteNetworkByAirport(string airport)
     {
-        return Ok(new RouteNetworkDto(networkedRouteService.GetNetworkedRoutes(airport)));
+        return Ok(new RouteNetworkDto(networkedRouteService.GetNetworkedRoutesFrom(airport)));
     }
     
     [HttpGet("Routes")]
@@ -31,7 +31,7 @@ public class RouteNetworkController(
     [HttpGet("Routes/{airport}")]
     public ActionResult<IEnumerable<NetworkedRouteDto>> GetRoutesByAirport(string airport)
     {
-        return Ok(networkedRouteService.GetNetworkedRoutes(airport)
+        return Ok(networkedRouteService.GetNetworkedRoutesFrom(airport)
             .Select(r => new NetworkedRouteDto(r)));
     }
 
@@ -46,7 +46,7 @@ public class RouteNetworkController(
         public ActionResult<AirportConnectionDto> GetNetworkMap(string airport)
         {
             return Ok(new NetworkMapDto(networkedRouteService
-                .GetNetworkedRoutes(airport)).Connections
+                .GetNetworkedRoutesFrom(airport)).Connections
                 .SingleOrDefault(c => c.Airport.AirportCode
                     .Equals(airport)));
         }

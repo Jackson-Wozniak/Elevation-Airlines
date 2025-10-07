@@ -21,4 +21,16 @@ public class Plane : BaseEntity
         Aircraft = aircraft;
         Status = status;
     }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is null) return false;
+        if (obj is not Plane p) return false;
+        return p.Id == Id;
+    }
+
+    public override int GetHashCode()
+    {
+        return Id.GetHashCode();
+    }
 }

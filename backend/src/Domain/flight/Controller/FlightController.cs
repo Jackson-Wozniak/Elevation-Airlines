@@ -19,4 +19,11 @@ public class FlightController(FlightService flightService) : ControllerBase
     {
         return Ok(new FlightDto(flightService.GetFlightById(id)));
     }
+    
+    [HttpGet("Plane/{callSign}")]
+    public ActionResult<IEnumerable<FlightDto>> GetFlightsByPlane(string callSign)
+    {
+        return Ok(flightService.GetFlightsByPlane(callSign)
+            .Select(f => new FlightDto(f)));
+    }
 }

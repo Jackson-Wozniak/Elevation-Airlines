@@ -1,4 +1,5 @@
 ﻿using backend.Core.Infrastructure.EventQueue;
+using backend.Domain.flight.Entity;
 using backend.Domain.flight.Object;
 using backend.Domain.flight.Service;
 
@@ -11,7 +12,11 @@ public class FlightEventService(
     public void QueueEvents(DateOnly date)
     {
         var flights = flightService.GetFlightsByDate(date);
-        eventQueue.Enqueue(
-            flights.SelectMany(f => f.CreateEvents()).ToList());
+        eventQueue.Enqueue(flights.SelectMany(f => f.CreateEvents()).ToList());
+    }
+    
+    public void QueueEvents(List<Flight> flights)
+    {
+        eventQueue.Enqueue(flights.SelectMany(f => f.CreateEvents()).ToList());
     }
 }

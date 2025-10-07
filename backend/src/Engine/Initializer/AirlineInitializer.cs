@@ -1,5 +1,6 @@
 ﻿using backend.Core.Interface;
 using backend.Core.Settings;
+using backend.Domain.fleet.Repository;
 using backend.Domain.fleet.Service;
 using backend.Domain.flight.Service;
 using backend.Domain.routenetwork.Service;
@@ -10,7 +11,7 @@ using Microsoft.Extensions.Options;
 namespace backend.Engine.Initializer;
 
 public class AirlineInitializer(
-    PlaneService planeService,
+    PlaneRepository planeRepository,
     FlightService flightService,
     NetworkedRouteService networkedRouteService,
     INetworkPlanService networkPlanService,
@@ -32,7 +33,7 @@ public class AirlineInitializer(
             {
                 logger.LogInformation("Clearing previous simulation state for (Flight, Plane, NetworkedRoute");
                 flightService.DeleteAllFlights();
-                planeService.DeleteAllPlanes();
+                planeRepository.DeleteAllPlanes();
                 networkedRouteService.DeleteAllNetworkedRoutes();
             }
             logger.LogInformation("Initializing simulation state: PrimaryHub({%s}), FleetSize({%d})", _simulationSettings.PrimaryHub, _simulationSettings.FleetSize);
