@@ -1,6 +1,6 @@
 ﻿using backend.Domain.routenetwork.Entity;
 
-namespace backend.Engine.Scheduling.Interface;
+namespace backend.Engine.Interface;
 
 public interface INetworkPlanService
 {

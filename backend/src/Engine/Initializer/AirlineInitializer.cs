@@ -1,16 +1,13 @@
 ﻿using backend.Core.Interface;
 using backend.Core.Settings;
-using backend.Domain.aircraft.Service;
-using backend.Domain.airport.Service;
 using backend.Domain.fleet.Service;
 using backend.Domain.flight.Service;
 using backend.Domain.routenetwork.Service;
-using backend.Engine.Scheduling.Interface;
-using backend.Engine.Scheduling.Service;
-using backend.Engine.Simulation.Service;
+using backend.Engine.Interface;
+using backend.Engine.Service;
 using Microsoft.Extensions.Options;
 
-namespace backend.Core.Initializer;
+namespace backend.Engine.Initializer;
 
 public class AirlineInitializer(
     PlaneService planeService,

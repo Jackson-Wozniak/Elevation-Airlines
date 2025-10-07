@@ -2,7 +2,7 @@
 using backend.Domain.flight.Object;
 using backend.Domain.flight.Service;
 
-namespace backend.Engine.Simulation.Service;
+namespace backend.Engine.Service;
 
 public class FlightEventService(
     PriorityEventQueue<FlightEvent> eventQueue,

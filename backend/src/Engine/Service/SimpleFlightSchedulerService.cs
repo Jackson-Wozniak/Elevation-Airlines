@@ -2,10 +2,10 @@
 using backend.Domain.fleet.Service;
 using backend.Domain.flight.Entity;
 using backend.Domain.routenetwork.Service;
-using backend.Engine.Scheduling.Interface;
+using backend.Engine.Interface;
 using Microsoft.Extensions.Options;
 
-namespace backend.Engine.Scheduling.Service;
+namespace backend.Engine.Service;
 
 public class SimpleFlightSchedulerService(
     NetworkedRouteService networkedRouteService,

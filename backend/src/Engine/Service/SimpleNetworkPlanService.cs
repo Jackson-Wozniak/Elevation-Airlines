@@ -5,10 +5,10 @@ using backend.Domain.airport.Service;
 using backend.Domain.routenetwork.Entity;
 using backend.Domain.routenetwork.Enum;
 using backend.Domain.routenetwork.Service;
-using backend.Engine.Scheduling.Interface;
+using backend.Engine.Interface;
 using Microsoft.Extensions.Options;
 
-namespace backend.Engine.Scheduling.Service;
+namespace backend.Engine.Service;
 
 public class SimpleNetworkPlanService(
     AirportService airportService,

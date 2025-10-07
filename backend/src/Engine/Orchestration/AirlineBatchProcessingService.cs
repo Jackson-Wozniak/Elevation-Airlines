@@ -1,7 +1,7 @@
-﻿using backend.Engine.Scheduling.Interface;
-using backend.Engine.Simulation.Service;
+﻿using backend.Engine.Interface;
+using backend.Engine.Service;
 
-namespace backend.Engine.Scheduling.Service;
+namespace backend.Engine.Orchestration;
 
 public class AirlineBatchProcessingService(IServiceProvider serviceProvider) : BackgroundService
 {

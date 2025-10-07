@@ -3,7 +3,7 @@ using backend.Domain.flight.Enum;
 using backend.Domain.flight.Object;
 using backend.Domain.flight.Service;
 
-namespace backend.Engine.Simulation.Service;
+namespace backend.Engine.Orchestration;
 
 public class FlightEventProcessor(
     IServiceProvider serviceProvider,

@@ -9,7 +9,7 @@ using backend.Domain.flight.Service;
 using backend.Domain.routenetwork.Service;
 using Microsoft.Extensions.Options;
 
-namespace backend.Core.Initializer;
+namespace backend.Engine.Initializer;
 
 public class DatabaseInitializer(
     AirportService airportService,
