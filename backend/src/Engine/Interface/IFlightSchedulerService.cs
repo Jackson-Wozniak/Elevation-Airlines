@@ -6,5 +6,5 @@ public interface IFlightSchedulerService
 {
     List<Flight> ScheduleAndSave(DateOnly date);
 
-    Dictionary<DateOnly, List<Flight>> ScheduleAndSave(DateOnly start, DateOnly end);
+    List<Flight> ScheduleAndSave(DateOnly start, DateOnly end);
 }

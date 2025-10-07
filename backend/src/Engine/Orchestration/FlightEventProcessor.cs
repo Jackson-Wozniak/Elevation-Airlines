@@ -9,15 +9,11 @@ public class FlightEventProcessor(
     IServiceProvider serviceProvider,
     PriorityEventQueue<FlightEvent> flightQueue) : BackgroundService
 {
-    private readonly SemaphoreSlim _semaphore = new(0);
-
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
         while (!cancellationToken.IsCancellationRequested)
         {
-            await _semaphore.WaitAsync(cancellationToken);
-
-            var nextEvent = flightQueue.Dequeue();
+            var nextEvent = await flightQueue.DequeueAsync(cancellationToken);
 
             if (nextEvent == null) continue;
             

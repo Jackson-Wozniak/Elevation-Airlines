@@ -10,10 +10,18 @@ public class FlightPlan : BaseEntity
     public Route Route { get; set; }
     [NotMapped] 
     public TimeSpan FlightDuration => CalculateFlightDuration();
+    
+    public FlightPlan() { }
+
+    public FlightPlan(Flight flight, Route route)
+    {
+        Flight = flight;
+        Route = new Route(route.Departure, route.Destination);
+    }
 
     private TimeSpan CalculateFlightDuration()
     {
-        return TimeSpan.Zero;
+        return TimeSpan.FromHours(1);
     }
     
 }

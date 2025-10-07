@@ -3,6 +3,7 @@ using backend.Core.Entity;
 using backend.Domain.fleet.Entity;
 using backend.Domain.flight.Enum;
 using backend.Domain.flight.Object;
+using Route = backend.Domain.shared.Route;
 
 namespace backend.Domain.flight.Entity;
 
@@ -15,6 +16,22 @@ public class Flight : BaseEntity
     public DateTime TakeoffTime { get; set; }
     [NotMapped]
     public DateTime ExpectedArrivalTime => CalculateArrivalTime();
+
+    protected Flight()
+    {
+        
+    }
+
+    public static Flight Create(Route route, Plane plane, DateTime boarding, DateTime takeoff)
+    {
+        var flight = new Flight();
+        flight.BoardingTime = boarding;
+        flight.FlightStatus = FlightStatus.Scheduled;
+        flight.TakeoffTime = takeoff;
+        flight.Plane = plane;
+        flight.FlightPlan = new FlightPlan(flight, route);
+        return flight;
+    }
 
     private DateTime CalculateArrivalTime()
     {

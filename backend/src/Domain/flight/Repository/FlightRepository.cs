@@ -33,16 +33,18 @@ public class FlightRepository(ApplicationDbContext context)
         context.SaveChanges();
     }
 
-    public void SaveAll(List<Flight> flights)
+    public List<Flight> SaveAll(List<Flight> flights)
     {
         context.Flights.AddRange(flights);
         context.SaveChanges();
+        return flights;
     }
     
-    public void Save(Flight flight)
+    public Flight Save(Flight flight)
     {
         context.Flights.Add(flight);
         context.SaveChanges();
+        return flight;
     }
 
     public void Update(Flight flight)

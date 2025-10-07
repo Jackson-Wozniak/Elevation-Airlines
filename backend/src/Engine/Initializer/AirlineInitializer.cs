@@ -39,8 +39,8 @@ public class AirlineInitializer(
             InitializeFleet();
             InitializeRouteNetwork();
             InitializeFlightSchedule();
-            InitializeFlightEventQueue();
         }
+        InitializeFlightEventQueue();
     }
 
     private void InitializeRouteNetwork()
@@ -55,6 +55,7 @@ public class AirlineInitializer(
 
     private void InitializeFlightSchedule()
     {
+        logger.LogInformation("Scheduling flights for following 7 days");
         var today = DateOnly.FromDateTime(DateTime.Today);
         var scheduleStart = today.AddDays(1);
         var scheduleEnd = scheduleStart.AddDays(6);
@@ -63,6 +64,7 @@ public class AirlineInitializer(
 
     private void InitializeFlightEventQueue()
     {
+        logger.LogInformation("Queuing flight events for following 2 days");
         var today = DateOnly.FromDateTime(DateTime.Today);
         flightEventService.QueueEvents(today.AddDays(1));
         flightEventService.QueueEvents(today.AddDays(2));

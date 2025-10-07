@@ -32,6 +32,11 @@ public class FlightService(FlightRepository flightRepository,
             .ToList();
     }
 
+    public List<Flight> SaveFlights(List<Flight> flights)
+    {
+        return flightRepository.SaveAll(flights);
+    }
+
     public void UpdateFlightStatus(long id, FlightStatus status)
     {
         //if flight is completed the plane may be sent to maintenance
