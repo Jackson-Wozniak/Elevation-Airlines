@@ -23,9 +23,7 @@
 
 <ol>
     <li><a href="#features">Overview & Current Undertakings</a></li>
-    <li><a href="#tracking">Flight Simulation Steps</a></li>
-    <li><a href="#technologies">Technologies</a></li>
-    <li><a href="#local-dev">Local Deployment</a></li>
+    <li><a href="#airline-simulation">Airline Simulation Approach</a></li>
     <li><a href="#credits">Credits</a></li>
 </ol>    
 
@@ -38,9 +36,9 @@ An airline tracking system that generates flights to popular airports across the
 
 <br>
 
-## ✈️ Flight Tracking <a id="tracking"></a>
+## ✈️ Airline Simulation Approach <a id="airline-simulation"></a>
 
-### The Steps for Flight Simulation
+### The Steps for Flight Scheduling & Simulation
 
 1. On application startup, the fleet of aircraft and network of serviced routes are set
 2. On application startup, the first 7 days of flights are scheduled (or verified if already present) to allow for recovery after failure or setting initial state
@@ -97,40 +95,7 @@ That said, for the minimum viable product (MVP), this is not strictly necessary 
 
 Full simulation documentation can be found <a href="https://github.com/Jackson-Wozniak/Elevation-Airlines/blob/main/backend/README.md" />here</a>
 
-## 📱 Technologies Used <a id="technologies"></a>
-
-#### Backend
-- Java
-- Spring Boot
-- Maven
-- MySQL
-
-#### Frontend
-
-- React
-- JavaScript
-
-#### General
-- Git
-- Docker
-
 <br>
-
-## ✏️ Local Development <a id="local-dev"></a>
-
-To run locally, follow these commands
-
-```
-- git clone https://github.com/Jackson-Wozniak/Airline-Reservation-System.git
-- cd (to the location of cloned repo)
-- docker-compose up
-
-to shut down the application, run:
-- docker-compose down
-
-to restart the app after making local changes (to rebuild the jar file), run:
--docker-compose up --build
-```
 
 ## Credits <a id="credits"></a>
 
