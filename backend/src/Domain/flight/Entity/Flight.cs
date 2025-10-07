@@ -14,8 +14,7 @@ public class Flight : BaseEntity
     public FlightPlan FlightPlan { get; set; }
     public DateTime BoardingTime { get; set; }
     public DateTime TakeoffTime { get; set; }
-    [NotMapped]
-    public DateTime ExpectedArrivalTime => CalculateArrivalTime();
+    public DateTime ExpectedArrivalTime { get; set; }
 
     protected Flight()
     {
@@ -30,12 +29,10 @@ public class Flight : BaseEntity
         flight.TakeoffTime = takeoff;
         flight.Plane = plane;
         flight.FlightPlan = new FlightPlan(flight, route);
+        flight.ExpectedArrivalTime = flight.TakeoffTime.Add(
+            flight.FlightPlan.CalculateFlightDuration(
+                flight.Plane.Aircraft.CruiseSpeedKnots * .8));
         return flight;
-    }
-
-    private DateTime CalculateArrivalTime()
-    {
-        return TakeoffTime.Add(FlightPlan.FlightDuration);
     }
 
     public bool StartsOnDate(DateOnly date)

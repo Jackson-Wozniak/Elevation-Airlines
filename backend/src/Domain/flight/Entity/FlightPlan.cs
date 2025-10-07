@@ -8,8 +8,6 @@ public class FlightPlan : BaseEntity
 {
     public Flight Flight { get; set; }
     public Route Route { get; set; }
-    [NotMapped] 
-    public TimeSpan FlightDuration => CalculateFlightDuration();
     
     public FlightPlan() { }
 
@@ -19,9 +17,9 @@ public class FlightPlan : BaseEntity
         Route = new Route(route.Departure, route.Destination);
     }
 
-    private TimeSpan CalculateFlightDuration()
+    public TimeSpan CalculateFlightDuration(double averageKnots)
     {
-        return TimeSpan.FromHours(1);
+        return TimeSpan.FromHours(Route.DistanceNauticalMiles / averageKnots); 
     }
     
 }
