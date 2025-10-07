@@ -7,7 +7,8 @@ namespace backend.Engine.Orchestration;
 
 public class FlightEventProcessor(
     IServiceProvider serviceProvider,
-    PriorityEventQueue<FlightEvent> flightQueue) : BackgroundService
+    PriorityEventQueue<FlightEvent> flightQueue,
+    ILogger<FlightEventProcessor> logger) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
@@ -16,6 +17,11 @@ public class FlightEventProcessor(
             var nextEvent = await flightQueue.DequeueAsync(cancellationToken);
 
             if (nextEvent == null) continue;
+
+            var delay = nextEvent.ScheduledTime - DateTime.Now;
+            
+            logger.LogInformation($"Flight queue delaying until {nextEvent.ScheduledTime} waiting for next event");
+            if (delay.Seconds > 0) await Task.Delay(delay, cancellationToken); 
             
             HandleEvent(nextEvent);
         }
