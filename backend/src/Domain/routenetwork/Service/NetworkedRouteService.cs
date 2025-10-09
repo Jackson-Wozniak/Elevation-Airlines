@@ -18,6 +18,9 @@ public class NetworkedRouteService(ApplicationDbContext context)
     {
         return context.NetworkedRoutes
             .Include(n => n.Route)
+            .ThenInclude(r => r.Departure)
+            .Include(n => n.Route)
+            .ThenInclude(r => r.Destination)
             .Where(r => r.Route.Departure.AirportCode.Equals(airport))
             .ToList();
     }
@@ -26,6 +29,9 @@ public class NetworkedRouteService(ApplicationDbContext context)
     {
         return context.NetworkedRoutes
             .Include(n => n.Route)
+            .ThenInclude(r => r.Departure)
+            .Include(n => n.Route)
+            .ThenInclude(r => r.Destination)
             .Where(r => r.Route.Destination.AirportCode.Equals(airport))
             .ToList();
     }
