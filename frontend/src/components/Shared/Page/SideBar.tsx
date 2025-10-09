@@ -4,15 +4,21 @@ import { useDemoMode } from '../../../AppInitializer';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
 import SidebarSection from './SidebarSection';
 import AirplanemodeActiveOutlinedIcon from '@mui/icons-material/AirplanemodeActiveOutlined';
 import GpsFixedOutlinedIcon from '@mui/icons-material/GpsFixedOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
-import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
+import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
+import BookOnlineIcon from '@mui/icons-material/BookOnline';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import RouteIcon from '@mui/icons-material/Route';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
+import FlightClassIcon from '@mui/icons-material/FlightClass';
+import PublicIcon from '@mui/icons-material/Public';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 
 const DEMO_MESSAGE: string = "The server could not be reached. If you believe there was an issue, reload the page."
     + "\n\nDemo mode uses sample data in place of all API calls to simulate application functionality. Enjoy!";
@@ -28,27 +34,30 @@ function SideBar(){
             </div>
             <div id="sidebar-menu-container">
                 <SidebarSection
-                    title="Dashboard"
+                    title="Home"
                     icon={<HomeOutlinedIcon className="sidebar-icons" />}
                     links={[
-                        { label: 'Flights', to: '/', element: <AirplanemodeActiveOutlinedIcon className="sidebar-icons"/>},
-                        { label: 'Tracker', to: '/', element: <GpsFixedOutlinedIcon className="sidebar-icons"/>},
-                        { label: 'Map', to: '/', element: <MapOutlinedIcon className="sidebar-icons"/>},
+                        { label: 'Flight Listings', to: '/', element: <FlightTakeoffIcon className="sidebar-icons"/>},
+                        { label: 'Live Flight Map', to: '/', element: <PublicIcon className="sidebar-icons"/>},
                     ]}
                 />
                 <SidebarSection
-                    title="Project Documentation"
-                    icon={<DescriptionOutlinedIcon className="sidebar-icons" />}
+                    title="Reservations"
+                    icon={<AirplaneTicketIcon className="sidebar-icons" />}
                     links={[
-                        { label: 'Overview', to: '/docs', element: <MenuBookOutlinedIcon className="sidebar-icons"/>},
-                        { label: 'Frontend', to: '/docs', element: <CodeOutlinedIcon className="sidebar-icons"/>},
-                        { label: 'Backend', to: '/docs', element: <DnsOutlinedIcon className="sidebar-icons"/>},
+                        { label: 'Buy Tickets', to: '/', element: <FlightClassIcon className="sidebar-icons"/>},
+                        { label: 'View Ticket Status', to: '/', element: <BookOnlineIcon className="sidebar-icons"/>},
                     ]}
                 />
                 <SidebarSection
-                    title="Admin Dashboard"
+                    title="Admin"
                     icon={<SupervisorAccountOutlinedIcon className="sidebar-icons" />}
-                    links={[]}
+                    links={[
+                        { label: 'Dashboard', to: '/', element: <DashboardIcon className="sidebar-icons"/>},
+                        { label: 'Route Network', to: '/', element: <RouteIcon className="sidebar-icons"/>},
+                        { label: 'Flight Event Queue', to: '/', element: <ListAltIcon className="sidebar-icons"/>},
+                        { label: 'Plane Tracking', to: '/', element: <ConnectingAirportsIcon className="sidebar-icons"/>},
+                    ]}
                 />
             </div>
 
