@@ -1,5 +1,4 @@
 import type { FlightDto } from '../types/Dtos';
-import { getAllFlightsSample } from '../data/HttpClientDemoData';
 import { useDemoMode } from '../AppInitializer';
 
 const ROOT_URL: string = "http://localhost:8080/api/v1";
@@ -10,7 +9,6 @@ export async function isServerRunning(){
 }
 
 export async function getAllFlights(isDemo: boolean){
-    if(isDemo) return getAllFlightsSample(25);
 
     let response = await fetch(FLIGHTS_URL);
 

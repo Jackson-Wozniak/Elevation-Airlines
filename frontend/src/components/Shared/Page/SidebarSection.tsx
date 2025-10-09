@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import '../../styles/shared.css';
+import '../../../styles/shared.css';
 
 interface SidebarSectionProps {
   title: string;

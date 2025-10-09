@@ -11,40 +11,6 @@
     --green-accent: rgb(59, 209, 111);
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-
-.page-container {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--dark-blue-background);
-    overflow: hidden;
-}
-
-.content-container{
-    min-width: 78%;
-    max-width: 78%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-}
-
-.content-container::-webkit-scrollbar {
-    width: 6px;
-}
-
-
 #sidebar-container{
     min-width: 22%;
     max-width: 22%;
