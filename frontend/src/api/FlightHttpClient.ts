@@ -1,35 +1,19 @@
-import type { FlightDto } from '../types/Dtos';
-import { useDemoMode } from '../AppInitializer';
+import type { FlightDto } from '../types/flight/flight.dto';
 
-const ROOT_URL: string = "http://localhost:8080/api/v1";
-const FLIGHTS_URL: string = ROOT_URL + "/flights";
+const ROOT_URL: string = "http://localhost:5258/api";
+const FLIGHTS_URL: string = ROOT_URL + "/Flight";
 
-export async function isServerRunning(){
-    return false;
-}
-
-export async function getAllFlights(isDemo: boolean){
-
+export async function fetchFlights(): Promise<FlightDto[]> {
     let response = await fetch(FLIGHTS_URL);
 
     if(!response.ok){
-        alert("ERROR IN getAllFlights()");
+        alert("ERROR IN fetchFlights()");
         return [];
     }
 
     const data = await response.json();
 
-    const mapped: FlightDto[] = data.map((flight: any) => ({
-        identifier: flight.identifier,
-        departure: flight.departure,
-        destination: flight.destination,
-        callsign: flight.callsign,
-        planeType: flight.planeType,
-        scheduledBoarding: flight.scheduledBoarding,
-        scheduledTakeoff: flight.scheduledTakeoff,
-        scheduledArrival: flight.scheduledArrival,
-        distanceMiles: flight.distanceMiles
-    }));
+    const mapped: FlightDto[] = data as FlightDto[];
 
-    return mapped;
+    return mapped;   
 }

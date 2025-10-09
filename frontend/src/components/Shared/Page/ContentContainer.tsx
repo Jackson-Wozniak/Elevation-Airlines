@@ -4,7 +4,7 @@ import '../../../styles/shared.css';
 const ContentContainerStyle = {
     minWidth: "78%",
     maxWidth: "78%",
-    height: "100%",
+    minHeight: "100%",
     margin: 0,
     padding: 0,
     overflowY: "auto",

@@ -1,3 +1,4 @@
+
 export interface FlightTableEntry{
     callsign: string,
     departureCode: string,
@@ -6,8 +7,4 @@ export interface FlightTableEntry{
     arrivalTime: string,
     planeType: string
     status: string
-}
-
-export interface FlightSearchConstraints{
-    
 }

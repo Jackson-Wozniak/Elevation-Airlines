@@ -1,36 +1,34 @@
-import type { FlightTableEntry } from '../../types/FlightTypes';
 import '../../styles/FlightTable.css';
-import type { FlightDto } from '../../types/Dtos';
+import type { FlightDto } from '../../types/flight/flight.dto';
 import FlightTakeoffOutlinedIcon from '@mui/icons-material/FlightTakeoffOutlined';
 import { DataGrid, type GridColDef, type GridRenderCellParams } from '@mui/x-data-grid';
-import { Box, Stack, Typography } from '@mui/material';
-import { grey } from '@mui/material/colors';
+import { Stack, Typography } from '@mui/material';
 import { Colors } from '../../types/shared/ApplicationThemes';
 
 const Columns: GridColDef[] = [
-    { 
-        field: "callsign",
-        headerName: "Call Sign",
-        flex: .15,
-    },
     {
-        field: "departure",
+        field: "route",
         display: "flex",
         flex: .3,
         headerName: "Route",
         renderCell: (params: GridRenderCellParams) => {
-            return (<Typography>{params.row.departure} {<FlightTakeoffOutlinedIcon className="route-icon"/> } 
-                {params.row.destination}</Typography> )
+            return (<Typography>{params.row.flightPlan.departure.airportCode} {<FlightTakeoffOutlinedIcon className="route-icon"/> } 
+                {params.row.flightPlan.destination.airportCode}</Typography> )
         }
     },
     {
-        field: "planeType",
+        field: "plane.callSign",
         headerName: "Aircraft",
-        flex: .15
+        display: "flex",
+        flex: .3,
+        renderCell: (params: GridRenderCellParams) => {
+            return (<Typography>{params.row.plane.callSign}</Typography> )
+        }
     },
     {
-        field: "scheduledBoarding",
+        field: "boardingTime",
         headerName: "Boarding",
+        display: "flex",
         flex: .2
     },
     {
@@ -47,7 +45,7 @@ const FlightTable: React.FC<{
 }> = ({
     flights
 }) => {
-function getStatusClassname(status: string){
+    function getStatusClassname(status: string){
         switch(status){
             case "SCHEDULED": 
                 return "scheduled-color";
@@ -62,16 +60,12 @@ function getStatusClassname(status: string){
         }
     }
 
-    function getRowId(row: FlightDto){
-        return row.identifier;
-    }
-
     return (
-        <Stack width="80vw" display="flex" justifyContent="center" alignItems="center" marginTop="25px">
+        <Stack width="90%" display="flex" justifyContent="center" alignItems="center" margin={0} marginTop="25px">
             <DataGrid 
              getRowClassName={(params) => params.indexRelativeToCurrentPage % 2 === 0 ? 'even-row' : 'odd-row' }
             sx={{ 
-                display: "flex", width: "80%",
+                display: "flex", width: "100%",
                 backgroundColor: "#2C303D",
                 color: "white",
                 border: "none",
@@ -80,7 +74,7 @@ function getStatusClassname(status: string){
                     display: "flex", alignItems: "center", justifyContent: "center"
                 },
                 '& .MuiDataGrid-columnHeader': {
-                    backgroundColor: Colors.Dark.AccentLightest,
+                    backgroundColor: Colors.Dark.AccentLightest, width: "100%",
                     display: "flex", alignItems: "center", justifyContent: "center"
                 },
                 '& .MuiDataGrid-cell': {
@@ -91,43 +85,13 @@ function getStatusClassname(status: string){
                     backgroundColor: Colors.Dark.AccentLightest
                 },
                 '& .even-row': {
-                    // backgroundColor: "#2C303D"
                     backgroundColor: "rgba(36, 40, 50, 0.5)"
                 }
             }}
-                rows={flights} columns={Columns} getRowId={getRowId}
+                rows={flights.map((item, index) => ({ id: index + 1, ...item }))} columns={Columns} getRowId={(row) => row.id}
             />
         </Stack>
     )
 }
-// function FlightTable(){
-    
-
-//     return (
-//         <div className="flight-table-container">
-//             <div className="flight-table">
-//                 <div className="flight-table-header">
-//                     <p>Callsign</p>
-//                     <p>Route</p>
-//                     <p>Boarding</p>
-//                     <p>Plane</p>
-//                     <p>Status</p>
-//                 </div>
-
-//                 {flights.map((flight: FlightDto, index: number) => {
-//                     return (
-//                         <div key={index} className={"flight-table-row" + (index % 2 == 0 ? "": " flight-table-row-even")}>
-//                             <p>{flight.callsign}</p>
-//                             <p>{flight.departure} {<FlightTakeoffOutlinedIcon className="route-icon"/> } {flight.destination}</p>
-//                             <p>{flight.scheduledBoarding}</p>
-//                             <p>{flight.planeType}</p>
-//                             <p className={getStatusClassname(flight.status)}>{flight.status}</p>
-//                         </div>
-//                     )
-//                 })}
-//             </div>
-//         </div>
-//     )
-// }
 
 export default FlightTable;

@@ -1,8 +1,8 @@
 import { createContext, useContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import FlightDashboard from './components/FlightDashboard/FlightDashboard';
 import { ThemeProvider } from '@mui/material/styles';
 import { AppTheme } from './theme/AppTheme';
+import FlightListingsPage from './components/FlightListings/FlightListingsPage';
 
 export const DemoModeContext = createContext<boolean>(false);
 export const useDemoMode = () => useContext(DemoModeContext);
@@ -12,7 +12,7 @@ function AppInitializer(){
         <ThemeProvider theme={AppTheme}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<FlightDashboard />} />
+                    <Route path="/" element={<FlightListingsPage />} />
                 </Routes>
             </BrowserRouter>
         </ThemeProvider>
