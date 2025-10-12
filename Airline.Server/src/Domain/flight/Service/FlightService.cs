@@ -43,7 +43,7 @@ public class FlightService(FlightRepository flightRepository,
         return flightRepository.SaveAll(flights);
     }
 
-    public void UpdateFlightStatus(long id, FlightStatus status)
+    public Flight UpdateFlightStatus(long id, FlightStatus status)
     {
         //if flight is completed the plane may be sent to maintenance
         try
@@ -52,10 +52,12 @@ public class FlightService(FlightRepository flightRepository,
             flight.FlightStatus = status;
             //if status is completed, we will need to convert this to a FlightRecord
             flightRepository.Update(flight);
+            return flight;
         }
         catch (Exception ex)
         {
             logger.LogWarning($"Cannot find flight {id} to update status");
+            throw;
         }
     }
 }

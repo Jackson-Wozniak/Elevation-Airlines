@@ -3,7 +3,8 @@ using Airline.Server.Engine.Service;
 
 namespace Airline.Server.Engine.Orchestration;
 
-public class AirlineBatchProcessingService(IServiceProvider serviceProvider) : BackgroundService
+public class AirlineBatchProcessingService(IServiceProvider serviceProvider,
+    FlightPublisherService flightPublisherService) : BackgroundService
 {
     private static readonly TimeOnly Midnight = TimeOnly.FromTimeSpan(TimeSpan.Zero);
     
@@ -21,7 +22,8 @@ public class AirlineBatchProcessingService(IServiceProvider serviceProvider) : B
                 .GetRequiredService<IFlightSchedulerService>();
             var flightEventService = scope.ServiceProvider
                 .GetRequiredService<FlightEventService>();
-            flightSchedulerService.ScheduleAndSave(today);
+            var flights = flightSchedulerService.ScheduleAndSave(today);
+            await flightPublisherService.PublishScheduledFlightAsync(flights);
             flightEventService.QueueEvents(today);
         }
     }

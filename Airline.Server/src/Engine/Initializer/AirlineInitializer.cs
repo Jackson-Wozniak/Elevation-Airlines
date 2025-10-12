@@ -18,6 +18,7 @@ public class AirlineInitializer(
     IFlightSchedulerService flightSchedulerService,
     FleetService fleetService,
     FlightEventService flightEventService,
+    FlightPublisherService flightPublisherService,
     ILogger<DatabaseInitializer> logger,
     IOptions<SimulationSettings> simulationOptions,
     IOptions<InitializerSettings> initializerOptions) : IInitializer
@@ -60,7 +61,8 @@ public class AirlineInitializer(
         var today = DateOnly.FromDateTime(DateTime.Today);
         var scheduleStart = today.AddDays(1);
         var scheduleEnd = scheduleStart.AddDays(6);
-        flightSchedulerService.ScheduleAndSave(scheduleStart, scheduleEnd);
+        var flights = flightSchedulerService.ScheduleAndSave(scheduleStart, scheduleEnd);
+        flightPublisherService.PublishScheduledFlight(flights);
     }
 
     private void InitializeFlightEventQueue()
