@@ -1,6 +1,7 @@
 using Airline.Server.Core.Data;
 using Airline.Server.Core.Exception;
 using Airline.Server.Core.Infrastructure.EventQueue;
+using Airline.Server.Core.Infrastructure.Messaging.Publisher;
 using Airline.Server.Engine.Initializer;
 using Airline.Server.Core.Settings;
 using Airline.Server.Domain.aircraft.Service;
@@ -31,6 +32,10 @@ string connectionString = builder.Configuration.GetConnectionString("ElevationAi
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
+builder.Services.AddSingleton<IPublisher>(publisher =>
+    new RedisPublisher(builder.Configuration["MessagePublisher:Url"])
+);
+builder.Services.AddSingleton<FlightPublisherService>();
 builder.Services.AddSingleton<PriorityEventQueue<FlightEvent>>();
 builder.Services.AddScoped<AirportService>();
 builder.Services.AddScoped<AircraftService>();
