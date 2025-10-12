@@ -1,4 +1,6 @@
-﻿### The Steps for Flight Simulation
+﻿## ✈️ Airline Simulation Approach <a id="airline-simulation"></a>
+
+### The Steps for Flight Scheduling & Simulation
 
 1. On application startup, the fleet of aircraft and network of serviced routes are set
 2. On application startup, the first 7 days of flights are scheduled (or verified if already present) to allow for recovery after failure or setting initial state
@@ -6,14 +8,14 @@
 4. Every day at midnight, flights are scheduled for 7 days from now, ensuring 7 days of flights are always scheduled
 5. During this batch scheduling, flights scheduled 2 days from now are sent to the event queue, ensuring the event queue always has 2 days worth of events
 6. The event queue works in the background, processing events for flights in chronological order
-    - Flight events are, in order: Boarding -> Takeoff/In Progress -> Completed -> In Layover or Maintenance
+   - Flight events are, in order: Boarding -> Takeoff/In Progress -> Completed -> In Layover or Maintenance
 7. FlightService keeps a rolling cache of flights in-memory for fast retrieval, usually of in progress flights
 
 
 ### Network Planner
 
 The network planner is run once on application startup. This creates a map of serviced routes. For the
-early models, a very simple hub-and-spoke model is used, where flights depart from the Hub to a destination, and then 
+early models, a very simple hub-and-spoke model is used, where flights depart from the Hub to a destination, and then
 immediately return to the hub for the next flight. The current network planner simply creates a route to/from the top 2 airports in each state and the hub airport (KBOS).
 
 ### Route Scheduler
