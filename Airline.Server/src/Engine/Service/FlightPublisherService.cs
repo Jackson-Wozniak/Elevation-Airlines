@@ -1,6 +1,7 @@
 ﻿using Airline.Server.Core.Infrastructure.Messaging.Publisher;
 using Airline.Server.Domain.flight.Entity;
 using Airline.Server.Domain.flight.Message;
+using Airline.Server.Domain.flight.Object;
 
 namespace Airline.Server.Engine.Service;
 
@@ -25,9 +26,14 @@ public class FlightPublisherService(IPublisher publisher)
         }
     }
     
-    public async Task PublishScheduledFlightAsync(Flight flight)
+    public async Task PublishFlightEventAsync(FlightEvent e, Flight flight)
     {
-        await publisher.PublishAsync(Channel, 
-            new FlightMessage(FlightMessageType.Scheduled, flight));
+        var type = e.MessageType();
+        if(type is null)
+        {
+            //TODO: log this
+            return;
+        }
+        await publisher.PublishAsync(Channel, new FlightMessage(type.Value, flight));
     }
 }

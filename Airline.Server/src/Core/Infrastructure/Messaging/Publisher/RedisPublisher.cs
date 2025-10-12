@@ -19,7 +19,6 @@ public class RedisPublisher : IPublisher
 
     public async Task PublishAsync(string channel, IMessage message)
     {
-        Console.WriteLine(message.Serialize());
         await _subscriber.PublishAsync(RedisChannel.Literal(channel), message.Serialize());
     }
 }
