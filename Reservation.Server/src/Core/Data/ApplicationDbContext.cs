@@ -1,11 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Reservation.Server.Core.Entity;
+using Reservation.Server.Features.Users.Entity;
 
 namespace Reservation.Server.Core.Data;
 
 public class ApplicationDbContext(
     DbContextOptions<ApplicationDbContext> options) : DbContext(options)
 {
+    public DbSet<User> Users { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())

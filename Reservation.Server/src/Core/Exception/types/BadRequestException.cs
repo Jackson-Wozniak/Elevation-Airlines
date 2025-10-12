@@ -4,6 +4,6 @@ namespace Reservation.Server.Core.Exception.types;
 
 public class BadRequestException : BaseException
 {
-    public BadRequestException(string message, string source) 
-        : base(message, HttpStatusCode.BadRequest, source) { }
+    public BadRequestException(string message) 
+        : base(message, HttpStatusCode.BadRequest) { }
 }

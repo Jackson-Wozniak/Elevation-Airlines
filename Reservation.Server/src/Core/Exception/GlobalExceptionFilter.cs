@@ -14,8 +14,7 @@ public class GlobalExceptionFilter : IExceptionFilter
         }
         else
         {
-            context.Result = new UnknownException(context.Exception.Message, 
-                "GlobalExceptionFilter.OnException()").Json();
+            context.Result = new UnknownException(context.Exception.Message).Json();
         }
 
         context.ExceptionHandled = true;

@@ -28,10 +28,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="src\Features\Billing\" />
-      <Folder Include="src\Features\Flight\" />
-      <Folder Include="src\Features\Reservation\" />
-      <Folder Include="src\Features\User\" />
+      <Folder Include="src\Features\Users\Enum\" />
     </ItemGroup>
 
 </Project>
