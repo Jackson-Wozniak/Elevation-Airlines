@@ -35,21 +35,23 @@
 <br/> 
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-## 📓 Elevation Airlines: Overview & Features <a id="elevation-airlines-overview"></a>
+## ✈️ Elevation Airlines: Overview & Features <a id="elevation-airlines-overview"></a>
 
-An airline tracking system that generates flights to popular airports across the world. The airline used in this simulation is called Elevation Airlines, and is a fake airline. Route generation is largely random, and the flights each plane takes does not necessarily match the popular flights real airlines fly.
+Elevation Airlines is a simulated airline carrier that services airports across the United States. Elevation Airlines uses a Hub-and-Spoke style network, with the operational hub located in Boston Logan Intl (KBOS). Real-world airport data is used to create a route network, integrating economic data to build a profit-centric route map. A reservation and ticketing system is implemented, allowing users to 'book' tickets for scheduled flights.
+
+While real airport and aircraft model data is used by the servers, all generated flight data is fake.
 
 <br>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 ## 📓 Design & Documentation Overview <a id="design-and-docs"></a>
 
-### :plane: Airline Server <a id="airline-server"></a>
+### ✈️ Airline Server <a id="airline-server"></a>
 
 Full documentation for Airline.Server can be found <a href="https://github.com/Jackson-Wozniak/Elevation-Airlines/blob/main/Airline.Server/README.md" />here</a>
 
 
-### Folder Structure
+#### Folder Structure
 
 ```md
 .
@@ -77,7 +79,7 @@ Full documentation for Airline.Server can be found <a href="https://github.com/J
         └── Service/
 ```
 
-### Orchestrators & Initializers
+#### Orchestrators & Initializers
 
 - Upon startup, DatabaseInitializer is run to set static data (airports, aircraft etc.), and clear
 database tables if required for setup
@@ -93,19 +95,18 @@ database tables if required for setup
 
 - FlightEventProcessor is a background service that handles the internal event queue, using thread delays to await important times for flight events. For example, if the flight is scheduled to begin boarding at 9:00am, a previously queued event will be setoff by the event processor to update the flight status to boarding at 9am
 
-### Flight Scheduling & Route Network Planning
+#### Flight Scheduling & Route Network Planning
 
 The Flight Scheduling algorithm uses a preset batch of 'NetworkedRoutes' which is used to track what airports the airline services in their network. Early iterations of the scheduler focus on a strict hub-and-spoke model, meaning that flights either originate from the hub (KBOS - Logan Intl), or return to the hub. This means that the map of networked routes involve flights from Boston to airports across the country, and then a mirrored set of 'return routes' which go from the previous destination back to the hub. This is not exactly realistic to how airlines would approach flight scheduling, however it works as starting point to optimize further down the line.
 
-### Simulating Flights with Events
+#### Simulating Flights with Events
 
 To design a scalable approach to simulating flights, a centralized event queue is used to queue up
 and process important steps throughout each scheduled flight. Once a flight is scheduled to start within two days of the current midnight batch process, a set of FlightEvents are created, accounting for major changes in the status of a flight (begin boarding, takeoff, landing/completion). Further down the line, period Flight Positional updates can be queued to accurately track the exact position of a flight along its expected flight plan, potentially altering other events in the queue that may be dependent on the timeline of a flight (for example, future flights by the plane if delays occur). In the current implementation however, the flight events are static, and occur exactly at their scheduled time. 
 
 As stated before, this approach allows for higher scalability, by creating only 3 processed events for each flight. If a future implementation involves position-based updates and events, this could be similarly scaled by queueing period scheduled position updates, adding more to the queue if the flight is delayed and needs more updates before it is completed.
 
-
-### Flight Data Publisher
+#### Flight Data Publisher
 
 A Redis Pub/Sub message queue is used to broadcast flight data. When a set of flights are scheduled (either by the AirlineInitializer or by AirlineBatchProcessingService), a message is broadcase for each of the flights.
 
@@ -114,9 +115,9 @@ Similarly, messages are broadcast when the FlightEventProcessor handles a new ev
 <br>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-### :ticket: Reservation Server <a id="reservation-server"></a>
+### 🎟️ Reservation Server <a id="reservation-server"></a>
 
-### Folder Structure
+#### Folder Structure
 
 ```md
 .
@@ -143,13 +144,13 @@ Similarly, messages are broadcast when the FlightEventProcessor handles a new ev
     └── Initialization/
 ```
 
-### Airline Subscriber & Synchronization
+#### Airline Subscriber & Synchronization
 
-### Creating open seats and pricing for flights
+#### Creating open seats and pricing for flights
 
-### Booking System
+#### Booking System
 
-### Users & Billing
+#### Users & Billing
 
 Full documentation for Airline.Server can be found <a href="https://github.com/Jackson-Wozniak/Elevation-Airlines/blob/main/Reservation.Server/README.md" />here</a>
 
