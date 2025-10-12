@@ -30,10 +30,10 @@
     <ItemGroup>
       <Folder Include="src\Features\Airline\Operations\Service\" />
       <Folder Include="src\Features\Reservation\Billing\" />
-      <Folder Include="src\Features\Reservation\Pricing\" />
-      <Folder Include="src\Features\Reservation\Tickets\" />
+      <Folder Include="src\Features\Reservation\Booking\Repository\" />
+      <Folder Include="src\Features\Reservation\Booking\Service\" />
+      <Folder Include="src\Features\Reservation\Pricing\Service\" />
       <Folder Include="src\Features\Users\Enum\" />
-      <Folder Include="src\Initialization\" />
     </ItemGroup>
 
 </Project>
