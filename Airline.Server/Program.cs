@@ -32,9 +32,12 @@ string connectionString = builder.Configuration.GetConnectionString("ElevationAi
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-builder.Services.AddSingleton<IPublisher>(publisher =>
-    new RedisPublisher(builder.Configuration["MessagePublisher:Url"])
-);
+builder.Services.AddSingleton<IPublisher>(sp =>
+{
+    var logger = sp.GetRequiredService<ILogger<RedisPublisher>>();
+    var url = builder.Configuration["MessagePublisher:Url"] ?? "No URL from appsettings.json";
+    return new RedisPublisher(logger, url);
+});
 builder.Services.AddSingleton<FlightPublisherService>();
 builder.Services.AddSingleton<PriorityEventQueue<FlightEvent>>();
 builder.Services.AddScoped<AirportService>();
