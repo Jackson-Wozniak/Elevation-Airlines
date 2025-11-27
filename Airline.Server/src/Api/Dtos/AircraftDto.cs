@@ -1,7 +1,7 @@
 ﻿using Airline.Server.Domain.aircraft.Entity;
 using Airline.Server.Domain.aircraft.Enums;
 
-namespace Airline.Server.Domain.aircraft.Dto;
+namespace Airline.Server.Api.Dtos;
 
 public class AircraftDto
 {

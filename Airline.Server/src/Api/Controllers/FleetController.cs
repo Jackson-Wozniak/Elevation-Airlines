@@ -1,10 +1,10 @@
-﻿using Airline.Server.Domain.fleet.Dto;
+﻿using Airline.Server.Api.Dtos;
 using Airline.Server.Domain.fleet.Entity;
 using Airline.Server.Domain.fleet.Repository;
 using Airline.Server.Domain.fleet.Service;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Airline.Server.Domain.fleet.Controller;
+namespace Airline.Server.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

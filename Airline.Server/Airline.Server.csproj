@@ -30,9 +30,4 @@
         <PackageReference Include="StackExchange.Redis" Version="2.9.25" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.5" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="src\Domain\aircraft\Controller\" />
-      <Folder Include="src\Domain\airport\Controller\" />
-    </ItemGroup>
 </Project>

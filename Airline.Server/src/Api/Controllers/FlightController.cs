@@ -1,8 +1,8 @@
-﻿using Airline.Server.Domain.flight.Dto;
+﻿using Airline.Server.Api.Dtos;
 using Airline.Server.Domain.flight.Service;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Airline.Server.Domain.flight.Controller;
+namespace Airline.Server.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

@@ -1,6 +1,4 @@
-﻿using Airline.Server.Domain.airport.Dto;
-
-namespace Airline.Server.Domain.routenetwork.Dto;
+﻿namespace Airline.Server.Api.Dtos;
 
 public class AirportConnectionDto
 {

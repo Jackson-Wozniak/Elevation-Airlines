@@ -1,8 +1,8 @@
-﻿using Airline.Server.Domain.routenetwork.Dto;
+﻿using Airline.Server.Api.Dtos;
 using Airline.Server.Domain.routenetwork.Service;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Airline.Server.Domain.routenetwork.Controller;
+namespace Airline.Server.Api.Controllers;
 
 [ApiController]
 [Route($"api/[controller]")]

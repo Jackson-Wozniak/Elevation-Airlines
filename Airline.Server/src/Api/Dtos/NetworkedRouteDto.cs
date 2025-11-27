@@ -1,7 +1,6 @@
-﻿using Airline.Server.Domain.airport.Dto;
-using Airline.Server.Domain.routenetwork.Entity;
+﻿using Airline.Server.Domain.routenetwork.Entity;
 
-namespace Airline.Server.Domain.routenetwork.Dto;
+namespace Airline.Server.Api.Dtos;
 
 public class NetworkedRouteDto
 {

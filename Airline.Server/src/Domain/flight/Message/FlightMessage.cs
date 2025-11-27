@@ -1,7 +1,6 @@
 ﻿using System.Text.Json;
 using Airline.Server.Core.Infrastructure.Messaging.Message;
-using Airline.Server.Domain.fleet.Dto;
-using Airline.Server.Domain.flight.Dto;
+using Airline.Server.Api.Dtos;
 using Airline.Server.Domain.flight.Entity;
 
 namespace Airline.Server.Domain.flight.Message;

@@ -1,7 +1,6 @@
-﻿using Airline.Server.Domain.fleet.Dto;
-using Airline.Server.Domain.flight.Entity;
+﻿using Airline.Server.Domain.flight.Entity;
 
-namespace Airline.Server.Domain.flight.Dto;
+namespace Airline.Server.Api.Dtos;
 
 public class FlightDto
 {
