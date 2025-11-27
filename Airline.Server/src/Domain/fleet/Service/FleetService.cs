@@ -1,5 +1,5 @@
 ﻿using Airline.Server.Core.Data;
-using Airline.Server.Core.Settings;
+using Airline.Server.Engine.Settings;
 using Airline.Server.Domain.fleet.Entity;
 using Airline.Server.Domain.fleet.Factory;
 using Airline.Server.Domain.fleet.Repository;

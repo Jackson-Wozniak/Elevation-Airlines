@@ -1,5 +1,5 @@
 ﻿using Airline.Server.Core.Interface;
-using Airline.Server.Core.Settings;
+using Airline.Server.Engine.Settings;
 using Airline.Server.Domain.aircraft.IO;
 using Airline.Server.Domain.aircraft.Service;
 using Airline.Server.Domain.airport.IO;

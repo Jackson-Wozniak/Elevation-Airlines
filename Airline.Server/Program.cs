@@ -3,7 +3,7 @@ using Airline.Server.Core.Exception;
 using Airline.Server.Core.Infrastructure.EventQueue;
 using Airline.Server.Core.Infrastructure.Messaging.Publisher;
 using Airline.Server.Engine.Initializer;
-using Airline.Server.Core.Settings;
+using Airline.Server.Engine.Settings;
 using Airline.Server.Domain.aircraft.Service;
 using Airline.Server.Domain.airport.Service;
 using Airline.Server.Domain.fleet.Factory;

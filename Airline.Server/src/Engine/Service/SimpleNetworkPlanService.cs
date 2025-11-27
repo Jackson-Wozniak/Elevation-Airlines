@@ -1,5 +1,4 @@
-﻿using Airline.Server.Core.Data;
-using Airline.Server.Core.Settings;
+﻿using Airline.Server.Engine.Settings;
 using Airline.Server.Domain.airport.Entity;
 using Airline.Server.Domain.airport.Service;
 using Airline.Server.Domain.routenetwork.Entity;

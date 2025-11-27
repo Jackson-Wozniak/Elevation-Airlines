@@ -1,4 +1,4 @@
-﻿namespace Airline.Server.Core.Settings;
+﻿namespace Airline.Server.Engine.Settings;
 
 public class SimulationSettings
 {

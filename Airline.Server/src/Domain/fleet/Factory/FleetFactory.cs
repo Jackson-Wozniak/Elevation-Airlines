@@ -1,4 +1,4 @@
-﻿using Airline.Server.Core.Settings;
+﻿using Airline.Server.Engine.Settings;
 using Airline.Server.Core.Utils;
 using Airline.Server.Domain.aircraft.Service;
 using Airline.Server.Domain.fleet.Entity;
