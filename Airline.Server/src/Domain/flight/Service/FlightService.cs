@@ -48,6 +48,7 @@ public class FlightService(FlightRepository flightRepository,
         //if flight is completed the plane may be sent to maintenance
         try
         {
+            //TODO: this is the method that will call AirlineStatisticsService
             var flight = flightRepository.GetById(id);
             flight.FlightStatus = status;
             //if status is completed, we will need to convert this to a FlightRecord

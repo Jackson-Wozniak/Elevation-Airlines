@@ -1,5 +1,6 @@
 ﻿using Airline.Server.Core.Entity;
 using Airline.Server.Domain.aircraft.Entity;
+using Airline.Server.Domain.airline.Entities;
 using Airline.Server.Domain.airport.Entity;
 using Airline.Server.Domain.fleet.Entity;
 using Airline.Server.Domain.flight.Entity;
@@ -15,6 +16,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Plane> Planes { get; set; }
     public DbSet<Flight> Flights { get; set; }
     public DbSet<NetworkedRoute> NetworkedRoutes { get; set; }
+    public DbSet<AirlineOperationData> AirlineOperationData { get; set; }
     
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options){ }
