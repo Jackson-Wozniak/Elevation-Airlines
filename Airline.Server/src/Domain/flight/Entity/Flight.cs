@@ -40,6 +40,8 @@ public class Flight : BaseEntity
         return DateOnly.FromDateTime(BoardingTime).Equals(date);
     }
 
+    public double DistanceNauticalMiles => FlightPlan.Route.DistanceNauticalMiles;
+
     public bool StartsOnDate(DateTime date)
     {
         return StartsOnDate(DateOnly.FromDateTime(date));

@@ -1,7 +1,7 @@
 ﻿using Airline.Server.Domain.airline.Entities;
-using Airline.Server.Domain.airline.Repository;
+using Airline.Server.Domain.airline.Repositories;
 
-namespace Airline.Server.Domain.airline.Service;
+namespace Airline.Server.Domain.airline.Services;
 
 public class AirlineOperationDataService(
     AirlineOperationDataRepository airlineOperationDataRepository)
@@ -32,6 +32,13 @@ public class AirlineOperationDataService(
     {
         AirlineOperationData data = FindAirlineOperationData();
         data.FlightsCurrentlyScheduled += 1;
+        airlineOperationDataRepository.Update(data);
+    }
+    
+    public void ScheduledFlights(int count)
+    {
+        AirlineOperationData data = FindAirlineOperationData();
+        data.FlightsCurrentlyScheduled += count;
         airlineOperationDataRepository.Update(data);
     }
 }

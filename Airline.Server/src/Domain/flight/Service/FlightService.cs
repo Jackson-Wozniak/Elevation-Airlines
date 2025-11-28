@@ -1,11 +1,13 @@
 ﻿using Airline.Server.Core.Infrastructure.Caching;
+using Airline.Server.Domain.airline.Services;
 using Airline.Server.Domain.flight.Entity;
 using Airline.Server.Domain.flight.Enum;
 using Airline.Server.Domain.flight.Repository;
 
 namespace Airline.Server.Domain.flight.Service;
 
-public class FlightService(FlightRepository flightRepository, 
+public class FlightService(FlightRepository flightRepository,
+    AirlineOperationDataService airlineOperationDataService,
     ILogger<FlightService> logger)
 {
     private readonly ConcurrentEntityCache<Flight> _flightCache = new(50);
@@ -40,6 +42,7 @@ public class FlightService(FlightRepository flightRepository,
 
     public List<Flight> SaveFlights(List<Flight> flights)
     {
+        airlineOperationDataService.ScheduledFlights(flights.Count);
         return flightRepository.SaveAll(flights);
     }
 
@@ -51,6 +54,16 @@ public class FlightService(FlightRepository flightRepository,
             //TODO: this is the method that will call AirlineStatisticsService
             var flight = flightRepository.GetById(id);
             flight.FlightStatus = status;
+
+            if (flight.FlightStatus is FlightStatus.InProgress)
+            {
+                airlineOperationDataService.StartedFlight();
+            }else if (flight.FlightStatus is FlightStatus.Completed)
+            {
+                airlineOperationDataService.CompletedFlight(
+                    flight.DistanceNauticalMiles);
+            }
+            
             //if status is completed, we will need to convert this to a FlightRecord
             flightRepository.Update(flight);
             return flight;

@@ -30,4 +30,54 @@
         <PackageReference Include="StackExchange.Redis" Version="2.9.25" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.5" />
     </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.deps.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.staticwebassets.endpoints.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.Tests.deps.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.Tests.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\appsettings.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\swagger.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.deps.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.staticwebassets.endpoints.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.Tests.deps.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.Tests.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\appsettings.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\swagger.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.deps.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.staticwebassets.endpoints.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.Tests.deps.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.Tests.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\appsettings.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\swagger.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.deps.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.staticwebassets.endpoints.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.Tests.deps.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\Airline.Server.Tests.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\appsettings.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\swagger.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\swagger.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\Airline.Server.Tests.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\Debug\net9.0\Airline.Server.Tests.sourcelink.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\Airline.Server.Tests.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\Debug\net9.0\Airline.Server.Tests.sourcelink.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\Airline.Server.Tests.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\Debug\net9.0\Airline.Server.Tests.sourcelink.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="tests\Airline.Server.Tests\bin\Debug\net9.0\tests\Airline.Server.Tests\obj\project.packagespec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="tests\Airline.Server.Tests\" />
+    </ItemGroup>
 </Project>

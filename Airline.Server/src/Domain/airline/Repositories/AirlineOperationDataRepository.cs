@@ -1,7 +1,7 @@
 ﻿using Airline.Server.Core.Data;
 using Airline.Server.Domain.airline.Entities;
 
-namespace Airline.Server.Domain.airline.Repository;
+namespace Airline.Server.Domain.airline.Repositories;
 
 public class AirlineOperationDataRepository(ApplicationDbContext context)
 {
