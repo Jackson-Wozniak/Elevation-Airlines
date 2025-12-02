@@ -1,9 +1,9 @@
-import '../../../styles/FlightTable.css';
-import type { FlightDto } from '../../../types/flight/flight.dto';
+import '../../styles/FlightTable.css';
+import type { FlightDto } from '../../types/flight/flight.dto';
 import FlightTakeoffOutlinedIcon from '@mui/icons-material/FlightTakeoffOutlined';
 import { DataGrid, type GridColDef, type GridRenderCellParams } from '@mui/x-data-grid';
 import { Stack, Typography } from '@mui/material';
-import { Colors } from '../../../types/shared/ApplicationThemes';
+import { Colors } from '../../types/shared/ApplicationThemes';
 
 const Columns: GridColDef[] = [
     {
@@ -62,9 +62,9 @@ const FlightTable: React.FC<{
 
     return (
         <Stack width="90%" display="flex" justifyContent="center" alignItems="center" margin={0} marginTop="25px">
-            <DataGrid 
+            <DataGrid
              getRowClassName={(params) => params.indexRelativeToCurrentPage % 2 === 0 ? 'even-row' : 'odd-row' }
-            sx={{ 
+            sx={{
                 display: "flex", width: "100%",
                 backgroundColor: "#2C303D",
                 color: "white",
@@ -83,6 +83,9 @@ const FlightTable: React.FC<{
                 },
                 '& .MuiDataGrid-row:hover': {
                     backgroundColor: Colors.Dark.AccentLightest
+                },
+                '& .MuiDataGrid-scrollBarContent': {
+                    overflow: 'hidden'
                 },
                 '& .even-row': {
                     backgroundColor: "rgba(36, 40, 50, 0.5)"

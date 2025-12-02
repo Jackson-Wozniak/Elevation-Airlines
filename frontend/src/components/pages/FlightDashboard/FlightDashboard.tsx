@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Page from "../../layout/Page";
-import FlightTable from "./FlightTable";
+import FlightTable from "../../shared/FlightTable";
 import { fetchFlights } from "../../../api/FlightHttpClient";
 import type { FlightDto } from "../../../types/flight/flight.dto";
 import Box from "@mui/material/Box";

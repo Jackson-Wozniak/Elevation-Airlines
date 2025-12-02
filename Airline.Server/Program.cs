@@ -5,6 +5,8 @@ using Airline.Server.Core.Infrastructure.Messaging.Publisher;
 using Airline.Server.Engine.Initializer;
 using Airline.Server.Engine.Settings;
 using Airline.Server.Domain.aircraft.Service;
+using Airline.Server.Domain.airline.Repositories;
+using Airline.Server.Domain.airline.Services;
 using Airline.Server.Domain.airport.Service;
 using Airline.Server.Domain.fleet.Factory;
 using Airline.Server.Domain.fleet.Repository;
@@ -49,6 +51,8 @@ builder.Services.AddScoped<FlightService>();
 builder.Services.AddScoped<FlightRepository>();
 builder.Services.AddScoped<FlightEventService>();
 builder.Services.AddScoped<NetworkedRouteService>();
+builder.Services.AddScoped<AirlineOperationDataService>();
+builder.Services.AddScoped<AirlineOperationDataRepository>();
 builder.Services.AddScoped<INetworkPlanService, SimpleNetworkPlanService>();
 builder.Services.AddScoped<IFlightSchedulerService, SimpleFlightSchedulerService>();
 
