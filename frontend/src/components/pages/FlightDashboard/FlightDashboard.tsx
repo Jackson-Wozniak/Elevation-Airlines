@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Page from "../Shared/Page/Page";
+import Page from "../../layout/Page";
 import FlightTable from "./FlightTable";
-import { fetchFlights } from "../../api/FlightHttpClient";
-import type { FlightDto } from "../../types/flight/flight.dto";
+import { fetchFlights } from "../../../api/FlightHttpClient";
+import type { FlightDto } from "../../../types/flight/flight.dto";
 import Box from "@mui/material/Box";
 
-const FlightListingsPage: React.FC = () => {
+const FlightDashboard: React.FC = () => {
     const [flights, setFlights] = useState<FlightDto[]>([]);
 
     useEffect(() => {
@@ -24,4 +24,4 @@ const FlightListingsPage: React.FC = () => {
     )
 }
 
-export default FlightListingsPage;
+export default FlightDashboard;

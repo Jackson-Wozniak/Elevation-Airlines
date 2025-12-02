@@ -1,9 +1,9 @@
-import '../../styles/FlightTable.css';
-import type { FlightDto } from '../../types/flight/flight.dto';
+import '../../../styles/FlightTable.css';
+import type { FlightDto } from '../../../types/flight/flight.dto';
 import FlightTakeoffOutlinedIcon from '@mui/icons-material/FlightTakeoffOutlined';
 import { DataGrid, type GridColDef, type GridRenderCellParams } from '@mui/x-data-grid';
 import { Stack, Typography } from '@mui/material';
-import { Colors } from '../../types/shared/ApplicationThemes';
+import { Colors } from '../../../types/shared/ApplicationThemes';
 
 const Columns: GridColDef[] = [
     {

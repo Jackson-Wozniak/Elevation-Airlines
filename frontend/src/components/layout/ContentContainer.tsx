@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import '../../../styles/shared.css';
 
 const ContentContainerStyle = {
     minWidth: "78%",

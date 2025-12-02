@@ -1,6 +1,6 @@
-import '../../../styles/shared.css';
-import logo from '../../../assets/icon.png'
-import { useDemoMode } from '../../../AppInitializer';
+import '../../styles/shared.css';
+import logo from '../../assets/icon.png'
+import { useDemoMode } from '../../AppInitializer';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
